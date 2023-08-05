@@ -225,6 +225,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-disable_spdx_check/">releng.disable_spdx_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-git-no_depth/">releng.git.no_depth</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-git-no_quick_fetch/">releng.git.no_quick_fetch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-git-replicate_cache/">releng.git.replicate_cache</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-stats-no_pdf/">releng.stats.no_pdf</a></li>
 </ul>
 </li>
@@ -443,9 +444,12 @@ the respective folder:</p>
 <li><p>Sources for <code class="docutils literal notranslate"><span class="pre">libb</span></code> will be used from the folder <code class="docutils literal notranslate"><span class="pre">/mnt/sources/libb</span></code>; and,</p></li>
 <li><p>Sources for <code class="docutils literal notranslate"><span class="pre">libc</span></code> will not be fetched locally.</p></li>
 </ul>
-<p>A user can either disable local sources mode by performing a
-<a class="reference internal" href="../arguments/#action-mrproper"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></span></a> or can manually remove the file flag
-observed at the root of the project.</p>
+<p>A user can either disable local sources mode by:</p>
+<ul class="simple">
+<li><p>Providing a local-source path of <code class="docutils literal notranslate"><span class="pre">-</span></code> or <code class="docutils literal notranslate"><span class="pre">unset</span></code>;</p></li>
+<li><p>Invoking <a class="reference internal" href="../arguments/#action-mrproper"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></span></a>; or,</p></li>
+<li><p>By manually removing the file flag found at the root of the project.</p></li>
+</ul>
 </section>
 
         </article>

@@ -225,6 +225,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-disable_spdx_check/">releng.disable_spdx_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-git-no_depth/">releng.git.no_depth</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-git-no_quick_fetch/">releng.git.no_quick_fetch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-git-replicate_cache/">releng.git.replicate_cache</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-stats-no_pdf/">releng.stats.no_pdf</a></li>
 </ul>
 </li>
@@ -424,6 +425,15 @@ actions.</p>
 </div>
 <p>By default, a releng-tool run will generate an SBOM file at the end of a
 run. This action can be used to generate an SBOM without requiring a build.</p>
+</section>
+<section id="state">
+<h3><code class="docutils literal notranslate"><span class="pre">state</span></code><a class="headerlink" href="#state" title="此标题的永久链接">¶</a></h3>
+<p>A request to dump active state information for a project.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>state
+</pre></div>
+</div>
+<p>A state request can be used to dump any active configuration and operating
+modes.</p>
 </section>
 </section>
 <section id="package-actions">
@@ -831,6 +841,7 @@ process. This option can be used multiple times to apply multiple quirks.</p>
 <li><a class="reference internal" href="#mrproper"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></a></li>
 <li><a class="reference internal" href="#patch"><code class="docutils literal notranslate"><span class="pre">patch</span></code></a></li>
 <li><a class="reference internal" href="#sbom"><code class="docutils literal notranslate"><span class="pre">sbom</span></code></a></li>
+<li><a class="reference internal" href="#state"><code class="docutils literal notranslate"><span class="pre">state</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#package-actions">Package actions</a><ul>
