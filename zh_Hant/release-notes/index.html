@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="search" title="搜索" href="../search/" /><link rel="next" title="0.17 (2023-08-06)" href="../news/2023-08-06_00.17.00/" /><link rel="prev" title="ANNEX A - Quick reference" href="../annex-a/" />
 
-    <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.07.26 -->
         <title>Release notes - releng-tool 文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
@@ -321,12 +321,12 @@
         </div>
         <article role="main">
           <section id="release-notes">
-<h1>Release notes<a class="headerlink" href="#release-notes" title="此标题的永久链接">¶</a></h1>
+<h1>Release notes<a class="headerlink" href="#release-notes" title="Link to this heading">¶</a></h1>
 <p>The following provides the notable features, bug fixes and more for each
 release of releng-tool. For a complete list of detailed changes to
 releng-tool, please see the project's <a class="reference external" href="https://github.com/releng-tool/releng-tool/commits">repository commits</a>.</p>
 <section id="news">
-<h2>News<a class="headerlink" href="#news" title="此标题的永久链接">¶</a></h2>
+<h2>News<a class="headerlink" href="#news" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../news/2023-08-06_00.17.00/">0.17 (2023-08-06)</a></li>
@@ -341,10 +341,16 @@ releng-tool, please see the project's <a class="reference external" href="https:
 </div>
 </section>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="此标题的永久链接">¶</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">¶</a></h2>
+</section>
+<section id="development">
+<h2>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT</span></code> and <code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT_DIR</span></code> hints</p></li>
+</ul>
 </section>
 <section id="id1">
-<h2>0.17 (2023-08-06)<a class="headerlink" href="#id1" title="此标题的永久链接">¶</a></h2>
+<h2>0.17 (2023-08-06)<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fixed issue with CMake-generated export targets missing prefix overrides</p></li>
 <li><p>Fixed issue with local-source configurations when provided relative paths</p></li>
@@ -359,7 +365,7 @@ releng-tool, please see the project's <a class="reference external" href="https:
 </ul>
 </section>
 <section id="id2">
-<h2>0.16 (2023-05-07)<a class="headerlink" href="#id2" title="此标题的永久链接">¶</a></h2>
+<h2>0.16 (2023-05-07)<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Enforce strict hash checking in development mode for external packages which
 define a development revision</p></li>
@@ -374,7 +380,7 @@ allowing certain shells to take advantage of path auto-completion</p></li>
 </ul>
 </section>
 <section id="id3">
-<h2>0.15 (2023-02-12)<a class="headerlink" href="#id3" title="此标题的永久链接">¶</a></h2>
+<h2>0.15 (2023-02-12)<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>CMake install events will now always skip dependency checks</p></li>
 <li><p>Fixed issue where extension loading may cause issues in Python 2.7</p></li>
@@ -388,7 +394,7 @@ allowing certain shells to take advantage of path auto-completion</p></li>
 </ul>
 </section>
 <section id="id4">
-<h2>0.14 (2023-02-05)<a class="headerlink" href="#id4" title="此标题的永久链接">¶</a></h2>
+<h2>0.14 (2023-02-05)<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><strong>(note)</strong> The deprecated <code class="docutils literal notranslate"><span class="pre">releng</span></code> namespace has been removed</p></li>
 <li><p>CMake install events will now always force installs by default</p></li>
@@ -408,7 +414,7 @@ issues finding includes/libraries with <code class="docutils literal notranslate
 </ul>
 </section>
 <section id="id5">
-<h2>0.13 (2022-08-10)<a class="headerlink" href="#id5" title="此标题的永久链接">¶</a></h2>
+<h2>0.13 (2022-08-10)<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Avoid interaction with target area when using CMake projects that only
 uses the staging area</p></li>
@@ -441,7 +447,7 @@ operating in local-sources mode</p></li>
 </ul>
 </section>
 <section id="id6">
-<h2>0.12 (2022-05-02)<a class="headerlink" href="#id6" title="此标题的永久链接">¶</a></h2>
+<h2>0.12 (2022-05-02)<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Adding <code class="docutils literal notranslate"><span class="pre">dst_dir</span></code> to <code class="docutils literal notranslate"><span class="pre">releng_copy</span></code> for explicit copies to directories</p></li>
 <li><p>Adjust automatic job detection to use physical cores instead of logical cores</p></li>
@@ -458,7 +464,7 @@ content on first extract</p></li>
 </ul>
 </section>
 <section id="id7">
-<h2>0.11 (2022-02-26)<a class="headerlink" href="#id7" title="此标题的永久链接">¶</a></h2>
+<h2>0.11 (2022-02-26)<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Always pre-create install directory before package install scripts are invoked</p></li>
 <li><p>Fixed an issue where nested zip files could not extract</p></li>
@@ -472,7 +478,7 @@ content on first extract</p></li>
 </ul>
 </section>
 <section id="id8">
-<h2>0.10 (2021-12-31)<a class="headerlink" href="#id8" title="此标题的永久链接">¶</a></h2>
+<h2>0.10 (2021-12-31)<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fixed an issue where a configured <code class="docutils literal notranslate"><span class="pre">sysroot_prefix</span></code> bin path would not be
 registered in the script environment's path</p></li>
@@ -492,7 +498,7 @@ would fail</p></li>
 </ul>
 </section>
 <section id="id9">
-<h2>0.9 (2021-10-02)<a class="headerlink" href="#id9" title="此标题的永久链接">¶</a></h2>
+<h2>0.9 (2021-10-02)<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fixed an import issue when running with Python 3.10</p></li>
 <li><p>Fixed an issue where a cyclic package check provided a bad message</p></li>
@@ -504,7 +510,7 @@ would fail</p></li>
 </ul>
 </section>
 <section id="id10">
-<h2>0.8 (2021-08-28)<a class="headerlink" href="#id10" title="此标题的永久链接">¶</a></h2>
+<h2>0.8 (2021-08-28)<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Allow DVCS packages to share caches (to minimize space/time fetching)</p></li>
 <li><p>Fixed an issue where tools/<code class="docutils literal notranslate"><span class="pre">releng_execute</span></code> requests would fail on Python
@@ -529,7 +535,7 @@ forced fetch request is made</p></li>
 </ul>
 </section>
 <section id="id11">
-<h2>0.7 (2021-08-08)<a class="headerlink" href="#id11" title="此标题的永久链接">¶</a></h2>
+<h2>0.7 (2021-08-08)<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fetch from an already cached package's site if the fetch is explicitly
 requested</p></li>
@@ -551,7 +557,7 @@ to force re-invoking a specific stage</p></li>
 </ul>
 </section>
 <section id="id12">
-<h2>0.6 (2020-10-10)<a class="headerlink" href="#id12" title="此标题的永久链接">¶</a></h2>
+<h2>0.6 (2020-10-10)<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Always register optional flags inside scripts (allowing developers to use
 flags like <code class="docutils literal notranslate"><span class="pre">RELENG_RECONFIGURE</span></code> without needing to check environment
@@ -567,13 +573,13 @@ an interim)</p></li>
 </ul>
 </section>
 <section id="id13">
-<h2>0.5 (2020-09-07)<a class="headerlink" href="#id13" title="此标题的永久链接">¶</a></h2>
+<h2>0.5 (2020-09-07)<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fixed false error when verifying cached Git reference</p></li>
 </ul>
 </section>
 <section id="id14">
-<h2>0.4 (2020-09-07)<a class="headerlink" href="#id14" title="此标题的永久链接">¶</a></h2>
+<h2>0.4 (2020-09-07)<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Allow developers to fetch from addition Git refspecs (e.g. pull requests)</p></li>
 <li><p>Allow setting quirks in command line</p></li>
@@ -585,7 +591,7 @@ an interim)</p></li>
 </ul>
 </section>
 <section id="id15">
-<h2>0.3 (2019-10-19)<a class="headerlink" href="#id15" title="此标题的永久链接">¶</a></h2>
+<h2>0.3 (2019-10-19)<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Allow packages to configure to ignore cache while in development mode</p></li>
 <li><p>Allow packages to configure for no-extraction for sources</p></li>
@@ -597,7 +603,7 @@ an interim)</p></li>
 </ul>
 </section>
 <section id="id16">
-<h2>0.2 (2019-03-15)<a class="headerlink" href="#id16" title="此标题的永久链接">¶</a></h2>
+<h2>0.2 (2019-03-15)<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>A project's host directory will now be registered in the system's path during
 execution</p></li>
@@ -607,7 +613,7 @@ execution</p></li>
 </ul>
 </section>
 <section id="id17">
-<h2>0.1 (2019-02-24)<a class="headerlink" href="#id17" title="此标题的永久链接">¶</a></h2>
+<h2>0.1 (2019-02-24)<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Hello world</p></li>
 </ul>
@@ -669,6 +675,7 @@ execution</p></li>
 <li><a class="reference internal" href="#">Release notes</a><ul>
 <li><a class="reference internal" href="#news">News</a></li>
 <li><a class="reference internal" href="#summary">Summary</a></li>
+<li><a class="reference internal" href="#development">Development</a></li>
 <li><a class="reference internal" href="#id1">0.17 (2023-08-06)</a></li>
 <li><a class="reference internal" href="#id2">0.16 (2023-05-07)</a></li>
 <li><a class="reference internal" href="#id3">0.15 (2023-02-12)</a></li>
@@ -697,9 +704,9 @@ execution</p></li>
       
     </aside>
   </div>
-</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=f2ee9b8c"></script>
+</div><script src="../_static/documentation_options.js?v=ebd5bd6d"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../_static/tabs.js?v=3ee01567"></script>
     </body>
