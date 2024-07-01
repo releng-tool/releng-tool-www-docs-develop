@@ -401,16 +401,17 @@ variable to apply to all of these stages. With the introduction of the
 <h2>Option to explicitly override <code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE</span></code><a class="headerlink" href="#option-to-explicitly-override-cmake-build-type" title="Link to this heading">¶</a></h2>
 <p>When building with CMake in releng-tool, the default build type is configured
 for <code class="docutils literal notranslate"><span class="pre">RelWithDebInfo</span></code>. Developers can now override this for a package by
-using the newly added <code class="docutils literal notranslate"><span class="pre">LIBFOO_CMAKE_BUILD_TYPE</span></code> option (alternatively,
-over defining a <code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE</span></code> override in a configuration define
-dictionary).</p>
+using the newly added <a class="reference internal" href="../../guides/packages/pkg-type-cmake/#pkg-cmake-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CMAKE_BUILD_TYPE</span></code></span></a> option
+(alternatively, over defining a <a class="reference external" href="https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html"><code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE</span></code></a>
+override in a configuration define dictionary).</p>
 </section>
 <section id="improvements-for-development-and-local-sources-modes">
 <h2>Improvements for development and local-sources modes<a class="headerlink" href="#improvements-for-development-and-local-sources-modes" title="Link to this heading">¶</a></h2>
 <p>A series of changes have been made to help improve usability when taking
-advantage of development or local-sources modes. A new action <code class="docutils literal notranslate"><span class="pre">state</span></code> has
-been added to allow users to query active modes without having to manually
-inspect file flags or perform active run of releng-tool:</p>
+advantage of development or local-sources modes. A new action
+<a class="reference internal" href="../../guides/arguments/#action-state"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">state</span></code></span></a> has been added to allow users to query active modes
+without having to manually inspect file flags or perform active run of
+releng-tool:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>releng-tool<span class="w"> </span>state
 <span class="go">...</span>
 <span class="go">Development mode: Enabled</span>
@@ -418,9 +419,10 @@ inspect file flags or perform active run of releng-tool:</p>
 </pre></div>
 </div>
 <p>When disabling development or local-sources mode, users would originally
-have to invoke a <code class="docutils literal notranslate"><span class="pre">mrproper</span></code> call or manually clear file flags. With this
-release, users can pass in a <code class="docutils literal notranslate"><span class="pre">-</span></code> value for these modes when attempting to
-unconfigure. For example, to unconfigure development mode:</p>
+have to invoke a <a class="reference internal" href="../../guides/arguments/#action-mrproper"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></span></a> call or manually clear
+file flags. With this release, users can pass in a <code class="docutils literal notranslate"><span class="pre">-</span></code> value for these
+modes when attempting to unconfigure. For example, to unconfigure
+development mode:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>releng-tool<span class="w"> </span>--development<span class="w"> </span>-
 <span class="go">...</span>
 <span class="gp gp-VirtualEnv">(warn)</span> <span class="go">development mode has been unconfigured</span>

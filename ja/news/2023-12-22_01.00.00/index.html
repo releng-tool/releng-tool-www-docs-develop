@@ -398,13 +398,16 @@ wish to determine the path of the running script or the directory which
 an active script is running (whether this is a build script for a package,
 a post-build script, etc.).</p>
 <p>Changes have been introduced into releng-tool so that any time a script
-is executed, the variables <code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT</span></code> and <code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT_DIR</span></code> will be
-set. This includes global contexts as well as environment variables. The
-variable <code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT</span></code> will be set to the absolute path of the running
-script. As for <code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT_DIR</span></code>, the value will be a subset of the script
-path, holding the absolute path of the directory holding the script.</p>
-<p>When using script helpers such as <code class="docutils literal notranslate"><span class="pre">releng_include</span></code>, the values of
-<code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT</span></code> and <code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT_DIR</span></code> will be updated in the included
+is executed, the variables <a class="reference internal" href="../../guides/environment/#env-releng-script"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT</span></code></span></a> and
+<a class="reference internal" href="../../guides/environment/#env-releng-script-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT_DIR</span></code></span></a> will be set. This includes
+global contexts as well as environment variables. The variable
+<a class="reference internal" href="../../guides/environment/#env-releng-script"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT</span></code></span></a> will be set to the absolute path of
+the running script. As for <a class="reference internal" href="../../guides/environment/#env-releng-script-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT_DIR</span></code></span></a>,
+the value will be a subset of the script path, holding the absolute path
+of the directory holding the script.</p>
+<p>When using <a class="reference internal" href="../../guides/script-helpers/"><span class="doc std std-doc">script helpers</span></a> such as
+<code class="docutils literal notranslate"><span class="pre">releng_include</span></code>, the values of <a class="reference internal" href="../../guides/environment/#env-releng-script"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT</span></code></span></a> and
+<a class="reference internal" href="../../guides/environment/#env-releng-script-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT_DIR</span></code></span></a> will be updated in the included
 context for the included script.</p>
 </section>
 <section id="spdx-license-database-updated">
