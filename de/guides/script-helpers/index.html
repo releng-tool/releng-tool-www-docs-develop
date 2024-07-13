@@ -636,7 +636,7 @@ be removed.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cwd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">poll</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capture</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cwd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">poll</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capture</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Runs the command described by <code class="docutils literal notranslate"><span class="pre">args</span></code> until completion. A caller can adjust
 the working directory of the executed command by explicitly setting the
 directory in <code class="docutils literal notranslate"><span class="pre">cwd</span></code>. The execution request will return <code class="docutils literal notranslate"><span class="pre">True</span></code> on a
@@ -686,6 +686,7 @@ list will be populated with the output provided from an invoked process.</p>
 <li><p><strong>poll</strong> (<em>optional</em>) – force polling stdin/stdout for output data (defaults to
 <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
 <li><p><strong>capture</strong> (<em>optional</em>) – list to capture output into</p></li>
+<li><p><strong>expand</strong> (<em>optional</em>) – perform variable expansion on arguments</p></li>
 </ul>
 </dd>
 <dt class="field-even">Rückgabe<span class="colon">:</span></dt>
@@ -730,6 +731,7 @@ instead of the original environment of the caller.</p>
 <li><p><strong>**cwd</strong> – working directory to use</p></li>
 <li><p><strong>**env</strong> – environment variables to use for the process</p></li>
 <li><p><strong>**env_update</strong> – environment variables to append for the process</p></li>
+<li><p><strong>**expand</strong> – perform variable expansion on arguments</p></li>
 </ul>
 </dd>
 <dt class="field-even">Rückgabe<span class="colon">:</span></dt>
@@ -878,15 +880,22 @@ be read</p>
 
 <dl class="py function">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_mkdir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_mkdir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Attempts to create the provided directory. If the directory already exists,
 this method has no effect. If the directory does not exist and could not be
-created, this method will return <code class="docutils literal notranslate"><span class="pre">False</span></code>. Also, if an error has been
+created, this method will return <code class="docutils literal notranslate"><span class="pre">None</span></code>. Also, if an error has been
 detected, an error message will be output to standard error (unless
 <code class="docutils literal notranslate"><span class="pre">quiet</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>).</p>
 <p>An example when using in the context of script helpers is as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">releng_mkdir</span><span class="p">(</span><span class="s1">&#39;my-directory&#39;</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;directory was created&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;directory was not created&#39;</span><span class="p">)</span>
+
+<span class="n">target_dir</span> <span class="o">=</span> <span class="n">releng_mkdir</span><span class="p">(</span><span class="n">TARGET_DIR</span><span class="p">,</span> <span class="s1">&#39;sub-folder&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">target_dir</span><span class="p">:</span>
+    <span class="c1"># output] target directory: &lt;target&gt;/sub-folder</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;target directory:&#39;</span><span class="p">,</span> <span class="n">target_dir</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;directory was not created&#39;</span><span class="p">)</span>
 </pre></div>
@@ -895,14 +904,15 @@ detected, an error message will be output to standard error (unless
 <dt class="field-odd">Parameter<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dir</strong> – the directory</p></li>
-<li><p><strong>quiet</strong> (<em>optional</em>) – whether or not to suppress output (defaults to
-<code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
-<li><p><strong>critical</strong> (<em>optional</em>) – whether or not to stop execution on failure
-(defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+<li><p><strong>*args</strong> (<em>optional</em>) – additional components of the directory</p></li>
+<li><p><strong>**quiet</strong> (<em>optional</em>) – whether or not to suppress output (defaults
+to <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+<li><p><strong>**critical</strong> (<em>optional</em>) – whether or not to stop execution on
+failure (defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Rückgabe<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the directory exists; <code class="docutils literal notranslate"><span class="pre">False</span></code> if the directory could not
+<dd class="field-even"><p>the directory that exists; <code class="docutils literal notranslate"><span class="pre">None</span></code> if the directory could not
 be created</p>
 </dd>
 </dl>

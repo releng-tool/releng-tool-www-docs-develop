@@ -408,6 +408,20 @@ releng-tool, please see the project's <a class="reference external" href="https:
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">¶</a></h2>
 </section>
+<section id="development">
+<h2>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Automatic debugging mode when detecting CI debugging runs</p></li>
+<li><p>Fixed issue where an aborted Mercurial fetch could require manual cleanup</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">RELENG_GENERATED_LICENSES</span></code> script variable</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">RELENG_GENERATED_SBOMS</span></code> script variable</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">environment</span></code> project configuration</p></li>
+<li><p>Script helper <code class="docutils literal notranslate"><span class="pre">releng_mkdir</span></code> will now return the path</p></li>
+<li><p>Support multiple path components in <code class="docutils literal notranslate"><span class="pre">releng_mkdir</span></code></p></li>
+<li><p>Support variable expansion for <code class="docutils literal notranslate"><span class="pre">releng_execute</span></code> arguments</p></li>
+<li><p>Unknown arguments will now generate an error by default</p></li>
+</ul>
+</section>
 <section id="id1">
 <h2>1.2 (2024-07-01)<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -759,6 +773,7 @@ execution</p></li>
 <li><a class="reference internal" href="#">バージョンノート</a><ul>
 <li><a class="reference internal" href="#news">News</a></li>
 <li><a class="reference internal" href="#summary">Summary</a></li>
+<li><a class="reference internal" href="#development">Development</a></li>
 <li><a class="reference internal" href="#id1">1.2 (2024-07-01)</a></li>
 <li><a class="reference internal" href="#id2">1.1 (2024-03-29)</a></li>
 <li><a class="reference internal" href="#id3">1.0 (2023-12-22)</a></li>

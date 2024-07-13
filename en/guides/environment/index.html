@@ -887,6 +887,22 @@ the value used will match the revision value (if set). If no revision value
 exists, this variable may be empty.</p>
 </section>
 </section>
+<section id="script-only-variables">
+<h2>Script-only variables<a class="headerlink" href="#script-only-variables" title="Link to this heading">¶</a></h2>
+<p>A series a script-only variables are also available at certain stages of
+releng-tool.</p>
+<section id="releng-generated-licenses">
+<h3><code class="docutils literal notranslate"><span class="pre">RELENG_GENERATED_LICENSES</span></code><a class="headerlink" href="#releng-generated-licenses" title="Link to this heading">¶</a></h3>
+<p>Defines a list of generated license files at the end of package processing
+that is available for post-processing actions to use.</p>
+</section>
+<section id="releng-generated-sboms">
+<h3><code class="docutils literal notranslate"><span class="pre">RELENG_GENERATED_SBOMS</span></code><a class="headerlink" href="#releng-generated-sboms" title="Link to this heading">¶</a></h3>
+<p>Defines a list of generated software build of materials (SBOM) files at the
+end of package processing that is available for post-processing actions
+to use.</p>
+</section>
+</section>
 <section id="other-variables">
 <h2>Other variables<a class="headerlink" href="#other-variables" title="Link to this heading">¶</a></h2>
 <p>releng-tool also accepts environment variables for configuring specific
@@ -1108,6 +1124,11 @@ directory using the <a class="reference internal" href="../arguments/#arg-out-di
 <li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_NAME</span></code></a></li>
 <li><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_REVISION</span></code></a></li>
 <li><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_VERSION</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#script-only-variables">Script-only variables</a><ul>
+<li><a class="reference internal" href="#releng-generated-licenses"><code class="docutils literal notranslate"><span class="pre">RELENG_GENERATED_LICENSES</span></code></a></li>
+<li><a class="reference internal" href="#releng-generated-sboms"><code class="docutils literal notranslate"><span class="pre">RELENG_GENERATED_SBOMS</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#other-variables">Other variables</a><ul>

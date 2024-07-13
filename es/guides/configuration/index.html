@@ -434,6 +434,17 @@ assumed to be external packages.</p>
 </div>
 <p>See also <a class="reference internal" href="../intern-extern-pkgs/"><span class="doc std std-doc">internal and external packages</span></a>.</p>
 </section>
+<section id="environment">
+<h3><code class="docutils literal notranslate"><span class="pre">environment</span></code><a class="headerlink" href="#environment" title="Link to this heading">¶</a></h3>
+<p>A dictionary to define environment variables to apply to all stages of
+releng-tool.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">environment</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;MY_ENV_1&#39;</span><span class="p">:</span> <span class="s1">&#39;First example&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;MY_ENV_2&#39;</span><span class="p">:</span> <span class="s1">&#39;Another example&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
 <section id="extensions">
 <h3><code class="docutils literal notranslate"><span class="pre">extensions</span></code><a class="headerlink" href="#extensions" title="Link to this heading">¶</a></h3>
 <p>A list of extensions to load before processing a releng-tool project. If an
@@ -785,6 +796,7 @@ environment. For example:</p>
 <li><a class="reference internal" href="#">Configuración</a><ul>
 <li><a class="reference internal" href="#common-options">Common options</a><ul>
 <li><a class="reference internal" href="#default-internal"><code class="docutils literal notranslate"><span class="pre">default_internal</span></code></a></li>
+<li><a class="reference internal" href="#environment"><code class="docutils literal notranslate"><span class="pre">environment</span></code></a></li>
 <li><a class="reference internal" href="#extensions"><code class="docutils literal notranslate"><span class="pre">extensions</span></code></a></li>
 <li><a class="reference internal" href="#external-packages"><code class="docutils literal notranslate"><span class="pre">external_packages</span></code></a></li>
 <li><a class="reference internal" href="#license-header"><code class="docutils literal notranslate"><span class="pre">license_header</span></code></a></li>

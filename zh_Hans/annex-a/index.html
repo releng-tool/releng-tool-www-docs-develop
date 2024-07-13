@@ -391,6 +391,7 @@ releng-tool project.</p>
 <p>Options which are read by releng-tool from a project's configuration script:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cache_ext</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nb">callable</span><span class="o">&gt;</span>
 <span class="n">default_internal</span> <span class="o">=</span> <span class="nb">bool</span>
+<span class="n">environment</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;&lt;key&gt;&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;val&gt;&#39;</span><span class="p">}</span>
 <span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&lt;extension&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;extension&gt;&#39;</span><span class="p">]</span>
 <span class="n">external_packages</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&lt;path&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;path&gt;&#39;</span><span class="p">]</span>
 <span class="n">extra_license_exceptions</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;&lt;short-exception-id&gt;&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;exception-name&gt;&#39;</span><span class="p">}</span>
@@ -447,6 +448,8 @@ releng-tool (may vary per context):</p>
 <span class="n">RELENG_DEVMODE</span>
 <span class="n">RELENG_DISTCLEAN</span>
 <span class="n">RELENG_FORCE</span>
+<span class="n">RELENG_GENERATED_LICENSES</span>
+<span class="n">RELENG_GENERATED_SBOMS</span>
 <span class="n">RELENG_LOCALSRCS</span>
 <span class="n">RELENG_MRPROPER</span>
 <span class="n">RELENG_REBUILD</span>
