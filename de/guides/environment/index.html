@@ -750,8 +750,8 @@ example, if a package <code class="docutils literal notranslate"><span class="pr
 in other configurations and script files. The following package-specific
 environment variables are available for use, where <code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;</span></code> translates to a
 releng-tool’s determined package key:</p>
-<section id="id1">
-<h3><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_BUILD_DIR</span></code><a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-build-dir">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_BUILD_DIR</span></code><a class="headerlink" href="#pkg-var-build-dir" title="Link to this heading">¶</a></h3>
 <p>The directory for a defined package’s buildable content.</p>
 <p>For most packages, this path will match the value specified in
 <code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_BUILD_OUTPUT_DIR</span></code>. For package types that do not support in-tree
@@ -805,8 +805,8 @@ the package’s definition directory:</p>
 </pre></div>
 </div>
 </section>
-<section id="id2">
-<h3><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_BUILD_OUTPUT_DIR</span></code><a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-build-output-dir">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_BUILD_OUTPUT_DIR</span></code><a class="headerlink" href="#pkg-var-build-output-dir" title="Link to this heading">¶</a></h3>
 <p>The directory for where a defined package’s build output will be stored.</p>
 <p>This location is a path is a folder inside the project’s <code class="docutils literal notranslate"><span class="pre">output/build</span></code>
 directory. The name is typically a combination of the package’s name and
@@ -854,8 +854,8 @@ for package types like CMake. For example:</p>
 </pre></div>
 </div>
 </section>
-<section id="id3">
-<h3><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_DEFDIR</span></code><a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-defdir">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_DEFDIR</span></code><a class="headerlink" href="#pkg-var-defdir" title="Link to this heading">¶</a></h3>
 <p>The directory where a defined package’s definition is stored.</p>
 <p>For example, if a package <code class="docutils literal notranslate"><span class="pre">libfoo</span></code> exists, the <code class="docutils literal notranslate"><span class="pre">LIBFOO_DEFDIR</span></code> environment
 variable will contain a directory path matching the path seen below:</p>
@@ -868,20 +868,20 @@ variable will contain a directory path matching the path seen below:</p>
 </pre></div>
 </div>
 </section>
-<section id="id4">
-<h3><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_NAME</span></code><a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-name">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_NAME</span></code><a class="headerlink" href="#pkg-var-name" title="Link to this heading">¶</a></h3>
 <p>The name of the package.</p>
 <p>For example, if a package <code class="docutils literal notranslate"><span class="pre">libfoo</span></code> exists, the <code class="docutils literal notranslate"><span class="pre">LIBFOO_NAME</span></code> environment
 variable will have a value of <code class="docutils literal notranslate"><span class="pre">libfoo</span></code>.</p>
 </section>
-<section id="id5">
-<h3><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_REVISION</span></code><a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-revision">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_REVISION</span></code><a class="headerlink" href="#pkg-var-revision" title="Link to this heading">¶</a></h3>
 <p>The revision of a defined package. If a package does not define a revision,
 the value used will match the version value (if set). If no version value
 exists, this variable may be empty.</p>
 </section>
-<section id="id6">
-<h3><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_VERSION</span></code><a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-version">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_VERSION</span></code><a class="headerlink" href="#pkg-var-version" title="Link to this heading">¶</a></h3>
 <p>The version of a defined package. If a package does not define a version,
 the value used will match the revision value (if set). If no revision value
 exists, this variable may be empty.</p>
@@ -908,8 +908,8 @@ to use.</p>
 <p>releng-tool also accepts environment variables for configuring specific
 features of the releng-tool process. The following environment variables are
 accepted:</p>
-<section id="releng-assets-dir-dir">
-<span id="env-releng-assets-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_ASSETS_DIR=&lt;dir&gt;</span></code><a class="headerlink" href="#releng-assets-dir-dir" title="Link to this heading">¶</a></h3>
+<section id="releng-assets-dir">
+<span id="env-releng-assets-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_ASSETS_DIR=&lt;dir&gt;</span></code><a class="headerlink" href="#releng-assets-dir" title="Link to this heading">¶</a></h3>
 <p>The asset directory to use. The asset directory is the container directory
 to use for both cache and download content. By default, no asset directory
 is configured. If a user does not override an asset directory using the
@@ -917,22 +917,22 @@ is configured. If a user does not override an asset directory using the
 used as the container directory override for both cache and download
 content.</p>
 </section>
-<section id="releng-cache-dir-dir">
-<span id="env-releng-cache-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_CACHE_DIR=&lt;dir&gt;</span></code><a class="headerlink" href="#releng-cache-dir-dir" title="Link to this heading">¶</a></h3>
+<section id="releng-cache-dir">
+<span id="env-releng-cache-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_CACHE_DIR=&lt;dir&gt;</span></code><a class="headerlink" href="#releng-cache-dir" title="Link to this heading">¶</a></h3>
 <p>The cache directory to use. By default, the cache directory used is configured
 to <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/cache</span></code>. If a user does not override a cache directory using the
 <a class="reference internal" href="../arguments/#arg-cache-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--cache-dir</span></code> argument</span></a>, the <code class="docutils literal notranslate"><span class="pre">RELENG_CACHE_DIR</span></code> option can
 be used to override this location.</p>
 </section>
-<section id="releng-dl-dir-dir">
-<span id="env-releng-dl-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_DL_DIR=&lt;dir&gt;</span></code><a class="headerlink" href="#releng-dl-dir-dir" title="Link to this heading">¶</a></h3>
+<section id="releng-dl-dir">
+<span id="env-releng-dl-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_DL_DIR=&lt;dir&gt;</span></code><a class="headerlink" href="#releng-dl-dir" title="Link to this heading">¶</a></h3>
 <p>The download directory to use. By default, the download directory used is
 configured to <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/dl</span></code>. If a user does not override a download directory
 using the <a class="reference internal" href="../arguments/#arg-dl-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--dl-dir</span></code> argument</span></a>, the <code class="docutils literal notranslate"><span class="pre">RELENG_DL_DIR</span></code> option
 can be used to override this location.</p>
 </section>
-<section id="releng-global-output-container-dir-dir">
-<span id="env-releng-global-out-container-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_DIR=&lt;dir&gt;</span></code><a class="headerlink" href="#releng-global-output-container-dir-dir" title="Link to this heading">¶</a></h3>
+<section id="releng-global-output-container-dir">
+<span id="env-releng-global-out-container-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_DIR=&lt;dir&gt;</span></code><a class="headerlink" href="#releng-global-output-container-dir" title="Link to this heading">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Bemerkung</p>
 <p>This environment variable is always ignored when either the
@@ -984,19 +984,19 @@ and configures this option to the path <code class="docutils literal notranslate
 </pre></div>
 </div>
 </section>
-<section id="releng-ignore-running-as-root-1">
-<span id="env-releng-ignore-running-as-root"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_RUNNING_AS_ROOT=1</span></code><a class="headerlink" href="#releng-ignore-running-as-root-1" title="Link to this heading">¶</a></h3>
+<section id="releng-ignore-running-as-root">
+<span id="env-releng-ignore-running-as-root"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_RUNNING_AS_ROOT=1</span></code><a class="headerlink" href="#releng-ignore-running-as-root" title="Link to this heading">¶</a></h3>
 <p>Suppress the <a class="reference internal" href="../tips/privileged-builds/"><span class="doc std std-doc">warning</span></a> generated when running
 releng-tool with an elevated user.</p>
 </section>
-<section id="releng-ignore-unknown-args-1">
-<span id="env-releng-ignore-unknown-args"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_UNKNOWN_ARGS=1</span></code><a class="headerlink" href="#releng-ignore-unknown-args-1" title="Link to this heading">¶</a></h3>
+<section id="releng-ignore-unknown-args">
+<span id="env-releng-ignore-unknown-args"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_UNKNOWN_ARGS=1</span></code><a class="headerlink" href="#releng-ignore-unknown-args" title="Link to this heading">¶</a></h3>
 <p>Suppress the warning/error generated when running releng-tool with unknown
 arguments.</p>
 <p>See also the <a class="reference internal" href="../arguments/#arg-relaxed-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--relaxed-args</span></code> argument</span></a>.</p>
 </section>
-<section id="releng-output-dir-dir">
-<span id="env-releng-out-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_OUTPUT_DIR=&lt;dir&gt;</span></code><a class="headerlink" href="#releng-output-dir-dir" title="Link to this heading">¶</a></h3>
+<section id="releng-output-dir">
+<span id="env-releng-out-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_OUTPUT_DIR=&lt;dir&gt;</span></code><a class="headerlink" href="#releng-output-dir" title="Link to this heading">¶</a></h3>
 <p>The output directory to use. By default, the output directory used is
 configured to <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/output</span></code>. If a user does not override an output
 directory using the <a class="reference internal" href="../arguments/#arg-out-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--out-dir</span></code> argument</span></a>, the
@@ -1118,12 +1118,12 @@ directory using the <a class="reference internal" href="../arguments/#arg-out-di
 </ul>
 </li>
 <li><a class="reference internal" href="#package-specific-variables">Package-specific variables</a><ul>
-<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_BUILD_DIR</span></code></a></li>
-<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_BUILD_OUTPUT_DIR</span></code></a></li>
-<li><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_DEFDIR</span></code></a></li>
-<li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_NAME</span></code></a></li>
-<li><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_REVISION</span></code></a></li>
-<li><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_VERSION</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-build-dir"><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_BUILD_DIR</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-build-output-dir"><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_BUILD_OUTPUT_DIR</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-defdir"><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_DEFDIR</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-name"><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_NAME</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-revision"><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_REVISION</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-version"><code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_VERSION</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#script-only-variables">Script-only variables</a><ul>
@@ -1132,13 +1132,13 @@ directory using the <a class="reference internal" href="../arguments/#arg-out-di
 </ul>
 </li>
 <li><a class="reference internal" href="#other-variables">Other variables</a><ul>
-<li><a class="reference internal" href="#releng-assets-dir-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_ASSETS_DIR=&lt;dir&gt;</span></code></a></li>
-<li><a class="reference internal" href="#releng-cache-dir-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_CACHE_DIR=&lt;dir&gt;</span></code></a></li>
-<li><a class="reference internal" href="#releng-dl-dir-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_DL_DIR=&lt;dir&gt;</span></code></a></li>
-<li><a class="reference internal" href="#releng-global-output-container-dir-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_DIR=&lt;dir&gt;</span></code></a></li>
-<li><a class="reference internal" href="#releng-ignore-running-as-root-1"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_RUNNING_AS_ROOT=1</span></code></a></li>
-<li><a class="reference internal" href="#releng-ignore-unknown-args-1"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_UNKNOWN_ARGS=1</span></code></a></li>
-<li><a class="reference internal" href="#releng-output-dir-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_OUTPUT_DIR=&lt;dir&gt;</span></code></a></li>
+<li><a class="reference internal" href="#releng-assets-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_ASSETS_DIR=&lt;dir&gt;</span></code></a></li>
+<li><a class="reference internal" href="#releng-cache-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_CACHE_DIR=&lt;dir&gt;</span></code></a></li>
+<li><a class="reference internal" href="#releng-dl-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_DL_DIR=&lt;dir&gt;</span></code></a></li>
+<li><a class="reference internal" href="#releng-global-output-container-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_DIR=&lt;dir&gt;</span></code></a></li>
+<li><a class="reference internal" href="#releng-ignore-running-as-root"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_RUNNING_AS_ROOT=1</span></code></a></li>
+<li><a class="reference internal" href="#releng-ignore-unknown-args"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_UNKNOWN_ARGS=1</span></code></a></li>
+<li><a class="reference internal" href="#releng-output-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_OUTPUT_DIR=&lt;dir&gt;</span></code></a></li>
 </ul>
 </li>
 </ul>

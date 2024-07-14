@@ -515,8 +515,8 @@ modes.</p>
 <section id="package-actions">
 <h2>Package actions<a class="headerlink" href="#package-actions" title="Link to this heading">¶</a></h2>
 <p>The following outlines available package-specific actions:</p>
-<section id="pkg-build">
-<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-build</span></code><a class="headerlink" href="#pkg-build" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-build">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-build</span></code><a class="headerlink" href="#pkg-var-build" title="Link to this heading">¶</a></h3>
 <p>Performs the build stage for the package.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-build
 </pre></div>
@@ -526,16 +526,16 @@ If a package has any package dependencies, these dependencies will be
 processed before the specified package. If the provided package name does
 not exist, a notification will be generated.</p>
 </section>
-<section id="pkg-clean">
-<span id="action-pkg-clean"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-clean</span></code><a class="headerlink" href="#pkg-clean" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-clean">
+<span id="action-pkg-clean"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-clean</span></code><a class="headerlink" href="#pkg-var-clean" title="Link to this heading">¶</a></h3>
 <p>Cleans the build directory for package (if it exists).</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-clean
 </pre></div>
 </div>
 <p>See also the <a class="reference internal" href="#action-pkg-distclean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-distclean</span></code></span></a> action.</p>
 </section>
-<section id="pkg-configure">
-<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-configure</span></code><a class="headerlink" href="#pkg-configure" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-configure">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-configure</span></code><a class="headerlink" href="#pkg-var-configure" title="Link to this heading">¶</a></h3>
 <p>Performs the configure stage for the package.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-configure
 </pre></div>
@@ -545,8 +545,8 @@ stage. If a package has any package dependencies, these dependencies will
 be processed before the specified package. If the provided package name
 does not exist, a notification will be generated.</p>
 </section>
-<section id="pkg-distclean">
-<span id="action-pkg-distclean"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-distclean</span></code><a class="headerlink" href="#pkg-distclean" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-distclean">
+<span id="action-pkg-distclean"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-distclean</span></code><a class="headerlink" href="#pkg-var-distclean" title="Link to this heading">¶</a></h3>
 <p>Perform a pristine clean of a releng-tool package.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-distclean
 </pre></div>
@@ -555,8 +555,8 @@ does not exist, a notification will be generated.</p>
 or directory associated with the package. See also the
 <a class="reference internal" href="#action-pkg-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-clean</span></code></span></a> action.</p>
 </section>
-<section id="pkg-exec-cmd">
-<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-exec</span> <span class="pre">&quot;&lt;cmd&gt;&quot;</span></code><a class="headerlink" href="#pkg-exec-cmd" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-exec-cmd-var">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-exec</span> <span class="pre">&quot;&lt;cmd&gt;&quot;</span></code><a class="headerlink" href="#pkg-var-exec-cmd-var" title="Link to this heading">¶</a></h3>
 <p>Invokes a provided command in the package's build output directory. This
 package action can be useful for developers attempting to develop/debug a
 specific package, allowing an easy way to issue commands in a package's
@@ -569,8 +569,8 @@ before a provided command is issued.</p>
 </div>
 <p>Package environment variables will be available for the invoked command.</p>
 </section>
-<section id="pkg-extract">
-<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-extract</span></code><a class="headerlink" href="#pkg-extract" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-extract">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-extract</span></code><a class="headerlink" href="#pkg-var-extract" title="Link to this heading">¶</a></h3>
 <p>Performs the extraction stage for the package.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-extract
 </pre></div>
@@ -579,8 +579,8 @@ before a provided command is issued.</p>
 If the provided package name does not exist, a notification will be
 generated.</p>
 </section>
-<section id="pkg-fetch">
-<span id="action-pkg-fetch"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch</span></code><a class="headerlink" href="#pkg-fetch" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-fetch">
+<span id="action-pkg-fetch"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch</span></code><a class="headerlink" href="#pkg-var-fetch" title="Link to this heading">¶</a></h3>
 <p>Performs the fetch stage for the package.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-fetch
 </pre></div>
@@ -589,8 +589,8 @@ generated.</p>
 If the provided package name does not exist, a notification will be
 generated.</p>
 </section>
-<section id="pkg-install">
-<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-install</span></code><a class="headerlink" href="#pkg-install" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-install">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-install</span></code><a class="headerlink" href="#pkg-var-install" title="Link to this heading">¶</a></h3>
 <p>Performs the installation stage for the package.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-install
 </pre></div>
@@ -600,8 +600,8 @@ stage. If a package has any package dependencies, these dependencies will
 be processed before the specified package. If the provided package name
 does not exist, a notification will be generated.</p>
 </section>
-<section id="pkg-license">
-<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-license</span></code><a class="headerlink" href="#pkg-license" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-license">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-license</span></code><a class="headerlink" href="#pkg-var-license" title="Link to this heading">¶</a></h3>
 <p>A request to generate the license information for a specific package
 in a project.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-license
@@ -611,8 +611,8 @@ in a project.</p>
 the package itself. Therefore, the package will be fetched/extracted if
 not already done.</p>
 </section>
-<section id="pkg-patch">
-<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-patch</span></code><a class="headerlink" href="#pkg-patch" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-patch">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-patch</span></code><a class="headerlink" href="#pkg-var-patch" title="Link to this heading">¶</a></h3>
 <p>Performs the patch stage for the package.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-patch
 </pre></div>
@@ -620,8 +620,8 @@ not already done.</p>
 <p>On success, the specified package will have completed its patch stage.
 If the provided package name does not exist, a notification will be generated.</p>
 </section>
-<section id="pkg-rebuild">
-<span id="action-pkg-rebuild"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild</span></code><a class="headerlink" href="#pkg-rebuild" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-rebuild">
+<span id="action-pkg-rebuild"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild</span></code><a class="headerlink" href="#pkg-var-rebuild" title="Link to this heading">¶</a></h3>
 <p>Force a rebuild of a specific package.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-rebuild
 </pre></div>
@@ -638,8 +638,8 @@ wishing to perform only the rebuild stage are recommended to use
 <a class="reference internal" href="../../getting-started/rebuilds/"><span class="doc std std-doc">understanding rebuilds</span></a> has been read to
 understand this action's effect.</p>
 </section>
-<section id="pkg-rebuild-only">
-<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild-only</span></code><a class="headerlink" href="#pkg-rebuild-only" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-rebuild-only">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild-only</span></code><a class="headerlink" href="#pkg-var-rebuild-only" title="Link to this heading">¶</a></h3>
 <p>Force a rebuild of a specific package.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-rebuild-only
 </pre></div>
@@ -655,8 +655,8 @@ installation phase are recommended to use <code class="docutils literal notransl
 <a class="reference internal" href="../../getting-started/rebuilds/"><span class="doc std std-doc">understanding rebuilds</span></a> has been read to
 understand this action's effect.</p>
 </section>
-<section id="pkg-reconfigure">
-<span id="action-pkg-reconfigure"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reconfigure</span></code><a class="headerlink" href="#pkg-reconfigure" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-reconfigure">
+<span id="action-pkg-reconfigure"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reconfigure</span></code><a class="headerlink" href="#pkg-var-reconfigure" title="Link to this heading">¶</a></h3>
 <p>Force a re-configuration of a specific package.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-rebuild-reconfigure
 </pre></div>
@@ -674,8 +674,8 @@ perform only the re-configuration stage are recommended to use
 <a class="reference internal" href="../../getting-started/rebuilds/"><span class="doc std std-doc">understanding rebuilds</span></a> has been read to
 understand this action's effect.</p>
 </section>
-<section id="pkg-reconfigure-only">
-<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reconfigure-only</span></code><a class="headerlink" href="#pkg-reconfigure-only" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-reconfigure-only">
+<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reconfigure-only</span></code><a class="headerlink" href="#pkg-var-reconfigure-only" title="Link to this heading">¶</a></h3>
 <p>Force a re-configuration of a specific package.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-reconfigure-only
 </pre></div>
@@ -692,8 +692,8 @@ recommended to use <code class="docutils literal notranslate"><span class="pre">
 <a class="reference internal" href="../../getting-started/rebuilds/"><span class="doc std std-doc">understanding rebuilds</span></a> has been read to
 understand this action's effect.</p>
 </section>
-<section id="pkg-reinstall">
-<span id="action-pkg-reinstall"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reinstall</span></code><a class="headerlink" href="#pkg-reinstall" title="Link to this heading">¶</a></h3>
+<section id="pkg-var-reinstall">
+<span id="action-pkg-reinstall"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reinstall</span></code><a class="headerlink" href="#pkg-var-reinstall" title="Link to this heading">¶</a></h3>
 <p>Force a re-installation of a specific package.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-reinstall
 </pre></div>
@@ -711,8 +711,8 @@ understand this action's effect.</p>
 <section id="option-arguments">
 <h2>Option arguments<a class="headerlink" href="#option-arguments" title="Link to this heading">¶</a></h2>
 <p>The following outlines available options:</p>
-<section id="assets-dir-dir">
-<span id="arg-assets-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">--assets-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#assets-dir-dir" title="Link to this heading">¶</a></h3>
+<section id="assets-dir-dir-var">
+<span id="arg-assets-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">--assets-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#assets-dir-dir-var" title="Link to this heading">¶</a></h3>
 <p>Directory to hold cache and download folders instead of using a configured
 root directory.</p>
 <div class="admonition note">
@@ -723,26 +723,26 @@ or <code class="docutils literal notranslate"><span class="pre">--dl-dir</span><
 </div>
 <p>See also <a class="reference internal" href="../environment/#env-releng-assets-dir"><span class="std std-ref">RELENG_ASSETS_DIR=&lt;dir&gt;</span></a>.</p>
 </section>
-<section id="cache-dir-dir">
-<span id="arg-cache-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">--cache-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#cache-dir-dir" title="Link to this heading">¶</a></h3>
+<section id="cache-dir-dir-var">
+<span id="arg-cache-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">--cache-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#cache-dir-dir-var" title="Link to this heading">¶</a></h3>
 <p>Directory for distributed version control cache information (defaults to
 <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/cache</span></code>).</p>
 <p>See also <a class="reference internal" href="../environment/#env-releng-cache-dir"><span class="std std-ref">RELENG_CACHE_DIR=&lt;dir&gt;</span></a>.</p>
 </section>
-<section id="config-file">
-<h3><code class="docutils literal notranslate"><span class="pre">--config</span> <span class="pre">&lt;file&gt;</span></code><a class="headerlink" href="#config-file" title="Link to this heading">¶</a></h3>
+<section id="config-file-var">
+<h3><code class="docutils literal notranslate"><span class="pre">--config</span> <span class="pre">&lt;file&gt;</span></code><a class="headerlink" href="#config-file-var" title="Link to this heading">¶</a></h3>
 <p>Configuration file to load (defaults to <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/releng</span></code>).</p>
 </section>
 <section id="debug">
 <h3><code class="docutils literal notranslate"><span class="pre">--debug</span></code><a class="headerlink" href="#debug" title="Link to this heading">¶</a></h3>
 <p>Show debug-related messages.</p>
 </section>
-<section id="d-development-mode">
-<h3><code class="docutils literal notranslate"><span class="pre">-D</span></code>, <code class="docutils literal notranslate"><span class="pre">--development</span> <span class="pre">[&lt;mode&gt;]</span></code><a class="headerlink" href="#d-development-mode" title="Link to this heading">¶</a></h3>
+<section id="d-development-mode-var">
+<h3><code class="docutils literal notranslate"><span class="pre">-D</span></code>, <code class="docutils literal notranslate"><span class="pre">--development</span> <span class="pre">[&lt;mode&gt;]</span></code><a class="headerlink" href="#d-development-mode-var" title="Link to this heading">¶</a></h3>
 <p>Enables <a class="reference internal" href="../development-mode/"><span class="doc std std-doc">development mode</span></a>.</p>
 </section>
-<section id="dl-dir-dir">
-<span id="arg-dl-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">--dl-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#dl-dir-dir" title="Link to this heading">¶</a></h3>
+<section id="dl-dir-dir-var">
+<span id="arg-dl-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">--dl-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#dl-dir-dir-var" title="Link to this heading">¶</a></h3>
 <p>Directory for download archives (defaults to <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/dl</span></code>).</p>
 <p>See also <a class="reference internal" href="../environment/#env-releng-dl-dir"><span class="std std-ref">RELENG_DL_DIR=&lt;dir&gt;</span></a>.</p>
 </section>
@@ -761,16 +761,16 @@ will have their cache files deleted to be re-fetched.</p></li>
 <h3><code class="docutils literal notranslate"><span class="pre">-h</span></code>, <code class="docutils literal notranslate"><span class="pre">--help</span></code><a class="headerlink" href="#h-help" title="Link to this heading">¶</a></h3>
 <p>Show a list of all arguments available by releng-tool.</p>
 </section>
-<section id="images-dir-dir">
-<h3><code class="docutils literal notranslate"><span class="pre">--images-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#images-dir-dir" title="Link to this heading">¶</a></h3>
+<section id="images-dir-dir-var">
+<h3><code class="docutils literal notranslate"><span class="pre">--images-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#images-dir-dir-var" title="Link to this heading">¶</a></h3>
 <p>Directory for image outputs (defaults to <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/output/images</span></code>).</p>
 </section>
-<section id="j-jobs-jobs">
-<h3><code class="docutils literal notranslate"><span class="pre">-j</span></code>, <code class="docutils literal notranslate"><span class="pre">--jobs</span> <span class="pre">&lt;jobs&gt;</span></code><a class="headerlink" href="#j-jobs-jobs" title="Link to this heading">¶</a></h3>
+<section id="j-jobs-jobs-var">
+<h3><code class="docutils literal notranslate"><span class="pre">-j</span></code>, <code class="docutils literal notranslate"><span class="pre">--jobs</span> <span class="pre">&lt;jobs&gt;</span></code><a class="headerlink" href="#j-jobs-jobs-var" title="Link to this heading">¶</a></h3>
 <p>Numbers of jobs to handle (defaults to <code class="docutils literal notranslate"><span class="pre">0</span></code>; automatic).</p>
 </section>
-<section id="l-local-sources-pkg-dir">
-<h3><code class="docutils literal notranslate"><span class="pre">-L</span></code>, <code class="docutils literal notranslate"><span class="pre">--local-sources</span> <span class="pre">[[&lt;pkg&gt;:]&lt;dir&gt;]</span></code><a class="headerlink" href="#l-local-sources-pkg-dir" title="Link to this heading">¶</a></h3>
+<section id="l-local-sources-pkg-var-dir-var">
+<h3><code class="docutils literal notranslate"><span class="pre">-L</span></code>, <code class="docutils literal notranslate"><span class="pre">--local-sources</span> <span class="pre">[[&lt;pkg&gt;:]&lt;dir&gt;]</span></code><a class="headerlink" href="#l-local-sources-pkg-var-dir-var" title="Link to this heading">¶</a></h3>
 <p>Enables <a class="reference internal" href="../local-sources-mode/"><span class="doc std std-doc">local-sources mode</span></a>.</p>
 <p>Without a directory provided, sources of
 <a class="reference internal" href="../intern-extern-pkgs/"><span class="doc std std-doc">internal packages</span></a> will be looked for in the
@@ -788,8 +788,8 @@ looked for inside the provided path.</p>
 in the running environment.</p>
 </div>
 </section>
-<section id="out-dir-dir">
-<span id="arg-out-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">--out-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#out-dir-dir" title="Link to this heading">¶</a></h3>
+<section id="out-dir-dir-var">
+<span id="arg-out-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">--out-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#out-dir-dir-var" title="Link to this heading">¶</a></h3>
 <p>Directory for output (builds, images, etc.; defaults to <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/output</span></code>).</p>
 <p>See also <a class="reference internal" href="../environment/#env-releng-out-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_OUTPUT_DIR</span></code></span></a>.</p>
 </section>
@@ -798,13 +798,13 @@ in the running environment.</p>
 <p>Do not throw an error when releng-tool is provided unknown arguments.</p>
 <p>See also <a class="reference internal" href="../environment/#env-releng-ignore-unknown-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_UNKNOWN_ARGS</span></code></span></a>.</p>
 </section>
-<section id="root-dir-dir">
-<h3><code class="docutils literal notranslate"><span class="pre">--root-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#root-dir-dir" title="Link to this heading">¶</a></h3>
+<section id="root-dir-dir-var">
+<h3><code class="docutils literal notranslate"><span class="pre">--root-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#root-dir-dir-var" title="Link to this heading">¶</a></h3>
 <p>Directory to process a releng-tool project (defaults to the working
 directory).</p>
 </section>
-<section id="sbom-format-fmt">
-<h3><code class="docutils literal notranslate"><span class="pre">--sbom-format</span> <span class="pre">&lt;fmt&gt;</span></code><a class="headerlink" href="#sbom-format-fmt" title="Link to this heading">¶</a></h3>
+<section id="sbom-format-fmt-var">
+<h3><code class="docutils literal notranslate"><span class="pre">--sbom-format</span> <span class="pre">&lt;fmt&gt;</span></code><a class="headerlink" href="#sbom-format-fmt-var" title="Link to this heading">¶</a></h3>
 <p>The format to use when generating a software build of materials (SBOM).
 Multiple formats can be provided (comma-separated).</p>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -841,8 +841,8 @@ Multiple formats can be provided (comma-separated).</p>
 </div>
 <p>See also <a class="reference internal" href="#action-sbom"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">sbom</span></code></span></a>.</p>
 </section>
-<section id="quirk-quirk-id">
-<h3><code class="docutils literal notranslate"><span class="pre">--quirk</span> <span class="pre">&lt;quirk-id&gt;</span></code><a class="headerlink" href="#quirk-quirk-id" title="Link to this heading">¶</a></h3>
+<section id="quirk-quirk-id-var">
+<h3><code class="docutils literal notranslate"><span class="pre">--quirk</span> <span class="pre">&lt;quirk-id&gt;</span></code><a class="headerlink" href="#quirk-quirk-id-var" title="Link to this heading">¶</a></h3>
 <p>Allows specifying a runtime <a class="reference internal" href="../quirks/quirks/"><span class="doc std std-doc">quirk</span></a> for the releng-tool
 process. This option can be used multiple times to apply multiple quirks.</p>
 </section>
@@ -929,41 +929,41 @@ process. This option can be used multiple times to apply multiple quirks.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#package-actions">Package actions</a><ul>
-<li><a class="reference internal" href="#pkg-build"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-build</span></code></a></li>
-<li><a class="reference internal" href="#pkg-clean"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-clean</span></code></a></li>
-<li><a class="reference internal" href="#pkg-configure"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-configure</span></code></a></li>
-<li><a class="reference internal" href="#pkg-distclean"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-distclean</span></code></a></li>
-<li><a class="reference internal" href="#pkg-exec-cmd"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-exec</span> <span class="pre">&quot;&lt;cmd&gt;&quot;</span></code></a></li>
-<li><a class="reference internal" href="#pkg-extract"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-extract</span></code></a></li>
-<li><a class="reference internal" href="#pkg-fetch"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch</span></code></a></li>
-<li><a class="reference internal" href="#pkg-install"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-install</span></code></a></li>
-<li><a class="reference internal" href="#pkg-license"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-license</span></code></a></li>
-<li><a class="reference internal" href="#pkg-patch"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-patch</span></code></a></li>
-<li><a class="reference internal" href="#pkg-rebuild"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild</span></code></a></li>
-<li><a class="reference internal" href="#pkg-rebuild-only"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild-only</span></code></a></li>
-<li><a class="reference internal" href="#pkg-reconfigure"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reconfigure</span></code></a></li>
-<li><a class="reference internal" href="#pkg-reconfigure-only"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reconfigure-only</span></code></a></li>
-<li><a class="reference internal" href="#pkg-reinstall"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reinstall</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-build"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-build</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-clean"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-clean</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-configure"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-configure</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-distclean"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-distclean</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-exec-cmd-var"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-exec</span> <span class="pre">&quot;&lt;cmd&gt;&quot;</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-extract"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-extract</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-fetch"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-install"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-install</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-license"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-license</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-patch"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-patch</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-rebuild"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-rebuild-only"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild-only</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-reconfigure"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reconfigure</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-reconfigure-only"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reconfigure-only</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-reinstall"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reinstall</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#option-arguments">Option arguments</a><ul>
-<li><a class="reference internal" href="#assets-dir-dir"><code class="docutils literal notranslate"><span class="pre">--assets-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
-<li><a class="reference internal" href="#cache-dir-dir"><code class="docutils literal notranslate"><span class="pre">--cache-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
-<li><a class="reference internal" href="#config-file"><code class="docutils literal notranslate"><span class="pre">--config</span> <span class="pre">&lt;file&gt;</span></code></a></li>
+<li><a class="reference internal" href="#assets-dir-dir-var"><code class="docutils literal notranslate"><span class="pre">--assets-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
+<li><a class="reference internal" href="#cache-dir-dir-var"><code class="docutils literal notranslate"><span class="pre">--cache-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
+<li><a class="reference internal" href="#config-file-var"><code class="docutils literal notranslate"><span class="pre">--config</span> <span class="pre">&lt;file&gt;</span></code></a></li>
 <li><a class="reference internal" href="#debug"><code class="docutils literal notranslate"><span class="pre">--debug</span></code></a></li>
-<li><a class="reference internal" href="#d-development-mode"><code class="docutils literal notranslate"><span class="pre">-D</span></code>, <code class="docutils literal notranslate"><span class="pre">--development</span> <span class="pre">[&lt;mode&gt;]</span></code></a></li>
-<li><a class="reference internal" href="#dl-dir-dir"><code class="docutils literal notranslate"><span class="pre">--dl-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
+<li><a class="reference internal" href="#d-development-mode-var"><code class="docutils literal notranslate"><span class="pre">-D</span></code>, <code class="docutils literal notranslate"><span class="pre">--development</span> <span class="pre">[&lt;mode&gt;]</span></code></a></li>
+<li><a class="reference internal" href="#dl-dir-dir-var"><code class="docutils literal notranslate"><span class="pre">--dl-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
 <li><a class="reference internal" href="#f-force"><code class="docutils literal notranslate"><span class="pre">-F</span></code>, <code class="docutils literal notranslate"><span class="pre">--force</span></code></a></li>
 <li><a class="reference internal" href="#h-help"><code class="docutils literal notranslate"><span class="pre">-h</span></code>, <code class="docutils literal notranslate"><span class="pre">--help</span></code></a></li>
-<li><a class="reference internal" href="#images-dir-dir"><code class="docutils literal notranslate"><span class="pre">--images-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
-<li><a class="reference internal" href="#j-jobs-jobs"><code class="docutils literal notranslate"><span class="pre">-j</span></code>, <code class="docutils literal notranslate"><span class="pre">--jobs</span> <span class="pre">&lt;jobs&gt;</span></code></a></li>
-<li><a class="reference internal" href="#l-local-sources-pkg-dir"><code class="docutils literal notranslate"><span class="pre">-L</span></code>, <code class="docutils literal notranslate"><span class="pre">--local-sources</span> <span class="pre">[[&lt;pkg&gt;:]&lt;dir&gt;]</span></code></a></li>
+<li><a class="reference internal" href="#images-dir-dir-var"><code class="docutils literal notranslate"><span class="pre">--images-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
+<li><a class="reference internal" href="#j-jobs-jobs-var"><code class="docutils literal notranslate"><span class="pre">-j</span></code>, <code class="docutils literal notranslate"><span class="pre">--jobs</span> <span class="pre">&lt;jobs&gt;</span></code></a></li>
+<li><a class="reference internal" href="#l-local-sources-pkg-var-dir-var"><code class="docutils literal notranslate"><span class="pre">-L</span></code>, <code class="docutils literal notranslate"><span class="pre">--local-sources</span> <span class="pre">[[&lt;pkg&gt;:]&lt;dir&gt;]</span></code></a></li>
 <li><a class="reference internal" href="#nocolorout"><code class="docutils literal notranslate"><span class="pre">--nocolorout</span></code></a></li>
-<li><a class="reference internal" href="#out-dir-dir"><code class="docutils literal notranslate"><span class="pre">--out-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
+<li><a class="reference internal" href="#out-dir-dir-var"><code class="docutils literal notranslate"><span class="pre">--out-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
 <li><a class="reference internal" href="#relaxed-args"><code class="docutils literal notranslate"><span class="pre">--relaxed-args</span></code></a></li>
-<li><a class="reference internal" href="#root-dir-dir"><code class="docutils literal notranslate"><span class="pre">--root-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
-<li><a class="reference internal" href="#sbom-format-fmt"><code class="docutils literal notranslate"><span class="pre">--sbom-format</span> <span class="pre">&lt;fmt&gt;</span></code></a></li>
-<li><a class="reference internal" href="#quirk-quirk-id"><code class="docutils literal notranslate"><span class="pre">--quirk</span> <span class="pre">&lt;quirk-id&gt;</span></code></a></li>
+<li><a class="reference internal" href="#root-dir-dir-var"><code class="docutils literal notranslate"><span class="pre">--root-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
+<li><a class="reference internal" href="#sbom-format-fmt-var"><code class="docutils literal notranslate"><span class="pre">--sbom-format</span> <span class="pre">&lt;fmt&gt;</span></code></a></li>
+<li><a class="reference internal" href="#quirk-quirk-id-var"><code class="docutils literal notranslate"><span class="pre">--quirk</span> <span class="pre">&lt;quirk-id&gt;</span></code></a></li>
 <li><a class="reference internal" href="#v-verbose"><code class="docutils literal notranslate"><span class="pre">-V</span></code>, <code class="docutils literal notranslate"><span class="pre">--verbose</span></code></a></li>
 <li><a class="reference internal" href="#version"><code class="docutils literal notranslate"><span class="pre">--version</span></code></a></li>
 <li><a class="reference internal" href="#werror-werror"><code class="docutils literal notranslate"><span class="pre">--werror</span></code>, <code class="docutils literal notranslate"><span class="pre">-Werror</span></code></a></li>
