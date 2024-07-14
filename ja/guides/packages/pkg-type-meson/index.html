@@ -405,7 +405,7 @@ can override this option by explicitly adjusting the define option
 <p>The following sections outline configuration options are available for a Meson
 package.</p>
 <section id="libfoo-build-defs">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_DEFS</span></code><a class="headerlink" href="#libfoo-build-defs" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-meson-build-defs"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_DEFS</span></code><a class="headerlink" href="#libfoo-build-defs" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass definitions into the build process. This option
 can is defined as a dictionary of string pairs. This field is optional.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_BUILD_DEFS</span> <span class="o">=</span> <span class="p">{</span>
@@ -416,7 +416,7 @@ can is defined as a dictionary of string pairs. This field is optional.</p>
 </div>
 </section>
 <section id="libfoo-build-env">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_ENV</span></code><a class="headerlink" href="#libfoo-build-env" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-meson-build-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_ENV</span></code><a class="headerlink" href="#libfoo-build-env" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass environment variables into the build process. This
 option is defined as a dictionary with key-value pairs where the key is the
 environment name and the value is the environment variable's value. This
@@ -428,7 +428,7 @@ field is optional.</p>
 </div>
 </section>
 <section id="libfoo-build-opts">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_OPTS</span></code><a class="headerlink" href="#libfoo-build-opts" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-meson-build-opts"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_OPTS</span></code><a class="headerlink" href="#libfoo-build-opts" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass command line options into the build process. This
 option can be defined as a dictionary of string pairs or a list with
 strings -- either way defined will generate argument values to include in
@@ -448,7 +448,7 @@ the build event. This field is optional.</p>
 </div>
 </section>
 <section id="libfoo-meson-noinstall">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_MESON_NOINSTALL</span></code><a class="headerlink" href="#libfoo-meson-noinstall" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-meson-noinstall"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_MESON_NOINSTALL</span></code><a class="headerlink" href="#libfoo-meson-noinstall" title="Link to this heading">¶</a></h2>
 <p>Specifies whether the Meson package should skip an attempt to invoke the
 install command. Ideally, projects will have an <a class="reference external" href="https://mesonbuild.com/Commands.html#install">install</a>
 options configured to define how a project will install files into a target
@@ -463,7 +463,7 @@ installation stage is invoked with a value of <code class="docutils literal notr
 </div>
 </section>
 <section id="libfoo-conf-defs">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_DEFS</span></code><a class="headerlink" href="#libfoo-conf-defs" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-meson-conf-defs"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_DEFS</span></code><a class="headerlink" href="#libfoo-conf-defs" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass definitions into the configuration process. This
 option can is defined as a dictionary of string pairs. This field is
 optional.</p>
@@ -475,7 +475,7 @@ optional.</p>
 </div>
 </section>
 <section id="libfoo-conf-env">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_ENV</span></code><a class="headerlink" href="#libfoo-conf-env" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-meson-conf-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_ENV</span></code><a class="headerlink" href="#libfoo-conf-env" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass environment variables into the configuration process.
 This option is defined as a dictionary with key-value pairs where the key is
 the environment name and the value is the environment variable's value. This
@@ -487,7 +487,7 @@ field is optional.</p>
 </div>
 </section>
 <section id="libfoo-conf-opts">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_OPTS</span></code><a class="headerlink" href="#libfoo-conf-opts" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-meson-conf-opts"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_OPTS</span></code><a class="headerlink" href="#libfoo-conf-opts" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass command line options into the configuration process.
 This option can be defined as a dictionary of string pairs or a list with
 strings -- either way defined will generate argument values to include in the
@@ -507,7 +507,7 @@ configuration event. This field is optional.</p>
 </div>
 </section>
 <section id="libfoo-env">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_ENV</span></code><a class="headerlink" href="#libfoo-env" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-meson-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_ENV</span></code><a class="headerlink" href="#libfoo-env" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass environment variables into all stages for a
 package. This option is defined as a dictionary with key-value pairs where
 the key is the environment name and the value is the environment variable's
@@ -519,7 +519,7 @@ value. This field is optional.</p>
 </div>
 </section>
 <section id="libfoo-install-defs">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code><a class="headerlink" href="#libfoo-install-defs" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-meson-install-defs"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code><a class="headerlink" href="#libfoo-install-defs" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass definitions into the installation process. This
 option can is defined as a dictionary of string pairs. This field is
 optional.</p>
@@ -531,7 +531,7 @@ optional.</p>
 </div>
 </section>
 <section id="libfoo-install-env">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_ENV</span></code><a class="headerlink" href="#libfoo-install-env" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-meson-install-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_ENV</span></code><a class="headerlink" href="#libfoo-install-env" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass environment variables into the installation process.
 This option is defined as a dictionary with key-value pairs where the key is
 the environment name and the value is the environment variable's value. This
@@ -543,7 +543,7 @@ field is optional.</p>
 </div>
 </section>
 <section id="libfoo-install-opts">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_OPTS</span></code><a class="headerlink" href="#libfoo-install-opts" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-meson-install-opts"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_OPTS</span></code><a class="headerlink" href="#libfoo-install-opts" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass command line options into the installation process.
 This option can be defined as a dictionary of string pairs or a list with
 strings -- either way defined will generate argument values to include in

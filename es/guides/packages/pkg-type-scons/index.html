@@ -409,7 +409,7 @@ install options:</p>
 </pre></div>
 </div>
 <p>For packages which do not have an installation alias to run, developers can
-use the <a class="reference internal" href="#pkg-scons-noinstall"><span class="std std-ref">LIBFOO_SCONS_NOINSTALL</span></a> option to skip the installation stage for
+use the <a class="reference internal" href="#pkg-opt-scons-noinstall"><span class="std std-ref">LIBFOO_SCONS_NOINSTALL</span></a> option to skip the installation stage for
 a package.</p>
 <p>Default configurations for a SCons package will not run a configuration stage.
 However, if a user wants to run a specific target during this stage, the
@@ -426,7 +426,7 @@ during the configuration stage, the following can be used:</p>
 <p>The following sections outline configuration options are available for a SCons
 package.</p>
 <section id="libfoo-build-defs">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_DEFS</span></code><a class="headerlink" href="#libfoo-build-defs" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-scons-build-defs"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_DEFS</span></code><a class="headerlink" href="#libfoo-build-defs" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass definitions into the build process. This option
 can is defined as a dictionary of string pairs. This field is optional.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_BUILD_DEFS</span> <span class="o">=</span> <span class="p">{</span>
@@ -437,7 +437,7 @@ can is defined as a dictionary of string pairs. This field is optional.</p>
 </div>
 </section>
 <section id="libfoo-build-env">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_ENV</span></code><a class="headerlink" href="#libfoo-build-env" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-scons-build-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_ENV</span></code><a class="headerlink" href="#libfoo-build-env" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass environment variables into the build process. This
 option is defined as a dictionary with key-value pairs where the key is the
 environment name and the value is the environment variable’s value. This
@@ -449,7 +449,7 @@ field is optional.</p>
 </div>
 </section>
 <section id="libfoo-build-opts">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_OPTS</span></code><a class="headerlink" href="#libfoo-build-opts" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-scons-build-opts"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_OPTS</span></code><a class="headerlink" href="#libfoo-build-opts" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass command line options into the build process. This
 option can be defined as a dictionary of string pairs or a list with
 strings – either way defined will generate argument values to include in
@@ -469,7 +469,7 @@ the build event. This field is optional.</p>
 </div>
 </section>
 <section id="libfoo-conf-defs">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_DEFS</span></code><a class="headerlink" href="#libfoo-conf-defs" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-scons-conf-defs"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_DEFS</span></code><a class="headerlink" href="#libfoo-conf-defs" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass definitions into the configuration process. This
 option can is defined as a dictionary of string pairs. This field is
 optional.</p>
@@ -481,7 +481,7 @@ optional.</p>
 </div>
 </section>
 <section id="libfoo-conf-env">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_ENV</span></code><a class="headerlink" href="#libfoo-conf-env" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-scons-conf-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_ENV</span></code><a class="headerlink" href="#libfoo-conf-env" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass environment variables into the configuration process.
 This option is defined as a dictionary with key-value pairs where the key is
 the environment name and the value is the environment variable’s value. This
@@ -493,7 +493,7 @@ field is optional.</p>
 </div>
 </section>
 <section id="libfoo-conf-opts">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_OPTS</span></code><a class="headerlink" href="#libfoo-conf-opts" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-scons-conf-opts"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_OPTS</span></code><a class="headerlink" href="#libfoo-conf-opts" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass command line options into the configuration process.
 This option can be defined as a dictionary of string pairs or a list with
 strings – either way defined will generate argument values to include in the
@@ -513,7 +513,7 @@ configuration event. This field is optional.</p>
 </div>
 </section>
 <section id="libfoo-env">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_ENV</span></code><a class="headerlink" href="#libfoo-env" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-scons-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_ENV</span></code><a class="headerlink" href="#libfoo-env" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass environment variables into all stages for a
 package. This option is defined as a dictionary with key-value pairs where
 the key is the environment name and the value is the environment variable’s
@@ -525,7 +525,7 @@ value. This field is optional.</p>
 </div>
 </section>
 <section id="libfoo-install-defs">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code><a class="headerlink" href="#libfoo-install-defs" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-scons-install-defs"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code><a class="headerlink" href="#libfoo-install-defs" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass definitions into the installation process. This
 option can is defined as a dictionary of string pairs. This field is
 optional.</p>
@@ -537,7 +537,7 @@ optional.</p>
 </div>
 </section>
 <section id="libfoo-install-env">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_ENV</span></code><a class="headerlink" href="#libfoo-install-env" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-scons-install-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_ENV</span></code><a class="headerlink" href="#libfoo-install-env" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass environment variables into the installation process.
 This option is defined as a dictionary with key-value pairs where the key is
 the environment name and the value is the environment variable’s value. This
@@ -549,7 +549,7 @@ field is optional.</p>
 </div>
 </section>
 <section id="libfoo-install-opts">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_OPTS</span></code><a class="headerlink" href="#libfoo-install-opts" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-scons-install-opts"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_OPTS</span></code><a class="headerlink" href="#libfoo-install-opts" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass command line options into the installation process.
 This option can be defined as a dictionary of string pairs or a list with
 strings – either way defined will generate argument values to include in
@@ -569,7 +569,7 @@ the installation event. This field is optional.</p>
 </div>
 </section>
 <section id="libfoo-scons-noinstall">
-<span id="pkg-scons-noinstall"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_SCONS_NOINSTALL</span></code><a class="headerlink" href="#libfoo-scons-noinstall" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-scons-noinstall"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_SCONS_NOINSTALL</span></code><a class="headerlink" href="#libfoo-scons-noinstall" title="Link to this heading">¶</a></h2>
 <p>Specifies whether a SCons package should skip an attempt to invoke the
 install alias. Ideally, projects will have an <a class="reference external" href="https://scons.org/doc/production/HTML/scons-man.html#f-Alias">install alias</a>
 defined to specify how a project will install files into a target (or staging)

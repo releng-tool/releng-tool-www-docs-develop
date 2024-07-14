@@ -430,7 +430,7 @@ use the configured <a class="reference internal" href="#pkg-opt-revision"><span 
 <p>See also <a class="reference internal" href="#pkg-opt-revision"><span class="std std-ref">LIBFOO_REVISION</span></a> and <a class="reference internal" href="../common-pkg-options/#pkg-opt-version"><span class="std std-ref">LIBFOO_VERSION</span></a>.</p>
 </section>
 <section id="libfoo-extension">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXTENSION</span></code><a class="headerlink" href="#libfoo-extension" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-extension"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXTENSION</span></code><a class="headerlink" href="#libfoo-extension" title="Link to this heading">¶</a></h2>
 <p>Specifies a filename extension for the package. A package may be cached inside
 the download directory to be used when the extraction phase is invoked.
 releng-tool attempts to determine the most ideal extension for this cache file;
@@ -454,7 +454,7 @@ be internal.</p>
 <p>See also <a class="reference internal" href="../../intern-extern-pkgs/"><span class="doc std std-doc">internal and external packages</span></a>.</p>
 </section>
 <section id="libfoo-extopt">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXTOPT</span></code><a class="headerlink" href="#libfoo-extopt" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-extopt"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXTOPT</span></code><a class="headerlink" href="#libfoo-extopt" title="Link to this heading">¶</a></h2>
 <p>Specifies extension-specific options. Packages wishing to take advantage of
 extension-specific capabilities can forward options to extensions by defining
 a dictionary of values.</p>
@@ -466,7 +466,7 @@ a dictionary of values.</p>
 </div>
 </section>
 <section id="libfoo-extract-type">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXTRACT_TYPE</span></code><a class="headerlink" href="#libfoo-extract-type" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-extract-type"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXTRACT_TYPE</span></code><a class="headerlink" href="#libfoo-extract-type" title="Link to this heading">¶</a></h2>
 <p>Specifies a custom extraction type for a package. If a configured extension
 supports a custom extraction capability, the registered extraction type can
 be explicitly registered in this option.</p>
@@ -505,7 +505,7 @@ for a package that cannot support a large or any parallel build environment.</p>
 </div>
 </section>
 <section id="libfoo-git-config">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_GIT_CONFIG</span></code><a class="headerlink" href="#libfoo-git-config" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-git-config"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_GIT_CONFIG</span></code><a class="headerlink" href="#libfoo-git-config" title="Link to this heading">¶</a></h2>
 <p>Apply additional repository-specific Git configuration settings
 (<a class="reference external" href="https://git-scm.com/docs/git-config"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span></code></a>) after a Git repository cache has been
 initialized. By default, no repository-specific configurations are
@@ -517,7 +517,7 @@ introduced (i.e. all Git calls will use the global configuration set).</p>
 </div>
 </section>
 <section id="libfoo-git-depth">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_GIT_DEPTH</span></code><a class="headerlink" href="#libfoo-git-depth" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-git-depth"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_GIT_DEPTH</span></code><a class="headerlink" href="#libfoo-git-depth" title="Link to this heading">¶</a></h2>
 <p>Limit fetching for a Git-based source to the specified number of commits. The
 value provided will be used with the <a class="reference external" href="https://git-scm.com/docs/git-fetch#Documentation/git-fetch.txt---depthltdepthgt"><code class="docutils literal notranslate"><span class="pre">--depth</span></code></a> argument. By
 default, the depth will be set to a value of <code class="docutils literal notranslate"><span class="pre">1</span></code>. If a developer wishes use
@@ -544,7 +544,7 @@ fetching.</p>
 </div>
 </section>
 <section id="libfoo-git-submodules">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_GIT_SUBMODULES</span></code><a class="headerlink" href="#libfoo-git-submodules" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-git-submodules"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_GIT_SUBMODULES</span></code><a class="headerlink" href="#libfoo-git-submodules" title="Link to this heading">¶</a></h2>
 <p>Flag value to indicate whether a package’s Git submodules should be
 fetched/extracted during a package’s own fetch/extraction stages. By default,
 submodules are not fetched. Ideally, any dependencies for a package are
@@ -560,7 +560,7 @@ package and reference its contents instead.</p>
 </div>
 </section>
 <section id="libfoo-git-verify-revision">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_GIT_VERIFY_REVISION</span></code><a class="headerlink" href="#libfoo-git-verify-revision" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-git-verify-revision"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_GIT_VERIFY_REVISION</span></code><a class="headerlink" href="#libfoo-git-verify-revision" title="Link to this heading">¶</a></h2>
 <p>Flag value to indicate whether the target revision is required to be signed
 before it can be used. When this value is set, the configured revision for a
 repository will not be extracted unless the GPG signature is verified. This
@@ -610,7 +610,7 @@ configured to be internal.</p>
 <p>See also <a class="reference internal" href="../../intern-extern-pkgs/"><span class="doc std std-doc">internal and external packages</span></a>.</p>
 </section>
 <section id="libfoo-no-extraction">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_NO_EXTRACTION</span></code><a class="headerlink" href="#libfoo-no-extraction" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-no-extraction"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_NO_EXTRACTION</span></code><a class="headerlink" href="#libfoo-no-extraction" title="Link to this heading">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Ostrzeżenie</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">LIBFOO_NO_EXTRACTION</span></code> is configured for a package, the package cannot
@@ -637,7 +637,7 @@ projects with the no-extraction flag enabled will result in a warning. By
 default, this option is disabled with a value of <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </section>
 <section id="libfoo-patch-subdir">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_PATCH_SUBDIR</span></code><a class="headerlink" href="#libfoo-patch-subdir" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-patch-subdir"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_PATCH_SUBDIR</span></code><a class="headerlink" href="#libfoo-patch-subdir" title="Link to this heading">¶</a></h2>
 <p>Sub-directory where any package patches should be applied to. By default,
 patches are applied to the root of the extracted sources for a package. This
 option can be useful for packages which utilize <a class="reference internal" href="#pkg-opt-build-subdir"><span class="std std-ref">LIBFOO_BUILD_SUBDIR</span></a> to
@@ -679,7 +679,7 @@ revisions can be configured based off the mode:</p>
 <p>See also <a class="reference internal" href="#pkg-opt-devmode-revision"><span class="std std-ref">LIBFOO_DEVMODE_REVISION</span></a> and <a class="reference internal" href="../common-pkg-options/#pkg-opt-version"><span class="std std-ref">LIBFOO_VERSION</span></a>.</p>
 </section>
 <section id="libfoo-skip-remote-config">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_SKIP_REMOTE_CONFIG</span></code><a class="headerlink" href="#libfoo-skip-remote-config" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-skip-remote-config"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_SKIP_REMOTE_CONFIG</span></code><a class="headerlink" href="#libfoo-skip-remote-config" title="Link to this heading">¶</a></h2>
 <p>Flag value to indicate that a package should not attempt to load any
 package configurations which may be defined in the package’s source. A
 package, by default, has the ability to load configuration information from
@@ -693,7 +693,7 @@ configuration stage.</p>
 <p>See also <a class="reference internal" href="../../quirks/quirks/"><span class="doc std std-doc">configuration quirks</span></a>.</p>
 </section>
 <section id="libfoo-skip-remote-scripts">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_SKIP_REMOTE_SCRIPTS</span></code><a class="headerlink" href="#libfoo-skip-remote-scripts" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-skip-remote-scripts"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_SKIP_REMOTE_SCRIPTS</span></code><a class="headerlink" href="#libfoo-skip-remote-scripts" title="Link to this heading">¶</a></h2>
 <p>Flag value to indicate that a package should not attempt to load any package
 scripts which may be defined in the package’s source. Typically, a
 script-based package will load configuration, build, etc. scripts from its
@@ -710,7 +710,7 @@ package’s contents.</p>
 <p>See also <a class="reference internal" href="../../quirks/quirks/"><span class="doc std std-doc">configuration quirks</span></a>.</p>
 </section>
 <section id="libfoo-strip-count">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_STRIP_COUNT</span></code><a class="headerlink" href="#libfoo-strip-count" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-strip-count"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_STRIP_COUNT</span></code><a class="headerlink" href="#libfoo-strip-count" title="Link to this heading">¶</a></h2>
 <p>Specifies the strip count to use when attempting to extract sources from an
 archive. By default, the extraction process will strip a single directory
 from an archive (value: <code class="docutils literal notranslate"><span class="pre">1</span></code>). If a package’s archive has no container

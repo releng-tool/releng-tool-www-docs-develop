@@ -392,17 +392,17 @@ supported module.</p>
 <p>Only the build and installation phases are used when processing the sources
 for a Python package (i.e. no configuration stage is invoked). By default,
 the build phase will invoke <code class="docutils literal notranslate"><span class="pre">setup.py</span> <span class="pre">build</span></code> while the installation stage
-will invoke <code class="docutils literal notranslate"><span class="pre">setup.py</span> <span class="pre">install</span></code> (see <a class="reference internal" href="#pkg-python-setup-type"><span class="std std-ref">LIBFOO_PYTHON_SETUP_TYPE</span></a> for other
+will invoke <code class="docutils literal notranslate"><span class="pre">setup.py</span> <span class="pre">install</span></code> (see <a class="reference internal" href="#pkg-opt-python-setup-type"><span class="std std-ref">LIBFOO_PYTHON_SETUP_TYPE</span></a> for other
 setup types). When a Python package is process, it will use the system’s
 default Python interpreter. A developer can override what Python interpreter
-to use by configuring the <a class="reference internal" href="#pkg-python-interpreter"><span class="std std-ref">LIBFOO_PYTHON_INTERPRETER</span></a> option in a package:</p>
+to use by configuring the <a class="reference internal" href="#pkg-opt-python-interpreter"><span class="std std-ref">LIBFOO_PYTHON_INTERPRETER</span></a> option in a package:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_PYTHON_INTERPRETER</span> <span class="o">=</span> <span class="s1">&#39;/opt/my-custom-python-build/python&#39;</span>
 </pre></div>
 </div>
 <p>The following sections outline configuration options are available for a
 Python package.</p>
 <section id="libfoo-build-defs">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_DEFS</span></code><a class="headerlink" href="#libfoo-build-defs" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-python-build-defs"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_DEFS</span></code><a class="headerlink" href="#libfoo-build-defs" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass definitions into the build process. This option
 can is defined as a dictionary of string pairs. This field is optional.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_BUILD_DEFS</span> <span class="o">=</span> <span class="p">{</span>
@@ -413,7 +413,7 @@ can is defined as a dictionary of string pairs. This field is optional.</p>
 </div>
 </section>
 <section id="libfoo-build-env">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_ENV</span></code><a class="headerlink" href="#libfoo-build-env" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-python-build-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_ENV</span></code><a class="headerlink" href="#libfoo-build-env" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass environment variables into the build process. This
 option is defined as a dictionary with key-value pairs where the key is the
 environment name and the value is the environment variable’s value. This
@@ -425,7 +425,7 @@ field is optional.</p>
 </div>
 </section>
 <section id="libfoo-build-opts">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_OPTS</span></code><a class="headerlink" href="#libfoo-build-opts" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-python-build-opts"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_OPTS</span></code><a class="headerlink" href="#libfoo-build-opts" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass command line options into the build process. This
 option can be defined as a dictionary of string pairs or a list with
 strings – either way defined will generate argument values to include in
@@ -445,7 +445,7 @@ the build event. This field is optional.</p>
 </div>
 </section>
 <section id="libfoo-env">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_ENV</span></code><a class="headerlink" href="#libfoo-env" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-python-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_ENV</span></code><a class="headerlink" href="#libfoo-env" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass environment variables into all stages for a
 package. This option is defined as a dictionary with key-value pairs where
 the key is the environment name and the value is the environment variable’s
@@ -457,7 +457,7 @@ value. This field is optional.</p>
 </div>
 </section>
 <section id="libfoo-install-defs">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code><a class="headerlink" href="#libfoo-install-defs" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-python-install-defs"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code><a class="headerlink" href="#libfoo-install-defs" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass definitions into the installation process. This
 option can is defined as a dictionary of string pairs. This field is
 optional.</p>
@@ -469,7 +469,7 @@ optional.</p>
 </div>
 </section>
 <section id="libfoo-install-env">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_ENV</span></code><a class="headerlink" href="#libfoo-install-env" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-python-install-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_ENV</span></code><a class="headerlink" href="#libfoo-install-env" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass environment variables into the installation process.
 This option is defined as a dictionary with key-value pairs where the key is
 the environment name and the value is the environment variable’s value. This
@@ -481,7 +481,7 @@ field is optional.</p>
 </div>
 </section>
 <section id="libfoo-install-opts">
-<h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_OPTS</span></code><a class="headerlink" href="#libfoo-install-opts" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-python-install-opts"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_OPTS</span></code><a class="headerlink" href="#libfoo-install-opts" title="Link to this heading">¶</a></h2>
 <p>Provides a means to pass command line options into the installation process.
 This option can be defined as a dictionary of string pairs or a list with
 strings – either way defined will generate argument values to include in
@@ -501,7 +501,7 @@ the installation event. This field is optional.</p>
 </div>
 </section>
 <section id="libfoo-python-interpreter">
-<span id="pkg-python-interpreter"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_INTERPRETER</span></code><a class="headerlink" href="#libfoo-python-interpreter" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-python-interpreter"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_INTERPRETER</span></code><a class="headerlink" href="#libfoo-python-interpreter" title="Link to this heading">¶</a></h2>
 <p>Defines a specific Python interpreter when processing the build and
 installation stages for a package. If not specified, the system’s Python
 interpreter will be used. This field is optional.</p>
@@ -510,7 +510,7 @@ interpreter will be used. This field is optional.</p>
 </div>
 </section>
 <section id="libfoo-python-setup-type">
-<span id="pkg-python-setup-type"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_SETUP_TYPE</span></code><a class="headerlink" href="#libfoo-python-setup-type" title="Link to this heading">¶</a></h2>
+<span id="pkg-opt-python-setup-type"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_SETUP_TYPE</span></code><a class="headerlink" href="#libfoo-python-setup-type" title="Link to this heading">¶</a></h2>
 <p>The setup type will configure how a Python package is built and installed.
 The default setup type used for a Python package is a distutils package. It
 is recommended to always configure a setup type for a Python package.
