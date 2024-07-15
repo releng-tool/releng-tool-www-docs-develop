@@ -247,6 +247,7 @@
 <li class="toctree-l3"><a class="reference internal" href="guides/packages/ascii-armor/">ASCII armor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guides/packages/pkg-type-script/">Script package (default)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guides/packages/pkg-type-autotools/">Autotools package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guides/packages/pkg-type-cargo/">Cargo package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guides/packages/pkg-type-cmake/">CMake package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guides/packages/pkg-type-make/">Make package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guides/packages/pkg-type-meson/">Meson package</a></li>
@@ -454,6 +455,7 @@
 <li class="toctree-l3"><a class="reference internal" href="getting-started/rebuilds/">Understanding rebuilds</a></li>
 <li class="toctree-l3"><a class="reference internal" href="getting-started/fetching/">Understanding fetching</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="getting-started/fetching/#start-fresh">Start fresh!</a></li>
+<li class="toctree-l4"><a class="reference internal" href="getting-started/fetching/#full-fetching">Full fetching</a></li>
 <li class="toctree-l4"><a class="reference internal" href="getting-started/fetching/#force-re-fetch-of-dvcs-sources">Force re-fetch of DVCS sources</a></li>
 <li class="toctree-l4"><a class="reference internal" href="getting-started/fetching/#force-re-fetch-of-fixed-sources">Force re-fetch of fixed sources</a></li>
 <li class="toctree-l4"><a class="reference internal" href="getting-started/fetching/#automatically-re-fetch-development-branches">Automatically re-fetch development branches</a></li>
@@ -470,6 +472,7 @@
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#distclean"><code class="docutils literal notranslate"><span class="pre">distclean</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#extract"><code class="docutils literal notranslate"><span class="pre">extract</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#fetch"><code class="docutils literal notranslate"><span class="pre">fetch</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/arguments/#fetch-full"><code class="docutils literal notranslate"><span class="pre">fetch-full</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#init"><code class="docutils literal notranslate"><span class="pre">init</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#licenses"><code class="docutils literal notranslate"><span class="pre">licenses</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#mrproper"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></a></li>
@@ -487,6 +490,7 @@
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#pkg-var-exec-cmd-var"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-exec</span> <span class="pre">&quot;&lt;cmd&gt;&quot;</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#pkg-var-extract"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-extract</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#pkg-var-fetch"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/arguments/#pkg-var-fetch-full"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch-full</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#pkg-var-install"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-install</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#pkg-var-license"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-license</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#pkg-var-patch"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-patch</span></code></a></li>
@@ -703,6 +707,16 @@
 <li class="toctree-l5"><a class="reference internal" href="guides/packages/pkg-type-autotools/#libfoo-install-defs"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="guides/packages/pkg-type-autotools/#libfoo-install-env"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_ENV</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="guides/packages/pkg-type-autotools/#libfoo-install-opts"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_OPTS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="guides/packages/pkg-type-cargo/">Cargo package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="guides/packages/pkg-type-cargo/#libfoo-build-defs"><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_DEFS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/packages/pkg-type-cargo/#libfoo-build-env"><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_ENV</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/packages/pkg-type-cargo/#libfoo-build-opts"><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_OPTS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/packages/pkg-type-cargo/#libfoo-env"><code class="docutils literal notranslate"><span class="pre">LIBFOO_ENV</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/packages/pkg-type-cargo/#libfoo-install-defs"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/packages/pkg-type-cargo/#libfoo-install-env"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_ENV</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides/packages/pkg-type-cargo/#libfoo-install-opts"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_OPTS</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="guides/packages/pkg-type-cmake/">CMake package</a><ul>

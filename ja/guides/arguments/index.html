@@ -247,6 +247,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../packages/ascii-armor/">ASCII armor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../packages/pkg-type-script/">Script package (default)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../packages/pkg-type-autotools/">Autotools package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packages/pkg-type-cargo/">Cargo package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../packages/pkg-type-cmake/">CMake package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../packages/pkg-type-make/">Make package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../packages/pkg-type-meson/">Meson package</a></li>
@@ -444,7 +445,18 @@ for their target revision, or wishing to use a tag which has been moved.</p>
 artifacts when using this action in combination with the <a class="reference internal" href="#arg-force"><span class="std std-ref">-F, --force</span></a>
 argument.</p>
 </div>
-<p>See also <a class="reference internal" href="../tips/offline-builds/"><span class="doc std std-doc">offline builds</span></a>.</p>
+<p>See also <a class="reference internal" href="../tips/offline-builds/"><span class="doc std std-doc">offline builds</span></a> and the
+<a class="reference internal" href="#action-fetch-full"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">fetch-full</span></code></span></a> action.</p>
+</section>
+<section id="fetch-full">
+<span id="action-fetch-full"></span><h3><code class="docutils literal notranslate"><span class="pre">fetch-full</span></code><a class="headerlink" href="#fetch-full" title="Link to this heading">¶</a></h3>
+<p>All packages will be processed up to the extraction phase, as well as any
+post-extraction fetch operations for supported package types (e.g. fetching
+Cargo dependencies).</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>fetch-full
+</pre></div>
+</div>
+<p>See also the <a class="reference internal" href="#action-fetch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">fetch</span></code></span></a> action.</p>
 </section>
 <section id="init">
 <h3><code class="docutils literal notranslate"><span class="pre">init</span></code><a class="headerlink" href="#init" title="Link to this heading">¶</a></h3>
@@ -588,6 +600,17 @@ generated.</p>
 </div>
 <p>On success, the specified package stage will have completed its fetch stage.
 If the provided package name does not exist, a notification will be
+generated.</p>
+</section>
+<section id="pkg-var-fetch-full">
+<span id="action-pkg-fetch-full"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch-full</span></code><a class="headerlink" href="#pkg-var-fetch-full" title="Link to this heading">¶</a></h3>
+<p>Performs the fetch and extraction stages for the package, as well as any
+post-extraction fetch operations for the supported package type (e.g.
+fetching Cargo dependencies).</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-fetch-full
+</pre></div>
+</div>
+<p>If the provided package name does not exist, a notification will be
 generated.</p>
 </section>
 <section id="pkg-var-install">
@@ -920,6 +943,7 @@ process. This option can be used multiple times to apply multiple quirks.</p>
 <li><a class="reference internal" href="#distclean"><code class="docutils literal notranslate"><span class="pre">distclean</span></code></a></li>
 <li><a class="reference internal" href="#extract"><code class="docutils literal notranslate"><span class="pre">extract</span></code></a></li>
 <li><a class="reference internal" href="#fetch"><code class="docutils literal notranslate"><span class="pre">fetch</span></code></a></li>
+<li><a class="reference internal" href="#fetch-full"><code class="docutils literal notranslate"><span class="pre">fetch-full</span></code></a></li>
 <li><a class="reference internal" href="#init"><code class="docutils literal notranslate"><span class="pre">init</span></code></a></li>
 <li><a class="reference internal" href="#licenses"><code class="docutils literal notranslate"><span class="pre">licenses</span></code></a></li>
 <li><a class="reference internal" href="#mrproper"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></a></li>
@@ -937,6 +961,7 @@ process. This option can be used multiple times to apply multiple quirks.</p>
 <li><a class="reference internal" href="#pkg-var-exec-cmd-var"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-exec</span> <span class="pre">&quot;&lt;cmd&gt;&quot;</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-extract"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-extract</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-fetch"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-fetch-full"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch-full</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-install"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-install</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-license"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-license</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-patch"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-patch</span></code></a></li>

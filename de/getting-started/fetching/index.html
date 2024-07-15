@@ -247,6 +247,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../guides/packages/ascii-armor/">ASCII armor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/packages/pkg-type-script/">Script package (default)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/packages/pkg-type-autotools/">Autotools package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/packages/pkg-type-cargo/">Cargo package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/packages/pkg-type-cmake/">CMake package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/packages/pkg-type-make/">Make package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/packages/pkg-type-meson/">Meson package</a></li>
@@ -422,8 +423,8 @@ use:</p>
 </div>
 <p>Once a package has completed its fetch stage, releng-tool should never need
 to remotely fetch content for that package again (until site, version, etc.
-changes). In the event that a user invokes a <code class="docutils literal notranslate"><span class="pre">clean</span></code> action followed by a
-full build:</p>
+changes). In the event that a user invokes a <a class="reference internal" href="../../guides/arguments/#action-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">clean</span></code></span></a> action
+followed by a full build:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>releng-tool<span class="w"> </span>clean
 <span class="gp">$ </span>releng-tool
 <span class="go">...</span>
@@ -454,6 +455,19 @@ local downloads/cache for a project. This can be achieved using
 <p>This will ensure all downloaded files, cached content, etc. are removed
 from the local system, ensuring a next-build to download fresh sources.</p>
 </section>
+<section id="full-fetching">
+<h2>Full fetching<a class="headerlink" href="#full-fetching" title="Link to this heading">¶</a></h2>
+<p>Most package sources are acquired during the fetch stage. However, some
+packages define dependencies within their sources. This can require
+releng-tool to first fetch a defined package’s sources, extract the
+package, followed by fetching any defined dependencies. Post-fetching
+will be automatically performed for supported packages (e.g. Cargo) after
+their extraction stage. Users can invoke the <a class="reference internal" href="../../guides/arguments/#action-fetch-full"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">fetch-full</span></code></span></a>
+action to explicitly process releng-tool’s fetch-post operations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="n">fetch</span><span class="o">-</span><span class="n">full</span>
+</pre></div>
+</div>
+</section>
 <section id="force-re-fetch-of-dvcs-sources">
 <h2>Force re-fetch of DVCS sources<a class="headerlink" href="#force-re-fetch-of-dvcs-sources" title="Link to this heading">¶</a></h2>
 <p>When a DVCS-based package goes through its fetch stage, the contents can
@@ -468,8 +482,8 @@ is cleaned and rebuilt again, releng-tool will referred to the locally
 cached tag. In the event that the remote site changes the tag location,
 clean builds will not be using the most recent tag location. If a user
 knows the reference for a site has been updated, they can explicitly
-request a <code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch</span></code> on a package which should trigger a forced update
-from the remote site. For example:</p>
+request a <a class="reference internal" href="../../guides/arguments/#action-pkg-fetch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch</span></code></span></a> on a package which should
+trigger a forced update from the remote site. For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="n">libfoo</span><span class="o">-</span><span class="n">fetch</span>
 </pre></div>
 </div>
@@ -598,6 +612,7 @@ package’s <code class="docutils literal notranslate"><span class="pre">main</s
             <ul>
 <li><a class="reference internal" href="#">Understanding fetching</a><ul>
 <li><a class="reference internal" href="#start-fresh">Start fresh!</a></li>
+<li><a class="reference internal" href="#full-fetching">Full fetching</a></li>
 <li><a class="reference internal" href="#force-re-fetch-of-dvcs-sources">Force re-fetch of DVCS sources</a></li>
 <li><a class="reference internal" href="#force-re-fetch-of-fixed-sources">Force re-fetch of fixed sources</a></li>
 <li><a class="reference internal" href="#automatically-re-fetch-development-branches">Automatically re-fetch development branches</a></li>
