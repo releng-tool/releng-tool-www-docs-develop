@@ -542,10 +542,10 @@ The following outlines available setup types in releng-tool:</p>
 <tr class="row-odd"><td class="text-right"><p><a class="reference external" href="https://hatch.pypa.io">Hatch</a></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">hatch</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-right"><p><a class="reference external" href="https://pdm.fming.dev">PDM</a></p></td>
+<tr class="row-even"><td class="text-right"><p><a class="reference external" href="https://pdm-project.org/">PDM</a></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">pdm</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-right"><p><a class="reference external" href="https://pypa-build.readthedocs.io">PEP 517 build</a></p></td>
+<tr class="row-odd"><td class="text-right"><p><a class="reference external" href="https://build.pypa.io/">PEP 517 build</a></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">pep517</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-right"><p><a class="reference external" href="https://python-poetry.org/">Poetry</a></p></td>
@@ -554,7 +554,7 @@ The following outlines available setup types in releng-tool:</p>
 <tr class="row-odd"><td class="text-right"><p><a class="reference external" href="https://setuptools.pypa.io">Setuptools</a></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">setuptools</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-right"><p><a class="reference external" href="https://docs.python.org/library/distutils.html">distutils</a></p></td>
+<tr class="row-even"><td class="text-right"><p><a class="reference external" href="https://docs.python.org/3.11/library/distutils.html">distutils</a></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">distutils</span></code> (default)</p></td>
 </tr>
 </tbody>
@@ -564,7 +564,7 @@ The following outlines available setup types in releng-tool:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_PYTHON_SETUP_TYPE</span> <span class="o">=</span> <span class="s1">&#39;setuptools&#39;</span>
 </pre></div>
 </div>
-<p>For setup types other than Setuptools/distutils, the <a class="reference external" href="https://installer.readthedocs.io"><code class="docutils literal notranslate"><span class="pre">installer</span></code></a>
+<p>For setup types other than Setuptools/distutils, the <a class="reference external" href="https://installer.pypa.io/"><code class="docutils literal notranslate"><span class="pre">installer</span></code></a>
 module will be used to install packages to their destination folders.</p>
 <p>Host environments are required to pre-install needed packages in their
 running Python environment to support setup types not available in a
