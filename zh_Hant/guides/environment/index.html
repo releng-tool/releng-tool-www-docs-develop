@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=dd935299" />
+    <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=df54547a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -367,9 +367,17 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          
-
-<div class="theme-toggle-container theme-toggle-content">
+          <div class="view-this-page">
+  <a class="muted-link" href="https://github.com/releng-tool/releng-tool-docs/blob/main/content/guides/environment.md?plain=true" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div><div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/releng-tool/releng-tool-docs/edit/main/content/guides/environment.md" title="Edit this page">
+    <svg><use href="#svg-pencil"></use></svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
@@ -493,10 +501,11 @@ the configured root directory. For example:</p>
 <span id="env-pkg-build-base-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_BASE_DIR</span></code><a class="headerlink" href="#pkg-build-base-dir" title="Link to this heading">¶</a></h3>
 <p>The directory for a specific package's base directory for buildable content.
 In most cases, this value will be the same as
-<a class="reference internal" href="#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a>. However, if <a class="reference internal" href="../packages/advanced-pkg-options/#pkg-opt-build-subdir"><span class="std std-ref">LIBFOO_BUILD_SUBDIR</span></a>
-is configured, <a class="reference internal" href="#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a> will also include the
-configured sub-directory. The value of <a class="reference internal" href="../packages/advanced-pkg-options/#pkg-opt-build-subdir"><span class="std std-ref">LIBFOO_BUILD_SUBDIR</span></a> does not
-adjust the value of <code class="docutils literal notranslate"><span class="pre">PKG_BUILD_BASE_DIR</span></code>.</p>
+<a class="reference internal" href="#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a>. However, if
+<a class="reference internal" href="../packages/advanced-pkg-options/#pkg-opt-build-subdir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_SUBDIR</span></code></span></a> is configured,
+<a class="reference internal" href="#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a> will also include the configured
+sub-directory. The value of <a class="reference internal" href="../packages/advanced-pkg-options/#pkg-opt-build-subdir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_SUBDIR</span></code></span></a>
+does not adjust the value of <code class="docutils literal notranslate"><span class="pre">PKG_BUILD_BASE_DIR</span></code>.</p>
 <p>See also <a class="reference internal" href="#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a>.</p>
 </section>
 <section id="pkg-build-dir">
@@ -561,17 +570,17 @@ value of one (i.e. <code class="docutils literal notranslate"><span class="pre">
 <section id="pkg-revision">
 <span id="env-pkg-revision"></span><h3><code class="docutils literal notranslate"><span class="pre">PKG_REVISION</span></code><a class="headerlink" href="#pkg-revision" title="Link to this heading">¶</a></h3>
 <p>The site revision of the package.</p>
-<p>See also <a class="reference internal" href="../packages/advanced-pkg-options/#pkg-opt-revision"><span class="std std-ref">LIBFOO_REVISION</span></a>.</p>
+<p>See also <a class="reference internal" href="../packages/advanced-pkg-options/#pkg-opt-revision"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_REVISION</span></code></span></a>.</p>
 </section>
 <section id="pkg-site">
 <span id="env-pkg-site"></span><h3><code class="docutils literal notranslate"><span class="pre">PKG_SITE</span></code><a class="headerlink" href="#pkg-site" title="Link to this heading">¶</a></h3>
 <p>The site of the package.</p>
-<p>See also <a class="reference internal" href="../packages/common-pkg-options/#pkg-opt-site"><span class="std std-ref">LIBFOO_SITE</span></a>.</p>
+<p>See also <a class="reference internal" href="../packages/common-pkg-options/#pkg-opt-site"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_SITE</span></code></span></a>.</p>
 </section>
 <section id="pkg-version">
 <span id="env-pkg-version"></span><h3><code class="docutils literal notranslate"><span class="pre">PKG_VERSION</span></code><a class="headerlink" href="#pkg-version" title="Link to this heading">¶</a></h3>
 <p>The version of the package.</p>
-<p>See also <a class="reference internal" href="../packages/common-pkg-options/#pkg-opt-version"><span class="std std-ref">LIBFOO_VERSION</span></a>.</p>
+<p>See also <a class="reference internal" href="../packages/common-pkg-options/#pkg-opt-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VERSION</span></code></span></a>.</p>
 </section>
 <section id="prefix">
 <span id="env-prefix"></span><h3><code class="docutils literal notranslate"><span class="pre">PREFIX</span></code><a class="headerlink" href="#prefix" title="Link to this heading">¶</a></h3>
@@ -1043,7 +1052,14 @@ directory using the <a class="reference internal" href="../arguments/#arg-out-di
             
           </div>
           <div class="right-details">
-            
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/releng-tool/releng-tool" aria-label="GitHub">
+<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+</svg>
+            </a>
+              
+            </div>
           </div>
         </div>
         
