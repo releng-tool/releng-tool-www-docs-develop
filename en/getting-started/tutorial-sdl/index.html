@@ -530,7 +530,7 @@ type (typically used for interim development) to help demonstrate the
 sample project.</p>
 <p>Create a package definition <code class="docutils literal notranslate"><span class="pre">my-sdl-project/sample/sample</span></code> with the
 following contents:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SAMPLE_DEPENDENCIES</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SAMPLE_NEEDS</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;libsdl&#39;</span><span class="p">,</span>
 <span class="p">]</span>
 
@@ -541,7 +541,7 @@ following contents:</p>
 </div>
 <ul class="simple">
 <li><p>We specify a dependency on the <code class="docutils literal notranslate"><span class="pre">libsdl</span></code> package by adding this package in
-a <code class="docutils literal notranslate"><span class="pre">SAMPLE_DEPENDENCIES</span></code> list. One or more packages can be specified here
+a <code class="docutils literal notranslate"><span class="pre">SAMPLE_NEEDS</span></code> list. One or more packages can be specified here
 if needed, and will ensure that <code class="docutils literal notranslate"><span class="pre">libsdl</span></code> is built before any attempts to
 configure/build the sample package.</p></li>
 <li><p>This package is then flagged as internal (<code class="docutils literal notranslate"><span class="pre">SAMPLE_INTERNAL</span></code>). We do this
