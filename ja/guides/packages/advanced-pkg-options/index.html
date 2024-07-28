@@ -253,6 +253,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../pkg-type-meson/">Meson package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pkg-type-python/">Python package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pkg-type-scons/">SCons package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deprecated-pkg-options/">Deprecated options</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../post-processing/">Post-processing</a></li>
@@ -673,6 +674,37 @@ prefix value.</p>
 </div>
 <p>See also <a class="reference internal" href="../../configuration/#conf-sysroot-prefix"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">sysroot_prefix</span></code></span></a>.</p>
 </section>
+<section id="libfoo-remote-config">
+<span id="pkg-opt-remote-config"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_REMOTE_CONFIG</span></code><a class="headerlink" href="#libfoo-remote-config" title="Link to this heading">¶</a></h2>
+<p>Flag value to indicate that a package should attempt to load any package
+configurations which may be defined in the package's source. If the package
+includes a <code class="docutils literal notranslate"><span class="pre">.releng-tool</span></code> file at the root of their sources, supported
+configuration options that have not been populated will be registered into
+the package before invoking a package's configuration stage.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REMOTE_CONFIG</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>See also
+<a class="reference internal" href="../../quirks/quirk-disable_remote_configs/#quirk-releng-disable-remote-configs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_remote_configs</span></code> quirk</span></a>.</p>
+</section>
+<section id="libfoo-remote-scripts">
+<span id="pkg-opt-remote-scripts"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_REMOTE_SCRIPTS</span></code><a class="headerlink" href="#libfoo-remote-scripts" title="Link to this heading">¶</a></h2>
+<p>Flag value to indicate that a package should attempt to load any package
+scripts which may be defined in the package's source. Typically, a
+script-based package will load configuration, build, etc. scripts from its
+package definition folder. If a script-based package is missing a stage script
+to invoke and finds an associated script in the package's source, the detected
+script will be invoked. For example, if <code class="docutils literal notranslate"><span class="pre">libfoo</span></code> package may attempt to load
+a <code class="docutils literal notranslate"><span class="pre">libfoo-configure</span></code> script for a configuration stage. In the event that the
+script cannot be found and remote scripting is permitted for a package, the
+script (if exists) <code class="docutils literal notranslate"><span class="pre">releng-configure</span></code> will be loaded from the root of the
+package's contents.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REMOTE_CONFIG</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>See also
+<a class="reference internal" href="../../quirks/quirk-disable_remote_scripts/#quirk-releng-disable-remote-scripts"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_remote_scripts</span></code> quirk</span></a>.</p>
+</section>
 <section id="libfoo-revision">
 <span id="pkg-opt-revision"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_REVISION</span></code><a class="headerlink" href="#libfoo-revision" title="Link to this heading">¶</a></h2>
 <p>Specifies a revision value for a package. When a package fetches content
@@ -694,37 +726,6 @@ revisions can be configured based off the mode:</p>
 </div>
 <p>See also <a class="reference internal" href="#pkg-opt-devmode-revision"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEVMODE_REVISION</span></code></span></a> and
 <a class="reference internal" href="../common-pkg-options/#pkg-opt-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VERSION</span></code></span></a>.</p>
-</section>
-<section id="libfoo-skip-remote-config">
-<span id="pkg-opt-skip-remote-config"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_SKIP_REMOTE_CONFIG</span></code><a class="headerlink" href="#libfoo-skip-remote-config" title="Link to this heading">¶</a></h2>
-<p>Flag value to indicate that a package should not attempt to load any
-package configurations which may be defined in the package's source. A
-package, by default, has the ability to load configuration information from
-a package's source. If the package includes a <code class="docutils literal notranslate"><span class="pre">.releng-tool</span></code> file at the
-root of their sources, supported configuration options that have not been
-populated will be registered into the package before invoking a package's
-configuration stage.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_SKIP_REMOTE_CONFIG</span> <span class="o">=</span> <span class="kc">True</span>
-</pre></div>
-</div>
-<p>See also <a class="reference internal" href="../../quirks/quirks/"><span class="doc std std-doc">configuration quirks</span></a>.</p>
-</section>
-<section id="libfoo-skip-remote-scripts">
-<span id="pkg-opt-skip-remote-scripts"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_SKIP_REMOTE_SCRIPTS</span></code><a class="headerlink" href="#libfoo-skip-remote-scripts" title="Link to this heading">¶</a></h2>
-<p>Flag value to indicate that a package should not attempt to load any package
-scripts which may be defined in the package's source. Typically, a
-script-based package will load configuration, build, etc. scripts from its
-package definition folder. If a script-based package is missing a stage script
-to invoke and finds an associated script in the package's source, the detected
-script will be invoked. For example, if <code class="docutils literal notranslate"><span class="pre">libfoo</span></code> package may attempt to load
-a <code class="docutils literal notranslate"><span class="pre">libfoo-configure</span></code> script for a configuration stage. In the event that the
-script cannot be found and remote scripting is permitted for a package, the
-script (if exists) <code class="docutils literal notranslate"><span class="pre">releng-configure</span></code> will be loaded from the root of the
-package's contents.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_SKIP_REMOTE_CONFIG</span> <span class="o">=</span> <span class="kc">True</span>
-</pre></div>
-</div>
-<p>See also <a class="reference internal" href="../../quirks/quirks/"><span class="doc std std-doc">configuration quirks</span></a>.</p>
 </section>
 <section id="libfoo-strip-count">
 <span id="pkg-opt-strip-count"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_STRIP_COUNT</span></code><a class="headerlink" href="#libfoo-strip-count" title="Link to this heading">¶</a></h2>
@@ -882,9 +883,9 @@ warning message.</p>
 <li><a class="reference internal" href="#libfoo-no-extraction"><code class="docutils literal notranslate"><span class="pre">LIBFOO_NO_EXTRACTION</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-patch-subdir"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PATCH_SUBDIR</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-prefix"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PREFIX</span></code></a></li>
+<li><a class="reference internal" href="#libfoo-remote-config"><code class="docutils literal notranslate"><span class="pre">LIBFOO_REMOTE_CONFIG</span></code></a></li>
+<li><a class="reference internal" href="#libfoo-remote-scripts"><code class="docutils literal notranslate"><span class="pre">LIBFOO_REMOTE_SCRIPTS</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-revision"><code class="docutils literal notranslate"><span class="pre">LIBFOO_REVISION</span></code></a></li>
-<li><a class="reference internal" href="#libfoo-skip-remote-config"><code class="docutils literal notranslate"><span class="pre">LIBFOO_SKIP_REMOTE_CONFIG</span></code></a></li>
-<li><a class="reference internal" href="#libfoo-skip-remote-scripts"><code class="docutils literal notranslate"><span class="pre">LIBFOO_SKIP_REMOTE_SCRIPTS</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-strip-count"><code class="docutils literal notranslate"><span class="pre">LIBFOO_STRIP_COUNT</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-vcs-type"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VCS_TYPE</span></code></a></li>
 </ul>

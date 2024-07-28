@@ -253,6 +253,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../pkg-type-meson/">Meson package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pkg-type-python/">Python package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pkg-type-scons/">SCons package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../deprecated-pkg-options/">Deprecated options</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../post-processing/">Post-processing</a></li>
@@ -473,7 +474,7 @@ entries (respectively).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The option replaces the legacy
-<a class="reference internal" href="#pkg-opt-dependencies"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEPENDENCIES</span></code></span></a> option.</p>
+<a class="reference internal" href="../deprecated-pkg-options/#pkg-opt-dependencies"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEPENDENCIES</span></code></span></a> option.</p>
 </div>
 <p>List of package dependencies a given project has. If a project depends on
 another package, the package name should be listed in this option. This ensures
@@ -627,25 +628,6 @@ directories such as <code class="docutils literal notranslate"><span class="pre"
 <p>See also <a class="reference internal" href="../advanced-pkg-options/#pkg-opt-devmode-revision"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEVMODE_REVISION</span></code></span></a> and
 <a class="reference internal" href="../advanced-pkg-options/#pkg-opt-revision"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_REVISION</span></code></span></a>.</p>
 </section>
-<section id="libfoo-dependencies">
-<span id="pkg-opt-dependencies"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEPENDENCIES</span></code><a class="headerlink" href="#libfoo-dependencies" title="Link to this heading">¶</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The option is deprecated and packages should use
-<a class="reference internal" href="#pkg-opt-needs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_NEEDS</span></code></span></a> instead.</p>
-</div>
-<p>List of package dependencies a given project has. If a project depends on
-another package, the package name should be listed in this option. This ensures
-releng-tool will process packages in the proper order. The following shows an
-example package <code class="docutils literal notranslate"><span class="pre">libfoo</span></code> being dependent on <code class="docutils literal notranslate"><span class="pre">liba</span></code> and <code class="docutils literal notranslate"><span class="pre">libb</span></code> being
-processed first:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_DEPENDENCIES</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;liba&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;libb&#39;</span><span class="p">,</span>
-<span class="p">]</span>
-</pre></div>
-</div>
-</section>
 </section>
 
         </article>
@@ -715,7 +697,6 @@ processed first:</p>
 <li><a class="reference internal" href="#libfoo-site"><code class="docutils literal notranslate"><span class="pre">LIBFOO_SITE</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-type"><code class="docutils literal notranslate"><span class="pre">LIBFOO_TYPE</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-version"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VERSION</span></code></a></li>
-<li><a class="reference internal" href="#libfoo-dependencies"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEPENDENCIES</span></code></a></li>
 </ul>
 </li>
 </ul>
