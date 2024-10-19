@@ -240,6 +240,7 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../guides/packages/packages/">Packages</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Packages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../guides/packages/common-pkg-options/">Common options</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/packages/advanced-pkg-options/">Advanced options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/packages/system-pkg-options/">System-specific options</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/packages/bootstrapping/">Bootstrapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/packages/post-processing/">Post-processing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/packages/site-definitions/">Site definitions</a></li>
@@ -418,7 +419,8 @@
   └── csv, html, json, json-spdx, rdp-spdx, text, xml
 <a class="reference internal" href="../guides/configuration/#conf-sysroot-prefix"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">sysroot_prefix</span></code></span></a> = '&lt;path&gt;' # '/usr'
 <a class="reference internal" href="../guides/configuration/#conf-url-mirror"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">url_mirror</span></code></span></a> = '&lt;mirror-url&gt;'
-<a class="reference internal" href="../guides/configuration/#conf-urlopen-context"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">urlopen_context</span></code></span></a> = &lt;ssl.SSLContext&gt;</pre>
+<a class="reference internal" href="../guides/configuration/#conf-urlopen-context"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">urlopen_context</span></code></span></a> = &lt;ssl.SSLContext&gt;
+<a class="reference internal" href="../guides/configuration/#conf-vsdevcmd"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">vsdevcmd</span></code></span></a> = bool or str</pre>
 </section>
 <section id="environment-variables">
 <h2>Zmienne środowiskowe<a class="headerlink" href="#environment-variables" title="Link to this heading">¶</a></h2>
@@ -544,7 +546,7 @@
 <a class="reference internal" href="../guides/packages/pkg-type-meson/#pkg-opt-meson-noinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MESON_NOINSTALL</span></code></span></a> = bool
 <a class="reference internal" href="../guides/packages/common-pkg-options/#pkg-opt-needs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_NEEDS</span></code></span></a> = ['&lt;pkg&gt;', '&lt;pkg&gt;']
 <a class="reference internal" href="../guides/packages/advanced-pkg-options/#pkg-opt-no-extraction"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_NO_EXTRACTION</span></code></span></a> = bool
-<a class="reference internal" href="../guides/packages/common-pkg-options/#pkg-opt-license"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_LICENSE</span></code></span></a> = '&lt;license&gt;'  or ['&lt;license&gt;', '&lt;license&gt;']
+<a class="reference internal" href="../guides/packages/common-pkg-options/#pkg-opt-license"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_LICENSE</span></code></span></a> = '&lt;license&gt;' or ['&lt;license&gt;', '&lt;license&gt;']
 <a class="reference internal" href="../guides/packages/common-pkg-options/#pkg-opt-license-files"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_LICENSE_FILES</span></code></span></a> = '&lt;file&gt;' or ['&lt;file&gt;', '&lt;file&gt;']
 <a class="reference internal" href="../guides/packages/advanced-pkg-options/#pkg-opt-patch-subdir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PATCH_SUBDIR</span></code></span></a> = '&lt;subdir&gt;'
 <a class="reference internal" href="../guides/packages/advanced-pkg-options/#pkg-opt-prefix"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PREFIX</span></code></span></a> = '&lt;path&gt;' # '/usr'
@@ -563,7 +565,8 @@
   └── autotools, cargo, cmake, make, meson, python, scons, script, ext-&lt;extension&gt;
 <a class="reference internal" href="../guides/packages/advanced-pkg-options/#pkg-opt-vcs-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VCS_TYPE</span></code></span></a> = '&lt;vcs-type&gt;'
   └── bzr, cvs, git, hg, local, none, perforce, rsync, scp, svn, url
-<a class="reference internal" href="../guides/packages/common-pkg-options/#pkg-opt-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VERSION</span></code></span></a> = '&lt;version&gt;'</pre>
+<a class="reference internal" href="../guides/packages/common-pkg-options/#pkg-opt-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VERSION</span></code></span></a> = '&lt;version&gt;'
+<a class="reference internal" href="../guides/packages/system-pkg-options/#pkg-opt-vsdevcmd"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VSDEVCMD</span></code></span></a> = bool or str</pre>
 </section>
 <section id="script-helpers">
 <h2>Script helpers<a class="headerlink" href="#script-helpers" title="Link to this heading">¶</a></h2>
@@ -579,8 +582,8 @@
 <a class="reference internal" href="../guides/script-helpers/#script-releng-env"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng_env</span></code></span></a>(key, value=None)
 <a class="reference internal" href="../guides/script-helpers/#script-releng-execute"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng_execute</span></code></span></a>(args, cwd=None, env=None, env_update=None,
                quiet=False, critical=True, poll=False,
-               capture=None, expand=None)
-<a class="reference internal" href="../guides/script-helpers/#script-releng-execute-rv"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng_execute_rv</span></code></span></a>(command, args, cwd=None, env=None, env_update=None)
+               capture=None, expand=None, args_native=False)
+<a class="reference internal" href="../guides/script-helpers/#script-releng-execute-rv"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng_execute_rv</span></code></span></a>(command, args, cwd=None, env=None, env_update=None, args_native=False)
 <a class="reference internal" href="../guides/script-helpers/#script-releng-exists"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng_exists</span></code></span></a>(path, *args)
 <a class="reference internal" href="../guides/script-helpers/#script-releng-exit"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng_exit</span></code></span></a>(msg=None, code=None)
 <a class="reference internal" href="../guides/script-helpers/#script-releng-expand"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng_expand</span></code></span></a>(obj, kv=None)

@@ -240,6 +240,7 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../packages/packages/">Packages</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Packages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../packages/common-pkg-options/">Common options</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../packages/advanced-pkg-options/">Advanced options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packages/system-pkg-options/">System-specific options</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../packages/bootstrapping/">Bootstrapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../packages/post-processing/">Post-processing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../packages/site-definitions/">Site definitions</a></li>
@@ -742,6 +743,27 @@ environment. For example:</p>
 <span class="n">urlopen_context</span> <span class="o">=</span> <span class="n">ssl</span><span class="o">.</span><span class="n">create_default_context</span><span class="p">()</span>
 </pre></div>
 </div>
+</section>
+<section id="vsdevcmd">
+<span id="conf-vsdevcmd"></span><h3><code class="docutils literal notranslate"><span class="pre">vsdevcmd</span></code><a class="headerlink" href="#vsdevcmd" title="Link to this heading">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>The option is only available for Windows environments.</p>
+</div>
+<p>Allows a project to automatically load Visual Studio Developer Command
+Prompt (<code class="docutils literal notranslate"><span class="pre">VsDevCmd.bat</span></code>) variables into the releng-tool process. This will
+allow packages and post-build scripts to invoke commands as if releng-tool
+was started from within a Visual Studio Developer Command Prompt.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vsdevcmd</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Projects looking to use an explicit version of Visual Studio can specify a
+version string that is compatible with <a class="reference external" href="https://github.com/microsoft/vswhere">Visual Studio Locator's</a>
+(vswhere) <code class="docutils literal notranslate"><span class="pre">-version</span></code> argument.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vsdevcmd</span> <span class="o">=</span> <span class="s1">&#39;[17.0,18.0)&#39;</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="../packages/system-pkg-options/#pkg-opt-vsdevcmd"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VSDEVCMD</span></code></span></a>.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="urlopen" role="doc-footnote">
@@ -835,6 +857,7 @@ environment. For example:</p>
 <li><a class="reference internal" href="#override-sites"><code class="docutils literal notranslate"><span class="pre">override_sites</span></code></a></li>
 <li><a class="reference internal" href="#quirks"><code class="docutils literal notranslate"><span class="pre">quirks</span></code></a></li>
 <li><a class="reference internal" href="#urlopen-context"><code class="docutils literal notranslate"><span class="pre">urlopen_context</span></code></a></li>
+<li><a class="reference internal" href="#vsdevcmd"><code class="docutils literal notranslate"><span class="pre">vsdevcmd</span></code></a></li>
 </ul>
 </li>
 </ul>

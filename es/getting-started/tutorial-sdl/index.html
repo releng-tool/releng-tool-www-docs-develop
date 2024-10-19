@@ -240,6 +240,7 @@
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../guides/packages/packages/">Packages</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Packages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/packages/common-pkg-options/">Common options</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/packages/advanced-pkg-options/">Advanced options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../guides/packages/system-pkg-options/">System-specific options</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/packages/bootstrapping/">Bootstrapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/packages/post-processing/">Post-processing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../guides/packages/site-definitions/">Site definitions</a></li>
@@ -424,7 +425,7 @@ uses the SDL library.</p>
 <section id="the-libsdl-package">
 <h2>The libsdl package<a class="headerlink" href="#the-libsdl-package" title="Link to this heading">¶</a></h2>
 <p>Inside the <code class="docutils literal notranslate"><span class="pre">libsdl</span></code> package, create a package definition
-<code class="docutils literal notranslate"><span class="pre">my-project/libsdl/libsdl</span></code> with the following contents:</p>
+<code class="docutils literal notranslate"><span class="pre">my-project/package/libsdl/libsdl</span></code> with the following contents:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBSDL_LICENSE</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Zlib&#39;</span><span class="p">]</span>
 <span class="n">LIBSDL_LICENSE_FILES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;LICENSE.txt&#39;</span><span class="p">]</span>
 <span class="n">LIBSDL_SITE</span> <span class="o">=</span> <span class="s1">&#39;https://www.libsdl.org/release/SDL2-$</span><span class="si">{LIBSDL_VERSION}</span><span class="s1">.tar.gz&#39;</span>
@@ -737,12 +738,16 @@ In the root folder, create a <code class="docutils literal notranslate"><span cl
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">packages</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;sample&#39;</span><span class="p">,</span>
 <span class="p">]</span>
+
+<span class="n">vsdevcmd</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>We explicitly configure releng-tool to load the <code class="docutils literal notranslate"><span class="pre">sample</span></code> package to build.</p></li>
 <li><p>Note that we do not need to specify the <code class="docutils literal notranslate"><span class="pre">libsdl</span></code> package since the <code class="docutils literal notranslate"><span class="pre">sample</span></code>
 package will load it implicitly through its dependency configuration.</p></li>
+<li><p>Adding <code class="docutils literal notranslate"><span class="pre">vsdevcmd</span></code> will auto-load Visual Studio developer environment
+variables to support Windows-based builds.</p></li>
 </ul>
 <p>The following shows the expected file structure at this stage of this
 tutorial:</p>
@@ -768,20 +773,6 @@ tutorial:</p>
 </section>
 <section id="performing-a-build">
 <h2>Performing a build<a class="headerlink" href="#performing-a-build" title="Link to this heading">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Users will want to run a build in a shell which has the host tools needed
-to perform a build (e.g. the compiler). For Windows, this may be invoking
-releng-tool in a Visual Studio command prompt on a system with <code class="docutils literal notranslate"><span class="pre">patch</span></code>
-installed. For example:</p>
-<ol class="arabic simple">
-<li><p>Start Git SCM Bash shell.</p></li>
-<li><p>Load Visual Studio support into the shell (for example, when using VS2019):
-<code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Microsoft</span> <span class="pre">Visual</span> <span class="pre">Studio\2019\Community\Common7\Tools\VsDevCmd.bat</span></code></p></li>
-<li><p>Navigate to the project directory.</p></li>
-<li><p>Invoke <code class="docutils literal notranslate"><span class="pre">releng-tool</span></code>.</p></li>
-</ol>
-</div>
 <p>With packages, assets and configurations prepared, the project should be
 ready to be built. While in the <code class="docutils literal notranslate"><span class="pre">my-sdl-project</span></code> folder, invoke
 <code class="docutils literal notranslate"><span class="pre">releng-tool</span></code>:</p>
