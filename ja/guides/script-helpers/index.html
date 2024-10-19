@@ -521,11 +521,12 @@ output; <code class="docutils literal notranslate"><span class="pre">False</span
 
 <dl class="py function" id="script-releng-copy">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>This call will attempt to copy a provided file or directory, defined by
-<code class="docutils literal notranslate"><span class="pre">src</span></code> into a destination file or directory defined by <code class="docutils literal notranslate"><span class="pre">dst</span></code>. If <code class="docutils literal notranslate"><span class="pre">src</span></code>
-is a file, then <code class="docutils literal notranslate"><span class="pre">dst</span></code> is considered to be a file or directory; if <code class="docutils literal notranslate"><span class="pre">src</span></code>
-is a directory, <code class="docutils literal notranslate"><span class="pre">dst</span></code> is considered a target directory. If a target
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nested</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>This call will attempt to copy a provided file, directory's contents or
+directory itself (if <code class="docutils literal notranslate"><span class="pre">nested</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>); defined by <code class="docutils literal notranslate"><span class="pre">src</span></code> into a
+destination file or directory defined by <code class="docutils literal notranslate"><span class="pre">dst</span></code>. If <code class="docutils literal notranslate"><span class="pre">src</span></code> is a file,
+then <code class="docutils literal notranslate"><span class="pre">dst</span></code> is considered to be a file or directory; if <code class="docutils literal notranslate"><span class="pre">src</span></code> is a
+directory, <code class="docutils literal notranslate"><span class="pre">dst</span></code> is considered a target directory. If a target
 directory or target file's directory does not exist, it will be
 automatically created. In the event that a file or directory could not be
 copied, an error message will be output to standard error (unless <code class="docutils literal notranslate"><span class="pre">quiet</span></code>
@@ -560,6 +561,7 @@ system exit (<code class="docutils literal notranslate"><span class="pre">System
 <li><p><strong>quiet</strong> (<em>optional</em>) -- whether or not to suppress output</p></li>
 <li><p><strong>critical</strong> (<em>optional</em>) -- whether or not to stop execution on failure</p></li>
 <li><p><strong>dst_dir</strong> (<em>optional</em>) -- force hint that the destination is a directory</p></li>
+<li><p><strong>nested</strong> (<em>optional</em>) -- nest a source directory into the destination</p></li>
 </ul>
 </dd>
 <dt class="field-even">戻り値<span class="colon">:</span></dt>
@@ -574,15 +576,15 @@ has failed</p>
 
 <dl class="py function" id="script-releng-copy-into">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_copy_into</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>This call will attempt to copy a provided file or directory, defined by
-<code class="docutils literal notranslate"><span class="pre">src</span></code> into a destination directory defined by <code class="docutils literal notranslate"><span class="pre">dst</span></code>. If a target
-directory does not exist, it will be automatically created. In the event
-that a file or directory could not be copied, an error message will be
-output to standard error (unless <code class="docutils literal notranslate"><span class="pre">quiet</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>). If
-<code class="docutils literal notranslate"><span class="pre">critical</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> and the specified file/directory could
-not be copied for any reason, this call will issue a system exit
-(<code class="docutils literal notranslate"><span class="pre">SystemExit</span></code>).</p>
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_copy_into</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nested</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>This call will attempt to copy a provided file, directory's contents or
+directory itself (if <code class="docutils literal notranslate"><span class="pre">nested</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>); defined by <code class="docutils literal notranslate"><span class="pre">src</span></code> into a
+destination directory defined by <code class="docutils literal notranslate"><span class="pre">dst</span></code>. If a target directory does not
+exist, it will be automatically created. In the event that a file or
+directory could not be copied, an error message will be output to
+standard error (unless <code class="docutils literal notranslate"><span class="pre">quiet</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>). If <code class="docutils literal notranslate"><span class="pre">critical</span></code>
+is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> and the specified file/directory could not be copied
+for any reason, this call will issue a system exit (<code class="docutils literal notranslate"><span class="pre">SystemExit</span></code>).</p>
 <p>An example when using in the context of script helpers is as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># (stage)</span>
 <span class="c1"># my-file</span>
@@ -595,6 +597,12 @@ not be copied for any reason, this call will issue a system exit
 <span class="c1"># my-directory/my-file</span>
 <span class="c1"># my-directory2/my-file</span>
 <span class="c1"># my-file</span>
+<span class="n">releng_copy_into</span><span class="p">(</span><span class="s1">&#39;my-directory&#39;</span><span class="p">,</span> <span class="s1">&#39;my-directory3&#39;</span><span class="p">,</span> <span class="n">nested</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># (stage)</span>
+<span class="c1"># my-directory/my-file</span>
+<span class="c1"># my-directory2/my-file</span>
+<span class="c1"># my-directory3/directory/my-file</span>
+<span class="c1"># my-file</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
@@ -604,6 +612,7 @@ not be copied for any reason, this call will issue a system exit
 <li><p><strong>dst</strong> -- the destination directory</p></li>
 <li><p><strong>quiet</strong> (<em>optional</em>) -- whether or not to suppress output</p></li>
 <li><p><strong>critical</strong> (<em>optional</em>) -- whether or not to stop execution on failure</p></li>
+<li><p><strong>nested</strong> (<em>optional</em>) -- nest a source directory into the destination</p></li>
 </ul>
 </dd>
 <dt class="field-even">戻り値<span class="colon">:</span></dt>
@@ -932,12 +941,13 @@ be created</p>
 
 <dl class="py function" id="script-releng-move">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>This call will attempt to move a provided file or directory's contents,
-defined by <code class="docutils literal notranslate"><span class="pre">src</span></code> into a destination file or directory defined by <code class="docutils literal notranslate"><span class="pre">dst</span></code>.
-If <code class="docutils literal notranslate"><span class="pre">src</span></code> is a file, then <code class="docutils literal notranslate"><span class="pre">dst</span></code> is considered to be a file or directory;
-if <code class="docutils literal notranslate"><span class="pre">src</span></code> is a directory, <code class="docutils literal notranslate"><span class="pre">dst</span></code> is considered a target directory. If a
-target directory or target file's directory does not exist, it will be
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nested</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>This call will attempt to move a provided file, directory's contents or
+directory itself (if <code class="docutils literal notranslate"><span class="pre">nested</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>); defined by <code class="docutils literal notranslate"><span class="pre">src</span></code> into a
+destination file or directory defined by <code class="docutils literal notranslate"><span class="pre">dst</span></code>. If <code class="docutils literal notranslate"><span class="pre">src</span></code> is a file,
+then <code class="docutils literal notranslate"><span class="pre">dst</span></code> is considered to be a file or directory; if <code class="docutils literal notranslate"><span class="pre">src</span></code> is a
+directory, <code class="docutils literal notranslate"><span class="pre">dst</span></code> is considered a target directory. If a target
+directory or target file's directory does not exist, it will be
 automatically created.</p>
 <p>In the event that a file or directory could not be moved, an error message
 will be output to standard error (unless <code class="docutils literal notranslate"><span class="pre">quiet</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>). If
@@ -966,6 +976,7 @@ be moved for any reason, this call will issue a system exit
 <li><p><strong>quiet</strong> (<em>optional</em>) -- whether or not to suppress output</p></li>
 <li><p><strong>critical</strong> (<em>optional</em>) -- whether or not to stop execution on failure</p></li>
 <li><p><strong>dst_dir</strong> (<em>optional</em>) -- force hint that the destination is a directory</p></li>
+<li><p><strong>nested</strong> (<em>optional</em>) -- nest a source directory into the destination</p></li>
 </ul>
 </dd>
 <dt class="field-even">戻り値<span class="colon">:</span></dt>
@@ -980,10 +991,11 @@ has failed</p>
 
 <dl class="py function" id="script-releng-move-into">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_move_into</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>This call will attempt to move a provided file or directory's contents,
-defined by <code class="docutils literal notranslate"><span class="pre">src</span></code> into a destination directory defined by <code class="docutils literal notranslate"><span class="pre">dst</span></code>. If a
-target directory directory does not exist, it will be automatically created.</p>
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_move_into</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nested</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>This call will attempt to move a provided file, directory's contents or
+directory itself (if <code class="docutils literal notranslate"><span class="pre">nested</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>); defined by <code class="docutils literal notranslate"><span class="pre">src</span></code> into a
+destination directory defined by <code class="docutils literal notranslate"><span class="pre">dst</span></code>. If a target directory directory
+does not exist, it will be automatically created.</p>
 <p>In the event that a file or directory could not be moved, an error message
 will be output to standard error (unless <code class="docutils literal notranslate"><span class="pre">quiet</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>). If
 <code class="docutils literal notranslate"><span class="pre">critical</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> and the specified file/directory could not
@@ -992,14 +1004,17 @@ be moved for any reason, this call will issue a system exit
 <p>An example when using in the context of script helpers is as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># (input)</span>
 <span class="c1"># my-directory/another-file</span>
+<span class="c1"># my-directory2/another-file2</span>
 <span class="c1"># my-file</span>
 <span class="c1"># my-file2</span>
 <span class="n">releng_move</span><span class="p">(</span><span class="s1">&#39;my-file&#39;</span><span class="p">,</span> <span class="s1">&#39;my-file3&#39;</span><span class="p">)</span>
-<span class="n">releng_move</span><span class="p">(</span><span class="s1">&#39;my-directory&#39;</span><span class="p">,</span> <span class="s1">&#39;my-directory2&#39;</span><span class="p">)</span>
-<span class="n">releng_move</span><span class="p">(</span><span class="s1">&#39;my-file2&#39;</span><span class="p">,</span> <span class="s1">&#39;my-directory2&#39;</span><span class="p">)</span>
+<span class="n">releng_move</span><span class="p">(</span><span class="s1">&#39;my-directory&#39;</span><span class="p">,</span> <span class="s1">&#39;my-directory3&#39;</span><span class="p">)</span>
+<span class="n">releng_move</span><span class="p">(</span><span class="s1">&#39;my-file2&#39;</span><span class="p">,</span> <span class="s1">&#39;my-directory3&#39;</span><span class="p">)</span>
+<span class="n">releng_move</span><span class="p">(</span><span class="s1">&#39;my-directory2&#39;</span><span class="p">,</span> <span class="s1">&#39;my-directory3&#39;</span><span class="p">,</span> <span class="n">nested</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="c1"># (output)</span>
-<span class="c1"># my-directory2/another-file</span>
-<span class="c1"># my-directory2/my-file2</span>
+<span class="c1"># my-directory3/my-directory2/another-file2</span>
+<span class="c1"># my-directory3/another-file</span>
+<span class="c1"># my-directory3/my-file2</span>
 <span class="c1"># my-file3</span>
 </pre></div>
 </div>
@@ -1010,6 +1025,7 @@ be moved for any reason, this call will issue a system exit
 <li><p><strong>dst</strong> -- the destination directory</p></li>
 <li><p><strong>quiet</strong> (<em>optional</em>) -- whether or not to suppress output</p></li>
 <li><p><strong>critical</strong> (<em>optional</em>) -- whether or not to stop execution on failure</p></li>
+<li><p><strong>nested</strong> (<em>optional</em>) -- nest a source directory into the destination</p></li>
 </ul>
 </dd>
 <dt class="field-even">戻り値<span class="colon">:</span></dt>
