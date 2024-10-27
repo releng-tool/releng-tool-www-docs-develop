@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=df54547a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=ddcdc2ba" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -449,6 +449,9 @@ assumed to be external packages.</p>
 </section>
 <section id="environment">
 <span id="conf-environment"></span><h3><code class="docutils literal notranslate"><span class="pre">environment</span></code><a class="headerlink" href="#environment" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.3.</span></p>
+</div>
 <p>A dictionary to define environment variables to apply to all stages of
 releng-tool.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">environment</span> <span class="o">=</span> <span class="p">{</span>
@@ -511,6 +514,9 @@ listed will be automatically loaded and processed as well.</p>
 </section>
 <section id="prerequisites">
 <span id="conf-prerequisites"></span><h3><code class="docutils literal notranslate"><span class="pre">prerequisites</span></code><a class="headerlink" href="#prerequisites" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.6.</span></p>
+</div>
 <p>A list of host tools to check for before running a releng-tool project.
 Allows a developer to identify tools to check and fail-fast if missing,
 instead of waiting for a stage which requires a specific tool and failing
@@ -525,6 +531,12 @@ later during a building, packaging, etc. phase.</p>
 </section>
 <section id="sbom-format">
 <span id="conf-sbom-format"></span><h3><code class="docutils literal notranslate"><span class="pre">sbom_format</span></code><a class="headerlink" href="#sbom-format" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.15.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">バージョン 0.16 で変更: </span>Support added for <code class="docutils literal notranslate"><span class="pre">json-spdx</span></code> and <code class="docutils literal notranslate"><span class="pre">rdp-spdx</span></code>.</p>
+</div>
 <p>Configures the default format to use when generating a software build of
 materials (SBOM). By default, <code class="docutils literal notranslate"><span class="pre">text</span></code> format SBOMs are generated for a
 project.</p>
@@ -629,6 +641,9 @@ For example:</p>
 </section>
 <section id="extra-license-exceptions">
 <span id="conf-extra-license-exceptions"></span><h3><code class="docutils literal notranslate"><span class="pre">extra_license_exceptions</span></code><a class="headerlink" href="#extra-license-exceptions" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.14.</span></p>
+</div>
 <p>A dictionary to define extra license exceptions that are permitted in
 package definitions. Packages which define license exceptions in a
 <a class="reference internal" href="../packages/common-pkg-options/#pkg-opt-license"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_LICENSE</span></code></span></a> option are expected to use
@@ -644,6 +659,9 @@ into a project's <code class="docutils literal notranslate"><span class="pre">ex
 </section>
 <section id="extra-licenses">
 <span id="conf-extra-licenses"></span><h3><code class="docutils literal notranslate"><span class="pre">extra_licenses</span></code><a class="headerlink" href="#extra-licenses" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.14.</span></p>
+</div>
 <p>A dictionary to define extra licenses that are permitted in package
 definitions. Packages which define licenses in a
 <a class="reference internal" href="../packages/common-pkg-options/#pkg-opt-license"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_LICENSE</span></code></span></a> option are expected to use a licensed
@@ -732,6 +750,9 @@ can prevent releng-tool operating on a host system.</p>
 </section>
 <section id="urlopen-context">
 <span id="conf-urlopen-context"></span><h3><code class="docutils literal notranslate"><span class="pre">urlopen_context</span></code><a class="headerlink" href="#urlopen-context" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.10.</span></p>
+</div>
 <p>Allows a project to specify a custom SSL context <a class="footnote-reference brackets" href="#urlopen" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> to apply for
 URL fetch requests. This can be useful for environments which may
 experience <code class="docutils literal notranslate"><span class="pre">CERTIFICATE_VERIFY_FAILED</span></code> errors when attempting to fetch
@@ -748,7 +769,10 @@ environment. For example:</p>
 <span id="conf-vsdevcmd"></span><h3><code class="docutils literal notranslate"><span class="pre">vsdevcmd</span></code><a class="headerlink" href="#vsdevcmd" title="Link to this heading">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>The option is only available for Windows environments.</p>
+<p>The option is ignored in non-Windows environments.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.14.</span></p>
 </div>
 <p>Allows a project to automatically load Visual Studio Developer Command
 Prompt (<code class="docutils literal notranslate"><span class="pre">VsDevCmd.bat</span></code>) variables into the releng-tool process. This will

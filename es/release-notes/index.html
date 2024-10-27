@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=df54547a" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=ddcdc2ba" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -422,10 +422,16 @@ releng-tool, please see the project’s <a class="reference external" href="http
 <section id="development">
 <h2>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h2>
 <ul class="simple">
+<li><p>Allow adding a package without a definition that defines at least one script</p></li>
+<li><p>Correct <code class="docutils literal notranslate"><span class="pre">hint</span></code> missing from script environments</p></li>
 <li><p>Ensure the <code class="docutils literal notranslate"><span class="pre">punch</span></code> action triggers the post-build stage</p></li>
+<li><p>Fixed issue where <code class="docutils literal notranslate"><span class="pre">releng_remove</span></code> could not remove a broken symbolic link</p></li>
+<li><p>Flag <code class="docutils literal notranslate"><span class="pre">RELENG_FORCE</span></code> when using the <code class="docutils literal notranslate"><span class="pre">punch</span></code> action</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">releng_symlink</span></code> helper script function</p></li>
 <li><p>Introduce a <code class="docutils literal notranslate"><span class="pre">nested</span></code> option for I/O copy/move utility calls</p></li>
 <li><p>Support injecting Visual Studio development environment variables</p></li>
 <li><p>Support preallocated list/dictionary package configurations</p></li>
+<li><p>Utilize forwarded arguments as fallback for <code class="docutils literal notranslate"><span class="pre">libfoo-exec</span></code> action</p></li>
 </ul>
 </section>
 <section id="v1-3-2024-08-19">

@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/theme_overrides.css?v=df54547a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/theme_overrides.css?v=ddcdc2ba" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -397,11 +397,9 @@
         <article role="main" id="furo-main-content">
           <section id="quirk-releng-cmake-disable-parallel-option">
 <span id="id1"></span><h1>Quirk <code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_parallel_option</span></code><a class="headerlink" href="#quirk-releng-cmake-disable-parallel-option" title="Link to this heading">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Ostrzeżenie</p>
-<p>This quirk is no longer applicable as of v1.0. CMake parallelization is
-now driven internally using the <code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_PARALLEL_LEVEL</span></code> environment
-variable.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Niezalecane od wersji 1.0: </span>This quirk is no longer applicable. CMake parallelization is now driven
+internally using the <code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_PARALLEL_LEVEL</span></code> environment variable.</p>
 </div>
 <p>When releng-tool invokes a build stage for a CMake project, the <code class="docutils literal notranslate"><span class="pre">--parallel</span></code>
 argument is used to trigger multiple jobs for a build. If running on a host

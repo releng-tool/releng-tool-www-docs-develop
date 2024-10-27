@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/theme_overrides.css?v=df54547a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/theme_overrides.css?v=ddcdc2ba" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -462,6 +462,9 @@ the build event. This field is optional.</p>
 </section>
 <section id="libfoo-env">
 <span id="pkg-opt-python-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_ENV</span></code><a class="headerlink" href="#libfoo-env" title="Link to this heading">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.17.</span></p>
+</div>
 <p>Provides a means to pass environment variables into all stages for a
 package. This option is defined as a dictionary with key-value pairs where
 the key is the environment name and the value is the environment variable’s
@@ -527,6 +530,12 @@ interpreter will be used. This field is optional.</p>
 </section>
 <section id="libfoo-python-setup-type">
 <span id="pkg-opt-python-setup-type"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_SETUP_TYPE</span></code><a class="headerlink" href="#libfoo-python-setup-type" title="Link to this heading">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.13.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.14: </span>Support added for <code class="docutils literal notranslate"><span class="pre">poetry</span></code>.</p>
+</div>
 <p>The setup type will configure how a Python package is built and installed.
 The default setup type used for a Python package is a distutils package. It
 is recommended to always configure a setup type for a Python package.

@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=df54547a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=ddcdc2ba" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
     
     
@@ -424,6 +424,9 @@ instead of the output directory (if any) found in the root directory.</p>
 </section>
 <section id="distclean">
 <span id="action-distclean"></span><h3><code class="docutils literal notranslate"><span class="pre">distclean</span></code><a class="headerlink" href="#distclean" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.6.</span></p>
+</div>
 <p>Perform a more extreme pristine clean of the releng-tool project.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>distclean
 </pre></div>
@@ -461,6 +464,9 @@ argument.</p>
 </section>
 <section id="fetch-full">
 <span id="action-fetch-full"></span><h3><code class="docutils literal notranslate"><span class="pre">fetch-full</span></code><a class="headerlink" href="#fetch-full" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.3.</span></p>
+</div>
 <p>All packages will be processed up to the extraction phase, as well as any
 post-extraction fetch operations for supported package types (e.g. fetching
 Cargo dependencies).</p>
@@ -471,6 +477,9 @@ Cargo dependencies).</p>
 </section>
 <section id="init">
 <h3><code class="docutils literal notranslate"><span class="pre">init</span></code><a class="headerlink" href="#init" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.6.</span></p>
+</div>
 <p>Initialize an empty root directory with a sample project.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>init
 </pre></div>
@@ -487,6 +496,9 @@ packages. Therefore, packages will be fetched/extracted if not already done.</p>
 </section>
 <section id="mrproper">
 <span id="action-mrproper"></span><h3><code class="docutils literal notranslate"><span class="pre">mrproper</span></code><a class="headerlink" href="#mrproper" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.6.</span></p>
+</div>
 <p>Perform a pristine clean of the releng-tool project.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>mrproper
 </pre></div>
@@ -506,6 +518,9 @@ actions.</p>
 </section>
 <section id="punch">
 <span id="action-punch"></span><h3><code class="docutils literal notranslate"><span class="pre">punch</span></code><a class="headerlink" href="#punch" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.2.</span></p>
+</div>
 <p>A punch request acts in a similar fashion as if no global action was provided.
 All configured packages will be processed to their completion and any post
 actions will be run. The difference between a default run and a punch run is
@@ -519,6 +534,9 @@ project when multiple packages have been updated.</p>
 </section>
 <section id="sbom">
 <span id="action-sbom"></span><h3><code class="docutils literal notranslate"><span class="pre">sbom</span></code><a class="headerlink" href="#sbom" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.14.</span></p>
+</div>
 <p>A request to generate a software build of materials (SBOM) for the project.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>sbom
 </pre></div>
@@ -528,6 +546,9 @@ run. This action can be used to generate an SBOM without requiring a build.</p>
 </section>
 <section id="state">
 <span id="action-state"></span><h3><code class="docutils literal notranslate"><span class="pre">state</span></code><a class="headerlink" href="#state" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.17.</span></p>
+</div>
 <p>A request to dump active state information for a project.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>state
 </pre></div>
@@ -571,6 +592,9 @@ does not exist, a notification will be generated.</p>
 </section>
 <section id="pkg-var-distclean">
 <span id="action-pkg-distclean"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-distclean</span></code><a class="headerlink" href="#pkg-var-distclean" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.8.</span></p>
+</div>
 <p>Perform a pristine clean of a releng-tool package.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-distclean
 </pre></div>
@@ -581,6 +605,9 @@ or directory associated with the package. See also the
 </section>
 <section id="pkg-var-exec-cmd-var">
 <h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-exec</span> <span class="pre">&quot;&lt;cmd&gt;&quot;</span></code><a class="headerlink" href="#pkg-var-exec-cmd-var" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.12.</span></p>
+</div>
 <p>Invokes a provided command in the package’s build output directory. This
 package action can be useful for developers attempting to develop/debug a
 specific package, allowing an easy way to issue commands in a package’s
@@ -615,6 +642,9 @@ generated.</p>
 </section>
 <section id="pkg-var-fetch-full">
 <span id="action-pkg-fetch-full"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch-full</span></code><a class="headerlink" href="#pkg-var-fetch-full" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.3.</span></p>
+</div>
 <p>Performs the fetch and extraction stages for the package, as well as any
 post-extraction fetch operations for the supported package type (e.g.
 fetching Cargo dependencies).</p>
@@ -637,6 +667,9 @@ does not exist, a notification will be generated.</p>
 </section>
 <section id="pkg-var-license">
 <h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-license</span></code><a class="headerlink" href="#pkg-var-license" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.8.</span></p>
+</div>
 <p>A request to generate the license information for a specific package
 in a project.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-license
@@ -675,6 +708,9 @@ understand this action’s effect.</p>
 </section>
 <section id="pkg-var-rebuild-only">
 <h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild-only</span></code><a class="headerlink" href="#pkg-var-rebuild-only" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.7.</span></p>
+</div>
 <p>Force a rebuild of a specific package.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-rebuild-only
 </pre></div>
@@ -711,6 +747,9 @@ understand this action’s effect.</p>
 </section>
 <section id="pkg-var-reconfigure-only">
 <h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reconfigure-only</span></code><a class="headerlink" href="#pkg-var-reconfigure-only" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.7.</span></p>
+</div>
 <p>Force a re-configuration of a specific package.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-reconfigure-only
 </pre></div>
@@ -748,6 +787,9 @@ understand this action’s effect.</p>
 <p>The following outlines available options:</p>
 <section id="assets-dir-dir-var">
 <span id="arg-assets-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">--assets-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#assets-dir-dir-var" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.10.</span></p>
+</div>
 <p>Directory to hold cache and download folders instead of using a configured
 root directory.</p>
 <div class="admonition note">
@@ -766,6 +808,9 @@ or <code class="docutils literal notranslate"><span class="pre">--dl-dir</span><
 </section>
 <section id="config-file-var">
 <h3><code class="docutils literal notranslate"><span class="pre">--config</span> <span class="pre">&lt;file&gt;</span></code><a class="headerlink" href="#config-file-var" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.13.</span></p>
+</div>
 <p>Configuration file to load (defaults to <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/releng</span></code>).</p>
 </section>
 <section id="debug">
@@ -774,6 +819,9 @@ or <code class="docutils literal notranslate"><span class="pre">--dl-dir</span><
 </section>
 <section id="d-development-mode-var">
 <h3><code class="docutils literal notranslate"><span class="pre">-D</span></code>, <code class="docutils literal notranslate"><span class="pre">--development</span> <span class="pre">[&lt;mode&gt;]</span></code><a class="headerlink" href="#d-development-mode-var" title="Link to this heading">¶</a></h3>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.13: </span>Support configurable modes.</p>
+</div>
 <p>Enables <a class="reference internal" href="../development-mode/"><span class="doc std std-doc">development mode</span></a>.</p>
 </section>
 <section id="dl-dir-dir-var">
@@ -783,6 +831,9 @@ or <code class="docutils literal notranslate"><span class="pre">--dl-dir</span><
 </section>
 <section id="f-force">
 <span id="arg-force"></span><h3><code class="docutils literal notranslate"><span class="pre">-F</span></code>, <code class="docutils literal notranslate"><span class="pre">--force</span></code><a class="headerlink" href="#f-force" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.11.</span></p>
+</div>
 <p>Triggers a forced request for the releng-tool invoke. This entails:</p>
 <ul class="simple">
 <li><p>Packages will be processed as if a re-configuration request has
@@ -798,6 +849,9 @@ will have their cache files deleted to be re-fetched.</p></li>
 </section>
 <section id="images-dir-dir-var">
 <h3><code class="docutils literal notranslate"><span class="pre">--images-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#images-dir-dir-var" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.13.</span></p>
+</div>
 <p>Directory for image outputs (defaults to <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/output/images</span></code>).</p>
 </section>
 <section id="j-jobs-jobs-var">
@@ -806,6 +860,9 @@ will have their cache files deleted to be re-fetched.</p></li>
 </section>
 <section id="l-local-sources-pkg-var-dir-var">
 <h3><code class="docutils literal notranslate"><span class="pre">-L</span></code>, <code class="docutils literal notranslate"><span class="pre">--local-sources</span> <span class="pre">[[&lt;pkg&gt;:]&lt;dir&gt;]</span></code><a class="headerlink" href="#l-local-sources-pkg-var-dir-var" title="Link to this heading">¶</a></h3>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.13: </span>Support configurable packages and directories.</p>
+</div>
 <p>Enables <a class="reference internal" href="../local-sources-mode/"><span class="doc std std-doc">local-sources mode</span></a>.</p>
 <p>Without a directory provided, sources of
 <a class="reference internal" href="../intern-extern-pkgs/"><span class="doc std std-doc">internal packages</span></a> will be looked for in the
@@ -830,6 +887,9 @@ configured in the running environment.</p>
 </section>
 <section id="relaxed-args">
 <span id="arg-relaxed-args"></span><h3><code class="docutils literal notranslate"><span class="pre">--relaxed-args</span></code><a class="headerlink" href="#relaxed-args" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.3.</span></p>
+</div>
 <p>Do not throw an error when releng-tool is provided unknown arguments.</p>
 <p>See also <a class="reference internal" href="../environment/#env-releng-ignore-unknown-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_UNKNOWN_ARGS</span></code></span></a>.</p>
 </section>
@@ -840,6 +900,9 @@ directory).</p>
 </section>
 <section id="sbom-format-fmt-var">
 <h3><code class="docutils literal notranslate"><span class="pre">--sbom-format</span> <span class="pre">&lt;fmt&gt;</span></code><a class="headerlink" href="#sbom-format-fmt-var" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.14.</span></p>
+</div>
 <p>The format to use when generating a software build of materials (SBOM).
 Multiple formats can be provided (comma-separated).</p>
 <div class="table-wrapper colwidths-auto docutils container">
@@ -878,6 +941,9 @@ Multiple formats can be provided (comma-separated).</p>
 </section>
 <section id="quirk-quirk-id-var">
 <h3><code class="docutils literal notranslate"><span class="pre">--quirk</span> <span class="pre">&lt;quirk-id&gt;</span></code><a class="headerlink" href="#quirk-quirk-id-var" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.4.</span></p>
+</div>
 <p>Allows specifying a runtime <a class="reference internal" href="../quirks/quirks/"><span class="doc std std-doc">quirk</span></a> for the releng-tool
 process. This option can be used multiple times to apply multiple quirks.</p>
 </section>
@@ -891,6 +957,9 @@ process. This option can be used multiple times to apply multiple quirks.</p>
 </section>
 <section id="werror-werror">
 <h3><code class="docutils literal notranslate"><span class="pre">--werror</span></code>, <code class="docutils literal notranslate"><span class="pre">-Werror</span></code><a class="headerlink" href="#werror-werror" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.14.</span></p>
+</div>
 <p>Treat warnings from releng-tool as errors.</p>
 </section>
 </section>
