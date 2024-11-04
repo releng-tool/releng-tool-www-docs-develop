@@ -424,10 +424,13 @@ releng-tool, please see the project’s <a class="reference external" href="http
 <ul class="simple">
 <li><p>Allow adding a package without a definition that defines at least one script</p></li>
 <li><p>Correct <code class="docutils literal notranslate"><span class="pre">hint</span></code> missing from script environments</p></li>
+<li><p>Disable garbage collection and maintenance tasks for Git caches</p></li>
 <li><p>Ensure the <code class="docutils literal notranslate"><span class="pre">punch</span></code> action triggers the post-build stage</p></li>
 <li><p>Fixed issue where <code class="docutils literal notranslate"><span class="pre">releng_copy</span></code> could not copy a broken symbolic link</p></li>
 <li><p>Fixed issue where <code class="docutils literal notranslate"><span class="pre">releng_remove</span></code> could not remove a broken symbolic link</p></li>
 <li><p>Flag <code class="docutils literal notranslate"><span class="pre">RELENG_FORCE</span></code> when using the <code class="docutils literal notranslate"><span class="pre">punch</span></code> action</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">RELENG_EXEC</span></code> environment/script variable</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">libfoo-fresh</span></code> action</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">releng_symlink</span></code> helper script function</p></li>
 <li><p>Introduce a <code class="docutils literal notranslate"><span class="pre">nested</span></code> option for I/O copy/move utility calls</p></li>
 <li><p>Support injecting Visual Studio development environment variables</p></li>

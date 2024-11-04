@@ -604,9 +604,12 @@ or directory associated with the package. See also the
 <a class="reference internal" href="#action-pkg-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-clean</span></code></span></a> action.</p>
 </section>
 <section id="pkg-var-exec-cmd-var">
-<h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-exec</span> <span class="pre">&quot;&lt;cmd&gt;&quot;</span></code><a class="headerlink" href="#pkg-var-exec-cmd-var" title="Link to this heading">¶</a></h3>
+<span id="action-pkg-exec"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-exec</span> <span class="pre">&quot;&lt;cmd&gt;&quot;</span></code><a class="headerlink" href="#pkg-var-exec-cmd-var" title="Link to this heading">¶</a></h3>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.12.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Zmienione w wersji 1.4: </span>Support accepting arguments after <code class="docutils literal notranslate"><span class="pre">--</span></code>.</p>
 </div>
 <p>Invokes a provided command in the package’s build output directory. This
 package action can be useful for developers attempting to develop/debug a
@@ -616,6 +619,10 @@ directory. Packages will need to be processed to at least the patch stage
 before a provided command is issued.</p>
 <p>An example is as follows:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>libfoo-exec<span class="w"> </span><span class="s2">&quot;mycmd arg1 arg2&quot;</span>
+</pre></div>
+</div>
+<p>Alternatively, arguments can be passed using the format:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>libfoo-exec<span class="w"> </span>--<span class="w"> </span>mycmd<span class="w"> </span>arg1<span class="w"> </span>arg2
 </pre></div>
 </div>
 <p>Package environment variables will be available for the invoked command.</p>
@@ -649,6 +656,21 @@ generated.</p>
 post-extraction fetch operations for the supported package type (e.g.
 fetching Cargo dependencies).</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-fetch-full
+</pre></div>
+</div>
+<p>If the provided package name does not exist, a notification will be
+generated.</p>
+</section>
+<section id="pkg-var-fresh">
+<span id="action-pkg-fresh"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fresh</span></code><a class="headerlink" href="#pkg-var-fresh" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.4.</span></p>
+</div>
+<p>Prepares a package to be ready to invoke its configuration stage. A
+successful end state results in the specified package will have
+completed its patch stage. If the package has already been processed
+before, it will be cleaned ahead of time to start fresh.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-fresh
 </pre></div>
 </div>
 <p>If the provided package name does not exist, a notification will be
@@ -1049,6 +1071,7 @@ process. This option can be used multiple times to apply multiple quirks.</p>
 <li><a class="reference internal" href="#pkg-var-extract"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-extract</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-fetch"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-fetch-full"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch-full</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-fresh"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fresh</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-install"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-install</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-license"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-license</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-patch"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-patch</span></code></a></li>
