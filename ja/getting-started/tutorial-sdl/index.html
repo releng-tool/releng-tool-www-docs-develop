@@ -286,6 +286,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../guides/quirks/quirk-git-no_depth/">releng.git.no_depth</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../guides/quirks/quirk-git-no_quick_fetch/">releng.git.no_quick_fetch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../guides/quirks/quirk-git-replicate_cache/">releng.git.replicate_cache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/quirks/quirk-log-execute_args/">releng.log.execute_args</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../guides/quirks/quirk-log-execute_env/">releng.log.execute_env</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../guides/quirks/quirk-stats-no_pdf/">releng.stats.no_pdf</a></li>
 </ul>
@@ -425,7 +426,7 @@ uses the SDL library.</p>
 <section id="the-libsdl-package">
 <h2>The libsdl package<a class="headerlink" href="#the-libsdl-package" title="Link to this heading">¶</a></h2>
 <p>Inside the <code class="docutils literal notranslate"><span class="pre">libsdl</span></code> package, create a package definition
-<code class="docutils literal notranslate"><span class="pre">my-project/package/libsdl/libsdl</span></code> with the following contents:</p>
+<code class="docutils literal notranslate"><span class="pre">my-project/package/libsdl/libsdl.rt</span></code> with the following contents:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBSDL_LICENSE</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Zlib&#39;</span><span class="p">]</span>
 <span class="n">LIBSDL_LICENSE_FILES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;LICENSE.txt&#39;</span><span class="p">]</span>
 <span class="n">LIBSDL_SITE</span> <span class="o">=</span> <span class="s1">&#39;https://www.libsdl.org/release/SDL2-$</span><span class="si">{LIBSDL_VERSION}</span><span class="s1">.tar.gz&#39;</span>
@@ -518,7 +519,7 @@ tutorial:</p>
     └── package/
         ├── libsdl/
         │   ├── 001-empty-prefix-support.patch
-        │   ├── libsdl
+        │   ├── libsdl.rt
         │   └── libsdl.hash
         └── sample/
 </pre></div>
@@ -531,7 +532,7 @@ project would typically be stored in a version control system such as a
 Git repository. To simplify this tutorial, we will utilize a <code class="docutils literal notranslate"><span class="pre">local</span></code> VCS
 type (typically used for interim development) to help demonstrate the
 sample project.</p>
-<p>Create a package definition <code class="docutils literal notranslate"><span class="pre">my-sdl-project/sample/sample</span></code> with the
+<p>Create a package definition <code class="docutils literal notranslate"><span class="pre">my-sdl-project/sample/sample.rt</span></code> with the
 following contents:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SAMPLE_NEEDS</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;libsdl&#39;</span><span class="p">,</span>
@@ -699,7 +700,7 @@ tutorial:</p>
     └── package/
         ├── libsdl/
         │   ├── 001-empty-prefix-support.patch
-        │   ├── libsdl
+        │   ├── libsdl.rt
         │   └── libsdl.hash
         └── sample/
             ├── local/
@@ -707,7 +708,7 @@ tutorial:</p>
             │   │   └── sample/
             │   │       └── main.c
             │   └── CMakeLists.txt
-            └── sample
+            └── sample.rt
 </pre></div>
 </div>
 </section>
@@ -721,7 +722,7 @@ post-build stages.</p>
 <p>Create a new <code class="docutils literal notranslate"><span class="pre">assets</span></code> folder at the root of the project folder. Inside,
 place a copy of the <a class="reference download internal" download="" href="../../_downloads/76c9d3887ce802f79198650cea36484b/releng-tool.bmp"><span class="xref download myst">releng-tool.bmp</span></a> image.
 At the root of the project folder, create a post-build script named
-<code class="docutils literal notranslate"><span class="pre">releng-post-build</span></code> with the following contents:</p>
+<code class="docutils literal notranslate"><span class="pre">releng-tool-post-build.rt</span></code> with the following contents:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">assets_dir</span> <span class="o">=</span> <span class="n">releng_join</span><span class="p">(</span><span class="n">ROOT_DIR</span><span class="p">,</span> <span class="s1">&#39;assets&#39;</span><span class="p">)</span>
 <span class="n">sample_img</span> <span class="o">=</span> <span class="n">releng_join</span><span class="p">(</span><span class="n">assets_dir</span><span class="p">,</span> <span class="s1">&#39;releng-tool.bmp&#39;</span><span class="p">)</span>
 <span class="n">releng_copy_into</span><span class="p">(</span><span class="n">sample_img</span><span class="p">,</span> <span class="n">TARGET_BIN_DIR</span><span class="p">)</span>
@@ -734,7 +735,8 @@ helper to find where we locally store the <code class="docutils literal notransl
 placed alongside the executable we plan to build.</p></li>
 </ul>
 <p>Lastly, we need to create our releng-tool configuration file for the project.
-In the root folder, create a <code class="docutils literal notranslate"><span class="pre">releng</span></code> file with the following contents:</p>
+In the root folder, create a <code class="docutils literal notranslate"><span class="pre">releng-tool.rt</span></code> file with the following
+contents:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">packages</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;sample&#39;</span><span class="p">,</span>
 <span class="p">]</span>
@@ -757,7 +759,7 @@ tutorial:</p>
     ├── package/
     │   ├── libsdl/
     │   │   ├── 001-empty-prefix-support.patch
-    │   │   ├── libsdl
+    │   │   ├── libsdl.rt
     │   │   └── libsdl.hash
     │   └── sample/
     │       ├── local/
@@ -765,9 +767,9 @@ tutorial:</p>
     │       │   │   └── sample/
     │       │   │       └── main.c
     │       │   └── CMakeLists.txt
-    │       └── sample
-    ├── releng
-    └── releng-post-build
+    │       └── sample.rt
+    ├── releng-tool.rt
+    └── releng-tool-post-build.rt
 </pre></div>
 </div>
 </section>

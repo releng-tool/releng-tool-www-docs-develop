@@ -286,6 +286,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-git-no_depth/">releng.git.no_depth</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-git-no_quick_fetch/">releng.git.no_quick_fetch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-git-replicate_cache/">releng.git.replicate_cache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-log-execute_args/">releng.log.execute_args</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-log-execute_env/">releng.log.execute_env</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-stats-no_pdf/">releng.stats.no_pdf</a></li>
 </ul>
@@ -864,8 +865,8 @@ in <code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_BUIL
     │               └── ...
     ├── package/
     │   └── libfoo/
-    │       └── libfoo.py
-    ├── releng
+    │       └── libfoo.rt
+    ├── releng-tool.rt
     ...
 </pre></div>
 </div>
@@ -882,8 +883,8 @@ out of the root directory:</p>
     │           └── ...
     ├── package/
     │   └── libfoo/
-    │       └── libfoo.py
-    ├── releng
+    │       └── libfoo.rt
+    ├── releng-tool.rt
     ...
 </pre></div>
 </div>
@@ -898,8 +899,8 @@ the package’s definition directory:</p>
     │   └── libfoo/
     │       └── local/                &lt;---- LIBFOO_BUILD_DIR
     │           └── ...
-    │       └── libfoo.py
-    ├── releng
+    │       └── libfoo.rt
+    ├── releng-tool.rt
     ...
 </pre></div>
 </div>
@@ -917,8 +918,8 @@ version (e.g. <code class="docutils literal notranslate"><span class="pre">libfo
     │           └── ...
     ├── package/
     │   └── libfoo/
-    │       └── libfoo.py
-    ├── releng
+    │       └── libfoo.rt
+    ├── releng-tool.rt
     ...
 </pre></div>
 </div>
@@ -931,8 +932,8 @@ just be <code class="docutils literal notranslate"><span class="pre">libfoo</spa
     │           └── ...
     ├── package/
     │   └── libfoo/
-    │       └── libfoo.py
-    ├── releng
+    │       └── libfoo.rt
+    ├── releng-tool.rt
     ...
 </pre></div>
 </div>
@@ -947,8 +948,8 @@ for package types like CMake. For example:</p>
     │               └── ...
     ├── package/
     │   └── libfoo/
-    │       └── libfoo.py
-    ├── releng
+    │       └── libfoo.rt
+    ├── releng-tool.rt
     ...
 </pre></div>
 </div>
@@ -961,8 +962,8 @@ variable will contain a directory path matching the path seen below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my-releng-tool-project/
     ├── package/
     │   └── libfoo/                   &lt;---- LIBFOO_DEFDIR
-    │       └── libfoo.py
-    ├── releng
+    │       └── libfoo.rt
+    ├── releng-tool.rt
     ...
 </pre></div>
 </div>
@@ -1088,10 +1089,10 @@ and configures this option to the path <code class="docutils literal notranslate
 │           └── projects/
 │               ├── my-project-a/
 │               │   ├── ...
-│               │   └── releng.py
+│               │   └── releng-tool.rt
 │               └── my-project-b/
 │                   ├── ...
-│                   └── releng.py
+│                   └── releng-tool.rt
 └── mnt/
     └── extern-disk/
         ├── my-project-a/

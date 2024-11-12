@@ -286,6 +286,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-git-no_depth/">releng.git.no_depth</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-git-no_quick_fetch/">releng.git.no_quick_fetch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-git-replicate_cache/">releng.git.replicate_cache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-log-execute_args/">releng.log.execute_args</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-log-execute_env/">releng.log.execute_env</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-stats-no_pdf/">releng.stats.no_pdf</a></li>
 </ul>
@@ -397,8 +398,8 @@
         <article role="main" id="furo-main-content">
           <section id="configuration">
 <h1>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h1>
-<p>A releng-tool project defines its configuration options inside the a <code class="docutils literal notranslate"><span class="pre">releng</span></code>
-file at the root of a project (or <code class="docutils literal notranslate"><span class="pre">releng.releng</span></code>/<code class="docutils literal notranslate"><span class="pre">releng.py</span></code> file; see also
+<p>A releng-tool project defines its configuration options inside the a
+<code class="docutils literal notranslate"><span class="pre">releng-tool.rt</span></code> file at the root of a project (or other defaults; see
 <a class="reference internal" href="../tips/alternative-extensions/"><span class="doc std std-doc">alternative extensions</span></a>). The primary
 configuration option for a developer to define is <code class="docutils literal notranslate"><span class="pre">packages</span></code>, which is used
 to hold a list of packages to be processed. For example, a project structure
@@ -411,7 +412,7 @@ such as follows:</p>
     │   │   └── ...
     │   └── package-c/
     │       └── ...
-    └── releng                        &lt;----
+    └── releng-tool.rt                &lt;----
 </pre></div>
 </div>
 <p>Can have a configuration (<code class="docutils literal notranslate"><span class="pre">releng</span></code>) such as:</p>

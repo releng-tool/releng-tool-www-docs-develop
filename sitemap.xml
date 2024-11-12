@@ -3015,6 +3015,76 @@
         <changefreq>monthly</changefreq>
     </url>
     <url>
+        <loc>https://docs-develop.releng.io/en/guides/quirks/quirk-log-execute_args/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-log-execute_args/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/guides/quirks/quirk-log-execute_args/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-log-execute_args/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/guides/quirks/quirk-log-execute_args/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-log-execute_args/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/guides/quirks/quirk-log-execute_args/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-log-execute_args/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/guides/quirks/quirk-log-execute_args/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-log-execute_args/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-log-execute_args/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-log-execute_args/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-log-execute_args/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-log-execute_args/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-log-execute_args/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
         <loc>https://docs-develop.releng.io/en/guides/quirks/quirk-cmake-disable_direct_includes/</loc>
         <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-cmake-disable_direct_includes/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-cmake-disable_direct_includes/"/>
