@@ -279,6 +279,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../guides/quirks/quirk-bzr-certifi/">releng.bzr.certifi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../guides/quirks/quirk-cmake-disable_direct_includes/">releng.cmake.disable_direct_includes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../guides/quirks/quirk-cmake-disable_parallel_option/">releng.cmake.disable_parallel_option</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides/quirks/quirk-disable_local_site_warn/">releng.disable_local_site_warn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../guides/quirks/quirk-disable_prerequisites_check/">releng.disable_prerequisites_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../guides/quirks/quirk-disable_remote_configs/">releng.disable_remote_configs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../guides/quirks/quirk-disable_remote_scripts/">releng.disable_remote_scripts</a></li>
@@ -469,12 +470,16 @@ from the local system, ensuring a next-build to download fresh sources.</p>
 </section>
 <section id="full-fetching">
 <h2>Full fetching<a class="headerlink" href="#full-fetching" title="Link to this heading">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 1.4 版本发生变更: </span>Post-fetching will occur after the patching stage instead of the
+extraction phase.</p>
+</div>
 <p>Most package sources are acquired during the fetch stage. However, some
 packages define dependencies within their sources. This can require
 releng-tool to first fetch a defined package's sources, extract the
 package, followed by fetching any defined dependencies. Post-fetching
 will be automatically performed for supported packages (e.g. Cargo) after
-their extraction stage. Users can invoke the <a class="reference internal" href="../../guides/arguments/#action-fetch-full"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">fetch-full</span></code></span></a>
+their patch stage. Users can invoke the <a class="reference internal" href="../../guides/arguments/#action-fetch-full"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">fetch-full</span></code></span></a>
 action to explicitly process releng-tool's fetch-post operations:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="n">fetch</span><span class="o">-</span><span class="n">full</span>
 </pre></div>

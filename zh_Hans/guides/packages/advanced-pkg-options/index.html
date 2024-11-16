@@ -279,6 +279,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-bzr-certifi/">releng.bzr.certifi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-cmake-disable_direct_includes/">releng.cmake.disable_direct_includes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-cmake-disable_parallel_option/">releng.cmake.disable_parallel_option</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-disable_local_site_warn/">releng.disable_local_site_warn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-disable_prerequisites_check/">releng.disable_prerequisites_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-disable_remote_configs/">releng.disable_remote_configs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-disable_remote_scripts/">releng.disable_remote_scripts</a></li>
@@ -776,6 +777,9 @@ contains multiple container directories, a higher strip count can be set.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 0.17 版本发生变更: </span>Support added for <code class="docutils literal notranslate"><span class="pre">perforce</span></code>.</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 1.4 版本发生变更: </span>Support added for <code class="docutils literal notranslate"><span class="pre">brz+</span></code>.</p>
+</div>
 <p>Explicitly sets the version control system type to use when acquiring
 sources. releng-tool attempts to automatically determine the VCS type of
 a package based off a <a class="reference internal" href="../common-pkg-options/#pkg-opt-site"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_SITE</span></code></span></a> value. In some
@@ -784,6 +788,7 @@ A developer can instead explicitly set the VCS type to be used no matter
 what the site value is configured as.</p>
 <p>Supported types are as follows:</p>
 <ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">brz</span></code> (Breezy)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bzr</span></code> (Bazaar)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cvs</span></code> (CVS)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span></code> (Git)</p></li>

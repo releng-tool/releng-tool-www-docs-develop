@@ -279,6 +279,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-bzr-certifi/">releng.bzr.certifi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-cmake-disable_direct_includes/">releng.cmake.disable_direct_includes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-cmake-disable_parallel_option/">releng.cmake.disable_parallel_option</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_local_site_warn/">releng.disable_local_site_warn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_prerequisites_check/">releng.disable_prerequisites_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_remote_configs/">releng.disable_remote_configs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_remote_scripts/">releng.disable_remote_scripts</a></li>
@@ -424,6 +425,7 @@ releng-tool, please see the project’s <a class="reference external" href="http
 <h2>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Allow adding a package without a definition that defines at least one script</p></li>
+<li><p>Allow users to suppress local-site package warnings</p></li>
 <li><p>Correct <code class="docutils literal notranslate"><span class="pre">hint</span></code> missing from script environments</p></li>
 <li><p>Disable garbage collection and maintenance tasks for Git caches</p></li>
 <li><p>Ensure the <code class="docutils literal notranslate"><span class="pre">punch</span></code> action triggers the post-build stage</p></li>
@@ -432,12 +434,17 @@ releng-tool, please see the project’s <a class="reference external" href="http
 <li><p>Fixed issue where <code class="docutils literal notranslate"><span class="pre">releng_remove</span></code> could not remove a broken symbolic link</p></li>
 <li><p>Fixed patch overrides not supporting alternative file extensions</p></li>
 <li><p>Flag <code class="docutils literal notranslate"><span class="pre">RELENG_FORCE</span></code> when using the <code class="docutils literal notranslate"><span class="pre">punch</span></code> action</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">LIBFOO_CARGO_NOINSTALL</span></code> to support Cargo libraries</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">RELENG_EXEC</span></code> environment/script variable</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">libfoo-fresh</span></code> action</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">releng_symlink</span></code> helper script function</p></li>
 <li><p>Introduce a <code class="docutils literal notranslate"><span class="pre">nested</span></code> option for I/O copy/move utility calls</p></li>
+<li><p>Introduce a shared build target for Cargo packages</p></li>
+<li><p>Perform automatic Cargo patching for project-managed dependencies</p></li>
+<li><p>Post-fetching Cargo dependencies now occurs after a package’s patch stage</p></li>
 <li><p>Promote use of <code class="docutils literal notranslate"><span class="pre">.rt</span></code> extensions for definitions/scripts</p></li>
 <li><p>Promote use of <code class="docutils literal notranslate"><span class="pre">releng-tool.rt</span></code> for project configuration</p></li>
+<li><p>Support Breezy VCS-type</p></li>
 <li><p>Support injecting Visual Studio development environment variables</p></li>
 <li><p>Support preallocated list/dictionary package configurations</p></li>
 <li><p>Utilize forwarded arguments as fallback for <code class="docutils literal notranslate"><span class="pre">libfoo-exec</span></code> action</p></li>

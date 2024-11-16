@@ -279,6 +279,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-bzr-certifi/">releng.bzr.certifi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-cmake-disable_direct_includes/">releng.cmake.disable_direct_includes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-cmake-disable_parallel_option/">releng.cmake.disable_parallel_option</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_local_site_warn/">releng.disable_local_site_warn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_prerequisites_check/">releng.disable_prerequisites_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_remote_configs/">releng.disable_remote_configs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_remote_scripts/">releng.disable_remote_scripts</a></li>
@@ -418,7 +419,7 @@
 <a class="reference internal" href="../guides/arguments/#action-pkg-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-clean</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-pkg-configure"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-configure</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-pkg-distclean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-distclean</span></code></span></a>
-<a class="reference internal" href="../guides/arguments/#action-pkg-exec"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-exec</span> <span class="pre">&quot;&lt;cmd&gt;&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-exec</span> <span class="pre">--</span> <span class="pre">&lt;cmd&gt;</span> <span class="pre">&lt;arg1&gt;</span> <span class="pre">&lt;arg2&gt;</span></code></span></a>
+<a class="reference internal" href="../guides/arguments/#action-pkg-exec"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-exec</span> <span class="pre">&quot;&lt;cmd&gt;&quot;</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-pkg-extract"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-extract</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-pkg-fetch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-pkg-fetch-full"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch-full</span></code></span></a>
@@ -563,6 +564,8 @@
 <code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_OPTS</span></code> = {'--option': 'value'} or ['--option', 'value']
   └── <em>(<a class="reference internal" href="../guides/packages/pkg-type-autotools/#pkg-opt-autotools-build-opts"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-cargo/#pkg-opt-cargo-build-opts"><span class="std std-ref">Cargo</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-cmake/#pkg-opt-cmake-build-opts"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-make/#pkg-opt-make-build-opts"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-meson/#pkg-opt-meson-build-opts"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-python/#pkg-opt-python-build-opts"><span class="std std-ref">Python</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-scons/#pkg-opt-scons-build-opts"><span class="std std-ref">SCons</span></a>)</em>
 <a class="reference internal" href="../guides/packages/advanced-pkg-options/#pkg-opt-build-subdir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_SUBDIR</span></code></span></a> = '&lt;subdir&gt;'
+<a class="reference internal" href="../guides/packages/pkg-type-cargo/#pkg-opt-cargo-name"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CARGO_NAME</span></code></span></a> = str
+<a class="reference internal" href="../guides/packages/pkg-type-cargo/#pkg-opt-cargo-noinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CARGO_NOINSTALL</span></code></span></a> = bool
 <a class="reference internal" href="../guides/packages/pkg-type-cmake/#pkg-opt-cmake-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CMAKE_BUILD_TYPE</span></code></span></a> = str
 <a class="reference internal" href="../guides/packages/pkg-type-cmake/#pkg-opt-cmake-noinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CMAKE_NOINSTALL</span></code></span></a> = bool
 <code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_DEFS</span></code> = {'FOO': 'BAR'}
@@ -619,7 +622,7 @@
 <a class="reference internal" href="../guides/packages/common-pkg-options/#pkg-opt-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_TYPE</span></code></span></a> = '&lt;type&gt;'
   └── autotools, cargo, cmake, make, meson, python, scons, script, ext-&lt;extension&gt;
 <a class="reference internal" href="../guides/packages/advanced-pkg-options/#pkg-opt-vcs-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VCS_TYPE</span></code></span></a> = '&lt;vcs-type&gt;'
-  └── bzr, cvs, git, hg, local, none, perforce, rsync, scp, svn, url
+  └── brz, bzr, cvs, git, hg, local, none, perforce, rsync, scp, svn, url
 <a class="reference internal" href="../guides/packages/common-pkg-options/#pkg-opt-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VERSION</span></code></span></a> = '&lt;version&gt;'
 <a class="reference internal" href="../guides/packages/system-pkg-options/#pkg-opt-vsdevcmd"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VSDEVCMD</span></code></span></a> = bool or str</pre>
 </section>
@@ -662,6 +665,7 @@
 <p>Quirk options used by releng-tool:</p>
 <pre class="literal-block"><a class="reference internal" href="../guides/quirks/quirk-bzr-certifi/#quirk-releng-bzr-certifi"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.bzr.certifi</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-cmake-disable_direct_includes/#quirk-releng-cmake-disable-direct-includes"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_direct_includes</span></code></span></a>
+<a class="reference internal" href="../guides/quirks/quirk-disable_local_site_warn/#quirk-releng-disable-local-site-warn"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_local_site_warn</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-disable_prerequisites_check/#quirk-releng-disable-prerequisites-check"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_prerequisites_check</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-disable_remote_configs/#quirk-releng-disable-remote-configs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_remote_configs</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-disable_remote_scripts/#quirk-releng-disable-remote-scripts"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_remote_scripts</span></code></span></a>
