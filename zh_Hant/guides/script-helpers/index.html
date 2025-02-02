@@ -685,12 +685,15 @@ be removed.</p>
 
 <dl class="py function" id="script-releng-execute">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cwd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">poll</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capture</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cwd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">poll</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capture</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_stderr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
 <dd><div class="versionchanged">
 <p><span class="versionmodified changed">在 1.13 版本发生变更: </span>Add support for <code class="docutils literal notranslate"><span class="pre">expand</span></code>.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 1.14 版本发生变更: </span>Add support for <code class="docutils literal notranslate"><span class="pre">args_str</span></code>.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 2.0 版本发生变更: </span>Add support for <code class="docutils literal notranslate"><span class="pre">ignore_stderr</span></code>.</p>
 </div>
 <p>Runs the command described by <code class="docutils literal notranslate"><span class="pre">args</span></code> until completion. A caller can adjust
 the working directory of the executed command by explicitly setting the
@@ -743,6 +746,7 @@ list will be populated with the output provided from an invoked process.</p>
 <li><p><strong>capture</strong> (<em>optional</em>) -- list to capture output into</p></li>
 <li><p><strong>expand</strong> (<em>optional</em>) -- perform variable expansion on arguments</p></li>
 <li><p><strong>args_str</strong> (<em>optional</em>) -- invoke arguments as a single string</p></li>
+<li><p><strong>ignore_stderr</strong> (<em>optional</em>) -- ignore any stderr output</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回<span class="colon">:</span></dt>
@@ -760,6 +764,15 @@ execution has failed</p>
 <span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_execute_rv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span></dt>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.8.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 1.13 版本发生变更: </span>Add support for <code class="docutils literal notranslate"><span class="pre">expand</span></code>.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 1.14 版本发生变更: </span>Add support for <code class="docutils literal notranslate"><span class="pre">args_str</span></code>.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 2.0 版本发生变更: </span>Add support for <code class="docutils literal notranslate"><span class="pre">ignore_stderr</span></code>.</p>
 </div>
 <p>Runs the command <code class="docutils literal notranslate"><span class="pre">command</span></code> with provided <code class="docutils literal notranslate"><span class="pre">args</span></code> until completion. A
 caller can adjust the working directory of the executed command by
@@ -792,6 +805,7 @@ instead of the original environment of the caller.</p>
 <li><p><strong>**env_update</strong> -- environment variables to append for the process</p></li>
 <li><p><strong>**expand</strong> -- perform variable expansion on arguments</p></li>
 <li><p><strong>**args_str</strong> -- invoke arguments as a single string</p></li>
+<li><p><strong>**ignore_stderr</strong> -- ignore any stderr output</p></li>
 </ul>
 </dd>
 <dt class="field-even">返回<span class="colon">:</span></dt>

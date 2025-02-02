@@ -587,6 +587,24 @@ standard Python distribution. For example, if a PDM setup type is set,
 the host system will need to have <code class="docutils literal notranslate"><span class="pre">pdm</span></code> Python module installed on
 the system.</p>
 </section>
+<section id="libfoo-python-use-installer">
+<span id="pkg-opt-python-use-installer"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_USE_INSTALLER</span></code><a class="headerlink" href="#libfoo-python-use-installer" title="Link to this heading">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.0.</span></p>
+</div>
+<p>Forces a Python package to use the <a class="reference external" href="https://installer.pypa.io/"><code class="docutils literal notranslate"><span class="pre">installer</span></code></a> module when
+installing to their destination folders. While most modules already use
+the installer module, this option can be used to override package types
+that provide their own installation method. For example, packages using
+<code class="docutils literal notranslate"><span class="pre">setuptools</span></code> can use this option to allow building with setuptools, but
+instead use the installer module for installation.</p>
+<p>For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_PYTHON_USE_INSTALLER</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>When using this option, ensure <a class="reference external" href="https://wheel.readthedocs.io/"><code class="docutils literal notranslate"><span class="pre">wheel</span></code></a> is available to help build
+as packages will be built with <code class="docutils literal notranslate"><span class="pre">bdist_wheel</span></code> instead of <code class="docutils literal notranslate"><span class="pre">build</span></code>.</p>
+</section>
 </section>
 
         </article>
@@ -658,6 +676,7 @@ the system.</p>
 <li><a class="reference internal" href="#libfoo-install-opts"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_OPTS</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-python-interpreter"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_INTERPRETER</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-python-setup-type"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_SETUP_TYPE</span></code></a></li>
+<li><a class="reference internal" href="#libfoo-python-use-installer"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_USE_INSTALLER</span></code></a></li>
 </ul>
 </li>
 </ul>
