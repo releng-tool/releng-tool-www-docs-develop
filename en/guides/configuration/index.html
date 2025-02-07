@@ -606,6 +606,16 @@ definition.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url_mirror</span> <span class="o">=</span> <span class="s1">&#39;ftp://mirror.example.org/data/&#39;</span>
 </pre></div>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">url_mirror</span></code> configuration also accepts the following format options:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: the name of a package</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code>: the version of a package</p></li>
+</ul>
+<p>For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url_mirror</span> <span class="o">=</span> <span class="s1">&#39;ftp://mirror.example.org/cache/</span><span class="si">{name}</span><span class="s1">/&#39;</span>
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">{name}</span></code> will be replaced by the package name being fetched.</p>
 </section>
 </section>
 <section id="advanced-options">

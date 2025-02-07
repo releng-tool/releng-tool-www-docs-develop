@@ -908,6 +908,15 @@ looked for inside the provided path.</p>
 configured in the running environment.</p>
 </div>
 </section>
+<section id="only-mirror">
+<span id="arg-only-mirror"></span><h3><code class="docutils literal notranslate"><span class="pre">--only-mirror</span></code><a class="headerlink" href="#only-mirror" title="Link to this heading">¶</a></h3>
+<p>Only fetch <a class="reference internal" href="../packages/advanced-pkg-options/#pkg-opt-external"><span class="std std-ref">external</span></a> projects with configured mirror.</p>
+<p>When releng-tool is fetching sources with <a class="reference internal" href="../configuration/#conf-url-mirror"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">url_mirror</span></code></span></a>
+configured, package downloads will be first attempted on the mirror before
+using their package-defined site. If a developer wishes to enforce a build
+to only download external packages from the configured mirror, this option
+can be provided when invoking releng-tool.</p>
+</section>
 <section id="out-dir-dir-var">
 <span id="arg-out-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">--out-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#out-dir-dir-var" title="Link to this heading">¶</a></h3>
 <p>Directory for output (builds, images, etc.; defaults to <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/output</span></code>).</p>
@@ -1101,6 +1110,7 @@ process. This option can be used multiple times to apply multiple quirks.</p>
 <li><a class="reference internal" href="#j-jobs-jobs-var"><code class="docutils literal notranslate"><span class="pre">-j</span></code>, <code class="docutils literal notranslate"><span class="pre">--jobs</span> <span class="pre">&lt;jobs&gt;</span></code></a></li>
 <li><a class="reference internal" href="#l-local-sources-pkg-var-dir-var"><code class="docutils literal notranslate"><span class="pre">-L</span></code>, <code class="docutils literal notranslate"><span class="pre">--local-sources</span> <span class="pre">[[&lt;pkg&gt;:]&lt;dir&gt;]</span></code></a></li>
 <li><a class="reference internal" href="#nocolorout"><code class="docutils literal notranslate"><span class="pre">--nocolorout</span></code></a></li>
+<li><a class="reference internal" href="#only-mirror"><code class="docutils literal notranslate"><span class="pre">--only-mirror</span></code></a></li>
 <li><a class="reference internal" href="#out-dir-dir-var"><code class="docutils literal notranslate"><span class="pre">--out-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
 <li><a class="reference internal" href="#relaxed-args"><code class="docutils literal notranslate"><span class="pre">--relaxed-args</span></code></a></li>
 <li><a class="reference internal" href="#root-dir-dir-var"><code class="docutils literal notranslate"><span class="pre">--root-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>

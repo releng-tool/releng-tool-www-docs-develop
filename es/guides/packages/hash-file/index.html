@@ -459,6 +459,23 @@ endings on other systems:</p>
 sha1 9e79b84ef32e911f8056d80a311cf281b2121469 LICENSE
 </pre></div>
 </div>
+<p>If operating in a <a class="reference internal" href="../../development-mode/"><span class="doc std std-doc">development mode</span></a> where an
+external package is configured with an alternative revision, hash checks
+will for a package can fail. A developer can override hash checks for a
+specific revision by adding an additional file in the package directory.
+The format is <code class="docutils literal notranslate"><span class="pre">libfoo.hash-&lt;revision&gt;</span></code>. For example, if a development
+run points to a package revision <code class="docutils literal notranslate"><span class="pre">canary</span></code>, if a file named
+<code class="docutils literal notranslate"><span class="pre">libfoo.hash-canary</span></code> exists, it will be used as the source of hashes for
+this revision.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my-releng-tool-project/
+    ├── package/
+    │   └── libfoo/
+    │       ├── libfoo.hash
+    │       ├── libfoo.hash-canary    &lt;----
+    │       └── libfoo.rt
+    ...
+</pre></div>
+</div>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="hashlib" role="doc-footnote">
