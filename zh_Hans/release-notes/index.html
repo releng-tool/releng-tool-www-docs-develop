@@ -433,10 +433,13 @@ releng-tool, please see the project's <a class="reference external" href="https:
 <li><p>Improved support for host tool integration with Python packages</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">--only-mirror</span></code> argument to force external package fetch with mirror</p></li>
 <li><p>Introduce alternative hash-files for package development revisions</p></li>
-<li><p>Overhaul of Python package processing (requirement for <code class="docutils literal notranslate"><span class="pre">installer</span></code> module,
-install scheme configuration via <code class="docutils literal notranslate"><span class="pre">PYTHON_INSTALLER_SCHEME</span></code> and launcher
-configuration via <code class="docutils literal notranslate"><span class="pre">PYTHON_INSTALLER_LAUNCHER_KIND</span></code>)</p></li>
+<li><p>Overhaul of Python package processing with install scheme configuration
+via <code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_INSTALLER_SCHEME</span></code>, launcher configuration via
+<code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_INSTALLER_LAUNCHER_KIND</span></code> and dist overrides via
+<code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_DIST_PATH</span></code></p></li>
 <li><p>Script function <code class="docutils literal notranslate"><span class="pre">releng_ls</span></code> now accepts a <code class="docutils literal notranslate"><span class="pre">recursive</span></code> argument</p></li>
+<li><p>Support for GNU Bazaar sites is deprecated</p></li>
+<li><p>Support for Python distutils packages is deprecated</p></li>
 <li><p>Support format hints in <code class="docutils literal notranslate"><span class="pre">url_mirror</span></code></p></li>
 <li><p>Support ignoring <code class="docutils literal notranslate"><span class="pre">stderr</span></code> output in execute calls</p></li>
 <li><p>Support maximum checks when using <code class="docutils literal notranslate"><span class="pre">releng_require_version</span></code></p></li>

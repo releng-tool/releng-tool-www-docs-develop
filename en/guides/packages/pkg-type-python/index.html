@@ -499,6 +499,23 @@ value. This field is optional.</p>
 <a class="reference external" href="https://installer.pypa.io/"><code class="docutils literal notranslate"><span class="pre">installer</span></code></a> module.</p>
 </div>
 </section>
+<section id="libfoo-python-dist-path">
+<span id="pkg-opt-python-dist-path"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_DIST_PATH</span></code><a class="headerlink" href="#libfoo-python-dist-path" title="Link to this heading">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.0.</span></p>
+</div>
+<p>When a Python package is built, it will scan the <code class="docutils literal notranslate"><span class="pre">dist/</span></code> directory in
+package’s output directory for a wheel package. It is possible for some
+Python packages to configure their projects to output built wheels into an
+alternative path. If an alternative path is configured, releng-tool will
+fail to find and install the package.</p>
+<p>This option informs releng-tool what container folder hosts the provided
+wheel package. For example, if the Python package configures itself to
+output into <code class="docutils literal notranslate"><span class="pre">build/dist</span></code>, the following configuration can be used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_PYTHON_DIST_PATH</span> <span class="o">=</span> <span class="s1">&#39;build/dist&#39;</span>
+</pre></div>
+</div>
+</section>
 <section id="libfoo-python-installer-launcher-kind">
 <span id="pkg-opt-python-installer-launcher-kind"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_INSTALLER_LAUNCHER_KIND</span></code><a class="headerlink" href="#libfoo-python-installer-launcher-kind" title="Link to this heading">¶</a></h2>
 <div class="versionadded">
@@ -607,6 +624,9 @@ interpreter will be used. This field is optional.</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 2.0: </span>Use of <a class="reference external" href="https://installer.pypa.io/"><code class="docutils literal notranslate"><span class="pre">installer</span></code></a> is required for all package types.</p>
+</div>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2.0: </span>Support for <code class="docutils literal notranslate"><span class="pre">distutils</span></code> packages is deprecated.</p>
 </div>
 <p>The setup type will configure how a Python package is built and installed.
 The default setup type used for a Python package is a distutils package. It
@@ -727,6 +747,7 @@ with <code class="docutils literal notranslate"><span class="pre">bdist_wheel</s
 <li><a class="reference internal" href="#libfoo-install-defs"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-install-env"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_ENV</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-install-opts"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_OPTS</span></code></a></li>
+<li><a class="reference internal" href="#libfoo-python-dist-path"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_DIST_PATH</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-python-installer-launcher-kind"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_INSTALLER_LAUNCHER_KIND</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-python-installer-scheme"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_INSTALLER_SCHEME</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-python-interpreter"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_INTERPRETER</span></code></a></li>
