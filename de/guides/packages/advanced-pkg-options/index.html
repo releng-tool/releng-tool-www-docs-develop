@@ -779,10 +779,19 @@ contains multiple container directories, a higher strip count can be set.</p>
 <p><span class="versionmodified changed">Geändert in Version 0.17: </span>Support added for <code class="docutils literal notranslate"><span class="pre">perforce</span></code>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">Geändert in Version 1.4: </span>Support added for <code class="docutils literal notranslate"><span class="pre">brz+</span></code>.</p>
+<p><span class="versionmodified changed">Geändert in Version 1.4: </span>Support added for <code class="docutils literal notranslate"><span class="pre">brz</span></code>.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Geändert in Version 2.0: </span>Support added for <code class="docutils literal notranslate"><span class="pre">file</span></code>.</p>
 </div>
 <div class="deprecated">
 <p><span class="versionmodified deprecated">Veraltet ab Version 2.0: </span>Support for <code class="docutils literal notranslate"><span class="pre">bzr</span></code> (Bazaar) sites is deprecated.</p>
+</div>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Veraltet ab Version 2.0: </span>URL types no longer accept <code class="docutils literal notranslate"><span class="pre">file://</span></code> URIs. Packages explicitly defining
+a <code class="docutils literal notranslate"><span class="pre">url</span></code> type with a file URI will automatically be converted into a <code class="docutils literal notranslate"><span class="pre">file</span></code>
+type. Projects should switch to defining <code class="docutils literal notranslate"><span class="pre">file</span></code> if they wish to explicitly
+set the VCS type.</p>
 </div>
 <p>Explicitly sets the version control system type to use when acquiring
 sources. releng-tool attempts to automatically determine the VCS type of
@@ -795,6 +804,7 @@ what the site value is configured as.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">brz</span></code> (Breezy)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">bzr</span></code> (Bazaar)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cvs</span></code> (CVS)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file</span></code> (File URI)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span></code> (Git)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">hg</span></code>  (Mercurial)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">local</span></code> (no VCS; local interim-development package)</p></li>
