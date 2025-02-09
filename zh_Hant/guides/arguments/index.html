@@ -304,7 +304,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../examples/">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../help/">Requesting help</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributors/">Contributor guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../annex-a/">ANNEX A - Quick reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../annex-a/">ANNEX A — Quick reference</a></li>
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../release-notes/">Release notes</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Release notes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -1000,6 +1000,22 @@ process. This option can be used multiple times to apply multiple quirks.</p>
 <p>Treat warnings from releng-tool as errors.</p>
 </section>
 </section>
+<section id="variable-injection">
+<span id="arg-variable-injection"></span><h2>Variable injection<a class="headerlink" href="#variable-injection" title="Link to this heading">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.12.</span></p>
+</div>
+<p>Users can override a select set of variables by defining them in the command
+line arguments. For example, consider a project that defines a <code class="docutils literal notranslate"><span class="pre">libfoo</span></code>
+package with a version <code class="docutils literal notranslate"><span class="pre">1.0</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_VERSION</span> <span class="o">=</span> <span class="s1">&#39;1.0&#39;</span>
+</pre></div>
+</div>
+<p>If a user wants to override this a run with <code class="docutils literal notranslate"><span class="pre">1.1</span></code>, the following can be used:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span><span class="nv">LIBFOO_VERSION</span><span class="o">=</span><span class="m">1</span>.1
+</pre></div>
+</div>
+</section>
 </section>
 
         </article>
@@ -1121,6 +1137,7 @@ process. This option can be used multiple times to apply multiple quirks.</p>
 <li><a class="reference internal" href="#werror-werror"><code class="docutils literal notranslate"><span class="pre">--werror</span></code>, <code class="docutils literal notranslate"><span class="pre">-Werror</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#variable-injection">Variable injection</a></li>
 </ul>
 </li>
 </ul>

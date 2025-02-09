@@ -6,7 +6,7 @@
 <link rel="search" title="Search" href="../search/" /><link rel="next" title="Release notes" href="../release-notes/" /><link rel="prev" title="Contributor guide" href="../contributors/" />
 
     <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
-        <title>ANNEX A - Quick reference - releng-tool documentation</title>
+        <title>ANNEX A — Quick reference - releng-tool documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
@@ -304,7 +304,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../help/">Requesting help</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contributors/">Contributor guide</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">ANNEX A - Quick reference</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">ANNEX A — Quick reference</a></li>
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../release-notes/">Release notes</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Release notes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -399,7 +399,7 @@
         </div>
         <article role="main" id="furo-main-content">
           <section id="annex-a-quick-reference">
-<h1>ANNEX A - Quick reference<a class="headerlink" href="#annex-a-quick-reference" title="Link to this heading">¶</a></h1>
+<h1>ANNEX A — Quick reference<a class="headerlink" href="#annex-a-quick-reference" title="Link to this heading">¶</a></h1>
 <p>A quick reference document listing available options to developers building a
 releng-tool project.</p>
 <section id="arguments">
@@ -468,8 +468,8 @@ releng-tool project.</p>
 <a class="reference internal" href="../guides/configuration/#conf-extra-licenses"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">extra_licenses</span></code></span></a> = {'&lt;short-license-id&gt;': '&lt;license-name&gt;'}
 <a class="reference internal" href="../guides/configuration/#conf-license-header"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">license_header</span></code></span></a> = '&lt;data&gt;'
 <a class="reference internal" href="../guides/configuration/#conf-override-extract-tools"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">override_extract_tools</span></code></span></a> = {'&lt;tool&gt;': '&lt;tool-path&gt;'}
-<a class="reference internal" href="../guides/configuration/#conf-override-revisions"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">override_revisions</span></code></span></a> = {'&lt;pkg&gt;': '&lt;revision&gt;'}
-<a class="reference internal" href="../guides/configuration/#conf-override-sites"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">override_sites</span></code></span></a> = {'&lt;pkg&gt;': '&lt;site&gt;'}
+<a class="reference internal" href="../guides/configuration/#conf-override-revisions"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">override_revisions</span></code></span></a> = {'&lt;pkg&gt;': '&lt;revision&gt;'}   <em>(deprecated)</em>
+<a class="reference internal" href="../guides/configuration/#conf-override-sites"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">override_sites</span></code></span></a> = {'&lt;pkg&gt;': '&lt;site&gt;'}   <em>(deprecated)</em>
 <a class="reference internal" href="../guides/configuration/#conf-packages"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">packages</span></code></span></a> = ['&lt;pkg&gt;', '&lt;pkg&gt;', '&lt;pkg&gt;']
 <a class="reference internal" href="../guides/configuration/#conf-prerequisites"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">prerequisites</span></code></span></a> = ['&lt;tool&gt;', '&lt;tool&gt;', '&lt;tool&gt;']
 <a class="reference internal" href="../guides/configuration/#conf-quirks"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">quirks</span></code></span></a> = ['&lt;quirk-id&gt;']
@@ -557,6 +557,18 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="../guides/environment/#env-releng-ignore-unknown-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_UNKNOWN_ARGS</span></code></span></a>
 <a class="reference internal" href="../guides/environment/#env-releng-out-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_OUTPUT_DIR</span></code></span></a></pre>
 </section>
+<section id="package-types">
+<h2>Package types<a class="headerlink" href="#package-types" title="Link to this heading">¶</a></h2>
+<p>Package types supported by releng-tool:</p>
+<pre class="literal-block"><a class="reference internal" href="../guides/packages/pkg-type-autotools/"><span class="doc std std-doc">Autotools</span></a>
+<a class="reference internal" href="../guides/packages/pkg-type-cmake/"><span class="doc std std-doc">CMake</span></a>
+<a class="reference internal" href="../guides/packages/pkg-type-cargo/"><span class="doc std std-doc">Cargo</span></a>
+<a class="reference internal" href="../guides/packages/pkg-type-make/"><span class="doc std std-doc">Make</span></a>
+<a class="reference internal" href="../guides/packages/pkg-type-meson/"><span class="doc std std-doc">Meson</span></a>
+<a class="reference internal" href="../guides/packages/pkg-type-python/"><span class="doc std std-doc">Python</span></a>
+<a class="reference internal" href="../guides/packages/pkg-type-scons/"><span class="doc std std-doc">SCons</span></a>
+<a class="reference internal" href="../guides/packages/pkg-type-script/"><span class="doc std std-doc">Script</span></a> <em>(default)</em></pre>
+</section>
 <section id="package-options">
 <h2>Package options<a class="headerlink" href="#package-options" title="Link to this heading">¶</a></h2>
 <p>Configuration options parsed by releng-tool for a package definition:</p>
@@ -571,6 +583,7 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="../guides/packages/pkg-type-cargo/#pkg-opt-cargo-name"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CARGO_NAME</span></code></span></a> = '&lt;name&gt;'
 <a class="reference internal" href="../guides/packages/pkg-type-cargo/#pkg-opt-cargo-noinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CARGO_NOINSTALL</span></code></span></a> = bool
 <a class="reference internal" href="../guides/packages/pkg-type-cmake/#pkg-opt-cmake-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CMAKE_BUILD_TYPE</span></code></span></a> = '&lt;build-type&gt;'
+  └── Debug, Release, RelWithDebInfo, MinSizeRel
 <a class="reference internal" href="../guides/packages/pkg-type-cmake/#pkg-opt-cmake-noinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CMAKE_NOINSTALL</span></code></span></a> = bool
 <code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_DEFS</span></code> = {'FOO': 'BAR'}
   └── <em>(<a class="reference internal" href="../guides/packages/pkg-type-autotools/#pkg-opt-autotools-conf-defs"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-cmake/#pkg-opt-cmake-conf-defs"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-make/#pkg-opt-make-conf-defs"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-meson/#pkg-opt-meson-conf-defs"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-scons/#pkg-opt-scons-conf-defs"><span class="std std-ref">SCons</span></a>)</em>
@@ -578,7 +591,7 @@ releng-tool (may vary per context):</p>
   └── <em>(<a class="reference internal" href="../guides/packages/pkg-type-autotools/#pkg-opt-autotools-conf-env"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-cmake/#pkg-opt-cmake-conf-env"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-make/#pkg-opt-make-conf-env"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-meson/#pkg-opt-meson-conf-env"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-scons/#pkg-opt-scons-conf-env"><span class="std std-ref">SCons</span></a>)</em>
 <code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_OPTS</span></code> = {'--option': 'value'} or ['--option', 'value']
   └── <em>(<a class="reference internal" href="../guides/packages/pkg-type-autotools/#pkg-opt-autotools-conf-opts"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-cmake/#pkg-opt-cmake-conf-opts"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-make/#pkg-opt-make-conf-opts"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-meson/#pkg-opt-meson-conf-opts"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="../guides/packages/pkg-type-scons/#pkg-opt-scons-conf-opts"><span class="std std-ref">SCons</span></a>)</em>
-<a class="reference internal" href="../guides/packages/deprecated-pkg-options/#pkg-opt-dependencies"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEPENDENCIES</span></code></span></a> = ['&lt;pkg&gt;', '&lt;pkg&gt;']
+<a class="reference internal" href="../guides/packages/deprecated-pkg-options/#pkg-opt-dependencies"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEPENDENCIES</span></code></span></a> = ['&lt;pkg&gt;', '&lt;pkg&gt;']   <em>(deprecated)</em>
 <a class="reference internal" href="../guides/packages/advanced-pkg-options/#pkg-opt-devmode-ignore-cache"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEVMODE_IGNORE_CACHE</span></code></span></a> = bool
 <a class="reference internal" href="../guides/packages/advanced-pkg-options/#pkg-opt-devmode-revision"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEVMODE_REVISION</span></code></span></a> = '&lt;revision&gt;'
 <code class="docutils literal notranslate"><span class="pre">LIBFOO_ENV</span></code> = {'FOO': 'BAR'}
@@ -623,8 +636,8 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="../guides/packages/advanced-pkg-options/#pkg-opt-remote-scripts"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_REMOTE_SCRIPTS</span></code></span></a> = bool
 <a class="reference internal" href="../guides/packages/advanced-pkg-options/#pkg-opt-revision"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_REVISION</span></code></span></a> = '&lt;revision&gt;'
 <a class="reference internal" href="../guides/packages/pkg-type-scons/#pkg-opt-scons-noinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_SCONS_NOINSTALL</span></code></span></a> = bool
-<a class="reference internal" href="../guides/packages/deprecated-pkg-options/#pkg-opt-skip-remote-config"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_SKIP_REMOTE_CONFIG</span></code></span></a> = bool
-<a class="reference internal" href="../guides/packages/deprecated-pkg-options/#pkg-opt-skip-remote-scripts"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_SKIP_REMOTE_SCRIPTS</span></code></span></a> = bool
+<a class="reference internal" href="../guides/packages/deprecated-pkg-options/#pkg-opt-skip-remote-config"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_SKIP_REMOTE_CONFIG</span></code></span></a> = bool   <em>(deprecated)</em>
+<a class="reference internal" href="../guides/packages/deprecated-pkg-options/#pkg-opt-skip-remote-scripts"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_SKIP_REMOTE_SCRIPTS</span></code></span></a> = bool   <em>(deprecated)</em>
 <a class="reference internal" href="../guides/packages/common-pkg-options/#pkg-opt-site"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_SITE</span></code></span></a> = '&lt;site&gt;'
 <a class="reference internal" href="../guides/packages/advanced-pkg-options/#pkg-opt-strip-count"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_STRIP_COUNT</span></code></span></a> = int # &gt;= 0
 <a class="reference internal" href="../guides/packages/common-pkg-options/#pkg-opt-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_TYPE</span></code></span></a> = '&lt;type&gt;'
@@ -747,10 +760,11 @@ releng-tool (may vary per context):</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">ANNEX A - Quick reference</a><ul>
+<li><a class="reference internal" href="#">ANNEX A — Quick reference</a><ul>
 <li><a class="reference internal" href="#arguments">Arguments</a></li>
 <li><a class="reference internal" href="#configuration-options">Configuration options</a></li>
 <li><a class="reference internal" href="#environment-variables">Environment variables</a></li>
+<li><a class="reference internal" href="#package-types">Package types</a></li>
 <li><a class="reference internal" href="#package-options">Package options</a></li>
 <li><a class="reference internal" href="#script-helpers">Script helpers</a></li>
 <li><a class="reference internal" href="#quirks">Quirks</a></li>

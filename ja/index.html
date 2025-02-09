@@ -304,7 +304,7 @@
 <li class="toctree-l1"><a class="reference internal" href="examples/">例</a></li>
 <li class="toctree-l1"><a class="reference internal" href="help/">Requesting help</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributors/">寄稿者ガイド</a></li>
-<li class="toctree-l1"><a class="reference internal" href="annex-a/">付録 A - クイックリファレンス</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annex-a/">ANNEX A — Quick reference</a></li>
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="release-notes/">バージョンノート</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of バージョンノート</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -441,11 +441,11 @@ sysroot.</p>
 type is a script-based package, where users can define custom scripts for
 various stages. A package does not need to handle every stage. Helper
 package types are available (e.g. autotools, Cargo, CMake, Make, Meson,
-various Python types, and SCons) for projects using common build systems.</p>
+various Python types and SCons) for projects using common build systems.</p>
 <p>While releng-tool assists in configuring and building projects, it does not
 aim to provide a perfect sandbox for the process. Users are responsible
 for defining the compilers/toolchains used and managing the interaction
-between the staging/target area and the host system.</p>
+between the staging/target area with the host system.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="requirements/">必要条件</a></li>
@@ -556,6 +556,7 @@ between the staging/target area and the host system.</p>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#werror-werror"><code class="docutils literal notranslate"><span class="pre">--werror</span></code>, <code class="docutils literal notranslate"><span class="pre">-Werror</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="guides/arguments/#variable-injection">Variable injection</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="guides/configuration/">Configuration</a><ul>
@@ -577,11 +578,14 @@ between the staging/target area and the host system.</p>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#extra-license-exceptions"><code class="docutils literal notranslate"><span class="pre">extra_license_exceptions</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#extra-licenses"><code class="docutils literal notranslate"><span class="pre">extra_licenses</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#override-extract-tools"><code class="docutils literal notranslate"><span class="pre">override_extract_tools</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="guides/configuration/#override-revisions"><code class="docutils literal notranslate"><span class="pre">override_revisions</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="guides/configuration/#override-sites"><code class="docutils literal notranslate"><span class="pre">override_sites</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#quirks"><code class="docutils literal notranslate"><span class="pre">quirks</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#urlopen-context"><code class="docutils literal notranslate"><span class="pre">urlopen_context</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#vsdevcmd"><code class="docutils literal notranslate"><span class="pre">vsdevcmd</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="guides/configuration/#deprecated-options">Deprecated options</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="guides/configuration/#override-revisions"><code class="docutils literal notranslate"><span class="pre">override_revisions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/configuration/#override-sites"><code class="docutils literal notranslate"><span class="pre">override_sites</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -667,6 +671,7 @@ between the staging/target area and the host system.</p>
 <li class="toctree-l4"><a class="reference internal" href="guides/environment/#releng-ignore-running-as-root"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_RUNNING_AS_ROOT=1</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/environment/#releng-ignore-unknown-args"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_UNKNOWN_ARGS=1</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/environment/#releng-output-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_OUTPUT_DIR=&lt;dir&gt;</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/environment/#tool-overrides">Tool overrides</a></li>
 </ul>
 </li>
 </ul>
@@ -929,10 +934,11 @@ between the staging/target area and the host system.</p>
 <li class="toctree-l2"><a class="reference internal" href="contributors/#documentation">Documentation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="annex-a/">付録 A - クイックリファレンス</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="annex-a/">ANNEX A — Quick reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="annex-a/#arguments">Arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="annex-a/#configuration-options">Configuration options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="annex-a/#environment-variables">Environment variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="annex-a/#package-types">Package types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="annex-a/#package-options">Package options</a></li>
 <li class="toctree-l2"><a class="reference internal" href="annex-a/#script-helpers">Script helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="annex-a/#quirks">Quirks</a></li>
