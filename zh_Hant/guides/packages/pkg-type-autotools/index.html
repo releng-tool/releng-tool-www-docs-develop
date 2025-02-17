@@ -401,20 +401,20 @@
         <article role="main" id="furo-main-content">
           <section id="autotools-package">
 <h1>Autotools package<a class="headerlink" href="#autotools-package" title="Link to this heading">¶</a></h1>
-<p>An autotools package provides support for processing a
+<p>An Autotools package provides support for processing a
 <a class="reference external" href="https://www.gnu.org/software/automake/manual/html_node/index.html">GNU Build System</a> supported module.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_TYPE</span> <span class="o">=</span> <span class="s1">&#39;autotools&#39;</span>
 </pre></div>
 </div>
-<p>When an autotools package performs a configuration stage, the package may
+<p>When an Autotools package performs a configuration stage, the package may
 invoke <code class="docutils literal notranslate"><span class="pre">autoreconf</span></code> (if configured to do so) and then invoke <code class="docutils literal notranslate"><span class="pre">configure</span></code>.
 When the build stage is reached, <code class="docutils literal notranslate"><span class="pre">make</span></code> will be invoked followed by
 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> during the installation stage.</p>
 <p>The following sections outline configuration options are available for an
-autotools package.</p>
+Autotools package.</p>
 <section id="libfoo-autotools-autoreconf">
 <span id="pkg-opt-autotools-autoreconf"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_AUTOTOOLS_AUTORECONF</span></code><a class="headerlink" href="#libfoo-autotools-autoreconf" title="Link to this heading">¶</a></h2>
-<p>Specifies whether the package needs to perform an autotools
+<p>Specifies whether the package needs to perform an Autotools
 re-configuration. This is to assist in the rebuilding of GNU Build System
 files which may be broken or a patch has introduced new build script
 changes that need to be applied. This field is optional. By default,

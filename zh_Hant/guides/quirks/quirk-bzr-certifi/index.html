@@ -405,8 +405,8 @@
 may have issues attempting to download from Launchpad (or other hosting) due
 to legacy certificates.</p>
 <blockquote>
-<div><p>See <code class="docutils literal notranslate"><span class="pre">bzr</span> <span class="pre">help</span> <span class="pre">ssl.ca_certs</span></code> for how to specify trusted CAcertificates.<br />
-Pass -Ossl.cert_reqs=none to disable certificate verification entirely.</p>
+<div><p>See <code class="docutils literal notranslate"><span class="pre">bzr</span> <span class="pre">help</span> <span class="pre">ssl.ca_certs</span></code> for how to specify trusted CA certificates.<br />
+Pass <code class="docutils literal notranslate"><span class="pre">-Ossl.cert_reqs=none</span></code> to disable certificate verification entirely.</p>
 </div></blockquote>
 <p>If a user's environment has <a class="reference external" href="https://pypi.org/project/certifi/"><code class="docutils literal notranslate"><span class="pre">certifi</span></code></a> installed, a user can invoke
 releng-tool with the quirk <code class="docutils literal notranslate"><span class="pre">releng.bzr.certifi</span></code> enabled to use certifi's

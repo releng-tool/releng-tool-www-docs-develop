@@ -537,13 +537,13 @@ is as follows:</p>
 </pre></div>
 </div>
 </section>
-<section id="support-certificates-override-for-bzr">
-<h2>Support certificates override for bzr<a class="headerlink" href="#support-certificates-override-for-bzr" title="Link to this heading">¶</a></h2>
-<p>When a package is configured to fetch <a class="reference external" href="https://bazaar.canonical.com">bzr</a> sources, select environments
+<section id="support-certificates-override-for-bazaar">
+<h2>Support certificates override for Bazaar<a class="headerlink" href="#support-certificates-override-for-bazaar" title="Link to this heading">¶</a></h2>
+<p>When a package is configured to fetch <a class="reference external" href="https://web.archive.org/web/https://bazaar.canonical.com">bzr</a> sources, select environments
 may have issues attempting to download from Launchpad (or other hosting) due
 to legacy certificates.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>See `bzr help ssl.ca_certs` for how to specify trusted CAcertificates.
-Pass -Ossl.cert_reqs=none to disable certificate verification entirely.
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>See `bzr help ssl.ca_certs` for how to specify trusted CA certificates.
+Pass `-Ossl.cert_reqs=none` to disable certificate verification entirely.
 </pre></div>
 </div>
 <p>If a user's environment has <a class="reference external" href="https://pypi.org/project/certifi/"><code class="docutils literal notranslate"><span class="pre">certifi</span></code></a> installed, a user can invoke
@@ -621,7 +621,7 @@ certificates instead. For example:</p>
 <li><a class="reference internal" href="#support-development-modes">Support development modes</a></li>
 <li><a class="reference internal" href="#support-path-overrides-for-local-sources-mode">Support path overrides for local-sources mode</a></li>
 <li><a class="reference internal" href="#new-copy-into-script-function">New copy-into script function</a></li>
-<li><a class="reference internal" href="#support-certificates-override-for-bzr">Support certificates override for bzr</a></li>
+<li><a class="reference internal" href="#support-certificates-override-for-bazaar">Support certificates override for Bazaar</a></li>
 </ul>
 </li>
 </ul>
