@@ -442,7 +442,7 @@ the configured root directory. For example:</p>
 <p><span class="versionmodified added">Added in version 0.14.</span></p>
 </div>
 <p>The host directory’s prefixed bin directory. For example:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;root-dir&gt;/output/build
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;root-dir&gt;/output/host/usr/bin
 </pre></div>
 </div>
 </section>
@@ -459,21 +459,33 @@ the configured output directory. For example:</p>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.12.</span></p>
 </div>
-<p>The host directory’s prefixed include directory.</p>
+<p>The host directory’s prefixed include directory. An example include
+directory may be as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;root-dir&gt;/output/host/usr/include
+</pre></div>
+</div>
 </section>
 <section id="host-lib-dir">
 <span id="env-host-lib-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">HOST_LIB_DIR</span></code><a class="headerlink" href="#host-lib-dir" title="Link to this heading">¶</a></h3>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.12.</span></p>
 </div>
-<p>The host directory’s prefixed library directory.</p>
+<p>The host directory’s prefixed library directory. An example library
+directory may be as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;root-dir&gt;/output/host/usr/lib
+</pre></div>
+</div>
 </section>
 <section id="host-share-dir">
 <span id="env-host-share-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">HOST_SHARE_DIR</span></code><a class="headerlink" href="#host-share-dir" title="Link to this heading">¶</a></h3>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 2.1.</span></p>
 </div>
-<p>The host directory’s prefixed share directory.</p>
+<p>The host directory’s prefixed share directory. An example share
+directory may be as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;root-dir&gt;/output/host/usr/share
+</pre></div>
+</div>
 </section>
 <section id="images-dir">
 <span id="env-images-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">IMAGES_DIR</span></code><a class="headerlink" href="#images-dir" title="Link to this heading">¶</a></h3>
@@ -561,13 +573,18 @@ advanced cases.</p>
 of an archive from a remote source, after the fetch stage is completed, the
 archive can be found in this location.</p>
 <p>For example, if a package defines a site <code class="docutils literal notranslate"><span class="pre">https://www.example.com/test.tgz</span></code>,
-the resulting cache file may be <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/output/dl/test-1.0.tgz</span></code>.</p>
+the resulting cache file may be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">root</span><span class="o">&gt;/</span><span class="n">output</span><span class="o">/</span><span class="n">dl</span><span class="o">/</span><span class="n">test</span><span class="o">-</span><span class="mf">1.0</span><span class="o">.</span><span class="n">tgz</span>
+</pre></div>
+</div>
 </section>
 <section id="pkg-defdir">
 <span id="env-pkg-defdir"></span><h3><code class="docutils literal notranslate"><span class="pre">PKG_DEFDIR</span></code><a class="headerlink" href="#pkg-defdir" title="Link to this heading">¶</a></h3>
 <p>The package’s definition directory.</p>
-<p>For example, for a package <code class="docutils literal notranslate"><span class="pre">test</span></code>, the definition directory would be
-<code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/package/test</span></code>.</p>
+<p>For example, for a package <code class="docutils literal notranslate"><span class="pre">test</span></code>, the definition directory would be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">root</span><span class="o">&gt;/</span><span class="n">package</span><span class="o">/</span><span class="n">test</span>
+</pre></div>
+</div>
 </section>
 <section id="pkg-devmode">
 <span id="env-pkg-defmode"></span><h3><code class="docutils literal notranslate"><span class="pre">PKG_DEVMODE</span></code><a class="headerlink" href="#pkg-devmode" title="Link to this heading">¶</a></h3>
