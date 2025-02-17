@@ -407,15 +407,26 @@ supported module.</p>
 </pre></div>
 </div>
 <p>Only the build and installation phases are used when processing the sources
-for a Python package (i.e. no configuration stage is invoked). By default,
-the build phase will invoke <code class="docutils literal notranslate"><span class="pre">setup.py</span> <span class="pre">build</span></code> while the installation stage
-will invoke <code class="docutils literal notranslate"><span class="pre">setup.py</span> <span class="pre">install</span></code> (see
-<a class="reference internal" href="#pkg-opt-python-setup-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_SETUP_TYPE</span></code></span></a> for other setup
-types). When a Python package is process, it will use the system’s
-default Python interpreter. A developer can override what Python interpreter
-to use by configuring the
-<a class="reference internal" href="#pkg-opt-python-interpreter"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_INTERPRETER</span></code></span></a> option in a
-package:</p>
+for a Python package (i.e. no configuration stage is invoked). The
+<a class="reference internal" href="#pkg-opt-python-setup-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_SETUP_TYPE</span></code></span></a> configuration dictates
+which build approach is performed for a package. The installation stage
+for all Python packages uses the <a class="reference external" href="https://installer.pypa.io/"><code class="docutils literal notranslate"><span class="pre">installer</span></code></a> module. When a Python
+package is processed, it will use the same Python interpreter used by
+releng-tool.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For environments where releng-tool has been installed using <code class="docutils literal notranslate"><span class="pre">pipx</span></code>, a user
+will need to install any required build backend desired using the
+<a class="reference external" href="https://pipx.pypa.io/#inject-a-package"><code class="docutils literal notranslate"><span class="pre">pipx</span> <span class="pre">inject</span></code></a> command. For example, packages requiring
+<a class="reference external" href="https://flit.pypa.io">Flit</a> can install the build backend for their isolated environment
+using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pipx</span> <span class="n">inject</span> <span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="n">flit</span><span class="o">-</span><span class="n">core</span>
+</pre></div>
+</div>
+</div>
+<p>A developer can override what Python interpreter to use by
+configuring the <a class="reference internal" href="#pkg-opt-python-interpreter"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_INTERPRETER</span></code></span></a>
+option in a package:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_PYTHON_INTERPRETER</span> <span class="o">=</span> <span class="s1">&#39;/opt/my-custom-python-build/python&#39;</span>
 </pre></div>
 </div>

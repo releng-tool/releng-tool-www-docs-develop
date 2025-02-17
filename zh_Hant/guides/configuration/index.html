@@ -487,7 +487,7 @@ to be located in another location/repository. To allow packages to be
 loaded from another package container directory, one or more package
 locations can be provided. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">external_packages</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MY_EXTERNAL_PKG_DIR&#39;</span><span class="p">],</span>
+    <span class="n">releng_env</span><span class="p">(</span><span class="s1">&#39;MY_EXTERNAL_PKG_DIR&#39;</span><span class="p">),</span>
 <span class="p">]</span>
 </pre></div>
 </div>

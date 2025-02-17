@@ -892,6 +892,9 @@ will have their cache files deleted to be re-fetched.</p></li>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Zmienione w wersji 0.13: </span>Support configurable packages and directories.</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Zmienione w wersji 0.16: </span>Support <code class="docutils literal notranslate"><span class="pre">:</span></code> (new) or <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> (original) as a separator.</p>
+</div>
 <p>Enables <a class="reference internal" href="../local-sources-mode/"><span class="doc std std-doc">local-sources mode</span></a>.</p>
 <p>Without a directory provided, sources of
 <a class="reference internal" href="../intern-extern-pkgs/"><span class="doc std std-doc">internal packages</span></a> will be looked for in the
@@ -911,6 +914,9 @@ configured in the running environment.</p>
 </section>
 <section id="only-mirror">
 <span id="arg-only-mirror"></span><h3><code class="docutils literal notranslate"><span class="pre">--only-mirror</span></code><a class="headerlink" href="#only-mirror" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.0.</span></p>
+</div>
 <p>Only fetch <a class="reference internal" href="../packages/advanced-pkg-options/#pkg-opt-external"><span class="std std-ref">external</span></a> projects with configured mirror.</p>
 <p>When releng-tool is fetching sources with <a class="reference internal" href="../configuration/#conf-url-mirror"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">url_mirror</span></code></span></a>
 configured, package downloads will be first attempted on the mirror before

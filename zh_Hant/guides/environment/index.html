@@ -468,6 +468,13 @@ the configured output directory. For example:</p>
 </div>
 <p>The host directory's prefixed library directory.</p>
 </section>
+<section id="host-share-dir">
+<span id="env-host-share-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">HOST_SHARE_DIR</span></code><a class="headerlink" href="#host-share-dir" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.1.</span></p>
+</div>
+<p>The host directory's prefixed share directory.</p>
+</section>
 <section id="images-dir">
 <span id="env-images-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">IMAGES_DIR</span></code><a class="headerlink" href="#images-dir" title="Link to this heading">¶</a></h3>
 <p>The images directory. By default, this will be a folder <code class="docutils literal notranslate"><span class="pre">images</span></code> found inside
@@ -793,6 +800,17 @@ directory may be as follows:</p>
 </pre></div>
 </div>
 </section>
+<section id="staging-share-dir">
+<span id="env-staging-share-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">STAGING_SHARE_DIR</span></code><a class="headerlink" href="#staging-share-dir" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.1.</span></p>
+</div>
+<p>The staging area directory's prefixed share directory. An example share
+directory may be as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;root-dir&gt;/output/staging/usr/share
+</pre></div>
+</div>
+</section>
 <section id="symbols-dir">
 <span id="env-symbols-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">SYMBOLS_DIR</span></code><a class="headerlink" href="#symbols-dir" title="Link to this heading">¶</a></h3>
 <p>The symbols area directory. By default, this will be a folder <code class="docutils literal notranslate"><span class="pre">symbols</span></code> found
@@ -839,6 +857,17 @@ directory may be as follows:</p>
 <p>The target area directory's prefixed library directory. An example library
 directory may be as follows:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;root-dir&gt;/output/target/usr/lib
+</pre></div>
+</div>
+</section>
+<section id="target-share-dir">
+<span id="env-target-share-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">TARGET_SHARE_DIR</span></code><a class="headerlink" href="#target-share-dir" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.1.</span></p>
+</div>
+<p>The target area directory's prefixed share directory. An example share
+directory may be as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;root-dir&gt;/output/target/usr/share
 </pre></div>
 </div>
 </section>
@@ -1221,6 +1250,7 @@ Consider the following example:</p>
 <li><a class="reference internal" href="#host-dir"><code class="docutils literal notranslate"><span class="pre">HOST_DIR</span></code></a></li>
 <li><a class="reference internal" href="#host-include-dir"><code class="docutils literal notranslate"><span class="pre">HOST_INCLUDE_DIR</span></code></a></li>
 <li><a class="reference internal" href="#host-lib-dir"><code class="docutils literal notranslate"><span class="pre">HOST_LIB_DIR</span></code></a></li>
+<li><a class="reference internal" href="#host-share-dir"><code class="docutils literal notranslate"><span class="pre">HOST_SHARE_DIR</span></code></a></li>
 <li><a class="reference internal" href="#images-dir"><code class="docutils literal notranslate"><span class="pre">IMAGES_DIR</span></code></a></li>
 <li><a class="reference internal" href="#license-dir"><code class="docutils literal notranslate"><span class="pre">LICENSE_DIR</span></code></a></li>
 <li><a class="reference internal" href="#njobs"><code class="docutils literal notranslate"><span class="pre">NJOBS</span></code></a></li>
@@ -1264,11 +1294,13 @@ Consider the following example:</p>
 <li><a class="reference internal" href="#staging-dir"><code class="docutils literal notranslate"><span class="pre">STAGING_DIR</span></code></a></li>
 <li><a class="reference internal" href="#staging-include-dir"><code class="docutils literal notranslate"><span class="pre">STAGING_INCLUDE_DIR</span></code></a></li>
 <li><a class="reference internal" href="#staging-lib-dir"><code class="docutils literal notranslate"><span class="pre">STAGING_LIB_DIR</span></code></a></li>
+<li><a class="reference internal" href="#staging-share-dir"><code class="docutils literal notranslate"><span class="pre">STAGING_SHARE_DIR</span></code></a></li>
 <li><a class="reference internal" href="#symbols-dir"><code class="docutils literal notranslate"><span class="pre">SYMBOLS_DIR</span></code></a></li>
 <li><a class="reference internal" href="#target-bin-dir"><code class="docutils literal notranslate"><span class="pre">TARGET_BIN_DIR</span></code></a></li>
 <li><a class="reference internal" href="#target-dir"><code class="docutils literal notranslate"><span class="pre">TARGET_DIR</span></code></a></li>
 <li><a class="reference internal" href="#target-include-dir"><code class="docutils literal notranslate"><span class="pre">TARGET_INCLUDE_DIR</span></code></a></li>
 <li><a class="reference internal" href="#target-lib-dir"><code class="docutils literal notranslate"><span class="pre">TARGET_LIB_DIR</span></code></a></li>
+<li><a class="reference internal" href="#target-share-dir"><code class="docutils literal notranslate"><span class="pre">TARGET_SHARE_DIR</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#package-specific-variables">Package-specific variables</a><ul>
