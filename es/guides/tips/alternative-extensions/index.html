@@ -403,8 +403,16 @@
           <section id="alternative-extensions">
 <h1>Alternative extensions<a class="headerlink" href="#alternative-extensions" title="Link to this heading">¶</a></h1>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">Obsoleto desde la versión 2.0: </span>The <code class="docutils literal notranslate"><span class="pre">.releng</span></code> extension is no longer recommended and may be removed in
+<p><span class="versionmodified deprecated">Obsoleto desde la versión 2.0: </span>The <code class="docutils literal notranslate"><span class="pre">.releng</span></code> extension is no longer recommended and will be removed in
 a future release.</p>
+</div>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Obsoleto desde la versión 2.2: </span>Extensionless configurations/scripts are no longer recommended and may
+be removed in a future release.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Distinto en la versión 2.2: </span>Extension priority orders have changed (&lt;2.2: <em>(none)</em>, <code class="docutils literal notranslate"><span class="pre">.rt</span></code>, <code class="docutils literal notranslate"><span class="pre">.releng</span></code>,
+<code class="docutils literal notranslate"><span class="pre">.py</span></code>; &gt;=2.2: <code class="docutils literal notranslate"><span class="pre">.rt</span></code>, <code class="docutils literal notranslate"><span class="pre">.py</span></code>, <em>(none)</em>, <code class="docutils literal notranslate"><span class="pre">.releng</span></code>).</p>
 </div>
 <p>A default configuration file is typically a file named <code class="docutils literal notranslate"><span class="pre">releng-tool.rt</span></code>
 at the root of a project. Consider the following example of a project
@@ -418,19 +426,8 @@ with a <code class="docutils literal notranslate"><span class="pre">libfoo</span
     └── releng-tool.rt
 </pre></div>
 </div>
-<p>Developers who do not prefer the <code class="docutils literal notranslate"><span class="pre">.rt</span></code> extension may use alternatives,
-such as the <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension or no extension at all. For example, the
-above example is equivalent to the structure:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my-project/
-    ├── package/
-    │   └── libfoo/
-    │       └── libfoo
-    │       └── libfoo-build
-    │       └── libfoo-install
-    └── releng-tool
-</pre></div>
-</div>
-<p>Or the structure:</p>
+<p>Developers who do not prefer the <code class="docutils literal notranslate"><span class="pre">.rt</span></code> extension may use the <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension.
+For example, the above example is equivalent to the structure:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my-project/
     ├── package/
     │   └── libfoo/
@@ -442,10 +439,10 @@ above example is equivalent to the structure:</p>
 </div>
 <p>For a specific file to be loaded, releng-tool uses the following priority:</p>
 <ol class="arabic simple">
-<li><p>File without an extension</p></li>
 <li><p>File with a <code class="docutils literal notranslate"><span class="pre">.rt</span></code> extension</p></li>
-<li><p>File with a <code class="docutils literal notranslate"><span class="pre">.releng</span></code> extension (<em>deprecated</em>)</p></li>
 <li><p>File with a <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension</p></li>
+<li><p>File without an extension (<em>deprecated</em>)</p></li>
+<li><p>File with a <code class="docutils literal notranslate"><span class="pre">.releng</span></code> extension (<em>deprecated</em>)</p></li>
 </ol>
 <p>Only the first detected file will be loaded. For example, if a project has
 multiple releng-tool configuration files with different extensions:</p>
