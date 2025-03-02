@@ -407,9 +407,9 @@ script-based packages, post-processing and more. Helper functions provided
 are listed below:</p>
 <section id="available-functions">
 <h2>Available functions<a class="headerlink" href="#available-functions" title="Link to this heading">¶</a></h2>
-<dl class="py function" id="script-debug">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">debug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.debug">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">debug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.debug" title="Link to this definition">¶</a></dt>
 <dd><p>Logs a debug message to standard out with a trailing new line. By default,
 debug messages will not be output to standard out unless the instance is
 configured with debugging enabled.</p>
@@ -427,9 +427,9 @@ generating a formatted message</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-err">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">err</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.err">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">err</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.err" title="Link to this definition">¶</a></dt>
 <dd><p>Logs an error message to standard error with a trailing new line and (if
 enabled) a red colorization.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">err</span><span class="p">(</span><span class="s1">&#39;this is an error message&#39;</span><span class="p">)</span>
@@ -446,9 +446,9 @@ generating a formatted message</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-hint">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">hint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.hint">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">hint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.hint" title="Link to this definition">¶</a></dt>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.13.</span></p>
 </div>
@@ -471,9 +471,9 @@ generating a formatted message</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-log">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.log">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.log" title="Link to this definition">¶</a></dt>
 <dd><p>Logs a (normal) message to standard out with a trailing new line.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;this is a message&#39;</span><span class="p">)</span>
 </pre></div>
@@ -489,9 +489,9 @@ generating a formatted message</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-note">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.note">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.note" title="Link to this definition">¶</a></dt>
 <dd><p>Logs a notification message to standard out with a trailing new line and (if
 enabled) an inverted colorization.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">note</span><span class="p">(</span><span class="s1">&#39;this is a note message&#39;</span><span class="p">)</span>
@@ -508,11 +508,14 @@ generating a formatted message</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-cat">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_cat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_cat">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_cat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#releng_tool.releng_cat" title="Link to this definition">¶</a></dt>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.11.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 2.2 版本发生变更: </span>Accepts a str, bytes or os.PathLike.</p>
 </div>
 <p>Attempts to read one or more files provided to this call. For each file, it
 will be read and printed out to the standard output.</p>
@@ -534,9 +537,9 @@ output; <code class="docutils literal notranslate"><span class="pre">False</span
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-copy">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nested</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_copy">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_copy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nested</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_copy" title="Link to this definition">¶</a></dt>
 <dd><div class="versionchanged">
 <p><span class="versionmodified changed">在 0.12 版本发生变更: </span>Add support for <code class="docutils literal notranslate"><span class="pre">dst_dir</span></code>.</p>
 </div>
@@ -595,9 +598,9 @@ has failed</p>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-copy-into">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_copy_into</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nested</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_copy_into">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_copy_into</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nested</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_copy_into" title="Link to this definition">¶</a></dt>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.13.</span></p>
 </div>
@@ -652,9 +655,9 @@ has failed</p>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-env">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value=&lt;object</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_env">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value=&lt;object</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_env" title="Link to this definition">¶</a></dt>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.3.</span></p>
 </div>
@@ -685,9 +688,9 @@ be removed.</p>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-execute">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cwd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">poll</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capture</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_stderr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_execute">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cwd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">poll</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capture</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expand</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_stderr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_execute" title="Link to this definition">¶</a></dt>
 <dd><div class="versionchanged">
 <p><span class="versionmodified changed">在 1.13 版本发生变更: </span>Add support for <code class="docutils literal notranslate"><span class="pre">expand</span></code>.</p>
 </div>
@@ -761,9 +764,9 @@ execution has failed</p>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-execute-rv">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_execute_rv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_execute_rv">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_execute_rv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_execute_rv" title="Link to this definition">¶</a></dt>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.8.</span></p>
 </div>
@@ -816,9 +819,9 @@ instead of the original environment of the caller.</p>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-exists">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_exists">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_exists" title="Link to this definition">¶</a></dt>
 <dd><p>Allows a caller to verify the existence of a file on the file system. This
 call will return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the path exists; <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
 <p>An example when using in the context of script helpers is as follows:</p>
@@ -841,9 +844,9 @@ call will return <code class="docutils literal notranslate"><span class="pre">Tr
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-exit">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_exit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_exit">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_exit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_exit" title="Link to this definition">¶</a></dt>
 <dd><p>Provides a convenience method to help invoke a system exit call without
 needing to explicitly use <code class="docutils literal notranslate"><span class="pre">sys</span></code>. A caller can provide a message to
 indicate the reason for the exit. The provide message will output to
@@ -870,9 +873,9 @@ if a message is set</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-expand">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_expand">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_expand" title="Link to this definition">¶</a></dt>
 <dd><p>This expand utility method will attempt to expand variables in detected
 string types. For a detected string which contains substrings in the form of
 <code class="docutils literal notranslate"><span class="pre">$value</span></code> or <code class="docutils literal notranslate"><span class="pre">${value}</span></code>, these substrings will be replaced with their
@@ -907,9 +910,9 @@ duplicate entries.</p>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-include">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_include</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_include">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_include</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_include" title="Link to this definition">¶</a></dt>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.12.</span></p>
 </div>
@@ -929,21 +932,24 @@ the caller's script.</p>
 </dl>
 </dd></dl>
 
-<dl class="py method" id="script-releng-tool">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">paths</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="releng_tool.releng_join">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_join" title="Link to this definition">¶</a></dt>
 <dd><p>An alias for <code class="docutils literal notranslate"><span class="pre">os.path.join</span></code>. See also
 <a class="reference external" href="https://docs.python.org/library/os.path.html#os.path.join">https://docs.python.org/library/os.path.html#os.path.join</a>.</p>
 </dd></dl>
 
-<dl class="py function" id="script-releng-ls">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_ls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_ls">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_ls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#releng_tool.releng_ls" title="Link to this definition">¶</a></dt>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.11.</span></p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 2.0 版本发生变更: </span>Add support for <code class="docutils literal notranslate"><span class="pre">recursive</span></code>.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 2.2 版本发生变更: </span>Accepts a str, bytes or os.PathLike.</p>
 </div>
 <p>Attempts to read a directory for its contents and prints this information
 to the configured standard output stream.</p>
@@ -966,9 +972,9 @@ be read</p>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-mkdir">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_mkdir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_mkdir">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_mkdir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></span><a class="headerlink" href="#releng_tool.releng_mkdir" title="Link to this definition">¶</a></dt>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.3.</span></p>
 </div>
@@ -980,6 +986,9 @@ be read</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 1.3 版本发生变更: </span>Returns the created path.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 2.2 版本发生变更: </span>Accepts a str, bytes or os.PathLike.</p>
 </div>
 <p>Attempts to create the provided directory. If the directory already exists,
 this method has no effect. If the directory does not exist and could not be
@@ -1018,9 +1027,9 @@ be created</p>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-move">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nested</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_move">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nested</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_move" title="Link to this definition">¶</a></dt>
 <dd><div class="versionchanged">
 <p><span class="versionmodified changed">在 0.14 版本发生变更: </span>Add support for <code class="docutils literal notranslate"><span class="pre">dst_dir</span></code>.</p>
 </div>
@@ -1074,9 +1083,9 @@ has failed</p>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-move-into">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_move_into</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nested</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_move_into">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_move_into</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nested</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_move_into" title="Link to this definition">¶</a></dt>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.14.</span></p>
 </div>
@@ -1129,10 +1138,13 @@ has failed</p>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-remove">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Attempts to remove the provided path if it exists. The path value can either
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_remove">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#releng_tool.releng_remove" title="Link to this definition">¶</a></dt>
+<dd><div class="versionchanged">
+<p><span class="versionmodified changed">在 2.2 版本发生变更: </span>Accepts a str, bytes or os.PathLike.</p>
+</div>
+<p>Attempts to remove the provided path if it exists. The path value can either
 be a directory or a specific file. If the provided path does not exist, this
 method has no effect. In the event that a file or directory could not be
 removed due to an error other than unable to be found, an error message will
@@ -1157,9 +1169,9 @@ path could not be removed from the system</p>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-symlink">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_symlink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lpd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_symlink">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_symlink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lpd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_symlink" title="Link to this definition">¶</a></dt>
 <dd><div class="admonition note">
 <p class="admonition-title">备注</p>
 <p>this call may not work in Windows environments if the user invoking
@@ -1223,9 +1235,9 @@ symbolic link could not be created</p>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-require-version">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_require_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_require_version">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_require_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_require_version" title="Link to this definition">¶</a></dt>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.11.</span></p>
 </div>
@@ -1263,10 +1275,16 @@ has failed</p>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-tmpdir">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_tmpdir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Creates a temporary directory in the provided directory <code class="docutils literal notranslate"><span class="pre">dir_</span></code> (or system
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_tmpdir">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_tmpdir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#releng_tool.releng_tmpdir" title="Link to this definition">¶</a></dt>
+<dd><div class="versionchanged">
+<p><span class="versionmodified changed">在 2.2 版本发生变更: </span>Accepts a str, bytes or os.PathLike.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 2.2 版本发生变更: </span>Add support for <code class="docutils literal notranslate"><span class="pre">*args</span></code> and <code class="docutils literal notranslate"><span class="pre">**wd</span></code>.</p>
+</div>
+<p>Creates a temporary directory in the provided directory <code class="docutils literal notranslate"><span class="pre">dir_</span></code> (or system
 default, is not provided). This is a context-supported call and will
 automatically remove the directory when completed. If the provided
 directory does not exist, it will created. If the directory could not be
@@ -1278,7 +1296,11 @@ created, an <code class="docutils literal notranslate"><span class="pre">FailedT
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">参数<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dir</strong> (<em>optional</em>) -- the directory to create the temporary directory in</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dir</strong> (<em>optional</em>) -- the directory to create the temporary directory in</p></li>
+<li><p><strong>**wd</strong> (<em>optional</em>) -- whether to use the temporary directory as the
+working directory (defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+</ul>
 </dd>
 <dt class="field-even">抛出<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>FailedToPrepareBaseDirectoryError</strong> -- the base directory does not exist and
@@ -1287,10 +1309,16 @@ created, an <code class="docutils literal notranslate"><span class="pre">FailedT
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-touch">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_touch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Attempts to update the access/modifications times on a file. If the file
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_touch">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_touch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#releng_tool.releng_touch" title="Link to this definition">¶</a></dt>
+<dd><div class="versionchanged">
+<p><span class="versionmodified changed">在 2.2 版本发生变更: </span>Accepts a str, bytes or os.PathLike.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">在 2.2 版本发生变更: </span>Add support for <code class="docutils literal notranslate"><span class="pre">*args</span></code>.</p>
+</div>
+<p>Attempts to update the access/modifications times on a file. If the file
 does not exist, it will be created. This utility call operates in the same
 fashion as the <code class="docutils literal notranslate"><span class="pre">touch</span></code> system command.</p>
 <p>An example when using in the context of script helpers is as follows:</p>
@@ -1302,7 +1330,10 @@ fashion as the <code class="docutils literal notranslate"><span class="pre">touc
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">参数<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>file</strong> -- the file</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file</strong> -- the file</p></li>
+<li><p><strong>*args</strong> (<em>optional</em>) -- additional components of the file</p></li>
+</ul>
 </dd>
 <dt class="field-even">返回<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the file was created/updated; <code class="docutils literal notranslate"><span class="pre">False</span></code> if the file could
@@ -1311,10 +1342,13 @@ not be created/updated</p>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-releng-wd">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_wd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span></em><span class="sig-paren">)</span></dt>
-<dd><p>Moves the current context into the provided working directory <code class="docutils literal notranslate"><span class="pre">dir</span></code>. When
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_wd">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_wd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#releng_tool.releng_wd" title="Link to this definition">¶</a></dt>
+<dd><div class="versionchanged">
+<p><span class="versionmodified changed">在 2.2 版本发生变更: </span>Accepts a str, bytes or os.PathLike.</p>
+</div>
+<p>Moves the current context into the provided working directory <code class="docutils literal notranslate"><span class="pre">dir</span></code>. When
 returned, the original working directory will be restored. If the provided
 directory does not exist, it will created. If the directory could not be
 created, an <code class="docutils literal notranslate"><span class="pre">FailedToPrepareWorkingDirectoryError</span></code> exception will be
@@ -1337,9 +1371,9 @@ thrown.</p>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-success">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">success</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.success">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">success</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.success" title="Link to this definition">¶</a></dt>
 <dd><p>Logs a success message to standard error with a trailing new line and (if
 enabled) a green colorization.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">success</span><span class="p">(</span><span class="s1">&#39;this is a success message&#39;</span><span class="p">)</span>
@@ -1356,9 +1390,9 @@ generating a formatted message</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-verbose">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">verbose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.verbose">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">verbose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.verbose" title="Link to this definition">¶</a></dt>
 <dd><p>Logs a verbose message to standard out with a trailing new line and (if
 enabled) an inverted colorization. By default, verbose messages will not be
 output to standard out unless the instance is configured with verbosity.</p>
@@ -1376,9 +1410,9 @@ generating a formatted message</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py function" id="script-warn">
-<dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">warn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.warn">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">warn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.warn" title="Link to this definition">¶</a></dt>
 <dd><p>Logs a warning message to standard error with a trailing new line and (if
 enabled) a purple colorization.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;this is a warning message&#39;</span><span class="p">)</span>
@@ -1509,7 +1543,38 @@ example, import a specific function:</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Script helpers</a><ul>
-<li><a class="reference internal" href="#available-functions">Available functions</a></li>
+<li><a class="reference internal" href="#available-functions">Available functions</a><ul>
+<li><a class="reference internal" href="#releng_tool.debug"><code class="docutils literal notranslate"><span class="pre">debug()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.err"><code class="docutils literal notranslate"><span class="pre">err()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.hint"><code class="docutils literal notranslate"><span class="pre">hint()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.log"><code class="docutils literal notranslate"><span class="pre">log()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.note"><code class="docutils literal notranslate"><span class="pre">note()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_cat"><code class="docutils literal notranslate"><span class="pre">releng_cat()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_copy"><code class="docutils literal notranslate"><span class="pre">releng_copy()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_copy_into"><code class="docutils literal notranslate"><span class="pre">releng_copy_into()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_env"><code class="docutils literal notranslate"><span class="pre">releng_env()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_execute"><code class="docutils literal notranslate"><span class="pre">releng_execute()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_execute_rv"><code class="docutils literal notranslate"><span class="pre">releng_execute_rv()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_exists"><code class="docutils literal notranslate"><span class="pre">releng_exists()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_exit"><code class="docutils literal notranslate"><span class="pre">releng_exit()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_expand"><code class="docutils literal notranslate"><span class="pre">releng_expand()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_include"><code class="docutils literal notranslate"><span class="pre">releng_include()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_join"><code class="docutils literal notranslate"><span class="pre">releng_join()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_ls"><code class="docutils literal notranslate"><span class="pre">releng_ls()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_mkdir"><code class="docutils literal notranslate"><span class="pre">releng_mkdir()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_move"><code class="docutils literal notranslate"><span class="pre">releng_move()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_move_into"><code class="docutils literal notranslate"><span class="pre">releng_move_into()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_remove"><code class="docutils literal notranslate"><span class="pre">releng_remove()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_symlink"><code class="docutils literal notranslate"><span class="pre">releng_symlink()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_require_version"><code class="docutils literal notranslate"><span class="pre">releng_require_version()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_tmpdir"><code class="docutils literal notranslate"><span class="pre">releng_tmpdir()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_touch"><code class="docutils literal notranslate"><span class="pre">releng_touch()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_wd"><code class="docutils literal notranslate"><span class="pre">releng_wd()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.success"><code class="docutils literal notranslate"><span class="pre">success()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.verbose"><code class="docutils literal notranslate"><span class="pre">verbose()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.warn"><code class="docutils literal notranslate"><span class="pre">warn()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#available-variables">Available variables</a><ul>
 <li><a class="reference internal" href="#releng-args"><code class="docutils literal notranslate"><span class="pre">releng_args</span></code></a></li>
 <li><a class="reference internal" href="#releng-version"><code class="docutils literal notranslate"><span class="pre">releng_version</span></code></a></li>
