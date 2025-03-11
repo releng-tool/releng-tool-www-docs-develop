@@ -1545,76 +1545,6 @@
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://docs-develop.releng.io/en/guides/quirks/quirk-disable_binary_patch/</loc>
-        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-disable_binary_patch/"/>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://docs-develop.releng.io/de/guides/quirks/quirk-disable_binary_patch/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-disable_binary_patch/"/>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://docs-develop.releng.io/es/guides/quirks/quirk-disable_binary_patch/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-disable_binary_patch/"/>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://docs-develop.releng.io/ja/guides/quirks/quirk-disable_binary_patch/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-disable_binary_patch/"/>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://docs-develop.releng.io/pl/guides/quirks/quirk-disable_binary_patch/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-disable_binary_patch/"/>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-disable_binary_patch/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-disable_binary_patch/"/>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-disable_binary_patch/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-disable_binary_patch/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-disable_binary_patch/"/>
-        <changefreq>monthly</changefreq>
-    </url>
-    <url>
         <loc>https://docs-develop.releng.io/en/guides/quirks/quirks/</loc>
         <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirks/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirks/"/>
@@ -2032,6 +1962,76 @@
         <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-disable_remote_scripts/"/>
         <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-disable_remote_scripts/"/>
         <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-disable_remote_scripts/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/en/guides/quirks/quirk-disable_verbose_patch/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-disable_verbose_patch/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/guides/quirks/quirk-disable_verbose_patch/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-disable_verbose_patch/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/guides/quirks/quirk-disable_verbose_patch/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-disable_verbose_patch/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/guides/quirks/quirk-disable_verbose_patch/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-disable_verbose_patch/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/guides/quirks/quirk-disable_verbose_patch/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-disable_verbose_patch/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-disable_verbose_patch/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-disable_verbose_patch/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-disable_verbose_patch/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-disable_verbose_patch/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-disable_verbose_patch/"/>
         <changefreq>monthly</changefreq>
     </url>
     <url>

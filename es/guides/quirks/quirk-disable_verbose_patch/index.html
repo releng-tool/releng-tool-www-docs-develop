@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="search" title="Búsqueda" href="../../../search/" /><link rel="next" title="Quirk releng.disable_local_site_warn" href="../quirk-disable_local_site_warn/" /><link rel="prev" title="Quirk releng.cmake.disable_parallel_option" href="../quirk-cmake-disable_parallel_option/" />
+<link rel="search" title="Búsqueda" href="../../../search/" /><link rel="next" title="Quirk releng.git.no_depth" href="../quirk-git-no_depth/" /><link rel="prev" title="Quirk releng.disable_spdx_check" href="../quirk-disable_spdx_check/" />
 
     <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
-        <title>Quirk releng.disable_binary_patch - documentación de releng-tool -</title>
+        <title>Quirk releng.disable_verbose_patch - documentación de releng-tool -</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
@@ -266,12 +266,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../quirk-bzr-certifi/">releng.bzr.certifi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirk-cmake-disable_direct_includes/">releng.cmake.disable_direct_includes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirk-cmake-disable_parallel_option/">releng.cmake.disable_parallel_option</a></li>
-<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">releng.disable_binary_patch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirk-disable_local_site_warn/">releng.disable_local_site_warn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirk-disable_prerequisites_check/">releng.disable_prerequisites_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirk-disable_remote_configs/">releng.disable_remote_configs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirk-disable_remote_scripts/">releng.disable_remote_scripts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirk-disable_spdx_check/">releng.disable_spdx_check</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">releng.disable_verbose_patch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirk-git-no_depth/">releng.git.no_depth</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirk-git-no_quick_fetch/">releng.git.no_quick_fetch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirk-git-replicate_cache/">releng.git.replicate_cache</a></li>
@@ -364,12 +364,12 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="https://github.com/releng-tool/releng-tool-docs/blob/main/content/guides/quirks/quirk-disable_binary_patch.md?plain=true" title="View this page">
+  <a class="muted-link" href="https://github.com/releng-tool/releng-tool-docs/blob/main/content/guides/quirks/quirk-disable_verbose_patch.md?plain=true" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
 </div><div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/releng-tool/releng-tool-docs/edit/main/content/guides/quirks/quirk-disable_binary_patch.md" title="Edit this page">
+  <a class="muted-link" href="https://github.com/releng-tool/releng-tool-docs/edit/main/content/guides/quirks/quirk-disable_verbose_patch.md" title="Edit this page">
     <svg><use href="#svg-pencil"></use></svg>
     <span class="visually-hidden">Edit this page</span>
   </a>
@@ -388,15 +388,15 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="quirk-releng-disable-binary-patch">
-<span id="id1"></span><h1>Quirk <code class="docutils literal notranslate"><span class="pre">releng.disable_binary_patch</span></code><a class="headerlink" href="#quirk-releng-disable-binary-patch" title="Link to this heading">¶</a></h1>
+          <section id="quirk-releng-disable-verbose-patch">
+<span id="id1"></span><h1>Quirk <code class="docutils literal notranslate"><span class="pre">releng.disable_verbose_patch</span></code><a class="headerlink" href="#quirk-releng-disable-verbose-patch" title="Link to this heading">¶</a></h1>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 2.2.</span></p>
 </div>
 <p>When utilizing <a class="reference internal" href="../../patching/"><span class="doc std std-doc">patching</span></a> capabilities in releng-tool,
-all patches are by default applied with a <code class="docutils literal notranslate"><span class="pre">--binary</span></code> argument. If this
+all patches are by default applied with a <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> argument. If this
 is not preferred by a project, this quirk can be set to omit the argument.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">disable_binary_patch</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">disable_verbose_patch</span>
 </pre></div>
 </div>
 <section id="see-also">
@@ -413,23 +413,23 @@ is not preferred by a project, this quirk can be set to omit the argument.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../quirk-disable_local_site_warn/">
+          <a class="next-page" href="../quirk-git-no_depth/">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Quirk <code class="docutils literal notranslate"><span class="pre">releng.disable_local_site_warn</span></code></div>
+                <div class="title">Quirk <code class="docutils literal notranslate"><span class="pre">releng.git.no_depth</span></code></div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../quirk-cmake-disable_parallel_option/">
+          <a class="prev-page" href="../quirk-disable_spdx_check/">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Quirk <code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_parallel_option</span></code></div>
+                <div class="title">Quirk <code class="docutils literal notranslate"><span class="pre">releng.disable_spdx_check</span></code></div>
                 
               </div>
             </a>
@@ -467,7 +467,7 @@ is not preferred by a project, this quirk can be set to omit the argument.</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Quirk <code class="docutils literal notranslate"><span class="pre">releng.disable_binary_patch</span></code></a><ul>
+<li><a class="reference internal" href="#">Quirk <code class="docutils literal notranslate"><span class="pre">releng.disable_verbose_patch</span></code></a><ul>
 <li><a class="reference internal" href="#see-also">See also</a></li>
 </ul>
 </li>
