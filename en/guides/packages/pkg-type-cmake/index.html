@@ -411,6 +411,9 @@ can override this option by explicitly adjusting the configuration option
 package.</p>
 <section id="libfoo-build-defs">
 <span id="pkg-opt-cmake-build-defs"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_DEFS</span></code><a class="headerlink" href="#libfoo-build-defs" title="Link to this heading">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Provides a means to pass definitions into the build process. This option
 can is defined as a dictionary of string pairs. This field is optional.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_BUILD_DEFS</span> <span class="o">=</span> <span class="p">{</span>
@@ -422,6 +425,9 @@ can is defined as a dictionary of string pairs. This field is optional.</p>
 </section>
 <section id="libfoo-build-env">
 <span id="pkg-opt-cmake-build-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_ENV</span></code><a class="headerlink" href="#libfoo-build-env" title="Link to this heading">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Provides a means to pass environment variables into the build process. This
 option is defined as a dictionary with key-value pairs where the key is the
 environment name and the value is the environment variable’s value. This
@@ -434,6 +440,9 @@ field is optional.</p>
 </section>
 <section id="libfoo-build-opts">
 <span id="pkg-opt-cmake-build-opts"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_OPTS</span></code><a class="headerlink" href="#libfoo-build-opts" title="Link to this heading">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Provides a means to pass command line options into the build process. This
 option can be defined as a dictionary of string pairs or a list with
 strings – either way defined will generate argument values to include in
@@ -486,6 +495,9 @@ By default, the installation stage is invoked with a value of <code class="docut
 </section>
 <section id="libfoo-conf-defs">
 <span id="pkg-opt-cmake-conf-defs"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_DEFS</span></code><a class="headerlink" href="#libfoo-conf-defs" title="Link to this heading">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Provides a means to pass definitions into the configuration process. This
 option can is defined as a dictionary of string pairs. This field is
 optional.</p>
@@ -498,6 +510,9 @@ optional.</p>
 </section>
 <section id="libfoo-conf-env">
 <span id="pkg-opt-cmake-conf-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_ENV</span></code><a class="headerlink" href="#libfoo-conf-env" title="Link to this heading">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Provides a means to pass environment variables into the configuration process.
 This option is defined as a dictionary with key-value pairs where the key is
 the environment name and the value is the environment variable’s value. This
@@ -510,6 +525,9 @@ field is optional.</p>
 </section>
 <section id="libfoo-conf-opts">
 <span id="pkg-opt-cmake-conf-opts"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_OPTS</span></code><a class="headerlink" href="#libfoo-conf-opts" title="Link to this heading">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Provides a means to pass command line options into the configuration process.
 This option can be defined as a dictionary of string pairs or a list with
 strings – either way defined will generate argument values to include in the
@@ -533,6 +551,9 @@ configuration event. This field is optional.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.17.</span></p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Provides a means to pass environment variables into all stages for a
 package. This option is defined as a dictionary with key-value pairs where
 the key is the environment name and the value is the environment variable’s
@@ -545,6 +566,9 @@ value. This field is optional.</p>
 </section>
 <section id="libfoo-install-defs">
 <span id="pkg-opt-cmake-install-defs"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code><a class="headerlink" href="#libfoo-install-defs" title="Link to this heading">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Provides a means to pass definitions into the installation process. This
 option can is defined as a dictionary of string pairs. This field is
 optional.</p>
@@ -557,6 +581,9 @@ optional.</p>
 </section>
 <section id="libfoo-install-env">
 <span id="pkg-opt-cmake-install-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_ENV</span></code><a class="headerlink" href="#libfoo-install-env" title="Link to this heading">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Provides a means to pass environment variables into the installation process.
 This option is defined as a dictionary with key-value pairs where the key is
 the environment name and the value is the environment variable’s value. This
@@ -569,6 +596,9 @@ field is optional.</p>
 </section>
 <section id="libfoo-install-opts">
 <span id="pkg-opt-cmake-install-opts"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_OPTS</span></code><a class="headerlink" href="#libfoo-install-opts" title="Link to this heading">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Provides a means to pass command line options into the installation process.
 This option can be defined as a dictionary of string pairs or a list with
 strings – either way defined will generate argument values to include in

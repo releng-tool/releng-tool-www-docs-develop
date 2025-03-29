@@ -394,6 +394,9 @@
 packages.</p>
 <section id="libfoo-build-subdir">
 <span id="pkg-opt-build-subdir"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_SUBDIR</span></code><a class="headerlink" href="#libfoo-build-subdir" title="Link to this heading">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Distinto en la versión 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Sub-directory where a package’s extracted sources holds its buildable content.
 Sources for a package may be nested inside one or more directories. A package
 can specify the sub-directory where the configuration, build and installation
@@ -520,6 +523,9 @@ for a package that cannot support a large or any parallel build environment.</p>
 <span id="pkg-opt-git-config"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_GIT_CONFIG</span></code><a class="headerlink" href="#libfoo-git-config" title="Link to this heading">¶</a></h2>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.6.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Distinto en la versión 2.2: </span>Support added for path-like values.</p>
 </div>
 <p>Apply additional repository-specific Git configuration settings
 (<a class="reference external" href="https://git-scm.com/docs/git-config"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span></code></a>) after a Git repository cache has been
@@ -673,6 +679,9 @@ default, this option is disabled with a value of <code class="docutils literal n
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.15.</span></p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Distinto en la versión 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Sub-directory where any package patches should be applied to. By default,
 patches are applied to the root of the extracted sources for a package. This
 option can be useful for packages which utilize
@@ -686,6 +695,9 @@ patches tailored for the specific module being targeted.</p>
 </section>
 <section id="libfoo-prefix">
 <span id="pkg-opt-prefix"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_PREFIX</span></code><a class="headerlink" href="#libfoo-prefix" title="Link to this heading">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Distinto en la versión 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Specifies the sysroot prefix value to use for the package. An explicitly
 provided prefix value will override the project-defined or default sysroot
 prefix value.</p>
@@ -840,7 +852,7 @@ follows:</p>
     │   └── libfoo/
     │       ├── local/                &lt;----
     │       │   ├── src/
-    │       │   |   └── ...
+    │       │   │   └── ...
     │       │   └── Makefile
     │       └── libfoo.rt
     ...

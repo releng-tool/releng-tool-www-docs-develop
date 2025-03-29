@@ -423,6 +423,9 @@ option in a package:</p>
 Python package.</p>
 <section id="libfoo-build-defs">
 <span id="pkg-opt-python-build-defs"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_DEFS</span></code><a class="headerlink" href="#libfoo-build-defs" title="Link to this heading">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Provides a means to pass definitions into the build process. This option
 can is defined as a dictionary of string pairs. This field is optional.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_BUILD_DEFS</span> <span class="o">=</span> <span class="p">{</span>
@@ -434,6 +437,9 @@ can is defined as a dictionary of string pairs. This field is optional.</p>
 </section>
 <section id="libfoo-build-env">
 <span id="pkg-opt-python-build-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_ENV</span></code><a class="headerlink" href="#libfoo-build-env" title="Link to this heading">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Provides a means to pass environment variables into the build process. This
 option is defined as a dictionary with key-value pairs where the key is the
 environment name and the value is the environment variable's value. This
@@ -446,6 +452,9 @@ field is optional.</p>
 </section>
 <section id="libfoo-build-opts">
 <span id="pkg-opt-python-build-opts"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_OPTS</span></code><a class="headerlink" href="#libfoo-build-opts" title="Link to this heading">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Provides a means to pass command line options into the build process. This
 option can be defined as a dictionary of string pairs or a list with
 strings -- either way defined will generate argument values to include in
@@ -468,6 +477,9 @@ the build event. This field is optional.</p>
 <span id="pkg-opt-python-env"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_ENV</span></code><a class="headerlink" href="#libfoo-env" title="Link to this heading">¶</a></h2>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.17.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Support added for path-like values.</p>
 </div>
 <p>Provides a means to pass environment variables into all stages for a
 package. This option is defined as a dictionary with key-value pairs where
@@ -504,6 +516,9 @@ value. This field is optional.</p>
 <span id="pkg-opt-python-dist-path"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_DIST_PATH</span></code><a class="headerlink" href="#libfoo-python-dist-path" title="Link to this heading">¶</a></h2>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 2.0.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Support added for path-like values.</p>
 </div>
 <p>When a Python package is built, it will scan the <code class="docutils literal notranslate"><span class="pre">dist/</span></code> directory in
 package's output directory for a wheel package. It is possible for some
@@ -608,6 +623,9 @@ module. For example:</p>
 </section>
 <section id="libfoo-python-interpreter">
 <span id="pkg-opt-python-interpreter"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_INTERPRETER</span></code><a class="headerlink" href="#libfoo-python-interpreter" title="Link to this heading">¶</a></h2>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.2: </span>Support added for path-like values.</p>
+</div>
 <p>Defines a specific Python interpreter when processing the build and
 installation stages for a package. If not specified, the system's Python
 interpreter will be used. This field is optional.</p>
