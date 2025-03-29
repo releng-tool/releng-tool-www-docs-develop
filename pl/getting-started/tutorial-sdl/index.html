@@ -715,8 +715,7 @@ post-build stages.</p>
 place a copy of the <a class="reference download internal" download="" href="../../_downloads/76c9d3887ce802f79198650cea36484b/releng-tool.bmp"><span class="xref download myst">releng-tool.bmp</span></a> image.
 At the root of the project folder, create a post-build script named
 <code class="docutils literal notranslate"><span class="pre">releng-tool-post-build.rt</span></code> with the following contents:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">assets_dir</span> <span class="o">=</span> <span class="n">releng_join</span><span class="p">(</span><span class="n">ROOT_DIR</span><span class="p">,</span> <span class="s1">&#39;assets&#39;</span><span class="p">)</span>
-<span class="n">sample_img</span> <span class="o">=</span> <span class="n">releng_join</span><span class="p">(</span><span class="n">assets_dir</span><span class="p">,</span> <span class="s1">&#39;releng-tool.bmp&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sample_img</span> <span class="o">=</span> <span class="n">ROOT_DIR</span> <span class="o">/</span> <span class="s1">&#39;assets&#39;</span> <span class="o">/</span> <span class="s1">&#39;releng-tool.bmp&#39;</span>
 <span class="n">releng_copy_into</span><span class="p">(</span><span class="n">sample_img</span><span class="p">,</span> <span class="n">TARGET_BIN_DIR</span><span class="p">)</span>
 </pre></div>
 </div>
