@@ -771,7 +771,28 @@ version string that is compatible with <a class="reference external" href="https
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vsdevcmd</span> <span class="o">=</span> <span class="s1">&#39;[17.0,18.0)&#39;</span>
 </pre></div>
 </div>
-<p>See also <a class="reference internal" href="../packages/system-pkg-options/#pkg-opt-vsdevcmd"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VSDEVCMD</span></code></span></a>.</p>
+<p>See also <a class="reference internal" href="#conf-vsdevcmd-products"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">vsdevcmd_products</span></code></span></a> and
+<a class="reference internal" href="../packages/system-pkg-options/#pkg-opt-vsdevcmd"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VSDEVCMD</span></code></span></a>.</p>
+</section>
+<section id="vsdevcmd-products">
+<span id="conf-vsdevcmd-products"></span><h3><code class="docutils literal notranslate"><span class="pre">vsdevcmd_products</span></code><a class="headerlink" href="#vsdevcmd-products" title="Link to this heading">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The option is ignored in non-Windows environments.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.4.</span></p>
+</div>
+<p>Allows a project to configure which products to search for when releng-tool
+invokes <a class="reference external" href="https://github.com/microsoft/vswhere">Visual Studio Locator</a> to find which Visual Studio tooling
+to use. By default, releng-tool operates as if <code class="docutils literal notranslate"><span class="pre">vswhere</span></code> is invoked with the
+<code class="docutils literal notranslate"><span class="pre">-products</span> <span class="pre">*</span></code> argument. Providing a string in this option replaces the
+asterisk value with the configured value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vsdevcmd_products</span> <span class="o">=</span> <span class="s1">&#39;Microsoft.VisualStudio.Product.BuildTools&#39;</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#conf-vsdevcmd"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">vsdevcmd</span></code></span></a> and
+<a class="reference internal" href="../packages/system-pkg-options/#pkg-opt-vsdevcmd-products"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VSDEVCMD_PRODUCTS</span></code></span></a>.</p>
 </section>
 </section>
 <section id="deprecated-options">
@@ -924,6 +945,7 @@ can be used:</p>
 <li><a class="reference internal" href="#quirks"><code class="docutils literal notranslate"><span class="pre">quirks</span></code></a></li>
 <li><a class="reference internal" href="#urlopen-context"><code class="docutils literal notranslate"><span class="pre">urlopen_context</span></code></a></li>
 <li><a class="reference internal" href="#vsdevcmd"><code class="docutils literal notranslate"><span class="pre">vsdevcmd</span></code></a></li>
+<li><a class="reference internal" href="#vsdevcmd-products"><code class="docutils literal notranslate"><span class="pre">vsdevcmd_products</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#deprecated-options">Deprecated options</a><ul>
