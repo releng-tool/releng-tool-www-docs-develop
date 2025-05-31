@@ -266,6 +266,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-bzr-certifi/">releng.bzr.certifi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-cmake-disable_direct_includes/">releng.cmake.disable_direct_includes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-cmake-disable_parallel_option/">releng.cmake.disable_parallel_option</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_devmode_ignore_cache/">releng.disable_devmode_ignore_cache</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_local_site_warn/">releng.disable_local_site_warn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_prerequisites_check/">releng.disable_prerequisites_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_remote_configs/">releng.disable_remote_configs</a></li>
@@ -418,6 +419,16 @@ releng-tool, please see the project's <a class="reference external" href="https:
 <li class="toctree-l1"><a class="reference internal" href="../news/2021-12-31_00.10.00/">0.10 (2021-12-31)</a></li>
 </ul>
 </div>
+</section>
+<section id="development">
+<h2>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Include VCS revisions in generated SBOM documents</p></li>
+<li><p>Introduce a <code class="docutils literal notranslate"><span class="pre">--debug-extended</span></code> argument</p></li>
+<li><p>Introduce quirk to help disable package-specific ignore-cache flags</p></li>
+<li><p>Renamed SBOM format <code class="docutils literal notranslate"><span class="pre">rdp-spdx</span></code> to <code class="docutils literal notranslate"><span class="pre">rdf-spdx</span></code></p></li>
+<li><p>Support Visual Studio Build Tools when using injected Visual Studio support</p></li>
+</ul>
 </section>
 <section id="v2-3-0-2025-05-04">
 <h2>2.3.0 (2025-05-04)<a class="headerlink" href="#v2-3-0-2025-05-04" title="Link to this heading">¶</a></h2>
@@ -906,6 +917,7 @@ execution</p></li>
             <ul>
 <li><a class="reference internal" href="#">Release notes</a><ul>
 <li><a class="reference internal" href="#news">News</a></li>
+<li><a class="reference internal" href="#development">Development</a></li>
 <li><a class="reference internal" href="#v2-3-0-2025-05-04">2.3.0 (2025-05-04)</a></li>
 <li><a class="reference internal" href="#v2-2-0-2025-03-29">2.2.0 (2025-03-29)</a></li>
 <li><a class="reference internal" href="#v2-1-1-2025-02-17">2.1.1 (2025-02-17)</a></li>
