@@ -261,6 +261,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../intern-extern-pkgs/">Internal/external packages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../development-mode/">Development mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../local-sources-mode/">Local-sources mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../profiles/">Profiles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../configuration-overrides/">Configuration overrides</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../quirks/quirks/">Quirks</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Quirks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-bzr-certifi/">releng.bzr.certifi</a></li>
@@ -611,6 +612,10 @@ or directory associated with the package. See also the
 <div class="versionchanged">
 <p><span class="versionmodified changed">Distinto en la versión 1.4: </span>Support accepting arguments after <code class="docutils literal notranslate"><span class="pre">--</span></code>.</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Distinto en la versión 2.5: </span>When using <code class="docutils literal notranslate"><span class="pre">--</span></code> with this call, <a class="reference internal" href="../script-helpers/#vars-releng-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng_args</span></code></span></a> is no
+longer populated.</p>
+</div>
 <p>Invokes a provided command in the package’s build output directory. This
 package action can be useful for developers attempting to develop/debug a
 specific package, allowing an easy way to issue commands in a package’s
@@ -626,7 +631,7 @@ before a provided command is issued.</p>
 </pre></div>
 </div>
 <p>Package environment variables will be available for the invoked command.</p>
-<p>See also <a class="reference internal" href="../environment/#env-releng-exec"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_EXEC</span></code></span></a>.</p>
+<p>See also <a class="reference internal" href="../environment/#env-releng-exec"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_EXEC</span></code></span></a> and <a class="reference internal" href="../script-helpers/#vars-releng-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng_args</span></code></span></a>.</p>
 </section>
 <section id="pkg-var-extract">
 <span id="action-pkg-extract"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-extract</span></code><a class="headerlink" href="#pkg-var-extract" title="Link to this heading">¶</a></h3>
@@ -932,6 +937,16 @@ can be provided when invoking releng-tool.</p>
 <p>Directory for output (builds, images, etc.; defaults to <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/output</span></code>).</p>
 <p>See also <a class="reference internal" href="../environment/#env-releng-out-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_OUTPUT_DIR</span></code></span></a>.</p>
 </section>
+<section id="profile-profile-var-p-profile-var">
+<span id="arg-profile"></span><h3><code class="docutils literal notranslate"><span class="pre">--profile</span> <span class="pre">[&lt;profile&gt;]</span></code>, <code class="docutils literal notranslate"><span class="pre">-P</span> <span class="pre">[&lt;profile&gt;]</span></code><a class="headerlink" href="#profile-profile-var-p-profile-var" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.5.</span></p>
+</div>
+<p>Configure a profile to run with. Providing this option is only applicable if
+a project accepts custom profile options. Multiple profiles can be provided
+by repeating this argument.</p>
+<p>See also <a class="reference internal" href="../profiles/"><span class="doc std std-doc">using profiles</span></a>.</p>
+</section>
 <section id="relaxed-args">
 <span id="arg-relaxed-args"></span><h3><code class="docutils literal notranslate"><span class="pre">--relaxed-args</span></code><a class="headerlink" href="#relaxed-args" title="Link to this heading">¶</a></h3>
 <div class="versionadded">
@@ -1143,6 +1158,7 @@ package with a version <code class="docutils literal notranslate"><span class="p
 <li><a class="reference internal" href="#nocolorout"><code class="docutils literal notranslate"><span class="pre">--nocolorout</span></code></a></li>
 <li><a class="reference internal" href="#only-mirror"><code class="docutils literal notranslate"><span class="pre">--only-mirror</span></code></a></li>
 <li><a class="reference internal" href="#out-dir-dir-var"><code class="docutils literal notranslate"><span class="pre">--out-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
+<li><a class="reference internal" href="#profile-profile-var-p-profile-var"><code class="docutils literal notranslate"><span class="pre">--profile</span> <span class="pre">[&lt;profile&gt;]</span></code>, <code class="docutils literal notranslate"><span class="pre">-P</span> <span class="pre">[&lt;profile&gt;]</span></code></a></li>
 <li><a class="reference internal" href="#relaxed-args"><code class="docutils literal notranslate"><span class="pre">--relaxed-args</span></code></a></li>
 <li><a class="reference internal" href="#root-dir-dir-var"><code class="docutils literal notranslate"><span class="pre">--root-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
 <li><a class="reference internal" href="#sbom-format-fmt-var"><code class="docutils literal notranslate"><span class="pre">--sbom-format</span> <span class="pre">&lt;fmt&gt;</span></code></a></li>
