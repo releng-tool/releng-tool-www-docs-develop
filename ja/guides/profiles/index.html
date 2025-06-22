@@ -408,17 +408,23 @@ a profile named <code class="docutils literal notranslate"><span class="pre">awe
 </div>
 <p>A project configuration or package stage can then check the
 <a class="reference internal" href="../environment/#env-releng-profiles"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_PROFILES</span></code></span></a> variable to determine if a
-conditional event should be performed:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+conditional event should be performed. To continue with this example, if
+looking to add an additional package when using this profile, the following
+can be added in a project's <code class="docutils literal notranslate"><span class="pre">releng-tool.rt</span></code> file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">packages</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;minimal&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 
 <span class="k">if</span> <span class="s1">&#39;awesome-mode&#39;</span> <span class="ow">in</span> <span class="n">RELENG_PROFILES</span><span class="p">:</span>
-	<span class="o">...</span>
-
-<span class="o">...</span>
+	<span class="n">packages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;awesome-mods&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Multiple profiles can be provided as well:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">profile</span> <span class="n">awesome</span><span class="o">-</span><span class="n">mode</span> <span class="o">--</span><span class="n">profile</span> <span class="n">another</span><span class="o">-</span><span class="n">example</span>
+ <span class="p">(</span><span class="ow">or</span><span class="p">)</span>
+<span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">profile</span> <span class="n">awesome</span><span class="o">-</span><span class="n">mode</span><span class="p">,</span><span class="n">another</span><span class="o">-</span><span class="n">example</span>
+ <span class="p">(</span><span class="ow">or</span><span class="p">)</span>
+<span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">profile</span> <span class="s2">&quot;awesome-mode;another-example&quot;</span>
 </pre></div>
 </div>
 <p>The script environment provides a list of known profiles. However, if reading
