@@ -425,10 +425,13 @@ releng-tool, please see the project's <a class="reference external" href="https:
 </ul>
 </div>
 </section>
-<section id="development">
-<h2>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h2>
+<section id="v2-6-0-2025-08-03">
+<h2>2.6.0 (2025-08-03)<a class="headerlink" href="#v2-6-0-2025-08-03" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Always output configured local sources paths</p></li>
+<li><p>Avoid configuring <code class="docutils literal notranslate"><span class="pre">CMAKE_PREFIX_PATH</span></code> and solely rely on find-related defines</p></li>
+<li><p>Detected tool version information is printed in debug mode</p></li>
+<li><p>Ensure <code class="docutils literal notranslate"><span class="pre">CMAKE_MODULE_PATH</span></code> paths are pre-populated to avoid directory building</p></li>
 <li><p>Handle trailing path-slash in a local sources package reference</p></li>
 <li><p>Support a pre-defined <code class="docutils literal notranslate"><span class="pre">CMAKE_FIND_ROOT_PATH</span></code> for staging/target/host areas</p></li>
 <li><p>Update SPDX license database to v3.27</p></li>
@@ -940,7 +943,7 @@ execution</p></li>
             <ul>
 <li><a class="reference internal" href="#">バージョンノート</a><ul>
 <li><a class="reference internal" href="#news">News</a></li>
-<li><a class="reference internal" href="#development">Development</a></li>
+<li><a class="reference internal" href="#v2-6-0-2025-08-03">2.6.0 (2025-08-03)</a></li>
 <li><a class="reference internal" href="#v2-5-0-2025-06-22">2.5.0 (2025-06-22)</a></li>
 <li><a class="reference internal" href="#v2-4-0-2025-05-31">2.4.0 (2025-05-31)</a></li>
 <li><a class="reference internal" href="#v2-3-0-2025-05-04">2.3.0 (2025-05-04)</a></li>
