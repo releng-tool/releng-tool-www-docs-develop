@@ -724,11 +724,6 @@ instead of the original environment of the caller.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">critical</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> and the execution fails for any reason,
 this call will issue a system exit (<code class="docutils literal notranslate"><span class="pre">SystemExit</span></code>). By default, the
 critical flag is enabled (i.e. <code class="docutils literal notranslate"><span class="pre">critical=True</span></code>).</p>
-<p>In special cases, an executing process may not provide carriage returns/new
-lines to simple output processing. This can lead the output of a process to
-be undesirably buffered. To workaround this issue, the execution call can
-instead poll for output results by using the <code class="docutils literal notranslate"><span class="pre">poll</span></code> option with a value
-of <code class="docutils literal notranslate"><span class="pre">True</span></code>. By default, polling is disabled with a value of <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <p>A caller may wish to capture the provided output from a process for
 examination. If a list is provided in the call argument <code class="docutils literal notranslate"><span class="pre">capture</span></code>, the
 list will be populated with the output provided from an invoked process.</p>
@@ -747,8 +742,7 @@ list will be populated with the output provided from an invoked process.</p>
 <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
 <li><p><strong>critical</strong> (<em>optional</em>) – whether or not to stop execution on failure
 (defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
-<li><p><strong>poll</strong> (<em>optional</em>) – force polling stdin/stdout for output data (defaults to
-<code class="docutils literal notranslate"><span class="pre">False</span></code>)</p></li>
+<li><p><strong>poll</strong> (<em>optional</em>) – obsolete/ignored argument</p></li>
 <li><p><strong>capture</strong> (<em>optional</em>) – list to capture output into</p></li>
 <li><p><strong>expand</strong> (<em>optional</em>) – perform variable expansion on arguments</p></li>
 <li><p><strong>args_str</strong> (<em>optional</em>) – invoke arguments as a single string</p></li>

@@ -417,12 +417,9 @@ releng-tool.</p>
 </section>
 <section id="configuration-driven-quirks">
 <h2>Configuration-driven quirks<a class="headerlink" href="#configuration-driven-quirks" title="Link to this heading">¶</a></h2>
-<p>Quirks can also be enabled through configuration override scripts. This can
-be used in certain build scenarios where defining a script override is
-easier than specifying multiple command line options.</p>
-<p>For example, if an override script
-<a class="reference internal" href="../../configuration-overrides/"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">releng-overrides</span></code></span></a> is created, the following
-can be used to enable one or more quirks for a releng-tool run:</p>
+<p>Quirks can also be enabled through the <a class="reference internal" href="../../configuration/#conf-quirks"><span class="std std-ref">project configuration</span></a>.
+For example, the following can be used to enable one or more quirks for a
+releng-tool run:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;releng.quirk1&#39;</span><span class="p">,</span>
     <span class="s1">&#39;releng.quirk2&#39;</span><span class="p">,</span>
