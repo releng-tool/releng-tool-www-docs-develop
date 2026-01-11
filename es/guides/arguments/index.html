@@ -561,7 +561,7 @@ modes.</p>
 </section>
 </section>
 <section id="package-actions">
-<h2>Package actions<a class="headerlink" href="#package-actions" title="Link to this heading">¶</a></h2>
+<span id="id1"></span><h2>Package actions<a class="headerlink" href="#package-actions" title="Link to this heading">¶</a></h2>
 <p>The following outlines available package-specific actions:</p>
 <section id="pkg-var-build">
 <span id="action-pkg-build"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-build</span></code><a class="headerlink" href="#pkg-var-build" title="Link to this heading">¶</a></h3>
@@ -848,6 +848,7 @@ may apply when detecting the default configuration file.</p>
 <section id="debug">
 <span id="arg-debug"></span><h3><code class="docutils literal notranslate"><span class="pre">--debug</span></code><a class="headerlink" href="#debug" title="Link to this heading">¶</a></h3>
 <p>Show debug-related messages.</p>
+<p>See also <a class="reference internal" href="../environment/#env-releng-debug"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_DEBUG</span></code></span></a>.</p>
 </section>
 <section id="debug-extended">
 <span id="arg-debug-extended"></span><h3><code class="docutils literal notranslate"><span class="pre">--debug-extended</span></code><a class="headerlink" href="#debug-extended" title="Link to this heading">¶</a></h3>
@@ -860,11 +861,12 @@ environment variables.</p>
 <p><span class="versionmodified changed">Distinto en la versión 0.13: </span>Support configurable modes.</p>
 </div>
 <p>Enables <a class="reference internal" href="../development-mode/"><span class="doc std std-doc">development mode</span></a>.</p>
+<p>See also <a class="reference internal" href="../environment/#env-releng-devmode"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_DEVMODE</span></code></span></a>.</p>
 </section>
 <section id="dl-dir-dir-var">
 <span id="arg-dl-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">--dl-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#dl-dir-dir-var" title="Link to this heading">¶</a></h3>
 <p>Directory for download archives (defaults to <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/dl</span></code>).</p>
-<p>See also <a class="reference internal" href="../environment/#env-releng-dl-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_DL_DIR</span></code></span></a>.</p>
+<p>See also <a class="reference internal" href="../environment/#env-dl-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">DL_DIR</span></code></span></a> and <a class="reference internal" href="../environment/#env-releng-dl-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_DL_DIR</span></code></span></a>.</p>
 </section>
 <section id="force-f">
 <span id="arg-force"></span><h3><code class="docutils literal notranslate"><span class="pre">--force</span></code>, <code class="docutils literal notranslate"><span class="pre">-F</span></code><a class="headerlink" href="#force-f" title="Link to this heading">¶</a></h3>
@@ -879,6 +881,7 @@ been made.</p></li>
 <a class="reference internal" href="#action-pkg-fetch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch</span></code></span></a>), any packages which cache to a file
 will have their cache files deleted to be re-fetched.</p></li>
 </ul>
+<p>See also <a class="reference internal" href="../environment/#env-releng-force"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_FORCE</span></code></span></a>.</p>
 </section>
 <section id="help-h">
 <span id="arg-help"></span><h3><code class="docutils literal notranslate"><span class="pre">--help</span></code>, <code class="docutils literal notranslate"><span class="pre">-h</span></code><a class="headerlink" href="#help-h" title="Link to this heading">¶</a></h3>
@@ -890,7 +893,8 @@ will have their cache files deleted to be re-fetched.</p></li>
 <p><span class="versionmodified added">Added in version 0.13.</span></p>
 </div>
 <p>Directory for image outputs (defaults to <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/output/images</span></code>).</p>
-<p>See also <a class="reference internal" href="../environment/#env-releng-images-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_IMAGES_DIR</span></code></span></a>.</p>
+<p>See also <a class="reference internal" href="../environment/#env-images-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">IMAGES_DIR</span></code></span></a> and
+<a class="reference internal" href="../environment/#env-releng-images-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_IMAGES_DIR</span></code></span></a>.</p>
 </section>
 <section id="jobs-jobs-var-j-jobs-var">
 <span id="arg-jobs"></span><h3><code class="docutils literal notranslate"><span class="pre">--jobs</span> <span class="pre">&lt;jobs&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">-j</span> <span class="pre">&lt;jobs&gt;</span></code><a class="headerlink" href="#jobs-jobs-var-j-jobs-var" title="Link to this heading">¶</a></h3>
@@ -961,8 +965,9 @@ semicolon (<code class="docutils literal notranslate"><span class="pre">;</span>
 </section>
 <section id="root-dir-dir-var">
 <span id="arg-root-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">--root-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#root-dir-dir-var" title="Link to this heading">¶</a></h3>
-<p>Directory to process a releng-tool project (defaults to the working
-directory).</p>
+<p>Directory to process a releng-tool project. By default, the root directory is
+configured to the working directory.</p>
+<p>See also <a class="reference internal" href="../environment/#env-root-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">ROOT_DIR</span></code></span></a>.</p>
 </section>
 <section id="sbom-format-fmt-var">
 <span id="arg-sbom-format"></span><h3><code class="docutils literal notranslate"><span class="pre">--sbom-format</span> <span class="pre">&lt;fmt&gt;</span></code><a class="headerlink" href="#sbom-format-fmt-var" title="Link to this heading">¶</a></h3>
@@ -1020,6 +1025,7 @@ process. This option can be used multiple times to apply multiple quirks.</p>
 <section id="verbose-v">
 <span id="arg-verbose"></span><h3><code class="docutils literal notranslate"><span class="pre">--verbose</span></code>, <code class="docutils literal notranslate"><span class="pre">-V</span></code><a class="headerlink" href="#verbose-v" title="Link to this heading">¶</a></h3>
 <p>Show additional messages.</p>
+<p>See also <a class="reference internal" href="../environment/#env-releng-verbose"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_VERBOSE</span></code></span></a>.</p>
 </section>
 <section id="version">
 <span id="arg-version"></span><h3><code class="docutils literal notranslate"><span class="pre">--version</span></code><a class="headerlink" href="#version" title="Link to this heading">¶</a></h3>

@@ -404,7 +404,7 @@ are listed below:</p>
 <h2>Available functions<a class="headerlink" href="#available-functions" title="Link to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="releng_tool.debug">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">debug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.debug" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">debug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.debug" title="Link to this definition">¶</a></dt>
 <dd><p>Logs a debug message to standard out with a trailing new line. By default,
 debug messages will not be output to standard out unless the instance is
 configured with debugging enabled.</p>
@@ -420,11 +420,12 @@ generating a formatted message</p></li>
 </ul>
 </dd>
 </dl>
+<p>See also the <code class="docutils literal notranslate"><span class="pre">--debug</span></code> <a class="reference internal" href="../arguments/#arg-debug"><span class="std std-ref">argument</span></a>.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="releng_tool.err">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">err</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.err" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">err</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.err" title="Link to this definition">¶</a></dt>
 <dd><p>Logs an error message to standard error with a trailing new line and (if
 enabled) a red colorization.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">err</span><span class="p">(</span><span class="s1">&#39;this is an error message&#39;</span><span class="p">)</span>
@@ -443,7 +444,7 @@ generating a formatted message</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="releng_tool.hint">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">hint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.hint" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">hint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.hint" title="Link to this definition">¶</a></dt>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.13.</span></p>
 </div>
@@ -468,7 +469,7 @@ generating a formatted message</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="releng_tool.log">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.log" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.log" title="Link to this definition">¶</a></dt>
 <dd><p>Logs a (normal) message to standard out with a trailing new line.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;this is a message&#39;</span><span class="p">)</span>
 </pre></div>
@@ -486,7 +487,7 @@ generating a formatted message</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="releng_tool.note">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.note" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.note" title="Link to this definition">¶</a></dt>
 <dd><p>Logs a notification message to standard out with a trailing new line and (if
 enabled) an inverted colorization.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">note</span><span class="p">(</span><span class="s1">&#39;this is a note message&#39;</span><span class="p">)</span>
@@ -844,7 +845,7 @@ call will return <code class="docutils literal notranslate"><span class="pre">Tr
 
 <dl class="py function">
 <dt class="sig sig-object py" id="releng_tool.releng_exit">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_exit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_exit" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_exit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_exit" title="Link to this definition">¶</a></dt>
 <dd><p>Provides a convenience method to help invoke a system exit call without
 needing to explicitly use <code class="docutils literal notranslate"><span class="pre">sys</span></code>. A caller can provide a message to
 indicate the reason for the exit. The provide message will output to
@@ -1191,7 +1192,7 @@ path could not be removed from the system</p>
 <span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_symlink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lpd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#releng_tool.releng_symlink" title="Link to this definition">¶</a></dt>
 <dd><div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>this call may not work in Windows environments if the user invoking
+<p>This call may not work in Windows environments if the user invoking
 releng-tool does not have permission to create symbolic links.</p>
 </div>
 <div class="versionadded">
@@ -1393,7 +1394,7 @@ thrown.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="releng_tool.success">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">success</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.success" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">success</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.success" title="Link to this definition">¶</a></dt>
 <dd><p>Logs a success message to standard error with a trailing new line and (if
 enabled) a green colorization.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">success</span><span class="p">(</span><span class="s1">&#39;this is a success message&#39;</span><span class="p">)</span>
@@ -1412,7 +1413,7 @@ generating a formatted message</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="releng_tool.verbose">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">verbose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.verbose" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">verbose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.verbose" title="Link to this definition">¶</a></dt>
 <dd><p>Logs a verbose message to standard out with a trailing new line and (if
 enabled) an inverted colorization. By default, verbose messages will not be
 output to standard out unless the instance is configured with verbosity.</p>
@@ -1428,11 +1429,12 @@ generating a formatted message</p></li>
 </ul>
 </dd>
 </dl>
+<p>See also the <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> <a class="reference internal" href="../arguments/#arg-verbose"><span class="std std-ref">argument</span></a>.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="releng_tool.warn">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">warn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.warn" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">warn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.warn" title="Link to this definition">¶</a></dt>
 <dd><p>Logs a warning message to standard error with a trailing new line and (if
 enabled) a purple colorization.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;this is a warning message&#39;</span><span class="p">)</span>
