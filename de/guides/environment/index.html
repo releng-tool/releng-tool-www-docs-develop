@@ -291,12 +291,21 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/">Beispiele</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../examples/examples/">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/examples-autotools/">Autotools package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/examples-cargo/">Cargo package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/examples-cmake/">CMake package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/examples-make/">Make package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/examples-meson/">Meson package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/examples-python/">Python package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/examples-scons/">SCons package examples</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../help/">Requesting help</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributors/">Leitfaden für Mitwirkende</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../release-notes/">Versionshinweise</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Versionshinweise</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../release-notes/">Versionshinweise</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Versionshinweise</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../news/2025-08-03_02.06.00/">2.6 (2025-08-03)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../news/2025-06-22_02.05.00/">2.5 (2025-06-22)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../news/2025-05-31_02.04.00/">2.4 (2025-05-31)</a></li>
@@ -621,13 +630,27 @@ does not adjust the value of <code class="docutils literal notranslate"><span cl
 <div class="versionchanged">
 <p><span class="versionmodified changed">Geändert in Version 2.2: </span>Variable is path-like in a script environment.</p>
 </div>
-<p>The directory for a specific package’s buildable content.</p>
-<p>For example, for a package <code class="docutils literal notranslate"><span class="pre">test</span></code>, the package build directory may be:</p>
+<p>The directory for a specific package’s buildable content. This path is the
+working directory for package stages (e.g. configuration, build, etc.).</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;root&gt;/build/&lt;pkg-name&gt;[-&lt;pkg-version&gt;]
+</pre></div>
+</div>
+<p>For example, for a package <code class="docutils literal notranslate"><span class="pre">test</span></code> with a version set (e.g.
+<code class="docutils literal notranslate"><span class="pre">PKG_VERSION='1.0'</span></code>), the package build directory may be:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;root&gt;/build/test-1.0
 </pre></div>
 </div>
+<p>If <a class="reference internal" href="#env-pkg-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_VERSION</span></code></span></a> is not configure, the package build
+directory may be:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;root&gt;/build/test
+</pre></div>
+</div>
 <p>If <a class="reference internal" href="../packages/advanced-pkg-options/#pkg-opt-build-subdir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_SUBDIR</span></code></span></a> is configured, the
-sub-directory path will be appended.</p>
+sub-directory path will be appended. For example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># LIBFOO_BUILD_SUBDIR=&#39;subdir/subdir2&#39;
+&lt;root&gt;/build/test/subdir/subdir2
+</pre></div>
+</div>
 <p>See also <a class="reference internal" href="#env-pkg-build-base-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_BASE_DIR</span></code></span></a> and
 <a class="reference internal" href="#env-pkg-build-output-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_OUTPUT_DIR</span></code></span></a>.</p>
 </section>

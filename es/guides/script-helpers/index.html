@@ -291,12 +291,21 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/">Ejemplos</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../examples/examples/">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/examples-autotools/">Autotools package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/examples-cargo/">Cargo package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/examples-cmake/">CMake package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/examples-make/">Make package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/examples-meson/">Meson package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/examples-python/">Python package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/examples-scons/">SCons package examples</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../help/">Requesting help</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contributors/">Guía del colaborador</a></li>
 </ul>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../release-notes/">Release notes</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Release notes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../release-notes/">Release notes</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Release notes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../news/2025-08-03_02.06.00/">2.6 (2025-08-03)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../news/2025-06-22_02.05.00/">2.5 (2025-06-22)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../news/2025-05-31_02.04.00/">2.4 (2025-05-31)</a></li>
@@ -653,6 +662,35 @@ has failed</p>
 </dd>
 <dt class="field-odd">Muestra<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>SystemExit</strong> – if the copy operation fails with <code class="docutils literal notranslate"><span class="pre">critical=True</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_define">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_define</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">var</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_define" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.7.</span></p>
+</div>
+<p>Ensures a provided variable is defined in the caller’s global context.
+If not, the variable will be defined with the provided default value.</p>
+<p>An example when using in the context of script helpers is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">val</span> <span class="o">=</span> <span class="n">releng_define</span><span class="p">(</span><span class="s1">&#39;MY_DEFINE&#39;</span><span class="p">,</span> <span class="s1">&#39;default-value&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<span class="c1"># (or)</span>
+<span class="n">releng_define</span><span class="p">(</span><span class="s1">&#39;MY_DEFINE&#39;</span><span class="p">,</span> <span class="s1">&#39;default-value&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">MY_DEFINE</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parámetros<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>var</strong> – the define/variable name</p></li>
+<li><p><strong>default</strong> (<em>optional</em>) – the default value to use if the define is not set</p></li>
+</ul>
+</dd>
+<dt class="field-even">Devuelve<span class="colon">:</span></dt>
+<dd class="field-even"><p>the set value for this define</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1583,6 +1621,7 @@ example, import a specific function:</p>
 <li><a class="reference internal" href="#releng_tool.releng_cat"><code class="docutils literal notranslate"><span class="pre">releng_cat()</span></code></a></li>
 <li><a class="reference internal" href="#releng_tool.releng_copy"><code class="docutils literal notranslate"><span class="pre">releng_copy()</span></code></a></li>
 <li><a class="reference internal" href="#releng_tool.releng_copy_into"><code class="docutils literal notranslate"><span class="pre">releng_copy_into()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_define"><code class="docutils literal notranslate"><span class="pre">releng_define()</span></code></a></li>
 <li><a class="reference internal" href="#releng_tool.releng_env"><code class="docutils literal notranslate"><span class="pre">releng_env()</span></code></a></li>
 <li><a class="reference internal" href="#releng_tool.releng_execute"><code class="docutils literal notranslate"><span class="pre">releng_execute()</span></code></a></li>
 <li><a class="reference internal" href="#releng_tool.releng_execute_rv"><code class="docutils literal notranslate"><span class="pre">releng_execute_rv()</span></code></a></li>

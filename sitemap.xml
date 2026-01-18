@@ -75,73 +75,563 @@
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://docs-develop.releng.io/en/examples/</loc>
-        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/"/>
+        <loc>https://docs-develop.releng.io/en/examples/examples-scons/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-scons/"/>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://docs-develop.releng.io/de/examples/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/"/>
+        <loc>https://docs-develop.releng.io/de/examples/examples-scons/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-scons/"/>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://docs-develop.releng.io/es/examples/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/"/>
+        <loc>https://docs-develop.releng.io/es/examples/examples-scons/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-scons/"/>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://docs-develop.releng.io/ja/examples/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/"/>
+        <loc>https://docs-develop.releng.io/ja/examples/examples-scons/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-scons/"/>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://docs-develop.releng.io/pl/examples/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/"/>
+        <loc>https://docs-develop.releng.io/pl/examples/examples-scons/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-scons/"/>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://docs-develop.releng.io/zh_Hans/examples/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/"/>
+        <loc>https://docs-develop.releng.io/zh_Hans/examples/examples-scons/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-scons/"/>
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://docs-develop.releng.io/zh_Hant/examples/</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/"/>
-        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/"/>
-        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/"/>
-        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/"/>
+        <loc>https://docs-develop.releng.io/zh_Hant/examples/examples-scons/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-scons/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-scons/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/en/examples/examples/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/examples/examples/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/examples/examples/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/examples/examples/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/examples/examples/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/examples/examples/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/examples/examples/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/en/examples/examples-cmake/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-cmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/examples/examples-cmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-cmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/examples/examples-cmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-cmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/examples/examples-cmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-cmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/examples/examples-cmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-cmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/examples/examples-cmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-cmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/examples/examples-cmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-cmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-cmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/en/examples/examples-autotools/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-autotools/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/examples/examples-autotools/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-autotools/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/examples/examples-autotools/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-autotools/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/examples/examples-autotools/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-autotools/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/examples/examples-autotools/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-autotools/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/examples/examples-autotools/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-autotools/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/examples/examples-autotools/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-autotools/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-autotools/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/en/examples/examples-python/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-python/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/examples/examples-python/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-python/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/examples/examples-python/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-python/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/examples/examples-python/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-python/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/examples/examples-python/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-python/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/examples/examples-python/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-python/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/examples/examples-python/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-python/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-python/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/en/examples/examples-cargo/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-cargo/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/examples/examples-cargo/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-cargo/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/examples/examples-cargo/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-cargo/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/examples/examples-cargo/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-cargo/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/examples/examples-cargo/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-cargo/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/examples/examples-cargo/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-cargo/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/examples/examples-cargo/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-cargo/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-cargo/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/en/examples/examples-meson/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-meson/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/examples/examples-meson/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-meson/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/examples/examples-meson/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-meson/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/examples/examples-meson/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-meson/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/examples/examples-meson/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-meson/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/examples/examples-meson/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-meson/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/examples/examples-meson/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-meson/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-meson/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/en/examples/examples-make/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-make/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/examples/examples-make/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-make/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/examples/examples-make/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-make/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/examples/examples-make/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-make/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/examples/examples-make/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-make/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/examples/examples-make/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-make/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/examples/examples-make/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-make/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-make/"/>
         <changefreq>monthly</changefreq>
     </url>
     <url>
