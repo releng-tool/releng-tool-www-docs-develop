@@ -241,6 +241,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../packages/pkg-type-meson/">Meson package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../packages/pkg-type-python/">Python package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../packages/pkg-type-scons/">SCons package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packages/hacking/">Package hacking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../packages/deprecated-pkg-options/">Deprecated options</a></li>
 </ul>
 </li>
@@ -277,6 +278,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-git-no_depth/">releng.git.no_depth</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-git-no_quick_fetch/">releng.git.no_quick_fetch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-git-replicate_cache/">releng.git.replicate_cache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-ignore_failed_extensions/">releng.ignore_failed_extensions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-log-execute_args/">releng.log.execute_args</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-log-execute_env/">releng.log.execute_env</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-stats-no_pdf/">releng.stats.no_pdf</a></li>
@@ -430,6 +432,8 @@ This clean operation will remove files based off the configured output
 directory. If an output directory is provided (i.e. <code class="docutils literal notranslate"><span class="pre">--out-dir</span> <span class="pre">&lt;dir&gt;</span></code>)
 during a clean event, select folders inside this directory will be removed
 instead of the output directory (if any) found in the root directory.</p>
+<p>See also the <a class="reference internal" href="#action-distclean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">distclean</span></code></span></a>, <a class="reference internal" href="#action-mrproper"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></span></a> and
+<a class="reference internal" href="#action-pkg-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-clean</span></code></span></a> actions.</p>
 </section>
 <section id="distclean">
 <span id="action-distclean"></span><h3><code class="docutils literal notranslate"><span class="pre">distclean</span></code><a class="headerlink" href="#distclean" title="Link to this heading">¶</a></h3>
@@ -444,6 +448,8 @@ instead of the output directory (if any) found in the root directory.</p>
 in the root directory or overridden by respective arguments, as well as
 any mode file flags which may be set. See also the <a class="reference internal" href="#action-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">clean</span></code></span></a>
 or <a class="reference internal" href="#action-mrproper"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></span></a> actions.</p>
+<p>See also the <a class="reference internal" href="#action-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">clean</span></code></span></a>, <a class="reference internal" href="#action-mrproper"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></span></a> and
+<a class="reference internal" href="#action-pkg-distclean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-distclean</span></code></span></a> actions.</p>
 </section>
 <section id="extract">
 <span id="action-extract"></span><h3><code class="docutils literal notranslate"><span class="pre">extract</span></code><a class="headerlink" href="#extract" title="Link to this heading">¶</a></h3>
@@ -451,6 +457,7 @@ or <a class="reference internal" href="#action-mrproper"><span class="std std-re
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>extract
 </pre></div>
 </div>
+<p>See also the <a class="reference internal" href="#action-pkg-extract"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-extract</span></code></span></a> action.</p>
 </section>
 <section id="fetch">
 <span id="action-fetch"></span><h3><code class="docutils literal notranslate"><span class="pre">fetch</span></code><a class="headerlink" href="#fetch" title="Link to this heading">¶</a></h3>
@@ -468,8 +475,9 @@ for their target revision, or wishing to use a tag which has been moved.</p>
 artifacts when using this action in combination with the <a class="reference internal" href="#arg-force"><span class="std std-ref">--force, -F</span></a>
 argument.</p>
 </div>
-<p>See also <a class="reference internal" href="../tips/offline-builds/"><span class="doc std std-doc">offline builds</span></a> and the
-<a class="reference internal" href="#action-fetch-full"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">fetch-full</span></code></span></a> action.</p>
+<p>See also <a class="reference internal" href="../tips/offline-builds/"><span class="doc std std-doc">offline builds</span></a>, the
+<a class="reference internal" href="#action-fetch-full"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">fetch-full</span></code></span></a> action and the
+<a class="reference internal" href="#action-pkg-fetch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch</span></code></span></a> action.</p>
 </section>
 <section id="fetch-full">
 <span id="action-fetch-full"></span><h3><code class="docutils literal notranslate"><span class="pre">fetch-full</span></code><a class="headerlink" href="#fetch-full" title="Link to this heading">¶</a></h3>
@@ -482,7 +490,8 @@ Cargo dependencies).</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>fetch-full
 </pre></div>
 </div>
-<p>See also the <a class="reference internal" href="#action-fetch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">fetch</span></code></span></a> action.</p>
+<p>See also the <a class="reference internal" href="#action-fetch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">fetch</span></code></span></a> and
+<a class="reference internal" href="#action-pkg-fetch-full"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch-full</span></code></span></a> actions.</p>
 </section>
 <section id="init">
 <span id="action-init"></span><h3><code class="docutils literal notranslate"><span class="pre">init</span></code><a class="headerlink" href="#init" title="Link to this heading">¶</a></h3>
@@ -502,6 +511,7 @@ Cargo dependencies).</p>
 </div>
 <p>Note that license information requires acquiring license documents from
 packages. Therefore, packages will be fetched/extracted if not already done.</p>
+<p>See also the <a class="reference internal" href="#action-pkg-license"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-license</span></code></span></a> action.</p>
 </section>
 <section id="mrproper">
 <span id="action-mrproper"></span><h3><code class="docutils literal notranslate"><span class="pre">mrproper</span></code><a class="headerlink" href="#mrproper" title="Link to this heading">¶</a></h3>
@@ -514,8 +524,8 @@ packages. Therefore, packages will be fetched/extracted if not already done.</p>
 </div>
 <p>This request removes the <code class="docutils literal notranslate"><span class="pre">output/</span></code> directory found in the root directory or
 overridden by the <code class="docutils literal notranslate"><span class="pre">--out-dir</span></code> argument, as well as any mode file flags
-which may be set. The <code class="docutils literal notranslate"><span class="pre">cache/</span></code> and <code class="docutils literal notranslate"><span class="pre">dl/</span></code> directories will remain untouched.
-See also the <a class="reference internal" href="#action-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">clean</span></code></span></a> or <a class="reference internal" href="#action-distclean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">distclean</span></code></span></a>
+which may be set. The <code class="docutils literal notranslate"><span class="pre">cache/</span></code> and <code class="docutils literal notranslate"><span class="pre">dl/</span></code> directories will remain untouched.</p>
+<p>See also the <a class="reference internal" href="#action-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">clean</span></code></span></a> and <a class="reference internal" href="#action-distclean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">distclean</span></code></span></a>
 actions.</p>
 </section>
 <section id="patch">
@@ -524,7 +534,20 @@ actions.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>patch
 </pre></div>
 </div>
-<p>See also <a class="reference internal" href="../patching/"><span class="doc std std-doc">Patching</span></a>.</p>
+<p>See also <a class="reference internal" href="../patching/"><span class="doc std std-doc">Patching</span></a> and the <a class="reference internal" href="#action-pkg-patch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-patch</span></code></span></a> action.</p>
+</section>
+<section id="printvars">
+<span id="action-printvars"></span><h3><code class="docutils literal notranslate"><span class="pre">printvars</span></code><a class="headerlink" href="#printvars" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.7.</span></p>
+</div>
+<p>Print configuration variables associated with the project.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>printvars
+</pre></div>
+</div>
+<p>Printed variables will also note whether the variable is known to be set in
+the active configuration/execution context.</p>
+<p>See also the <a class="reference internal" href="#action-pkg-printvars"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-printvars</span></code></span></a> action.</p>
 </section>
 <section id="punch">
 <span id="action-punch"></span><h3><code class="docutils literal notranslate"><span class="pre">punch</span></code><a class="headerlink" href="#punch" title="Link to this heading">¶</a></h3>
@@ -589,7 +612,8 @@ not exist, a notification will be generated.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-clean
 </pre></div>
 </div>
-<p>See also the <a class="reference internal" href="#action-pkg-distclean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-distclean</span></code></span></a> action.</p>
+<p>See also the <a class="reference internal" href="#action-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">clean</span></code></span></a> and
+<a class="reference internal" href="#action-pkg-distclean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-distclean</span></code></span></a> actions.</p>
 </section>
 <section id="pkg-var-configure">
 <span id="action-pkg-configure"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-configure</span></code><a class="headerlink" href="#pkg-var-configure" title="Link to this heading">¶</a></h3>
@@ -612,8 +636,9 @@ does not exist, a notification will be generated.</p>
 </pre></div>
 </div>
 <p>This request not only removes the build directory but also any cached file
-or directory associated with the package. See also the
-<a class="reference internal" href="#action-pkg-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-clean</span></code></span></a> action.</p>
+or directory associated with the package.</p>
+<p>See also the <a class="reference internal" href="#action-distclean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">distclean</span></code></span></a> and
+<a class="reference internal" href="#action-pkg-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-clean</span></code></span></a> actions.</p>
 </section>
 <section id="pkg-var-exec-cmd-var">
 <span id="action-pkg-exec"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-exec</span> <span class="pre">&quot;&lt;cmd&gt;&quot;</span></code><a class="headerlink" href="#pkg-var-exec-cmd-var" title="Link to this heading">¶</a></h3>
@@ -642,7 +667,8 @@ before a provided command is issued.</p>
 </pre></div>
 </div>
 <p>Package environment variables will be available for the invoked command.</p>
-<p>See also <a class="reference internal" href="../environment/#env-releng-exec"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_EXEC</span></code></span></a> and <a class="reference internal" href="../script-helpers/#vars-releng-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng_args</span></code></span></a>.</p>
+<p>See also <a class="reference internal" href="../environment/#env-releng-exec"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_EXEC</span></code></span></a> (environment) and
+<a class="reference internal" href="../script-helpers/#vars-releng-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng_args</span></code></span></a> (configuration).</p>
 </section>
 <section id="pkg-var-extract">
 <span id="action-pkg-extract"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-extract</span></code><a class="headerlink" href="#pkg-var-extract" title="Link to this heading">¶</a></h3>
@@ -653,6 +679,7 @@ before a provided command is issued.</p>
 <p>On success, the specified package will have completed its extraction stage.
 If the provided package name does not exist, a notification will be
 generated.</p>
+<p>See also the <a class="reference internal" href="#action-extract"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">extract</span></code></span></a> action.</p>
 </section>
 <section id="pkg-var-fetch">
 <span id="action-pkg-fetch"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch</span></code><a class="headerlink" href="#pkg-var-fetch" title="Link to this heading">¶</a></h3>
@@ -663,6 +690,8 @@ generated.</p>
 <p>On success, the specified package stage will have completed its fetch stage.
 If the provided package name does not exist, a notification will be
 generated.</p>
+<p>See also the <a class="reference internal" href="#action-fetch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">fetch</span></code></span></a> and
+<a class="reference internal" href="#action-pkg-fetch-full"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch-full</span></code></span></a> actions.</p>
 </section>
 <section id="pkg-var-fetch-full">
 <span id="action-pkg-fetch-full"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch-full</span></code><a class="headerlink" href="#pkg-var-fetch-full" title="Link to this heading">¶</a></h3>
@@ -677,6 +706,8 @@ fetching Cargo dependencies).</p>
 </div>
 <p>If the provided package name does not exist, a notification will be
 generated.</p>
+<p>See also the <a class="reference internal" href="#action-fetch-full"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">fetch-full</span></code></span></a> and
+<a class="reference internal" href="#action-pkg-fetch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fetch</span></code></span></a> actions.</p>
 </section>
 <section id="pkg-var-fresh">
 <span id="action-pkg-fresh"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fresh</span></code><a class="headerlink" href="#pkg-var-fresh" title="Link to this heading">¶</a></h3>
@@ -717,6 +748,7 @@ in a project.</p>
 <p>Note that license information requires acquiring license documents from
 the package itself. Therefore, the package will be fetched/extracted if
 not already done.</p>
+<p>See also the <a class="reference internal" href="#action-licenses"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">licenses</span></code></span></a> action.</p>
 </section>
 <section id="pkg-var-patch">
 <span id="action-pkg-patch"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-patch</span></code><a class="headerlink" href="#pkg-var-patch" title="Link to this heading">¶</a></h3>
@@ -726,6 +758,20 @@ not already done.</p>
 </div>
 <p>On success, the specified package will have completed its patch stage.
 If the provided package name does not exist, a notification will be generated.</p>
+<p>See also <a class="reference internal" href="../patching/"><span class="doc std std-doc">Patching</span></a> and the <a class="reference internal" href="#action-patch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">patch</span></code></span></a> action.</p>
+</section>
+<section id="pkg-var-printvars">
+<span id="action-pkg-printvars"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-printvars</span></code><a class="headerlink" href="#pkg-var-printvars" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.7.</span></p>
+</div>
+<p>Print configuration variables associated with the package.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-printvars
+</pre></div>
+</div>
+<p>Printed variables will also note whether the variable is known to be set in
+the active configuration/execution context.</p>
+<p>See also the <a class="reference internal" href="#action-printvars"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">printvars</span></code></span></a> action.</p>
 </section>
 <section id="pkg-var-rebuild">
 <span id="action-pkg-rebuild"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild</span></code><a class="headerlink" href="#pkg-var-rebuild" title="Link to this heading">¶</a></h3>
@@ -1136,6 +1182,7 @@ package with a version <code class="docutils literal notranslate"><span class="p
 <li><a class="reference internal" href="#licenses"><code class="docutils literal notranslate"><span class="pre">licenses</span></code></a></li>
 <li><a class="reference internal" href="#mrproper"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></a></li>
 <li><a class="reference internal" href="#patch"><code class="docutils literal notranslate"><span class="pre">patch</span></code></a></li>
+<li><a class="reference internal" href="#printvars"><code class="docutils literal notranslate"><span class="pre">printvars</span></code></a></li>
 <li><a class="reference internal" href="#punch"><code class="docutils literal notranslate"><span class="pre">punch</span></code></a></li>
 <li><a class="reference internal" href="#sbom"><code class="docutils literal notranslate"><span class="pre">sbom</span></code></a></li>
 <li><a class="reference internal" href="#state"><code class="docutils literal notranslate"><span class="pre">state</span></code></a></li>
@@ -1154,6 +1201,7 @@ package with a version <code class="docutils literal notranslate"><span class="p
 <li><a class="reference internal" href="#pkg-var-install"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-install</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-license"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-license</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-patch"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-patch</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-printvars"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-printvars</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-rebuild"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-rebuild-only"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild-only</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-reconfigure"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reconfigure</span></code></a></li>

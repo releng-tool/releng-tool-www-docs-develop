@@ -241,6 +241,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../guides/packages/pkg-type-meson/">Meson package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/packages/pkg-type-python/">Python package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/packages/pkg-type-scons/">SCons package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../guides/packages/hacking/">Package hacking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/packages/deprecated-pkg-options/">Deprecated options</a></li>
 </ul>
 </li>
@@ -277,6 +278,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-git-no_depth/">releng.git.no_depth</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-git-no_quick_fetch/">releng.git.no_quick_fetch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-git-replicate_cache/">releng.git.replicate_cache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-ignore_failed_extensions/">releng.ignore_failed_extensions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-log-execute_args/">releng.log.execute_args</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-log-execute_env/">releng.log.execute_env</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-stats-no_pdf/">releng.stats.no_pdf</a></li>
@@ -419,6 +421,7 @@
 <a class="reference internal" href="../guides/arguments/#action-licenses"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">licenses</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-mrproper"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-patch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">patch</span></code></span></a>
+<a class="reference internal" href="../guides/arguments/#action-printvars"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">printvars</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-punch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">punch</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-sbom"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">sbom</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-state"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">state</span></code></span></a>
@@ -434,6 +437,7 @@
 <a class="reference internal" href="../guides/arguments/#action-pkg-install"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-install</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-pkg-license"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-license</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-pkg-patch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-patch</span></code></span></a>
+<a class="reference internal" href="../guides/arguments/#action-pkg-printvars"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-printvars</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-pkg-rebuild"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-pkg-rebuild-only"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild-only</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-pkg-reconfigure"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reconfigure</span></code></span></a>
@@ -641,6 +645,7 @@
 <a class="reference internal" href="../guides/packages/common-pkg-options/#pkg-opt-license"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_LICENSE</span></code></span></a> = '&lt;license&gt;' or ['&lt;license&gt;', '&lt;license&gt;']
 <a class="reference internal" href="../guides/packages/common-pkg-options/#pkg-opt-license-files"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_LICENSE_FILES</span></code></span></a> = '&lt;file&gt;' or ['&lt;file&gt;', '&lt;file&gt;']
 <a class="reference internal" href="../guides/packages/advanced-pkg-options/#pkg-opt-patch-subdir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PATCH_SUBDIR</span></code></span></a> = '&lt;subdir&gt;'
+<a class="reference internal" href="../guides/packages/advanced-pkg-options/#pkg-opt-preextract"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PREEXTRACT</span></code></span></a> = bool
 <a class="reference internal" href="../guides/packages/advanced-pkg-options/#pkg-opt-prefix"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PREFIX</span></code></span></a> = '&lt;path&gt;' # '/usr'
 <a class="reference internal" href="../guides/packages/pkg-type-python/#pkg-opt-python-dist-path"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_DIST_PATH</span></code></span></a> = '&lt;path&gt;'  # e.g. 'dist/'
 <a class="reference internal" href="../guides/packages/pkg-type-python/#pkg-opt-python-installer-interpreter"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_INSTALLER_INTERPRETER</span></code></span></a> = '&lt;interpreter&gt;'
@@ -717,6 +722,7 @@
 <a class="reference internal" href="../guides/quirks/quirk-git-no_depth/#quirk-releng-git-no-depth"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.git.no_depth</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-git-no_quick_fetch/#quirk-releng-git-no-quick-fetch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.git.no_quick_fetch</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-git-replicate_cache/#quirk-releng-git-replicate-cache"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.git.replicate_cache</span></code></span></a>
+<a class="reference internal" href="../guides/quirks/quirk-ignore_failed_extensions/#quirk-releng-ignore-failed-extensions"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.ignore_failed_extensions</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-log-execute_args/#quirk-releng-log-execute-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.log.execute_args</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-log-execute_env/#quirk-releng-log-execute-env"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.log.execute_env</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-stats-no_pdf/#quirk-releng-stats-no-pdf"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.stats.no_pdf</span></code></span></a></pre>
