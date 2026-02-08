@@ -5885,6 +5885,76 @@
         <changefreq>monthly</changefreq>
     </url>
     <url>
+        <loc>https://docs-develop.releng.io/en/news/2026-02-08_02.07.00/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/news/2026-02-08_02.07.00/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/news/2026-02-08_02.07.00/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/news/2026-02-08_02.07.00/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/news/2026-02-08_02.07.00/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/news/2026-02-08_02.07.00/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/news/2026-02-08_02.07.00/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/news/2026-02-08_02.07.00/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/news/2026-02-08_02.07.00/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/news/2026-02-08_02.07.00/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/news/2026-02-08_02.07.00/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/news/2026-02-08_02.07.00/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/news/2026-02-08_02.07.00/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/news/2026-02-08_02.07.00/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/news/2026-02-08_02.07.00/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
         <loc>https://docs-develop.releng.io/en/news/2024-08-01_01.03.00/</loc>
         <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/news/2024-08-01_01.03.00/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/news/2024-08-01_01.03.00/"/>
