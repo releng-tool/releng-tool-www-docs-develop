@@ -442,19 +442,25 @@ releng-tool, please see the project’s <a class="reference external" href="http
 <h2>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Failures in loading project extensions will now stop releng-tool</p></li>
+<li><p>Fixed some scenarios where using <code class="docutils literal notranslate"><span class="pre">--debug-extended</span></code> may crash releng-tool</p></li>
 <li><p>Generate a «step over» message for already processed packages on rebuilds</p></li>
 <li><p>Handle trailing path-slash in a path-completed action request</p></li>
 <li><p>Improved error handling for incorrect extension handle signatures</p></li>
 <li><p>Improved processing of command outputs</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">LIBFOO_MESON_BUILD_TYPE</span></code> to override Meson build types</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">LIBFOO_PREEXTRACT</span></code> to support forced pre-configuration extraction</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">default_cmake_build_type</span></code> project configuration</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">default_meson_build_type</span></code> project configuration</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">releng_define</span></code> helper script function</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">releng_register_path</span></code> helper script function</p></li>
 <li><p>Introduce multiple package event types extension can hook into</p></li>
+<li><p>Introduce the <code class="docutils literal notranslate"><span class="pre">lint</span></code> action to support quality checks on a project/package</p></li>
 <li><p>Introduce the <code class="docutils literal notranslate"><span class="pre">printvars</span></code> action to support dumping package variable names</p></li>
 <li><p>Only show SSH error logs for remote Git actions</p></li>
 <li><p>Prevent default CMake define conflicts when overrides set in <code class="docutils literal notranslate"><span class="pre">&lt;PKG&gt;_CONF_DEFS</span></code></p></li>
 <li><p>Support <code class="docutils literal notranslate"><span class="pre">PKG_DEFDIR</span></code> in early package configuration variable expansions</p></li>
 <li><p>Support <code class="docutils literal notranslate"><span class="pre">releng_include</span></code> sourcing variables into caller script</p></li>
+<li><p>Support the existence of a <code class="docutils literal notranslate"><span class="pre">FORCE_COLOR</span></code> environment variable</p></li>
 <li><p>Support variable expansion on various logging calls</p></li>
 <li><p>Support variable expansion on various path-like utility calls</p></li>
 </ul>

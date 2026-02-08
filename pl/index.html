@@ -516,6 +516,7 @@ between the staging/target area with the host system.</p>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#fetch-full"><code class="docutils literal notranslate"><span class="pre">fetch-full</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#init"><code class="docutils literal notranslate"><span class="pre">init</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#licenses"><code class="docutils literal notranslate"><span class="pre">licenses</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/arguments/#lint"><code class="docutils literal notranslate"><span class="pre">lint</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#mrproper"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#patch"><code class="docutils literal notranslate"><span class="pre">patch</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#printvars"><code class="docutils literal notranslate"><span class="pre">printvars</span></code></a></li>
@@ -536,6 +537,7 @@ between the staging/target area with the host system.</p>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#pkg-var-fresh"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fresh</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#pkg-var-install"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-install</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#pkg-var-license"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-license</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/arguments/#pkg-var-lint"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-lint</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#pkg-var-patch"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-patch</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#pkg-var-printvars"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-printvars</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/arguments/#pkg-var-rebuild"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild</span></code></a></li>
@@ -590,7 +592,9 @@ between the staging/target area with the host system.</p>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="guides/configuration/#advanced-options">Advanced options</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#cache-ext"><code class="docutils literal notranslate"><span class="pre">cache_ext</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/configuration/#default-cmake-build-type"><code class="docutils literal notranslate"><span class="pre">default_cmake_build_type</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#default-devmode-ignore-cache"><code class="docutils literal notranslate"><span class="pre">default_devmode_ignore_cache</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/configuration/#default-meson-build-type"><code class="docutils literal notranslate"><span class="pre">default_meson_build_type</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#extra-license-exceptions"><code class="docutils literal notranslate"><span class="pre">extra_license_exceptions</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#extra-licenses"><code class="docutils literal notranslate"><span class="pre">extra_licenses</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#override-extract-tools"><code class="docutils literal notranslate"><span class="pre">override_extract_tools</span></code></a></li>
@@ -897,6 +901,7 @@ between the staging/target area with the host system.</p>
 <li class="toctree-l4"><a class="reference internal" href="guides/script-helpers/#releng_tool.releng_move"><code class="docutils literal notranslate"><span class="pre">releng_move()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/script-helpers/#releng_tool.releng_move_into"><code class="docutils literal notranslate"><span class="pre">releng_move_into()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/script-helpers/#releng_tool.releng_path"><code class="docutils literal notranslate"><span class="pre">releng_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/script-helpers/#releng_tool.releng_register_path"><code class="docutils literal notranslate"><span class="pre">releng_register_path()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/script-helpers/#releng_tool.releng_remove"><code class="docutils literal notranslate"><span class="pre">releng_remove()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/script-helpers/#releng_tool.releng_symlink"><code class="docutils literal notranslate"><span class="pre">releng_symlink()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/script-helpers/#releng_tool.releng_require_version"><code class="docutils literal notranslate"><span class="pre">releng_require_version()</span></code></a></li>

@@ -513,6 +513,22 @@ Cargo dependencies).</p>
 packages. Therefore, packages will be fetched/extracted if not already done.</p>
 <p>See also the <a class="reference internal" href="#action-pkg-license"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-license</span></code></span></a> action.</p>
 </section>
+<section id="lint">
+<span id="action-lint"></span><h3><code class="docutils literal notranslate"><span class="pre">lint</span></code><a class="headerlink" href="#lint" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.7.</span></p>
+</div>
+<p>A request to lint the quality of a project.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>lint
+</pre></div>
+</div>
+<p>To ignore lines based on preference or false-positives, lines can be commented
+with a <code class="docutils literal notranslate"><span class="pre">noqa</span></code> keyword to not be flagged. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">UNEXPECTED_KEY</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># noqa</span>
+</pre></div>
+</div>
+<p>See also the <a class="reference internal" href="#action-pkg-lint"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-lint</span></code></span></a> action.</p>
+</section>
 <section id="mrproper">
 <span id="action-mrproper"></span><h3><code class="docutils literal notranslate"><span class="pre">mrproper</span></code><a class="headerlink" href="#mrproper" title="Link to this heading">¶</a></h3>
 <div class="versionadded">
@@ -750,6 +766,17 @@ the package itself. Therefore, the package will be fetched/extracted if
 not already done.</p>
 <p>See also the <a class="reference internal" href="#action-licenses"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">licenses</span></code></span></a> action.</p>
 </section>
+<section id="pkg-var-lint">
+<span id="action-pkg-lint"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-lint</span></code><a class="headerlink" href="#pkg-var-lint" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.7.</span></p>
+</div>
+<p>A request to lint the quality of a specific package in a project.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>&lt;pkg&gt;-lint
+</pre></div>
+</div>
+<p>See also the <a class="reference internal" href="#action-lint"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">lint</span></code></span></a> action.</p>
+</section>
 <section id="pkg-var-patch">
 <span id="action-pkg-patch"></span><h3><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-patch</span></code><a class="headerlink" href="#pkg-var-patch" title="Link to this heading">¶</a></h3>
 <p>Performs the patch stage for the package.</p>
@@ -977,8 +1004,15 @@ looked for inside the provided path.</p>
 <p>Explicitly disable colorized output.</p>
 <div class="admonition tip">
 <p class="admonition-title">Truco</p>
-<p>releng-tool respects the <a class="reference external" href="https://no-color.org/"><code class="docutils literal notranslate"><span class="pre">NO_COLOR</span></code></a> environment variable, if
-configured in the running environment.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.17: </span>Added <code class="docutils literal notranslate"><span class="pre">NO_COLOR</span></code> support.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.7: </span>Added <code class="docutils literal notranslate"><span class="pre">FORCE_COLOR</span></code> support.</p>
+</div>
+<p>releng-tool respects the <a class="reference external" href="https://no-color.org/"><code class="docutils literal notranslate"><span class="pre">NO_COLOR</span></code></a> and
+<a class="reference external" href="https://force-color.org/"><code class="docutils literal notranslate"><span class="pre">FORCE_COLOR</span></code></a> environment variables, if configured in the
+running environment.</p>
 </div>
 </section>
 <section id="only-mirror">
@@ -1180,6 +1214,7 @@ package with a version <code class="docutils literal notranslate"><span class="p
 <li><a class="reference internal" href="#fetch-full"><code class="docutils literal notranslate"><span class="pre">fetch-full</span></code></a></li>
 <li><a class="reference internal" href="#init"><code class="docutils literal notranslate"><span class="pre">init</span></code></a></li>
 <li><a class="reference internal" href="#licenses"><code class="docutils literal notranslate"><span class="pre">licenses</span></code></a></li>
+<li><a class="reference internal" href="#lint"><code class="docutils literal notranslate"><span class="pre">lint</span></code></a></li>
 <li><a class="reference internal" href="#mrproper"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></a></li>
 <li><a class="reference internal" href="#patch"><code class="docutils literal notranslate"><span class="pre">patch</span></code></a></li>
 <li><a class="reference internal" href="#printvars"><code class="docutils literal notranslate"><span class="pre">printvars</span></code></a></li>
@@ -1200,6 +1235,7 @@ package with a version <code class="docutils literal notranslate"><span class="p
 <li><a class="reference internal" href="#pkg-var-fresh"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fresh</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-install"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-install</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-license"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-license</span></code></a></li>
+<li><a class="reference internal" href="#pkg-var-lint"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-lint</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-patch"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-patch</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-printvars"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-printvars</span></code></a></li>
 <li><a class="reference internal" href="#pkg-var-rebuild"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild</span></code></a></li>

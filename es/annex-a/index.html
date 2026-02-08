@@ -420,6 +420,7 @@ releng-tool project.</p>
 <a class="reference internal" href="../guides/arguments/#action-fetch-full"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">fetch-full</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-init"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">init</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-licenses"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">licenses</span></code></span></a>
+<a class="reference internal" href="../guides/arguments/#action-lint"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">lint</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-mrproper"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-patch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">patch</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-printvars"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">printvars</span></code></span></a>
@@ -437,6 +438,7 @@ releng-tool project.</p>
 <a class="reference internal" href="../guides/arguments/#action-pkg-fresh"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-fresh</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-pkg-install"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-install</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-pkg-license"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-license</span></code></span></a>
+<a class="reference internal" href="../guides/arguments/#action-pkg-lint"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-lint</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-pkg-patch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-patch</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-pkg-printvars"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-printvars</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-pkg-rebuild"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-rebuild</span></code></span></a>
@@ -474,6 +476,8 @@ releng-tool project.</p>
 (<code class="docutils literal notranslate"><span class="pre">releng-tool.rt</span></code>):</p>
 <pre class="literal-block"><a class="reference internal" href="../guides/configuration/#conf-cache-ext"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">cache_ext</span></code></span></a> = &lt;callable&gt;
 <a class="reference internal" href="../guides/configuration/#conf-default-devmode-ignore-cache"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">default_devmode_ignore_cache</span></code></span></a> = bool
+<a class="reference internal" href="../guides/configuration/#conf-default-cmake-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">default_cmake_build_type</span></code></span></a> = str
+<a class="reference internal" href="../guides/configuration/#conf-default-meson-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">default_meson_build_type</span></code></span></a> = str
 <a class="reference internal" href="../guides/configuration/#conf-default-internal"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">default_internal</span></code></span></a> = bool
 <a class="reference internal" href="../guides/configuration/#conf-environment"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">environment</span></code></span></a> = {'&lt;key&gt;': '&lt;val&gt;'}
 <a class="reference internal" href="../guides/configuration/#conf-extensions"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">extensions</span></code></span></a> = ['&lt;extension&gt;', '&lt;extension&gt;']
@@ -567,7 +571,8 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="../guides/environment/#env-pkg-var-revision"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;PKG_NAME&gt;_REVISION</span></code></span></a>
 <a class="reference internal" href="../guides/environment/#env-pkg-var-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;PKG_NAME&gt;_VERSION</span></code></span></a></pre>
 <p>Other environment variables accepted by releng-tool:</p>
-<pre class="literal-block"><code class="docutils literal notranslate"><span class="pre">NO_COLOR</span></code>
+<pre class="literal-block"><code class="docutils literal notranslate"><span class="pre">FORCE_COLOR</span></code>
+<code class="docutils literal notranslate"><span class="pre">NO_COLOR</span></code>
 <a class="reference internal" href="../guides/environment/#env-releng-assets-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_ASSETS_DIR</span></code></span></a>
 <a class="reference internal" href="../guides/environment/#env-releng-cache-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_CACHE_DIR</span></code></span></a>
 <a class="reference internal" href="../guides/environment/#env-releng-dl-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_DL_DIR</span></code></span></a>

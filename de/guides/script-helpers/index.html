@@ -1256,6 +1256,41 @@ has failed</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_register_path">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_register_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_register_path" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.7.</span></p>
+</div>
+<p>This call will register a provided path into the Python module search path
+(<code class="docutils literal notranslate"><span class="pre">sys.path</span></code>). This can be useful for situations when trying to load a
+local/relative folder containing extensions or other enhancements a
+developer wants to use/import. If <code class="docutils literal notranslate"><span class="pre">critical</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> and the
+specified directory could not be registered for any reason, this call will
+issue a system exit (<code class="docutils literal notranslate"><span class="pre">SystemExit</span></code>).</p>
+<p>If the provided path is already registered, the call is ignored and will
+return as if a registration was made (<code class="docutils literal notranslate"><span class="pre">True</span></code>).</p>
+<p>An example when using in the context of script helpers is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_register_path</span><span class="p">(</span><span class="n">ROOT_DIR</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;my-other-folder&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameter<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dir</strong> – the directory to register</p></li>
+<li><p><strong>critical</strong> (<em>optional</em>) – whether or not to stop execution on failure</p></li>
+</ul>
+</dd>
+<dt class="field-even">Rückgabe<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the path has been registered; <code class="docutils literal notranslate"><span class="pre">False</span></code> if the registration
+has failed</p>
+</dd>
+<dt class="field-odd">Verursacht<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>SystemExit</strong> – if the registration fails with <code class="docutils literal notranslate"><span class="pre">critical=True</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="releng_tool.releng_remove">
 <span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#releng_tool.releng_remove" title="Link to this definition">¶</a></dt>
 <dd><div class="versionchanged">
@@ -1720,6 +1755,7 @@ example, import a specific function:</p>
 <li><a class="reference internal" href="#releng_tool.releng_move"><code class="docutils literal notranslate"><span class="pre">releng_move()</span></code></a></li>
 <li><a class="reference internal" href="#releng_tool.releng_move_into"><code class="docutils literal notranslate"><span class="pre">releng_move_into()</span></code></a></li>
 <li><a class="reference internal" href="#releng_tool.releng_path"><code class="docutils literal notranslate"><span class="pre">releng_path()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_register_path"><code class="docutils literal notranslate"><span class="pre">releng_register_path()</span></code></a></li>
 <li><a class="reference internal" href="#releng_tool.releng_remove"><code class="docutils literal notranslate"><span class="pre">releng_remove()</span></code></a></li>
 <li><a class="reference internal" href="#releng_tool.releng_symlink"><code class="docutils literal notranslate"><span class="pre">releng_symlink()</span></code></a></li>
 <li><a class="reference internal" href="#releng_tool.releng_require_version"><code class="docutils literal notranslate"><span class="pre">releng_require_version()</span></code></a></li>

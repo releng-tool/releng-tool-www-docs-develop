@@ -669,6 +669,22 @@ For example:</p>
 <p>The above transform indicates that all packages using the
 <code class="docutils literal notranslate"><span class="pre">static.example.org</span></code> site will be <code class="docutils literal notranslate"><span class="pre">tgz</span></code> archives.</p>
 </section>
+<section id="default-cmake-build-type">
+<span id="conf-default-cmake-build-type"></span><h3><code class="docutils literal notranslate"><span class="pre">default_cmake_build_type</span></code><a class="headerlink" href="#default-cmake-build-type" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.7.</span></p>
+</div>
+<p><a class="reference internal" href="../packages/pkg-type-cmake/"><span class="doc std std-doc">CMake</span></a> packages can configure their default
+build type on individual packages using
+<a class="reference internal" href="../packages/pkg-type-cmake/#pkg-opt-cmake-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CMAKE_BUILD_TYPE</span></code></span></a>. However, if a developer
+wishes to configure the default build type across all CMake packages, this
+option may be used. For example, to default to using the <code class="docutils literal notranslate"><span class="pre">Release</span></code> build type,
+the following may be used:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">default_cmake_build_type</span> <span class="o">=</span> <span class="s1">&#39;Release&#39;</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="../packages/pkg-type-cmake/#pkg-opt-cmake-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CMAKE_BUILD_TYPE</span></code></span></a>.</p>
+</section>
 <section id="default-devmode-ignore-cache">
 <span id="conf-default-devmode-ignore-cache"></span><h3><code class="docutils literal notranslate"><span class="pre">default_devmode_ignore_cache</span></code><a class="headerlink" href="#default-devmode-ignore-cache" title="Link to this heading">¶</a></h3>
 <div class="versionadded">
@@ -687,6 +703,22 @@ override can be configured.</p>
 manner as if <code class="docutils literal notranslate"><span class="pre">LIBFOO_DEVMODE_IGNORE_CACHE</span> <span class="pre">=</span> <span class="pre">True</span></code>. Individual packages may
 opt-out in this scenario by configuring <code class="docutils literal notranslate"><span class="pre">LIBFOO_DEVMODE_IGNORE_CACHE</span> <span class="pre">=</span> <span class="pre">False</span></code>.</p>
 <p>See also <a class="reference internal" href="../packages/advanced-pkg-options/#pkg-opt-devmode-ignore-cache"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEVMODE_IGNORE_CACHE</span></code></span></a>.</p>
+</section>
+<section id="default-meson-build-type">
+<span id="conf-default-meson-build-type"></span><h3><code class="docutils literal notranslate"><span class="pre">default_meson_build_type</span></code><a class="headerlink" href="#default-meson-build-type" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.7.</span></p>
+</div>
+<p><a class="reference internal" href="../packages/pkg-type-meson/"><span class="doc std std-doc">Meson</span></a> packages can configure their default
+build type on individual packages using
+<a class="reference internal" href="../packages/pkg-type-meson/#pkg-opt-meson-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MESON_BUILD_TYPE</span></code></span></a>. However, if a developer
+wishes to configure the default build type across all Meson packages, this
+option may be used. For example, to default to using the <code class="docutils literal notranslate"><span class="pre">Release</span></code> build type,
+the following may be used:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">default_meson_build_type</span> <span class="o">=</span> <span class="s1">&#39;release&#39;</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="../packages/pkg-type-meson/#pkg-opt-meson-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MESON_BUILD_TYPE</span></code></span></a>.</p>
 </section>
 <section id="extra-license-exceptions">
 <span id="conf-extra-license-exceptions"></span><h3><code class="docutils literal notranslate"><span class="pre">extra_license_exceptions</span></code><a class="headerlink" href="#extra-license-exceptions" title="Link to this heading">¶</a></h3>
@@ -964,7 +996,9 @@ can be used:</p>
 </li>
 <li><a class="reference internal" href="#advanced-options">Advanced options</a><ul>
 <li><a class="reference internal" href="#cache-ext"><code class="docutils literal notranslate"><span class="pre">cache_ext</span></code></a></li>
+<li><a class="reference internal" href="#default-cmake-build-type"><code class="docutils literal notranslate"><span class="pre">default_cmake_build_type</span></code></a></li>
 <li><a class="reference internal" href="#default-devmode-ignore-cache"><code class="docutils literal notranslate"><span class="pre">default_devmode_ignore_cache</span></code></a></li>
+<li><a class="reference internal" href="#default-meson-build-type"><code class="docutils literal notranslate"><span class="pre">default_meson_build_type</span></code></a></li>
 <li><a class="reference internal" href="#extra-license-exceptions"><code class="docutils literal notranslate"><span class="pre">extra_license_exceptions</span></code></a></li>
 <li><a class="reference internal" href="#extra-licenses"><code class="docutils literal notranslate"><span class="pre">extra_licenses</span></code></a></li>
 <li><a class="reference internal" href="#override-extract-tools"><code class="docutils literal notranslate"><span class="pre">override_extract_tools</span></code></a></li>
