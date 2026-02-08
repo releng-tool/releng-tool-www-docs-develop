@@ -478,9 +478,7 @@ project and register this new example extension into the releng-tool process:</p
 <span class="p">]</span>
 
 <span class="c1"># add local extension path into system path</span>
-<span class="n">container_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">ROOT_DIR</span><span class="p">)</span>
-<span class="n">ext_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">container_dir</span><span class="p">,</span> <span class="s1">&#39;my-awesome-extension&#39;</span><span class="p">)</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ext_dir</span><span class="p">)</span>
+<span class="n">releng_register_path</span><span class="p">(</span><span class="n">ROOT_DIR</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;my-awesome-extension&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>When running releng-tool, the following message should be printed at the end of

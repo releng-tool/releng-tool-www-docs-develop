@@ -411,6 +411,10 @@
 <div class="versionchanged">
 <p><span class="versionmodified changed">バージョン 2.7 で変更: </span>releng-tool will now stop if an extension fails to load.</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">バージョン 2.7 で変更: </span>releng-tool projects can define a <code class="docutils literal notranslate"><span class="pre">releng_setup</span></code> hook in their project
+configurations to perform similar actions as extensions can.</p>
+</div>
 <p>A releng-tool project can use an extension by registering the extension name
 in the <code class="docutils literal notranslate"><span class="pre">extensions</span></code> configuration option inside the project configuration
 (<code class="docutils literal notranslate"><span class="pre">releng</span></code>). For example, to load an extension <code class="docutils literal notranslate"><span class="pre">my_awesome_extension</span></code> into
@@ -431,12 +435,7 @@ the releng-tool configuration file. For example, if a user has a releng-tool
 project checked out alongside a checked out extension in a folder named
 <code class="docutils literal notranslate"><span class="pre">my-awesome-extension</span></code>, the extension's path can be registered into the
 system path using the following:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-
-<span class="n">container_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">ROOT_DIR</span><span class="p">)</span>
-<span class="n">ext_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">container_dir</span><span class="p">,</span> <span class="s1">&#39;my-awesome-extension&#39;</span><span class="p">)</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ext_dir</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_register_path</span><span class="p">(</span><span class="n">ROOT_DIR</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;my-awesome-extension&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>While the ability to load extensions is supported, capabilities provided by
@@ -449,6 +448,12 @@ interfaces and documentation for these interfaces can be found inside the
 to be &quot;API safe&quot; -- there is a strong attempt to prevent the changing of
 classes, methods, etc. to prevent compatibility issues as both releng-tool
 and extensions (if any) evolve.</p>
+<p>Advanced users may also register application hooks by defining a <code class="docutils literal notranslate"><span class="pre">releng_setup</span></code>
+hook in their project's <code class="docutils literal notranslate"><span class="pre">releng-tool.rt</span></code> configuration. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">releng_setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
 <p>The following provides a series of examples for developers on how to develop
