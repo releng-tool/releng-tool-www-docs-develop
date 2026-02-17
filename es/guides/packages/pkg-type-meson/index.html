@@ -468,9 +468,10 @@ will also be included.</p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">-C</span></code> directory is configured to
 <a class="reference internal" href="../../environment/#env-pkg-build-output-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_OUTPUT_DIR</span></code></span></a>.</p>
-<p>The number of jobs is populated by either the <a class="reference internal" href="../../arguments/#arg-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--jobs</span></code> argument</span></a> or
-<a class="reference internal" href="../advanced-pkg-options/#pkg-opt-fixed-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_FIXED_JOBS</span></code></span></a>. Although, if the configuration
-results in a single job, the argument will not be used.</p>
+<p>The number of jobs is populated by either the <a class="reference internal" href="../../arguments/#arg-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--jobs</span></code> argument</span></a>,
+<a class="reference internal" href="../advanced-pkg-options/#pkg-opt-fixed-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_FIXED_JOBS</span></code></span></a> or
+<a class="reference internal" href="../advanced-pkg-options/#pkg-opt-max-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAX_JOBS</span></code></span></a>. Although, if the configuration results
+in a single job, the argument will not be used.</p>
 </div>
 <input class="tab-input" id="tab-set--0-input--3" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--3">Install</label><div class="tab-content docutils">
 <p>The install stage invokes <code class="docutils literal notranslate"><span class="pre">meson</span></code> with the arguments:</p>
