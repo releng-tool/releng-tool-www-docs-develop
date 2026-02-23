@@ -241,6 +241,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../packages/pkg-type-meson/">Meson package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../packages/pkg-type-python/">Python package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../packages/pkg-type-scons/">SCons package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packages/pkg-type-waf/">Waf package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../packages/hacking/">Package hacking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../packages/deprecated-pkg-options/">Deprecated options</a></li>
 </ul>
@@ -301,6 +302,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../examples/examples-meson/">Meson package examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples/examples-python/">Python package examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../examples/examples-scons/">SCons package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/examples-waf/">Waf package examples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../help/">Prośba o pomoc</a></li>
@@ -462,6 +464,17 @@ can be useful if a package uses a built archive for a stable release, but
 having development sources fetched from a repository. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">DEFAULT_SITE</span><span class="p">:</span> <span class="s1">&#39;https://pkgs.example.com/releases/libfoo-$</span><span class="si">{LIBFOO_VERSION}</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;test&#39;</span><span class="p">:</span> <span class="s1">&#39;https://git.example.com/libfoo.git&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;test&#39;</span><span class="p">:</span> <span class="s1">&#39;main&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Or an equivalent:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;*&#39;</span><span class="p">:</span> <span class="s1">&#39;https://pkgs.example.com/releases/libfoo-$</span><span class="si">{LIBFOO_VERSION}</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
     <span class="s1">&#39;test&#39;</span><span class="p">:</span> <span class="s1">&#39;https://git.example.com/libfoo.git&#39;</span><span class="p">,</span>
 <span class="p">}</span>
 
