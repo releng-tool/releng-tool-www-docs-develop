@@ -437,6 +437,23 @@ prefixed with a <code class="docutils literal notranslate"><span class="pre">brz
 call <a class="footnote-reference brackets" href="#brzexport" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. Content from a Bazaar or Git repository will be fetched and
 archived into a file during fetch stage. Once a cached archive is made, the
 fetch stage will be skipped unless the archive is manually removed.</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Tagged Clone</label><div class="tab-content docutils">
+<p>The following shows an example of cloning a v1.0 tag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;tag:v$</span><span class="si">{LIBFOO_VERSION}</span><span class="s1">&#39;</span>
+<span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;brz+https://example.com/project/trunk&#39;</span>
+<span class="n">LIBFOO_VERSION</span> <span class="o">=</span> <span class="s1">&#39;1.0&#39;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Branch Clone</label><div class="tab-content docutils">
+<p>The following shows an example of cloning the latest trunk branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;-1&#39;</span>
+<span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;brz+https://example.com/project/trunk&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="bazaar-site">
 <span id="site-bazaar"></span><h2>Bazaar site<a class="headerlink" href="#bazaar-site" title="Link to this heading">¶</a></h2>
@@ -471,6 +488,23 @@ CVS module <a class="footnote-reference brackets" href="#cvsmodule" id="id4" rol
 fetched and archived into a file during fetch stage. Once a cached archive
 is made, the fetch stage will be skipped unless the archive is manually
 removed.</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Tagged Clone</label><div class="tab-content docutils">
+<p>The following shows an example of cloning a libfoo-1.2.3 tag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;libfoo-$</span><span class="si">{LIBFOO_VERSION}</span><span class="s1">&#39;</span>
+<span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;:pserver:anonymous@cvs.example.com:/var/lib/cvsroot libfoo&#39;</span>
+<span class="n">LIBFOO_VERSION</span> <span class="o">=</span> <span class="s1">&#39;1.2.3&#39;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Branch Clone</label><div class="tab-content docutils">
+<p>The following shows an example of cloning a v1.x LTS branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;lts-1.x&#39;</span>
+<span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;:pserver:anonymous@cvs.example.com:/var/lib/cvsroot libfoo&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="file-site">
 <span id="site-file"></span><h2>File site<a class="headerlink" href="#file-site" title="Link to this heading">¶</a></h2>
@@ -501,6 +535,30 @@ for a locally managed cache source. Git sources will be cached inside the
 will use the cached Git file system. If a desired revision exists, content
 will be acquired from the cache location. If a desired revision does not
 exist, the origin remote will be fetched for the new revision (if it exists).</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Tagged Clone</label><div class="tab-content docutils">
+<p>The following shows an example of cloning a v1.2.3 tag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;v$</span><span class="si">{LIBFOO_VERSION}</span><span class="s1">&#39;</span>
+<span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;git+git@example.com:base/libfoo.git&#39;</span>
+<span class="n">LIBFOO_VERSION</span> <span class="o">=</span> <span class="s1">&#39;1.2.3&#39;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Branch Clone</label><div class="tab-content docutils">
+<p>The following shows an example of cloning a v1.x LTS branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;lts-1.x&#39;</span>
+<span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;https://example.com/libfoo.git&#39;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--2-input--3" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--3">Commit Hash Clone</label><div class="tab-content docutils">
+<p>The following shows an example of cloning with a commit hash:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;da39a3ee5e6b4b0d3255bfef95601890afd80709&#39;</span>
+<span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;git+ssh://git.example.com/group/libfoo.git&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="local-site">
 <span id="site-local"></span><h2>Local site<a class="headerlink" href="#local-site" title="Link to this heading">¶</a></h2>
@@ -527,6 +585,23 @@ first-run. Future runs to fetch a project’s source will use the cached Mercuri
 repository. If a desired revision exists, content will be acquired from the
 cache location. If a desired revision does not exist, the origin remote will be
 pulled for the new revision (if it exists).</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Tagged Clone</label><div class="tab-content docutils">
+<p>The following shows an example of cloning a v1.2.3 tag:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;v$</span><span class="si">{LIBFOO_VERSION}</span><span class="s1">&#39;</span>
+<span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;hg+https://hg.example.org/repo/hello&#39;</span>
+<span class="n">LIBFOO_VERSION</span> <span class="o">=</span> <span class="s1">&#39;1.2.3&#39;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Branch Clone</label><div class="tab-content docutils">
+<p>The following shows an example of cloning a v1.x LTS branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;lts-1.x&#39;</span>
+<span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;hg+https://hg.example.org/repo/hello&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="perforce-site">
 <span id="site-perforce"></span><h2>Perforce site<a class="headerlink" href="#perforce-site" title="Link to this heading">¶</a></h2>
@@ -548,6 +623,15 @@ part specifies the Perforce depot path. Perforce data is fetched using
 installed. Content from a Perforce depot will be fetched and archived into
 a file during fetch stage. Once a cached archive is made, the fetch stage
 ill be skipped unless the archive is manually removed.</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Revision Clone</label><div class="tab-content docutils">
+<p>The following shows an example of cloning the 27574 revision:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;perforce+srcs.example.com:1666 //base/libfoo/main&#39;</span>
+<span class="n">LIBFOO_VERSION</span> <span class="o">=</span> <span class="s1">&#39;27574&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="rsync-site">
 <span id="site-rsync"></span><h2>rsync site<a class="headerlink" href="#rsync-site" title="Link to this heading">¶</a></h2>
@@ -589,6 +673,36 @@ prefixed with a <code class="docutils literal notranslate"><span class="pre">svn
 <code class="docutils literal notranslate"><span class="pre">svn</span> <span class="pre">checkout</span></code> call <a class="footnote-reference brackets" href="#svncheckout" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a>. Content from a Subversion repository will
 be fetched and archived into a file during fetch stage. Once a cached archive
 is made, the fetch stage will be skipped unless the archive is manually removed.</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Explicit Tagged Clone</label><div class="tab-content docutils">
+<p>The following shows an example of cloning a v1.2.3 tag with a fixed SVN
+revision value:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="mi">46801</span>
+<span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;svn+https://svn.example.com/repos/libfoo/c/tags/$</span><span class="si">{LIBFOO_VERSION}</span><span class="s1">&#39;</span>
+<span class="n">LIBFOO_VERSION</span> <span class="o">=</span> <span class="s1">&#39;1.2.3&#39;</span>
+</pre></div>
+</div>
+<p>This ensures a fixed/repeatable clone experience.</p>
+</div>
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Flexible Tagged Clone</label><div class="tab-content docutils">
+<p>The following shows an example of cloning a v1.2.3 tag with a flexible
+revision value:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;HEAD&#39;</span>
+<span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;svn+https://svn.example.com/repos/libfoo/c/tags/$</span><span class="si">{LIBFOO_VERSION}</span><span class="s1">&#39;</span>
+<span class="n">LIBFOO_VERSION</span> <span class="o">=</span> <span class="s1">&#39;1.2.3&#39;</span>
+</pre></div>
+</div>
+<p>Provides a simple definition to clone a tag without needing to determine an
+explicit SVN revision. This approach supports moved tags.</p>
+</div>
+<input class="tab-input" id="tab-set--5-input--3" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--3">Branch Clone</label><div class="tab-content docutils">
+<p>The following shows an example of cloning a v1.x LTS branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;HEAD&#39;</span>
+<span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;svn+https://svn.example.com/repos/libfoo/c/branches/1.x-lts&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="url-site-default">
 <span id="site-url"></span><h2>URL site (default)<a class="headerlink" href="#url-site-default" title="Link to this heading">¶</a></h2>
@@ -629,7 +743,7 @@ which includes (but not limited to) <code class="docutils literal notranslate"><
 </aside>
 <aside class="footnote brackets" id="hgclone" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
-<p><a class="reference external" href="https://www.mercurial-scm.org/doc/hg.1.html#clone">https://www.mercurial-scm.org/doc/hg.1.html#clone</a></p>
+<p><a class="reference external" href="https://www.mercurial-scm.org/help/commands/clone">https://www.mercurial-scm.org/help/commands/clone</a></p>
 </aside>
 <aside class="footnote brackets" id="p4port" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>

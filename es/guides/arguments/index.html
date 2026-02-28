@@ -984,7 +984,12 @@ will have their cache files deleted to be re-fetched.</p></li>
 </section>
 <section id="jobs-jobs-var-j-jobs-var">
 <span id="arg-jobs"></span><h3><code class="docutils literal notranslate"><span class="pre">--jobs</span> <span class="pre">&lt;jobs&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">-j</span> <span class="pre">&lt;jobs&gt;</span></code><a class="headerlink" href="#jobs-jobs-var-j-jobs-var" title="Link to this heading">¶</a></h3>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Distinto en la versión 2.9: </span>Added support for negative jobs.</p>
+</div>
 <p>Numbers of jobs to handle (defaults to <code class="docutils literal notranslate"><span class="pre">0</span></code>; automatic).</p>
+<p>If the total number of jobs provided is negative, it will subtract the
+provided value from the automatic job detection count (to a minimum of one).</p>
 <p>See also <a class="reference internal" href="../environment/#env-releng-parallel-level"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_PARALLEL_LEVEL</span></code></span></a>.</p>
 </section>
 <section id="local-sources-pkg-var-dir-var-l-pkg-var-dir-var">
@@ -1056,8 +1061,8 @@ semicolon (<code class="docutils literal notranslate"><span class="pre">;</span>
 <p>Do not throw an error when releng-tool is provided unknown arguments.</p>
 <p>See also <a class="reference internal" href="../environment/#env-releng-ignore-unknown-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_UNKNOWN_ARGS</span></code></span></a>.</p>
 </section>
-<section id="root-dir-dir-var">
-<span id="arg-root-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">--root-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#root-dir-dir-var" title="Link to this heading">¶</a></h3>
+<section id="root-dir-dir-var-r-dir-var">
+<span id="arg-root-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">--root-dir</span> <span class="pre">&lt;dir&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">-R</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#root-dir-dir-var-r-dir-var" title="Link to this heading">¶</a></h3>
 <p>Directory to process a releng-tool project. By default, the root directory is
 configured to the working directory.</p>
 <p>See also <a class="reference internal" href="../environment/#env-root-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">ROOT_DIR</span></code></span></a>.</p>
@@ -1275,7 +1280,7 @@ package with a version <code class="docutils literal notranslate"><span class="p
 <li><a class="reference internal" href="#out-dir-dir-var"><code class="docutils literal notranslate"><span class="pre">--out-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
 <li><a class="reference internal" href="#profile-profile-var-p-profile-var"><code class="docutils literal notranslate"><span class="pre">--profile</span> <span class="pre">[&lt;profile&gt;]</span></code>, <code class="docutils literal notranslate"><span class="pre">-P</span> <span class="pre">[&lt;profile&gt;]</span></code></a></li>
 <li><a class="reference internal" href="#relaxed-args"><code class="docutils literal notranslate"><span class="pre">--relaxed-args</span></code></a></li>
-<li><a class="reference internal" href="#root-dir-dir-var"><code class="docutils literal notranslate"><span class="pre">--root-dir</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
+<li><a class="reference internal" href="#root-dir-dir-var-r-dir-var"><code class="docutils literal notranslate"><span class="pre">--root-dir</span> <span class="pre">&lt;dir&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">-R</span> <span class="pre">&lt;dir&gt;</span></code></a></li>
 <li><a class="reference internal" href="#success-exit-code-code-var"><code class="docutils literal notranslate"><span class="pre">--success-exit-code</span> <span class="pre">&lt;code&gt;</span></code></a></li>
 <li><a class="reference internal" href="#sbom-format-fmt-var"><code class="docutils literal notranslate"><span class="pre">--sbom-format</span> <span class="pre">&lt;fmt&gt;</span></code></a></li>
 <li><a class="reference internal" href="#quirk-quirk-id-var"><code class="docutils literal notranslate"><span class="pre">--quirk</span> <span class="pre">&lt;quirk-id&gt;</span></code></a></li>

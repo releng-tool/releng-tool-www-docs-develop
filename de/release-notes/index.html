@@ -444,6 +444,29 @@ releng-tool, please see the project’s <a class="reference external" href="http
 </ul>
 </div>
 </section>
+<section id="development">
+<h2>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>(note)</strong> Last version supporting Bazaar sites</p></li>
+<li><p><strong>(note)</strong> Last version supporting Python 3.9</p></li>
+<li><p><strong>(note)</strong> Last version supporting <code class="docutils literal notranslate"><span class="pre">override_revisions</span></code></p></li>
+<li><p><strong>(note)</strong> Last version supporting <code class="docutils literal notranslate"><span class="pre">override_sites</span></code></p></li>
+<li><p><strong>(note)</strong> Last version supporting <code class="docutils literal notranslate"><span class="pre">LIBFOO_SKIP_REMOTE_SCRIPTS</span></code></p></li>
+<li><p><strong>(note)</strong> Last version supporting <code class="docutils literal notranslate"><span class="pre">LIBFOO_SKIP_REMOTE_CONFIG</span></code></p></li>
+<li><p><strong>(note)</strong> Last version supporting an implicit <code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_SETUP_TYPE</span></code></p></li>
+<li><p>Fix undesired warnings when using <code class="docutils literal notranslate"><span class="pre">revisions</span></code> in development mode</p></li>
+<li><p>Fix where <code class="docutils literal notranslate"><span class="pre">NJOBSCONF</span></code> was not properly set when using <code class="docutils literal notranslate"><span class="pre">RELENG_PARALLEL_LEVEL</span></code></p></li>
+<li><p>Improved support for setting local-sources POSIX paths on Windows platforms</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">LIBFOO_DEVMODE_PATCHES</span></code> to support development mode patching</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">LIBFOO_IGNORE_PATCHES</span></code> to support ignoring package patches</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">LIBFOO_ONLY_DEVMODE</span></code> to support development-only packages</p></li>
+<li><p>Move package SPDX license check warnings into the lint action</p></li>
+<li><p>Printed local-sources paths are now printed in POSIX format</p></li>
+<li><p>Support for negative jobs value to reduce detected job usage</p></li>
+<li><p>Support not overwriting environment variables when using <code class="docutils literal notranslate"><span class="pre">releng_env</span></code></p></li>
+<li><p>Use of local-sources mode with external packages now generate a warning</p></li>
+</ul>
+</section>
 <section id="v2-8-0-2026-02-22">
 <h2>2.8.0 (2026-02-22)<a class="headerlink" href="#v2-8-0-2026-02-22" title="Link to this heading">¶</a></h2>
 <ul class="simple">
@@ -1003,6 +1026,7 @@ execution</p></li>
             <ul>
 <li><a class="reference internal" href="#">Versionshinweise</a><ul>
 <li><a class="reference internal" href="#news">News</a></li>
+<li><a class="reference internal" href="#development">Development</a></li>
 <li><a class="reference internal" href="#v2-8-0-2026-02-22">2.8.0 (2026-02-22)</a></li>
 <li><a class="reference internal" href="#v2-7-0-2026-02-08">2.7.0 (2026-02-08)</a></li>
 <li><a class="reference internal" href="#v2-6-0-2025-08-03">2.6.0 (2025-08-03)</a></li>

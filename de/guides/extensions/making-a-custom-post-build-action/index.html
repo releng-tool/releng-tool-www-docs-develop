@@ -499,13 +499,11 @@ extension-managed <code class="docutils literal notranslate"><span class="pre">N
 Update the extension with the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_awesome_postbuild_handler</span><span class="p">(</span><span class="n">env</span><span class="p">):</span>
     <span class="c1"># find the NOTICE PDF document</span>
-    <span class="n">ext_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
-    <span class="n">assets_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ext_dir</span><span class="p">,</span> <span class="s1">&#39;assets&#39;</span><span class="p">)</span>
-    <span class="n">notice_pdf</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">assets_dir</span><span class="p">,</span> <span class="s1">&#39;NOTICE.pdf&#39;</span><span class="p">)</span>
+    <span class="n">notice_pdf</span> <span class="o">=</span> <span class="n">ROOT_DIR</span> <span class="o">/</span> <span class="s1">&#39;assets&#39;</span> <span class="o">/</span> <span class="s1">&#39;NOTICE.pdf&#39;</span>
 
     <span class="c1"># copy this file into the target directory</span>
-    <span class="n">target</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">env</span><span class="p">[</span><span class="s1">&#39;TARGET_DIR&#39;</span><span class="p">],</span> <span class="s1">&#39;NOTICE.pdf&#39;</span><span class="p">)</span>
-    <span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">notice_pdf</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="n">TARGET_DIR</span> <span class="o">/</span> <span class="s1">&#39;NOTICE.pdf&#39;</span>
+    <span class="n">releng_copy</span><span class="p">(</span><span class="n">notice_pdf</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>With this change, a re-run of the releng-tool project should have the

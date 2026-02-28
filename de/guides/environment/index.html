@@ -1427,7 +1427,12 @@ directory using the <a class="reference internal" href="../arguments/#arg-out-di
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 2.3.</span></p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Geändert in Version 2.9: </span>Added support for negative jobs.</p>
+</div>
 <p>Configures the number of jobs to use (defaults to <code class="docutils literal notranslate"><span class="pre">0</span></code>; automatic).</p>
+<p>If the total number of jobs provided is negative, it will subtract the
+provided value from the automatic job detection count (to a minimum of one).</p>
 <p>See also the <a class="reference internal" href="../arguments/#arg-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--jobs</span></code> argument</span></a>, <a class="reference internal" href="#env-njobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">NJOBS</span></code></span></a> and
 <a class="reference internal" href="#env-njobsconf"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">NJOBSCONF</span></code></span></a>.</p>
 </section>

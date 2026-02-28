@@ -437,11 +437,8 @@ project folder:</p>
 
 <span class="o">...</span> <span class="p">(</span><span class="n">other</span> <span class="n">configuration</span> <span class="n">options</span><span class="p">)</span>
 
-<span class="n">root_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
-<span class="n">license_header_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root_dir</span><span class="p">,</span> <span class="s1">&#39;assets&#39;</span><span class="p">,</span> <span class="s1">&#39;license-header.tpl&#39;</span><span class="p">)</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">license_header_file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-   <span class="n">license_header</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
+<span class="n">license_header_file</span> <span class="o">=</span> <span class="n">ROOT_DIR</span> <span class="o">/</span> <span class="s1">&#39;assets&#39;</span> <span class="o">/</span> <span class="s1">&#39;license-header.tpl&#39;</span>
+<span class="n">license_header</span> <span class="o">=</span> <span class="n">license_header_file</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Licenses for a project are generated before the
