@@ -414,9 +414,13 @@
 <h1>Patching<a class="headerlink" href="#patching" title="Link to this heading">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Informacja</p>
-<p>Patches are ignored when in <a class="reference internal" href="../development-mode/"><span class="doc std std-doc">development mode</span></a> for
-packages with a development revision, for <code class="docutils literal notranslate"><span class="pre">local</span></code> VCS packages or when in
-<a class="reference internal" href="../local-sources-mode/"><span class="doc std std-doc">local-sources mode</span></a> for internal packages.</p>
+<p>Patches are ignored when in <a class="reference internal" href="../development-mode/"><span class="doc std std-doc">development mode</span></a> by default
+for packages with a development revision, for <code class="docutils literal notranslate"><span class="pre">local</span></code> VCS packages or when
+in <a class="reference internal" href="../local-sources-mode/"><span class="doc std std-doc">local-sources mode</span></a> for internal packages.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Zmienione w wersji 2.9: </span>Additional configuration modes to permit development revisions to have
+patches applied.</p>
 </div>
 <p>The patching stage for a package provides the ability for a developer to apply
 one or more patches to extracted sources. A project may take advantage of
@@ -450,14 +454,27 @@ the following package patches:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">0003-support-disabling-test-build.patch</span></code></p></li>
 </ol>
 <p>If a user configures their build environment in
-<a class="reference internal" href="../development-mode/"><span class="doc std std-doc">development mode</span></a>, patches will not be applied if a
-package defines a development revision. The idea is that a development
+<a class="reference internal" href="../development-mode/"><span class="doc std std-doc">development mode</span></a>, patches will not be applied by default
+if a package defines a development revision. The idea is that a development
 revision is most likely the bleeding edge source of a package and does not
 need any patches. If a user configures their build environment in
 <a class="reference internal" href="../local-sources-mode/"><span class="doc std std-doc">local-sources mode</span></a> and a package is defined as
 internal, patches will not be applied to the sources. This is to prevent the
 patching system from making unexpected modifications to a developer’s local
 sources.</p>
+<p>In the scenario where a developer does want to override when patches are
+applied, there are a couple of advanced options. First, the option
+<a class="reference internal" href="../packages/advanced-pkg-options/#pkg-opt-ignore-patches"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_IGNORE_PATCHES</span></code></span></a> allows a developer to avoid
+the automatic application of patches on a package during normal runs. Second,
+the option <a class="reference internal" href="../packages/advanced-pkg-options/#pkg-opt-devmode-patches"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEVMODE_PATCHES</span></code></span></a> can be
+configured to permit a package to utilize patches in a development mode.</p>
+<p>For example, the following configuration will instead only apply patches on
+a package when releng-tool is operating in a development mode and the package
+defines a development revision:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_DEVMODE_PATCHES</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">LIBFOO_IGNORE_PATCHES</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
 </section>
 
         </article>
