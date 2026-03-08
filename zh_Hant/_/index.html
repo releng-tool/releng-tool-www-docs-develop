@@ -261,13 +261,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/configuration-overrides">Configuration overrides</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="#document-guides/quirks/quirks">Quirks</a><input aria-label="Toggle navigation of Quirks" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-cmake-disable_direct_includes">releng.cmake.disable_direct_includes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-cmake-disable_parallel_option">releng.cmake.disable_parallel_option</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-disable_devmode_ignore_cache">releng.disable_devmode_ignore_cache</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-disable_local_site_warn">releng.disable_local_site_warn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-disable_prerequisites_check">releng.disable_prerequisites_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-disable_remote_configs">releng.disable_remote_configs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-disable_remote_scripts">releng.disable_remote_scripts</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-disable_spdx_check">releng.disable_spdx_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-disable_verbose_patch">releng.disable_verbose_patch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-git-no_depth">releng.git.no_depth</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-git-no_quick_fetch">releng.git.no_quick_fetch</a></li>
@@ -303,6 +300,7 @@
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="#document-release-notes">Release notes</a><input aria-label="Toggle navigation of Release notes" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="#document-news/2026-03-08_02.10.00">2.10 (2026-03-08)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-news/2026-03-01_02.09.00">2.9 (2026-03-01)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-news/2026-02-22_02.08.00">2.8 (2026-02-22)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-news/2026-02-08_02.07.00">2.7 (2026-02-08)</a></li>
@@ -2523,6 +2521,21 @@ single argument where profiles are separated by a comma (<code class="docutils l
 semicolon (<code class="docutils literal notranslate"><span class="pre">;</span></code>).</p>
 <p>See also <a class="reference internal" href="#document-guides/profiles"><span class="doc std std-doc">using profiles</span></a>.</p>
 </section>
+<section id="quiet">
+<span id="arg-quiet"></span><h5><code class="docutils literal notranslate"><span class="pre">--quiet</span></code><a class="headerlink" href="#quiet" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.10.</span></p>
+</div>
+<p>Enable a quiet output.</p>
+</section>
+<section id="quirk-quirk-id-var">
+<span id="arg-quirk"></span><h5><code class="docutils literal notranslate"><span class="pre">--quirk</span> <span class="pre">&lt;quirk-id&gt;</span></code><a class="headerlink" href="#quirk-quirk-id-var" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.4.</span></p>
+</div>
+<p>Allows specifying a runtime <a class="reference internal" href="#document-guides/quirks/quirks"><span class="doc std std-doc">quirk</span></a> for the releng-tool
+process. This option can be used multiple times to apply multiple quirks.</p>
+</section>
 <section id="relaxed-args">
 <span id="arg-relaxed-args"></span><h5><code class="docutils literal notranslate"><span class="pre">--relaxed-args</span></code><a class="headerlink" href="#relaxed-args" title="Link to this heading">¶</a></h5>
 <div class="versionadded">
@@ -2595,14 +2608,6 @@ Multiple formats can be provided (comma-separated).</p>
 </div>
 <p>See also <a class="reference internal" href="#action-sbom"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">sbom</span></code></span></a> (action) and <a class="reference internal" href="#conf-sbom-format"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">sbom_format</span></code></span></a>
 (configuration).</p>
-</section>
-<section id="quirk-quirk-id-var">
-<span id="arg-quirk"></span><h5><code class="docutils literal notranslate"><span class="pre">--quirk</span> <span class="pre">&lt;quirk-id&gt;</span></code><a class="headerlink" href="#quirk-quirk-id-var" title="Link to this heading">¶</a></h5>
-<div class="versionadded">
-<p><span class="versionmodified added">Added in version 0.4.</span></p>
-</div>
-<p>Allows specifying a runtime <a class="reference internal" href="#document-guides/quirks/quirks"><span class="doc std std-doc">quirk</span></a> for the releng-tool
-process. This option can be used multiple times to apply multiple quirks.</p>
 </section>
 <section id="verbose-v">
 <span id="arg-verbose"></span><h5><code class="docutils literal notranslate"><span class="pre">--verbose</span></code>, <code class="docutils literal notranslate"><span class="pre">-V</span></code><a class="headerlink" href="#verbose-v" title="Link to this heading">¶</a></h5>
@@ -10481,28 +10486,6 @@ overrides), the option can be disabled using the
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-cmake-disable_parallel_option"></span><section id="quirk-releng-cmake-disable-parallel-option">
-<span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_parallel_option</span></code><a class="headerlink" href="#quirk-releng-cmake-disable-parallel-option" title="Link to this heading">¶</a></h6>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 1.0: </span>This quirk is no longer applicable. CMake parallelization is now driven
-internally using the <code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_PARALLEL_LEVEL</span></code> environment variable.</p>
-</div>
-<p>When releng-tool invokes a build stage for a CMake project, the <code class="docutils literal notranslate"><span class="pre">--parallel</span></code>
-argument is used to trigger multiple jobs for a build. If running on a host
-system running a version/variant of CMake which do not explicitly provide the
-parallelization option, the build may fail. Users to enable the
-<code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_parallel_option</span></code> quirk to prevent this option from being
-used:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">cmake</span><span class="o">.</span><span class="n">disable_parallel_option</span>
-</pre></div>
-</div>
-<section id="see-also">
-<h6 aria-level="7">See also<a class="headerlink" href="#see-also" title="Link to this heading">¶</a></h6>
-<ul class="simple">
-<li><p><a class="reference internal" href="#document-guides/quirks/quirks"><span class="doc std std-doc">Quirks</span></a></p></li>
-</ul>
-</section>
-</section>
 <span id="document-guides/quirks/quirk-disable_devmode_ignore_cache"></span><section id="quirk-releng-disable-devmode-ignore-cache">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.disable_devmode_ignore_cache</span></code><a class="headerlink" href="#quirk-releng-disable-devmode-ignore-cache" title="Link to this heading">¶</a></h6>
 <div class="versionadded">
@@ -10516,33 +10499,6 @@ the package cannot be re-fetched from the configured site. To help a builder
 hint that using the cache is fine for an invoke, this quirk can be provided to
 avoid any re-fetch attempt.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">disable_devmode_ignore_cache</span>
-</pre></div>
-</div>
-<section id="see-also">
-<h6 aria-level="7">See also<a class="headerlink" href="#see-also" title="Link to this heading">¶</a></h6>
-<ul class="simple">
-<li><p><a class="reference internal" href="#document-guides/quirks/quirks"><span class="doc std std-doc">Quirks</span></a></p></li>
-</ul>
-</section>
-</section>
-<span id="document-guides/quirks/quirk-disable_local_site_warn"></span><section id="quirk-releng-disable-local-site-warn">
-<span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.disable_local_site_warn</span></code><a class="headerlink" href="#quirk-releng-disable-local-site-warn" title="Link to this heading">¶</a></h6>
-<div class="versionadded">
-<p><span class="versionmodified added">Added in version 1.4.</span></p>
-</div>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 2.5: </span>This quirk is no longer applicable. releng-tool will no longer generate
-a warning when using a local package.</p>
-</div>
-<p>Users can create packages using a <a class="reference internal" href="#site-local"><span class="std std-ref">local site</span></a> for initial
-development and testing scenarios. However, using local sites is not
-recommended for long-term use; hence a warning is generated when
-releng-tool runs. While the warning aims to promote a user to move the
-package into their own site of some sort (e.g. Git), a user may be good
-enough with using a specific package as a local one. For such cases,
-using this quirk can prevent any warnings generated when a local site is
-used.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">disable_local_site_warn</span>
 </pre></div>
 </div>
 <section id="see-also">
@@ -10606,28 +10562,6 @@ these scripts:</p>
 <h6 aria-level="7">See also<a class="headerlink" href="#see-also" title="Link to this heading">¶</a></h6>
 <ul class="simple">
 <li><p><a class="reference internal" href="#document-guides/quirks/quirks"><span class="doc std std-doc">Quirks</span></a></p></li>
-</ul>
-</section>
-</section>
-<span id="document-guides/quirks/quirk-disable_spdx_check"></span><section id="quirk-releng-disable-spdx-check">
-<span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.disable_spdx_check</span></code><a class="headerlink" href="#quirk-releng-disable-spdx-check" title="Link to this heading">¶</a></h6>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 2.9: </span>This quirk is no longer applicable. SPDX license checks are now handled by
-the <a class="reference internal" href="#action-lint"><span class="std std-ref">lint action</span></a>.</p>
-</div>
-<p>When package definitions are being processed, any license configurations will
-be checked to see if they conform with <a class="reference external" href="https://spdx.org/licenses/">SPDX license identifiers</a>. If
-not, a warning will be generated.</p>
-<p>If a user wishes to ignore all SPDX license warnings, the
-<code class="docutils literal notranslate"><span class="pre">releng.disable_spdx_check</span></code> quirk can be used:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">disable_spdx_check</span>
-</pre></div>
-</div>
-<section id="see-also">
-<h6 aria-level="7">See also<a class="headerlink" href="#see-also" title="Link to this heading">¶</a></h6>
-<ul class="simple">
-<li><p><a class="reference internal" href="#document-guides/quirks/quirks"><span class="doc std std-doc">Quirks</span></a></p></li>
-<li><p><a class="reference external" href="https://spdx.org/licenses/">SPDX license identifiers</a></p></li>
 </ul>
 </section>
 </section>
@@ -11478,6 +11412,41 @@ releng-tool, please see the project's <a class="reference external" href="https:
 <section id="news">
 <h3>News<a class="headerlink" href="#news" title="Link to this heading">¶</a></h3>
 <div class="toctree-wrapper compound">
+<span id="document-news/2026-03-08_02.10.00"></span><section id="v2-10-2026-03-08">
+<h4>2.10 (2026-03-08)<a class="headerlink" href="#v2-10-2026-03-08" title="Link to this heading">¶</a></h4>
+<section id="lint-false-positive-corrections">
+<h5>Lint False-Positive Corrections<a class="headerlink" href="#lint-false-positive-corrections" title="Link to this heading">¶</a></h5>
+<p>With the newly added linter support, a series of package/VCS type checks
+(RT105-RT113) resulted in false-positive events when package definitions
+use non-constant value for select configuration entries. This release includes
+a series of improvements towards the detection of these types to help reduce
+the chance of these warnings being generated.</p>
+</section>
+<section id="support-for-cyclonedx-sbom-generation">
+<h5>Support for CycloneDX SBOM Generation<a class="headerlink" href="#support-for-cyclonedx-sbom-generation" title="Link to this heading">¶</a></h5>
+<p>Support has been added for generating <a class="reference external" href="https://cyclonedx.org/specification/overview/">CycloneDX</a>-compatible
+software build of materials (SBOM) documents. This includes CycloneDX v1.7
+JSON and XML compatible documents.</p>
+</section>
+<section id="api-mode">
+<h5>API Mode<a class="headerlink" href="#api-mode" title="Link to this heading">¶</a></h5>
+<p>This release introduces a new <a class="reference internal" href="#document-guides/api-mode"><span class="doc std std-doc">API mode</span></a>. Callers can now
+trigger releng-tool with the <code class="docutils literal notranslate"><span class="pre">--api</span></code> argument to have the standard output
+stream generate a programmatic response (JSON) for scripts/etc. to use.</p>
+<p>API response data is limited at this time.</p>
+</section>
+<section id="removals">
+<h5>Removals<a class="headerlink" href="#removals" title="Link to this heading">¶</a></h5>
+<p>A series of deprecated features have now been removed:</p>
+<ul class="simple">
+<li><p>An implicit Python package setup type</p></li>
+<li><p>Bazaar-site support</p></li>
+<li><p>Package configurations <code class="docutils literal notranslate"><span class="pre">override_revisions</span></code> and <code class="docutils literal notranslate"><span class="pre">override_sites</span></code></p></li>
+<li><p>Support for Python 3.9 (EOL)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LIBFOO_SKIP_REMOTE_*</span></code></p></li>
+</ul>
+</section>
+</section>
 <span id="document-news/2026-03-01_02.09.00"></span><section id="v2-9-2026-03-01">
 <h4>2.9 (2026-03-01)<a class="headerlink" href="#v2-9-2026-03-01" title="Link to this heading">¶</a></h4>
 <section id="new-linting-checks">
@@ -13302,8 +13271,8 @@ the following environment variables can be used instead:</p>
 </section>
 </div>
 </section>
-<section id="development">
-<h3>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h3>
+<section id="v2-10-0-2026-03-08">
+<h3>2.10.0 (2026-03-08)<a class="headerlink" href="#v2-10-0-2026-03-08" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>(note)</strong> Support for Bazaar sites has been dropped</p></li>
 <li><p><strong>(note)</strong> Support for Python 3.9 (EOL) has been dropped</p></li>
@@ -13901,11 +13870,12 @@ releng-tool project.</p>
 <a class="reference internal" href="#arg-only-mirror"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--only-mirror</span></code></span></a>
 <a class="reference internal" href="#arg-out-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--out-dir</span> <span class="pre">&lt;dir&gt;</span></code></span></a>
 <a class="reference internal" href="#arg-profile"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--profile</span> <span class="pre">[&lt;profile&gt;]</span></code>, <code class="docutils literal notranslate"><span class="pre">-P</span> <span class="pre">[&lt;profile&gt;]</span></code></span></a>
+<a class="reference internal" href="#arg-quiet"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--quiet</span></code></span></a>
+<a class="reference internal" href="#arg-quirk"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--quirk</span> <span class="pre">&lt;quirk-id&gt;</span></code></span></a>
 <a class="reference internal" href="#arg-relaxed-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--relaxed-args</span></code></span></a>
 <a class="reference internal" href="#arg-root-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--root-dir</span> <span class="pre">&lt;dir&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">-R</span> <span class="pre">&lt;dir&gt;</span></code></span></a>
 <a class="reference internal" href="#arg-sbom-format"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--sbom-format</span> <span class="pre">&lt;fmt&gt;</span></code></span></a>
 <a class="reference internal" href="#arg-success-exit-code"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--success-exit-code</span> <span class="pre">&lt;code&gt;</span></code></span></a>
-<a class="reference internal" href="#arg-quirk"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--quirk</span> <span class="pre">&lt;quirk-id&gt;</span></code></span></a>
 <a class="reference internal" href="#arg-verbose"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--verbose</span></code>, <code class="docutils literal notranslate"><span class="pre">-V</span></code></span></a>
 <a class="reference internal" href="#arg-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--version</span></code></span></a>
 <a class="reference internal" href="#arg-werror"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--werror</span></code>, <code class="docutils literal notranslate"><span class="pre">-Werror</span></code></span></a></pre>
@@ -14169,11 +14139,9 @@ releng-tool (may vary per context):</p>
 <p>Quirk options used by releng-tool:</p>
 <pre class="literal-block"><a class="reference internal" href="#quirk-releng-cmake-disable-direct-includes"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_direct_includes</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-disable-devmode-ignore-cache"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_devmode_ignore_cache</span></code></span></a>
-<a class="reference internal" href="#quirk-releng-disable-local-site-warn"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_local_site_warn</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-disable-prerequisites-check"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_prerequisites_check</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-disable-remote-configs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_remote_configs</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-disable-remote-scripts"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_remote_scripts</span></code></span></a>
-<a class="reference internal" href="#quirk-releng-disable-spdx-check"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_spdx_check</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-disable-verbose-patch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_verbose_patch</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-git-no-depth"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.git.no_depth</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-git-no-quick-fetch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.git.no_quick_fetch</span></code></span></a>

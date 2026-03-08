@@ -260,13 +260,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../guides/configuration-overrides/">Configuration overrides</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../guides/quirks/quirks/">Quirks</a><input aria-label="Toggle navigation of Quirks" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-cmake-disable_direct_includes/">releng.cmake.disable_direct_includes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-cmake-disable_parallel_option/">releng.cmake.disable_parallel_option</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_devmode_ignore_cache/">releng.disable_devmode_ignore_cache</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_local_site_warn/">releng.disable_local_site_warn</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_prerequisites_check/">releng.disable_prerequisites_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_remote_configs/">releng.disable_remote_configs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_remote_scripts/">releng.disable_remote_scripts</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_spdx_check/">releng.disable_spdx_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_verbose_patch/">releng.disable_verbose_patch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-git-no_depth/">releng.git.no_depth</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-git-no_quick_fetch/">releng.git.no_quick_fetch</a></li>
@@ -302,6 +299,7 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../release-notes/">バージョンノート</a><input aria-label="Toggle navigation of バージョンノート" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../news/2026-03-08_02.10.00/">2.10 (2026-03-08)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../news/2026-03-01_02.09.00/">2.9 (2026-03-01)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../news/2026-02-22_02.08.00/">2.8 (2026-02-22)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../news/2026-02-08_02.07.00/">2.7 (2026-02-08)</a></li>
@@ -463,11 +461,12 @@ releng-tool project.</p>
 <a class="reference internal" href="../guides/arguments/#arg-only-mirror"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--only-mirror</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#arg-out-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--out-dir</span> <span class="pre">&lt;dir&gt;</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#arg-profile"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--profile</span> <span class="pre">[&lt;profile&gt;]</span></code>, <code class="docutils literal notranslate"><span class="pre">-P</span> <span class="pre">[&lt;profile&gt;]</span></code></span></a>
+<a class="reference internal" href="../guides/arguments/#arg-quiet"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--quiet</span></code></span></a>
+<a class="reference internal" href="../guides/arguments/#arg-quirk"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--quirk</span> <span class="pre">&lt;quirk-id&gt;</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#arg-relaxed-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--relaxed-args</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#arg-root-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--root-dir</span> <span class="pre">&lt;dir&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">-R</span> <span class="pre">&lt;dir&gt;</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#arg-sbom-format"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--sbom-format</span> <span class="pre">&lt;fmt&gt;</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#arg-success-exit-code"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--success-exit-code</span> <span class="pre">&lt;code&gt;</span></code></span></a>
-<a class="reference internal" href="../guides/arguments/#arg-quirk"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--quirk</span> <span class="pre">&lt;quirk-id&gt;</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#arg-verbose"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--verbose</span></code>, <code class="docutils literal notranslate"><span class="pre">-V</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#arg-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--version</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#arg-werror"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--werror</span></code>, <code class="docutils literal notranslate"><span class="pre">-Werror</span></code></span></a></pre>
@@ -731,11 +730,9 @@ releng-tool (may vary per context):</p>
 <p>Quirk options used by releng-tool:</p>
 <pre class="literal-block"><a class="reference internal" href="../guides/quirks/quirk-cmake-disable_direct_includes/#quirk-releng-cmake-disable-direct-includes"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_direct_includes</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-disable_devmode_ignore_cache/#quirk-releng-disable-devmode-ignore-cache"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_devmode_ignore_cache</span></code></span></a>
-<a class="reference internal" href="../guides/quirks/quirk-disable_local_site_warn/#quirk-releng-disable-local-site-warn"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_local_site_warn</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-disable_prerequisites_check/#quirk-releng-disable-prerequisites-check"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_prerequisites_check</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-disable_remote_configs/#quirk-releng-disable-remote-configs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_remote_configs</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-disable_remote_scripts/#quirk-releng-disable-remote-scripts"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_remote_scripts</span></code></span></a>
-<a class="reference internal" href="../guides/quirks/quirk-disable_spdx_check/#quirk-releng-disable-spdx-check"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_spdx_check</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-disable_verbose_patch/#quirk-releng-disable-verbose-patch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_verbose_patch</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-git-no_depth/#quirk-releng-git-no-depth"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.git.no_depth</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-git-no_quick_fetch/#quirk-releng-git-no-quick-fetch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.git.no_quick_fetch</span></code></span></a>
