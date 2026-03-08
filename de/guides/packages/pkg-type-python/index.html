@@ -259,7 +259,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../api-mode/">API Mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration-overrides/">Configuration overrides</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../quirks/quirks/">Quirks</a><input aria-label="Toggle navigation of Quirks" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-bzr-certifi/">releng.bzr.certifi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-cmake-disable_direct_includes/">releng.cmake.disable_direct_includes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-cmake-disable_parallel_option/">releng.cmake.disable_parallel_option</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-disable_devmode_ignore_cache/">releng.disable_devmode_ignore_cache</a></li>
@@ -412,6 +411,7 @@
 <p>A Python package provides support for processing a <a class="reference external" href="https://www.python.org/">Python</a>
 supported module.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_TYPE</span> <span class="o">=</span> <span class="s1">&#39;python&#39;</span>
+<span class="n">LIBFOO_PYTHON_SETUP_TYPE</span> <span class="o">=</span> <span class="s1">&#39;setuptools&#39;</span>
 </pre></div>
 </div>
 <p>Only the build and installation phases are used when processing the sources
@@ -759,9 +759,11 @@ interpreter will be used. This field is optional.</p>
 <div class="deprecated">
 <p><span class="versionmodified deprecated">Veraltet ab Version 2.0: </span>Support for <code class="docutils literal notranslate"><span class="pre">distutils</span></code> packages is deprecated.</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Geändert in Version 2.10: </span>Explicit setup type is required.</p>
+</div>
 <p>The setup type will configure how a Python package is built and installed.
-The default setup type used for a Python package is a distutils package. It
-is recommended to always configure a setup type for a Python package.
+It is required to configure a setup type for a Python package.
 The following outlines available setup types in releng-tool:</p>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
@@ -790,7 +792,7 @@ The following outlines available setup types in releng-tool:</p>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">setuptools</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-right"><p><a class="reference external" href="https://docs.python.org/3.11/library/distutils.html">distutils</a></p></td>
-<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">distutils</span></code> (default)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">distutils</span></code></p></td>
 </tr>
 </tbody>
 </table>

@@ -259,7 +259,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../api-mode/">API Mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration-overrides/">Configuration overrides</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../quirks/quirks/">Quirks</a><input aria-label="Toggle navigation of Quirks" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-bzr-certifi/">releng.bzr.certifi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-cmake-disable_direct_includes/">releng.cmake.disable_direct_includes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-cmake-disable_parallel_option/">releng.cmake.disable_parallel_option</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-disable_devmode_ignore_cache/">releng.disable_devmode_ignore_cache</a></li>
@@ -994,6 +993,9 @@ a <code class="docutils literal notranslate"><span class="pre">url</span></code>
 type. Projects should switch to defining <code class="docutils literal notranslate"><span class="pre">file</span></code> if they wish to explicitly
 set the VCS type.</p>
 </div>
+<div class="versionremoved">
+<p><span class="versionmodified removed">Removed in version 2.10: </span>Support for Bazaar sites has been removed.</p>
+</div>
 <p>Explicitly sets the version control system type to use when acquiring
 sources. releng-tool attempts to automatically determine the VCS type of
 a package based off a <a class="reference internal" href="../common-pkg-options/#pkg-opt-site"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_SITE</span></code></span></a> value. In some
@@ -1003,7 +1005,6 @@ what the site value is configured as.</p>
 <p>Supported types are as follows:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">brz</span></code> (Breezy)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">bzr</span></code> (Bazaar) <em>(deprecated)</em></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cvs</span></code> (CVS)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">file</span></code> (File URI)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span></code> (Git)</p></li>
