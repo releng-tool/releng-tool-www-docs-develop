@@ -258,7 +258,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/local-sources-mode">Local-sources mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/profiles">Profiles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/api-mode">API Mode</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#document-guides/configuration-overrides">Configuration overrides</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="#document-guides/quirks/quirks">Quirks</a><input aria-label="Toggle navigation of Quirks" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-cmake-disable_direct_includes">releng.cmake.disable_direct_includes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-disable_devmode_ignore_cache">releng.disable_devmode_ignore_cache</a></li>
@@ -10286,38 +10285,6 @@ the standard output stream is not populated during an API mode run.</p>
 </div>
 </section>
 </section>
-<span id="document-guides/configuration-overrides"></span><section id="configuration-overrides">
-<h4>Configuration overrides<a class="headerlink" href="#configuration-overrides" title="Link to this heading">¶</a></h4>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Obsoleto desde la versión 2.0: </span>The use of a <code class="docutils literal notranslate"><span class="pre">releng-overrides</span></code> script is deprecated. Various override
-capabilities noted below can either be supported in a <code class="docutils literal notranslate"><span class="pre">releng-tool.rt</span></code>
-configuration or have alternative approaches to performing overrides.</p>
-</div>
-<p>If a builder needs to (for example) override a tool location or package site, a
-user can define either environment options or setup a configuration override
-script <code class="docutils literal notranslate"><span class="pre">releng-overrides</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my-releng-tool-project/
-    ├── package/
-    │   └── ...
-    ├── LICENSE
-    ├── README.md
-    ├── releng-tool.rt
-    ├── releng-overrides     &lt;-- an override script
-    ...
-</pre></div>
-</div>
-<p>It is never recommended to persist a configuration overrides file into a
-project’s source repository. Overrides are intended for dealing with specific
-hosts (e.g. injecting overrides when running with legacy build images).</p>
-<section id="extraction-tool-overrides">
-<h5>Extraction tool overrides<a class="headerlink" href="#extraction-tool-overrides" title="Link to this heading">¶</a></h5>
-<p>See <a class="reference internal" href="#conf-override-extract-tools"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">override_extract_tools</span></code></span></a>.</p>
-</section>
-<section id="tool-overrides">
-<h5>Tool overrides<a class="headerlink" href="#tool-overrides" title="Link to this heading">¶</a></h5>
-<p>See <a class="reference internal" href="#env-tool-overrides"><span class="std std-ref">Environment — Tool overrides</span></a>.</p>
-</section>
-</section>
 <span id="document-guides/quirks/quirks"></span><section id="quirks">
 <h4>Quirks<a class="headerlink" href="#quirks" title="Link to this heading">¶</a></h4>
 <p>releng-tool also provides a series of configuration quirks to change the
@@ -13181,6 +13148,12 @@ the following environment variables can be used instead:</p>
 </section>
 </section>
 </div>
+</section>
+<section id="development">
+<h3>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>(note)</strong> Support for <code class="docutils literal notranslate"><span class="pre">releng-overrides</span></code> script has been dropped</p></li>
+</ul>
 </section>
 <section id="v2-11-0-2026-03-10">
 <h3>2.11.0 (2026-03-10)<a class="headerlink" href="#v2-11-0-2026-03-10" title="Link to this heading">¶</a></h3>
