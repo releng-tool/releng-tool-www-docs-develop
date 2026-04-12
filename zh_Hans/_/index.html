@@ -200,7 +200,7 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
 <li class="toctree-l1"><a class="reference internal" href="#document-requirements">要求</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#document-install">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#document-install">安装</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="#document-getting-started/getting-started">Getting started</a><input aria-label="Toggle navigation of Getting started" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="#document-getting-started/prelude">Prelude</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="#document-getting-started/tutorials">Tutorials</a><input aria-label="Toggle navigation of Tutorials" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
@@ -448,7 +448,7 @@ between the staging/target area with the host system.</p>
 <span id="document-requirements"></span><section id="requirements">
 <h2>要求<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h2>
 <p>releng-tool is developed in <a class="reference external" href="https://www.python.org/">Python</a> and requires either
-<a class="reference external" href="https://www.python.org/">Python</a> 3.9+ to run on a host system. A series of optional
+<a class="reference external" href="https://www.python.org/">Python</a> 3.10+ to run on a host system. A series of optional
 tools are required if certain stages or features are used. For example,
 projects fetching sources from <a class="reference external" href="https://git-scm.com/">Git</a> will require the <code class="docutils literal notranslate"><span class="pre">git</span></code> tool
 installed; projects with patches will required the <code class="docutils literal notranslate"><span class="pre">patch</span></code> tool. While
@@ -457,7 +457,7 @@ designed for Linux-based hosts), releng-tool can work on various operating
 system variants.</p>
 </section>
 <span id="document-install"></span><section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
+<h2>安装<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
 <p>The recommended method of installing/upgrading releng-tool is using
 <a class="reference external" href="https://pipx.pypa.io/">pipx</a>:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pipx<span class="w"> </span>install<span class="w"> </span>releng-tool
@@ -478,7 +478,7 @@ python<span class="w"> </span>-m<span class="w"> </span>releng-tool<span class="
 </pre></div>
 </div>
 <section id="quick-start">
-<h3>Quick-start<a class="headerlink" href="#quick-start" title="Link to this heading">¶</a></h3>
+<h3>快速开始<a class="headerlink" href="#quick-start" title="Link to this heading">¶</a></h3>
 <p>The following provides a series of steps to assist in preparing a new
 environment to use this package.</p>
 <div class="tab-set docutils">
@@ -601,16 +601,13 @@ invoke the following commands:</p>
 </div>
 </div>
 <input class="tab-input" id="tab-set--1-input--3" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--3">Windows</label><div class="tab-content docutils">
-<p>If not already installed, download the most recent version of <a class="reference external" href="https://www.python.org/">Python</a>:</p>
+<p>请先下载最新版本的 [Python][python]：</p>
 <blockquote>
 <div><p>Python — Downloads <br />
 <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p>
 </div></blockquote>
-<p>When invoking the installer, it is recommended to select the option to
-&quot;Add Python to PATH&quot;. However, users can explicitly invoked Python from
-an absolute path (the remainder of these steps will assume Python is
-available in the path).</p>
-<p>Open a Windows command prompt and invoke the following:</p>
+<p>调用安装程序时，建议选择 [&quot;Add Python to PATH&quot;] 选项。但是，用户可以从绝对路径显式调用 Python （这些步骤的其余部分将假设 Python 在路径中可用）。</p>
+<p>打开 Windows 命令提示符并调用以下内容：</p>
 <div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> python -m pip install -U releng-tool
 <span class="gp">&gt;</span> python -m releng-tool --version
 <span class="go">releng-tool ~version~</span>
@@ -707,7 +704,7 @@ found in the running interpreter (if even different). Users could either:</p>
 </ul>
 </section>
 <section id="development">
-<h3>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h3>
+<h3>发展<a class="headerlink" href="#development" title="Link to this heading">¶</a></h3>
 <p>To install the most recent development sources, the following
 <a class="reference external" href="https://pipx.pypa.io/">pipx</a>/<a class="reference external" href="https://pip.pypa.io/">pip</a> command can be used:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pipx<span class="w"> </span>install<span class="w"> </span>git+https://github.com/releng-tool/releng-tool.git
@@ -7403,7 +7400,7 @@ needed for a project's Python packages. Users may install dependencies
 manually (e.g. using <a class="reference external" href="https://pipx.pypa.io/stable/how-to/inject-packages/"><code class="docutils literal notranslate"><span class="pre">pipx</span> <span class="pre">inject</span></code></a> for <code class="docutils literal notranslate"><span class="pre">pipx</span></code> installs).
 Alternatively, users may also automatically support various Python dependencies
 when installing releng-tool. For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pipx</span> <span class="n">install</span> <span class="n">releng</span><span class="o">-</span><span class="n">tool</span><span class="p">[</span><span class="n">py</span><span class="o">-</span><span class="nb">all</span><span class="p">]</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pipx install releng-tool[py-all]
 </pre></div>
 </div>
 <p>See also <a class="reference internal" href="#python-dependencies"><span class="std std-ref">Optional Python Dependencies</span></a> for more
@@ -14247,10 +14244,8 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="#releng_tool.verbose" title="releng_tool.verbose"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">verbose</span></code></span></a>(msg, *args)
 <a class="reference internal" href="#releng_tool.warn" title="releng_tool.warn"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">warn</span></code></span></a>(msg, *args)</pre>
 <p>Variables available to scripts invoked by releng-tool:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[`releng_args`](vars-releng_args)
-[`releng_version`](vars-releng_version)
-</pre></div>
-</div>
+<pre class="literal-block"><a class="reference internal" href="#vars-releng-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng_args</span></code></span></a>
+<a class="reference internal" href="#vars-releng-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng_version</span></code></span></a></pre>
 </section>
 <section id="quirks">
 <h3>Quirks<a class="headerlink" href="#quirks" title="Link to this heading">¶</a></h3>
