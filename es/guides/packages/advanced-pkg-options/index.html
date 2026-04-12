@@ -251,6 +251,7 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../advanced-guides/">Advanced</a><input aria-label="Toggle navigation of Advanced" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../linting/">Linting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../patching/">Patching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../intern-extern-pkgs/">Internal/external packages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../development-mode/">Development mode</a></li>
@@ -604,6 +605,28 @@ for a package that cannot support a large or any parallel build environment.</p>
 be used to exceed the jobs count (although not recommended in most scenarios).</p>
 <p>See also the <a class="reference internal" href="../../arguments/#arg-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--jobs</span></code> argument</span></a> and
 <a class="reference internal" href="#pkg-opt-max-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAX_JOBS</span></code></span></a>.</p>
+</section>
+<section id="libfoo-force-revision">
+<span id="pkg-opt-force-revision"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_FORCE_REVISION</span></code><a class="headerlink" href="#libfoo-force-revision" title="Link to this heading">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.0.</span></p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Prudencia</p>
+<p>This options is not recommended for use inside a package definition.</p>
+</div>
+<p>Specifies a forced revision to use for a package. This option is not
+recommended for use inside a package definition. It is designed for users
+trying to override a used revision from the command line. The primary use
+case is to help override a specific revision for projects that may utilize
+both regular and development revisions. A user may be in a situation where
+the active runtime mode may vary but wants a consistent revision to use no
+matter what mode is configured.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="n">LIBFOO_FORCE_REVISION</span><span class="o">=</span><span class="s2">&quot;1.2.3&quot;</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#pkg-opt-devmode-revision"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEVMODE_REVISION</span></code></span></a>,
+<a class="reference internal" href="#pkg-opt-revision"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_REVISION</span></code></span></a> and <a class="reference internal" href="../../configuration/#conf-revisions"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">revisions</span></code></span></a>.</p>
 </section>
 <section id="libfoo-git-config">
 <span id="pkg-opt-git-config"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_GIT_CONFIG</span></code><a class="headerlink" href="#libfoo-git-config" title="Link to this heading">¶</a></h2>
@@ -1130,6 +1153,7 @@ warning message.</p>
 <li><a class="reference internal" href="#libfoo-extract-type"><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXTRACT_TYPE</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-fetch-opts"><code class="docutils literal notranslate"><span class="pre">LIBFOO_FETCH_OPTS</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-fixed-jobs"><code class="docutils literal notranslate"><span class="pre">LIBFOO_FIXED_JOBS</span></code></a></li>
+<li><a class="reference internal" href="#libfoo-force-revision"><code class="docutils literal notranslate"><span class="pre">LIBFOO_FORCE_REVISION</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-git-config"><code class="docutils literal notranslate"><span class="pre">LIBFOO_GIT_CONFIG</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-git-depth"><code class="docutils literal notranslate"><span class="pre">LIBFOO_GIT_DEPTH</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-git-refspecs"><code class="docutils literal notranslate"><span class="pre">LIBFOO_GIT_REFSPECS</span></code></a></li>

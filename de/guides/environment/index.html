@@ -251,6 +251,7 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../advanced-guides/">Advanced</a><input aria-label="Toggle navigation of Advanced" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../linting/">Linting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../patching/">Patching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../intern-extern-pkgs/">Internal/external packages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../development-mode/">Development mode</a></li>
@@ -1393,6 +1394,18 @@ releng-tool with an elevated user.</p>
 arguments.</p>
 <p>See also the <a class="reference internal" href="../arguments/#arg-relaxed-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--relaxed-args</span></code> argument</span></a>.</p>
 </section>
+<section id="releng-lint-max-version">
+<span id="env-releng-lint-max-version"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_LINT_MAX_VERSION=&lt;dir&gt;</span></code><a class="headerlink" href="#releng-lint-max-version" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.0.</span></p>
+</div>
+<p>Configures the maximum lint version checks when using the <a class="reference internal" href="../arguments/#action-lint"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">lint</span></code></span></a>
+action.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">RELENG_LINT_MAX_VERSION</span><span class="o">=</span><span class="mf">3.0</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="../linting/"><span class="doc std std-doc">Linting</span></a> and <a class="reference internal" href="../configuration/#conf-lint-max-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">lint_max_version</span></code></span></a>.</p>
+</section>
 <section id="releng-images-dir">
 <span id="env-releng-images-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_IMAGES_DIR=&lt;dir&gt;</span></code><a class="headerlink" href="#releng-images-dir" title="Link to this heading">¶</a></h3>
 <div class="versionadded">
@@ -1590,6 +1603,7 @@ Consider the following example:</p>
 <li><a class="reference internal" href="#releng-global-output-container-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_DIR=&lt;dir&gt;</span></code></a></li>
 <li><a class="reference internal" href="#releng-ignore-running-as-root"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_RUNNING_AS_ROOT=1</span></code></a></li>
 <li><a class="reference internal" href="#releng-ignore-unknown-args"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_UNKNOWN_ARGS=1</span></code></a></li>
+<li><a class="reference internal" href="#releng-lint-max-version"><code class="docutils literal notranslate"><span class="pre">RELENG_LINT_MAX_VERSION=&lt;dir&gt;</span></code></a></li>
 <li><a class="reference internal" href="#releng-images-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_IMAGES_DIR=&lt;dir&gt;</span></code></a></li>
 <li><a class="reference internal" href="#releng-output-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_OUTPUT_DIR=&lt;dir&gt;</span></code></a></li>
 <li><a class="reference internal" href="#releng-parallel-level"><code class="docutils literal notranslate"><span class="pre">RELENG_PARALLEL_LEVEL=&lt;level&gt;</span></code></a></li>

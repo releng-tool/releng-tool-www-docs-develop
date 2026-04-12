@@ -251,6 +251,7 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="guides/advanced-guides/">Advanced</a><input aria-label="Toggle navigation of Advanced" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/linting/">Linting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guides/patching/">Patching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guides/intern-extern-pkgs/">Internal/external packages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guides/development-mode/">Development mode</a></li>
@@ -457,6 +458,7 @@ between the staging/target area with the host system.</p>
 <li class="toctree-l1"><a class="reference internal" href="requirements/">Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install/">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="install/#quick-start">Quick-start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install/#optional-python-dependencies">Optional Python Dependencies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install/#development">Development</a></li>
 </ul>
 </li>
@@ -599,6 +601,7 @@ between the staging/target area with the host system.</p>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#default-meson-build-type"><code class="docutils literal notranslate"><span class="pre">default_meson_build_type</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#extra-license-exceptions"><code class="docutils literal notranslate"><span class="pre">extra_license_exceptions</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#extra-licenses"><code class="docutils literal notranslate"><span class="pre">extra_licenses</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/configuration/#lint-max-version"><code class="docutils literal notranslate"><span class="pre">lint_max_version</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#override-extract-tools"><code class="docutils literal notranslate"><span class="pre">override_extract_tools</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#quirks"><code class="docutils literal notranslate"><span class="pre">quirks</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/configuration/#urlopen-context"><code class="docutils literal notranslate"><span class="pre">urlopen_context</span></code></a></li>
@@ -692,6 +695,7 @@ between the staging/target area with the host system.</p>
 <li class="toctree-l4"><a class="reference internal" href="guides/environment/#releng-global-output-container-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_DIR=&lt;dir&gt;</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/environment/#releng-ignore-running-as-root"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_RUNNING_AS_ROOT=1</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/environment/#releng-ignore-unknown-args"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_UNKNOWN_ARGS=1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/environment/#releng-lint-max-version"><code class="docutils literal notranslate"><span class="pre">RELENG_LINT_MAX_VERSION=&lt;dir&gt;</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/environment/#releng-images-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_IMAGES_DIR=&lt;dir&gt;</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/environment/#releng-output-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_OUTPUT_DIR=&lt;dir&gt;</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/environment/#releng-parallel-level"><code class="docutils literal notranslate"><span class="pre">RELENG_PARALLEL_LEVEL=&lt;level&gt;</span></code></a></li>
@@ -723,6 +727,7 @@ between the staging/target area with the host system.</p>
 <li class="toctree-l4"><a class="reference internal" href="guides/packages/advanced-pkg-options/#libfoo-extract-type"><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXTRACT_TYPE</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/packages/advanced-pkg-options/#libfoo-fetch-opts"><code class="docutils literal notranslate"><span class="pre">LIBFOO_FETCH_OPTS</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/packages/advanced-pkg-options/#libfoo-fixed-jobs"><code class="docutils literal notranslate"><span class="pre">LIBFOO_FIXED_JOBS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="guides/packages/advanced-pkg-options/#libfoo-force-revision"><code class="docutils literal notranslate"><span class="pre">LIBFOO_FORCE_REVISION</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/packages/advanced-pkg-options/#libfoo-git-config"><code class="docutils literal notranslate"><span class="pre">LIBFOO_GIT_CONFIG</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/packages/advanced-pkg-options/#libfoo-git-depth"><code class="docutils literal notranslate"><span class="pre">LIBFOO_GIT_DEPTH</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="guides/packages/advanced-pkg-options/#libfoo-git-refspecs"><code class="docutils literal notranslate"><span class="pre">LIBFOO_GIT_REFSPECS</span></code></a></li>
@@ -948,6 +953,7 @@ between the staging/target area with the host system.</p>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="guides/advanced-guides/">Advanced</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guides/linting/">Linting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guides/patching/">Patching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guides/intern-extern-pkgs/">Internal/external packages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="guides/development-mode/">Development mode</a></li>

@@ -251,6 +251,7 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../guides/advanced-guides/">Advanced</a><input aria-label="Toggle navigation of Advanced" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../guides/linting/">Linting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/patching/">Patching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/intern-extern-pkgs/">Internal/external packages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/development-mode/">Development mode</a></li>
@@ -445,6 +446,14 @@ releng-tool, please see the project’s <a class="reference external" href="http
 <h2>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><strong>(note)</strong> Support for <code class="docutils literal notranslate"><span class="pre">releng-overrides</span></code> script has been dropped</p></li>
+<li><p>Adding various prerequisite checks for configured Python setup types</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">LIBFOO_FORCE_REVISION</span></code> to forcing package revisions for all modes</p></li>
+<li><p>Introduce support for a maximum version for lint checks</p></li>
+<li><p>Introduce various install optional dependencies configurations (e.g. <code class="docutils literal notranslate"><span class="pre">[all]</span></code>)</p></li>
+<li><p>Python’s <code class="docutils literal notranslate"><span class="pre">installer</span></code> package is now an optional dependency</p></li>
+<li><p>SBOM package entries are now sorted by name</p></li>
+<li><p>Support new changes in Python’s <code class="docutils literal notranslate"><span class="pre">installer</span></code> package (v1.0+)</p></li>
+<li><p>Use of a global output container path now hints full project output path</p></li>
 </ul>
 </section>
 <section id="v2-11-0-2026-03-10">
