@@ -300,6 +300,7 @@
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="#document-release-notes">Release notes</a><input aria-label="Toggle navigation of Release notes" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="#document-news/2026-04-12_03.00.00">3.0 (2026-04-12)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-news/2026-03-10_02.11.00">2.11 (2026-03-10)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-news/2026-03-08_02.10.00">2.10 (2026-03-08)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-news/2026-03-01_02.09.00">2.9 (2026-03-01)</a></li>
@@ -11491,6 +11492,59 @@ releng-tool, please see the project's <a class="reference external" href="https:
 <section id="news">
 <h3>News<a class="headerlink" href="#news" title="Link to this heading">¶</a></h3>
 <div class="toctree-wrapper compound">
+<span id="document-news/2026-04-12_03.00.00"></span><section id="v3-0-2026-04-12">
+<h4>3.0 (2026-04-12)<a class="headerlink" href="#v3-0-2026-04-12" title="Link to this heading">¶</a></h4>
+<section id="python-installer-support-and-dependency-changes">
+<h5>Python Installer support and dependency changes<a class="headerlink" href="#python-installer-support-and-dependency-changes" title="Link to this heading">¶</a></h5>
+<p>Since releng-tool v2.0, Python-based packages have been installed into various
+staging/target paths using the <a class="reference external" href="https://installer.pypa.io/">Python installer</a> package.
+Changes introduced in its latest v1.0 release has resulted in unexpected
+installation events for Python-based packages.</p>
+<p>This release of releng-tool adjusts its interaction to address issues,
+maintaining support for installer's v0.5 to v1.0 releases.</p>
+<p>In part with these changes, adjustments have been made to releng-tool to help
+manage Python optional dependencies for releng-tool projects. Originally, the
+<code class="docutils literal notranslate"><span class="pre">installer</span></code> package was included by default in releng-tool installations. This
+is no longer the case with v3.0. Users with projects that utilize Python will
+now need to ensure the dependency is installed with any frontend or backend
+used.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pipx</span> <span class="n">inject</span> <span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="n">installer</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>Also introduced in this release is new optional dependency configurations.
+While releng-tool will now only install the bare minimum requirements for
+execution, users wanting to automatically install Python dependencies can do
+so when installing releng-tool. For example, to install all Python-related
+dependencies releng-tool could use, the following can be used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pipx</span> <span class="n">install</span> <span class="n">releng</span><span class="o">-</span><span class="n">tool</span><span class="p">[</span><span class="n">py</span><span class="o">-</span><span class="nb">all</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>See all <a class="reference internal" href="#python-dependencies"><span class="std std-ref">optional Python dependencies options</span></a>.</p>
+<p>Lastly, releng-tool now includes prerequisite checks for each supported Python
+setup-type. A package requiring, for example, Flit support will now fail early
+if the Python runtime/virtual environment is missing the module.</p>
+</section>
+<section id="lint-check-version-capping">
+<h5>Lint-check version capping<a class="headerlink" href="#lint-check-version-capping" title="Link to this heading">¶</a></h5>
+<p>Users taking advantage of <a class="reference internal" href="#document-guides/linting"><span class="doc std std-doc">linting capabilities</span></a> may now
+configure version limits for lint-checks to be performed. This may be helpful
+for users who add linting checks to their projects CI scripts, but do not want
+to cause failures on required pipelines when new linting checks are
+introduced by releng-tool.</p>
+<p>Linting limits can be configured with the
+<a class="reference internal" href="#conf-lint-max-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">lint_max_version</span></code></span></a> project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lint_max_version</span> <span class="o">=</span> <span class="s1">&#39;2.8&#39;</span>
+</pre></div>
+</div>
+<p>Or configured with a <a class="reference internal" href="#env-releng-lint-max-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_LINT_MAX_VERSION</span></code></span></a>
+environment variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">RELENG_LINT_MAX_VERSION</span><span class="o">=</span><span class="mf">2.8</span>
+<span class="n">releng</span><span class="o">-</span><span class="n">tool</span>
+</pre></div>
+</div>
+</section>
+</section>
 <span id="document-news/2026-03-10_02.11.00"></span><section id="v2-11-2026-03-10">
 <h4>2.11 (2026-03-10)<a class="headerlink" href="#v2-11-2026-03-10" title="Link to this heading">¶</a></h4>
 <section id="corrections-in-version-requirement-checks">
@@ -13363,8 +13417,8 @@ the following environment variables can be used instead:</p>
 </section>
 </div>
 </section>
-<section id="development">
-<h3>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h3>
+<section id="v3-0-2026-04-12">
+<h3>3.0 (2026-04-12)<a class="headerlink" href="#v3-0-2026-04-12" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>(note)</strong> Support for <code class="docutils literal notranslate"><span class="pre">releng-overrides</span></code> script has been dropped</p></li>
 <li><p>Adding various prerequisite checks for configured Python setup types</p></li>
