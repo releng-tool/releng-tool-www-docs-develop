@@ -441,7 +441,8 @@ script-based package:</p>
 <p>When a package performs a configuration, build or installation stage; the
 respective script (mentioned above) will be invoked. Package scripts are
 optional. If a script is not provided for a stage, the stage will be
-skipped.</p>
+skipped. All scripts are invoked with a <a class="reference internal" href="../../environment/#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a>
+working directory.</p>
 <p>See also <a class="reference internal" href="../../script-helpers/"><span class="doc std std-doc">script helpers</span></a> for helper functions and
 variables available for use, as well as <a class="reference internal" href="../bootstrapping/"><span class="doc std std-doc">bootstrapping</span></a> or
 <a class="reference internal" href="../post-processing/"><span class="doc std std-doc">post-processing</span></a> for more stage script support.</p>

@@ -408,7 +408,7 @@
         <article role="main" id="furo-main-content">
           <section id="package-hacking">
 <h1>Package hacking<a class="headerlink" href="#package-hacking" title="Link to this heading">¶</a></h1>
-<p>Package types may define various command line defines and options to help
+<p>Package types may specify various command line defines and options to help
 support certain features or practices that best fit with releng-tool’s
 staged processing. In some advanced scenarios, developers may wish to override
 these defines/options due to corner cases or preferences. Developers can
@@ -432,9 +432,9 @@ hint to remove such an option by configuring
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">DESTDIR</span><span class="o">=&lt;</span><span class="n">output</span><span class="o">&gt;/</span><span class="n">target</span> <span class="n">install</span>
 </pre></div>
 </div>
-<p>Overrides are typically support on each configuration, build and
+<p>Overrides are typically supported on each configure, build and
 install-related configurations. Not all defines/options can be overridden.
-As such overrides are advanced, developers are recommended to refer to the
+Since overrides are advanced, developers are recommended to refer to the
 implementation for specifics. Developers can also use the
 <a class="reference internal" href="../../arguments/#arg-debug"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--debug</span></code></span></a> argument to see explicit commands invoked:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">debug</span>

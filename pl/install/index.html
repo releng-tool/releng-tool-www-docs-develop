@@ -514,7 +514,7 @@ invoke the following commands:</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--0-input--6" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--6">Ubuntu</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--0-input--6" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--6">Ubuntu 24</label><div class="tab-content docutils">
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>pipx
 <span class="gp"># </span>pipx<span class="w"> </span>ensurepath
 <span class="gp"># </span>pipx<span class="w"> </span>install<span class="w"> </span>releng-tool
@@ -526,6 +526,21 @@ invoke the following commands:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>pipx
 <span class="gp">$ </span>pipx<span class="w"> </span>ensurepath
 <span class="gp">$ </span>pipx<span class="w"> </span>install<span class="w"> </span>releng-tool
+<span class="gp">$ </span>releng-tool<span class="w"> </span>--version
+<span class="go">releng-tool &lt;version&gt;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--7" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--7">Ubuntu 26</label><div class="tab-content docutils">
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>pipx
+<span class="gp"># </span>pipx<span class="w"> </span>install<span class="w"> </span>--global<span class="w"> </span>releng-tool
+<span class="gp"># </span>releng-tool<span class="w"> </span>--version
+<span class="go">releng-tool &lt;version&gt;</span>
+</pre></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">sudo</span></code>:</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>pipx
+<span class="gp">$ </span>sudo<span class="w"> </span>pipx<span class="w"> </span>install<span class="w"> </span>--global<span class="w"> </span>releng-tool
 <span class="gp">$ </span>releng-tool<span class="w"> </span>--version
 <span class="go">releng-tool &lt;version&gt;</span>
 </pre></div>
@@ -660,6 +675,12 @@ found in the running interpreter (if even different). Users could either:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pipx<span class="w"> </span>install<span class="w"> </span>git+https://github.com/releng-tool/releng-tool.git
 <span class="w"> </span><span class="o">(</span>or<span class="o">)</span>
 pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/releng-tool/releng-tool.git
+</pre></div>
+</div>
+<p>Or, if looking to install with optional dependencies:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pipx<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;releng-tool[all]@git+https://github.com/releng-tool/releng-tool.git&quot;</span>
+<span class="w"> </span><span class="o">(</span>or<span class="o">)</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;releng-tool[all]@git+https://github.com/releng-tool/releng-tool.git&quot;</span>
 </pre></div>
 </div>
 </section>

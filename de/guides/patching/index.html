@@ -418,6 +418,11 @@ in <a class="reference internal" href="../local-sources-mode/"><span class="doc 
 <p><span class="versionmodified changed">Geändert in Version 2.9: </span>Additional configuration modes to permit development revisions to have
 patches applied.</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Geändert in Version 3.1: </span>The working directory will now be updated to account for
+<a class="reference internal" href="../environment/#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a> (and possibly
+<a class="reference internal" href="../packages/advanced-pkg-options/#pkg-opt-patch-subdir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PATCH_SUBDIR</span></code></span></a>) when using a patch script.</p>
+</div>
 <p>The patching stage for a package provides the ability for a developer to apply
 one or more patches to extracted sources. A project may take advantage of
 acquiring sources from one or more externally managed implementations.
@@ -471,6 +476,25 @@ defines a development revision:</p>
 <span class="n">LIBFOO_IGNORE_PATCHES</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
+<p>An alternative to using patch files is supported via a patch script. Similar
+to <a class="reference internal" href="../packages/pkg-type-script/"><span class="doc std std-doc">script-based packages</span></a>, all package can opt for
+using a Python-based <code class="docutils literal notranslate"><span class="pre">&lt;package&gt;-patch.rt</span></code> script.</p>
+<p>For example, a <code class="docutils literal notranslate"><span class="pre">libfoo</span></code> package could have the following patch file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my-releng-tool-project/
+    ├── package/
+    │   └── libfoo/
+    │       ├── libfoo.rt
+    │       └── libfoo-patch.rt
+    ...
+</pre></div>
+</div>
+<p>When a patch script is defined, no patch files are automatically applied. It
+is assumed developers want to control any type of patching from a provided
+script.</p>
+<p>The patch script is typically invoked with a
+<a class="reference internal" href="../environment/#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a> working directory. In the event
+<a class="reference internal" href="../packages/advanced-pkg-options/#pkg-opt-patch-subdir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PATCH_SUBDIR</span></code></span></a> is configured, the working
+directory will be adjusted for the configured sub-directory.</p>
 </section>
 
         </article>

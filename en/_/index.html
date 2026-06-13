@@ -565,7 +565,7 @@ invoke the following commands:</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--0-input--6" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--6">Ubuntu</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--0-input--6" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--6">Ubuntu 24</label><div class="tab-content docutils">
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>pipx
 <span class="gp"># </span>pipx<span class="w"> </span>ensurepath
 <span class="gp"># </span>pipx<span class="w"> </span>install<span class="w"> </span>releng-tool
@@ -577,6 +577,21 @@ invoke the following commands:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>pipx
 <span class="gp">$ </span>pipx<span class="w"> </span>ensurepath
 <span class="gp">$ </span>pipx<span class="w"> </span>install<span class="w"> </span>releng-tool
+<span class="gp">$ </span>releng-tool<span class="w"> </span>--version
+<span class="go">releng-tool &lt;version&gt;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--7" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--7">Ubuntu 26</label><div class="tab-content docutils">
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>pipx
+<span class="gp"># </span>pipx<span class="w"> </span>install<span class="w"> </span>--global<span class="w"> </span>releng-tool
+<span class="gp"># </span>releng-tool<span class="w"> </span>--version
+<span class="go">releng-tool &lt;version&gt;</span>
+</pre></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">sudo</span></code>:</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>pipx
+<span class="gp">$ </span>sudo<span class="w"> </span>pipx<span class="w"> </span>install<span class="w"> </span>--global<span class="w"> </span>releng-tool
 <span class="gp">$ </span>releng-tool<span class="w"> </span>--version
 <span class="go">releng-tool &lt;version&gt;</span>
 </pre></div>
@@ -714,6 +729,12 @@ found in the running interpreter (if even different). Users could either:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pipx<span class="w"> </span>install<span class="w"> </span>git+https://github.com/releng-tool/releng-tool.git
 <span class="w"> </span><span class="o">(</span>or<span class="o">)</span>
 pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/releng-tool/releng-tool.git
+</pre></div>
+</div>
+<p>Or, if looking to install with optional dependencies:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pipx<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;releng-tool[all]@git+https://github.com/releng-tool/releng-tool.git&quot;</span>
+<span class="w"> </span><span class="o">(</span>or<span class="o">)</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;releng-tool[all]@git+https://github.com/releng-tool/releng-tool.git&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -4245,6 +4266,33 @@ and configures this option to the path <code class="docutils literal notranslate
             └── ...
 </pre></div>
 </div>
+<p>See also
+<a class="reference internal" href="#env-releng-global-out-container-no-images"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_NO_IMAGES</span></code></span></a>.</p>
+</section>
+<section id="releng-global-output-container-no-images">
+<span id="env-releng-global-out-container-no-images"></span><h5><code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_NO_IMAGES=1</span></code><a class="headerlink" href="#releng-global-output-container-no-images" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.1.</span></p>
+</div>
+<p>This option is used with
+<a class="reference internal" href="#env-releng-global-out-container-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_DIR</span></code></span></a> to
+hint that generate images should not default to a global output container
+path. While developers may want to rely on
+<code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_DIR</span></code> for interim build files for partitioning
+or spacing reasons, developers may want final images/artifacts to be
+placed in a project’s root/local output directory.</p>
+<p>When this option is used, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">RELENG_GLOBAL_OUTPUT_CONTAINER_DIR</span><span class="o">=/</span><span class="n">mnt</span><span class="o">/</span><span class="n">extern</span><span class="o">-</span><span class="n">disk</span>
+<span class="n">export</span> <span class="n">RELENG_GLOBAL_OUTPUT_CONTAINER_NO_IMAGES</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>If a build utilizes a global container output, files generates into
+<a class="reference internal" href="#env-images-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">IMAGES_DIR</span></code></span></a> will still output to the default images path:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">root</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;/</span><span class="n">output</span><span class="o">/</span><span class="n">images</span>
+</pre></div>
+</div>
+<p>See also
+<a class="reference internal" href="#env-releng-global-out-container-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_DIR</span></code></span></a>.</p>
 </section>
 <section id="releng-ignore-running-as-root">
 <span id="env-releng-ignore-running-as-root"></span><h5><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_RUNNING_AS_ROOT=1</span></code><a class="headerlink" href="#releng-ignore-running-as-root" title="Link to this heading">¶</a></h5>
@@ -4423,12 +4471,24 @@ type:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_INSTALL_TYPE</span> <span class="o">=</span> <span class="s1">&#39;target&#39;</span>
 </pre></div>
 </div>
+<p>For example, a package configured for <code class="docutils literal notranslate"><span class="pre">target</span></code> may install a library under:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">root</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;/</span><span class="n">output</span><span class="o">/</span><span class="n">target</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span>
+</pre></div>
+</div>
+<p>If configured for <code class="docutils literal notranslate"><span class="pre">staging_and_target</span></code>, the library would be installed into
+paths:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">root</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;/</span><span class="n">output</span><span class="o">/</span><span class="n">staging</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span>
+<span class="o">&lt;</span><span class="n">root</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;/</span><span class="n">output</span><span class="o">/</span><span class="n">target</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span>
+</pre></div>
+</div>
 <p>See also <a class="reference internal" href="#pkg-opt-host-provides"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_HOST_PROVIDES</span></code></span></a>.</p>
 </section>
 <section id="libfoo-license">
 <span id="pkg-opt-license"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_LICENSE</span></code><a class="headerlink" href="#libfoo-license" title="Link to this heading">¶</a></h5>
 <p>A string or list of strings outlining the license information for a package.
-Outlining the license of a package is recommended.
+Outlining the license of a package is suggested for users who wish to build a
+software build of materials (SBOM) document or provide a helpful hint to other
+developers applicable licenses for a given package.
 It is recommended to use <a class="reference external" href="https://spdx.org/licenses/">SPDX registered licenses</a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_LICENSE</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;GPL-2.0-only&#39;</span><span class="p">,</span>
@@ -5953,7 +6013,8 @@ script-based package:</p>
 <p>When a package performs a configuration, build or installation stage; the
 respective script (mentioned above) will be invoked. Package scripts are
 optional. If a script is not provided for a stage, the stage will be
-skipped.</p>
+skipped. All scripts are invoked with a <a class="reference internal" href="#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a>
+working directory.</p>
 <p>See also <a class="reference internal" href="#document-guides/script-helpers"><span class="doc std std-doc">script helpers</span></a> for helper functions and
 variables available for use, as well as <a class="reference internal" href="#document-guides/packages/bootstrapping"><span class="doc std std-doc">bootstrapping</span></a> or
 <a class="reference internal" href="#document-guides/packages/post-processing"><span class="doc std std-doc">post-processing</span></a> for more stage script support.</p>
@@ -6480,7 +6541,7 @@ can override this option by explicitly adjusting the configuration option
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_CMAKE_BUILD_TYPE</span> <span class="o">=</span> <span class="s1">&#39;Debug&#39;</span>
 </pre></div>
 </div>
-<p>Packages can be configured with a toolchain using with the define
+<p>Packages can be configured with a toolchain using the define
 <a class="reference external" href="https://cmake.org/cmake/help/latest/variable/CMAKE_TOOLCHAIN_FILE.html"><code class="docutils literal notranslate"><span class="pre">CMAKE_TOOLCHAIN_FILE</span></code></a> (via
 <a class="reference internal" href="#pkg-opt-cmake-conf-defs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_DEFS</span></code></span></a>) or using the command line option
 <a class="reference external" href="https://cmake.org/cmake/help/latest/manual/cmake.1.html#cmdoption-cmake-toolchain"><code class="docutils literal notranslate"><span class="pre">--toolchain</span></code></a> (via
@@ -6525,7 +6586,7 @@ CMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON
 <p>The build type is configured by
 <a class="reference internal" href="#pkg-opt-cmake-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CMAKE_BUILD_TYPE</span></code></span></a>.</p>
 <p>Paths may vary based on how the package’s
-<a class="reference internal" href="#pkg-opt-install-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_TYPE</span></code></span></a> is configured. System root paths
+<a class="reference internal" href="#pkg-opt-install-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_TYPE</span></code></span></a> is configured. Root paths
 provided will only include the staging directory if <code class="docutils literal notranslate"><span class="pre">staging</span></code> is configured.
 Both the staging and target directories are provided is the <code class="docutils literal notranslate"><span class="pre">target</span></code> is
 configured. Likewise with the host directory if <code class="docutils literal notranslate"><span class="pre">host</span></code> is configured.</p>
@@ -8340,7 +8401,7 @@ By default, the installation stage is invoked with a value of <code class="docut
 </section>
 <span id="document-guides/packages/hacking"></span><section id="package-hacking">
 <h4>Package hacking<a class="headerlink" href="#package-hacking" title="Link to this heading">¶</a></h4>
-<p>Package types may define various command line defines and options to help
+<p>Package types may specify various command line defines and options to help
 support certain features or practices that best fit with releng-tool’s
 staged processing. In some advanced scenarios, developers may wish to override
 these defines/options due to corner cases or preferences. Developers can
@@ -8364,9 +8425,9 @@ hint to remove such an option by configuring
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">DESTDIR</span><span class="o">=&lt;</span><span class="n">output</span><span class="o">&gt;/</span><span class="n">target</span> <span class="n">install</span>
 </pre></div>
 </div>
-<p>Overrides are typically support on each configuration, build and
+<p>Overrides are typically supported on each configure, build and
 install-related configurations. Not all defines/options can be overridden.
-As such overrides are advanced, developers are recommended to refer to the
+Since overrides are advanced, developers are recommended to refer to the
 implementation for specifics. Developers can also use the
 <a class="reference internal" href="#arg-debug"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--debug</span></code></span></a> argument to see explicit commands invoked:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">debug</span>
@@ -9445,6 +9506,102 @@ path could not be removed from the system</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_require_version">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_require_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_require_version" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.11.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.0: </span>Support maximum version.</p>
+</div>
+<p>Enables a caller to explicitly check for a required releng-tool version.
+Invoking this function with a dotted-separated <code class="docutils literal notranslate"><span class="pre">version</span></code> string, the
+string will be parsed and compared with the running releng-tool version.
+If the required version is met, this method will have no effect. In the
+event that the required version is not met, the exception <code class="docutils literal notranslate"><span class="pre">SystemExit</span></code>
+will be raised if the critical flag is set; otherwise this call will
+return <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>An example when using in the context of script helpers is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ensure we are using releng-tool v1</span>
+<span class="n">releng_require_version</span><span class="p">(</span><span class="s1">&#39;1.0.0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>minver</strong> – dotted-separated minimum version string</p></li>
+<li><p><strong>**quiet</strong> (<em>optional</em>) – whether or not to suppress output</p></li>
+<li><p><strong>**critical</strong> (<em>optional</em>) – whether or not to stop execution on failure</p></li>
+<li><p><strong>**maxver</strong> (<em>optional</em>) – dotted-separated maximum version string</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the version check is met; <code class="docutils literal notranslate"><span class="pre">False</span></code> if the version check
+has failed</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>SystemExit</strong> – if the version check fails with <code class="docutils literal notranslate"><span class="pre">critical=True</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_step">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_step" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.1.</span></p>
+</div>
+<p>The following is a helper generator that aims to act like a context manager
+for invoking a step of commands once across re-invokes. This may
+be useful for scripts which contain a large number of actions. A step
+operation accepts a name value which would typically be unique for a
+given package. Consider the following example when used in the context
+of a build script helper:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">releng_step</span><span class="p">(</span><span class="s1">&#39;first-step&#39;</span><span class="p">):</span>
+    <span class="c1"># invoked only once on success</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">releng_step</span><span class="p">(</span><span class="s1">&#39;second-step&#39;</span><span class="p">):</span>
+    <span class="c1"># invoked only once on success</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">releng_step</span><span class="p">(</span><span class="s1">&#39;third-step&#39;</span><span class="p">):</span>
+    <span class="c1"># invoked only once on success</span>
+</pre></div>
+</div>
+<p>When invoked for the first time, calls inside the for-loop scope will
+be executed as normal. Once done, the step will persist a file flag in
+the active context’s package output directory (or the path defined by
+<code class="docutils literal notranslate"><span class="pre">dir_</span></code>). In the event that the build script is re-invoked (e.g. continuing
+from a stopped/canceled state), if the step was previously completed, the
+scope will be stepped over.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">force</span></code> argument can be set depending on the stage, if desired. For
+example, when running in a build script, utilizing <code class="docutils literal notranslate"><span class="pre">RELENG_REBUILD</span></code> may
+be ideal:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">releng_step</span><span class="p">(</span><span class="s1">&#39;subbuild&#39;</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="n">RELENG_REBUILD</span><span class="p">):</span>
+    <span class="c1"># invoked only once on success</span>
+</pre></div>
+</div>
+<p>Likewise with <code class="docutils literal notranslate"><span class="pre">RELENG_RECONFIGURE</span></code> in configuration scripts:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">releng_step</span><span class="p">(</span><span class="s1">&#39;cfg-stage-1&#39;</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="n">RELENG_RECONFIGURE</span><span class="p">):</span>
+    <span class="c1"># invoked only once on success</span>
+</pre></div>
+</div>
+<p>If a directory cannot be detected for use of the file flag, a
+<code class="docutils literal notranslate"><span class="pre">FailedToPrepareStepError</span></code> exception will be thrown.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> – name for the file flag</p></li>
+<li><p><strong>force</strong> (<em>optional</em>) – force run the step</p></li>
+<li><p><strong>dir</strong> (<em>optional</em>) – the directory to store the file flag</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>FailedToPrepareStepError</strong> – the step context could not be prepared</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="releng_tool.releng_symlink">
 <span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_symlink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lpd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#releng_tool.releng_symlink" title="Link to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -9512,46 +9669,6 @@ symbolic link could not be created</p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>SystemExit</strong> – if the symbolic link operation fails with <code class="docutils literal notranslate"><span class="pre">critical=True</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="releng_tool.releng_require_version">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_require_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_require_version" title="Link to this definition">¶</a></dt>
-<dd><div class="versionadded">
-<p><span class="versionmodified added">Added in version 0.11.</span></p>
-</div>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 2.0: </span>Support maximum version.</p>
-</div>
-<p>Enables a caller to explicitly check for a required releng-tool version.
-Invoking this function with a dotted-separated <code class="docutils literal notranslate"><span class="pre">version</span></code> string, the
-string will be parsed and compared with the running releng-tool version.
-If the required version is met, this method will have no effect. In the
-event that the required version is not met, the exception <code class="docutils literal notranslate"><span class="pre">SystemExit</span></code>
-will be raised if the critical flag is set; otherwise this call will
-return <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
-<p>An example when using in the context of script helpers is as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ensure we are using releng-tool v1</span>
-<span class="n">releng_require_version</span><span class="p">(</span><span class="s1">&#39;1.0.0&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>minver</strong> – dotted-separated minimum version string</p></li>
-<li><p><strong>**quiet</strong> (<em>optional</em>) – whether or not to suppress output</p></li>
-<li><p><strong>**critical</strong> (<em>optional</em>) – whether or not to stop execution on failure</p></li>
-<li><p><strong>**maxver</strong> (<em>optional</em>) – dotted-separated maximum version string</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the version check is met; <code class="docutils literal notranslate"><span class="pre">False</span></code> if the version check
-has failed</p>
-</dd>
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>SystemExit</strong> – if the version check fails with <code class="docutils literal notranslate"><span class="pre">critical=True</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -9912,7 +10029,7 @@ build, the <code class="docutils literal notranslate"><span class="pre">licenses
 a future release.</p>
 </div>
 <div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 2.2: </span>Extensionless configurations/scripts are no longer recommended and may
+<p><span class="versionmodified deprecated">Deprecated since version 2.2: </span>Extensionless configurations/scripts are no longer recommended and will
 be removed in a future release.</p>
 </div>
 <div class="versionchanged">
@@ -10043,6 +10160,11 @@ in <a class="reference internal" href="#document-guides/local-sources-mode"><spa
 <p><span class="versionmodified changed">Changed in version 2.9: </span>Additional configuration modes to permit development revisions to have
 patches applied.</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.1: </span>The working directory will now be updated to account for
+<a class="reference internal" href="#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a> (and possibly
+<a class="reference internal" href="#pkg-opt-patch-subdir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PATCH_SUBDIR</span></code></span></a>) when using a patch script.</p>
+</div>
 <p>The patching stage for a package provides the ability for a developer to apply
 one or more patches to extracted sources. A project may take advantage of
 acquiring sources from one or more externally managed implementations.
@@ -10096,6 +10218,25 @@ defines a development revision:</p>
 <span class="n">LIBFOO_IGNORE_PATCHES</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
+<p>An alternative to using patch files is supported via a patch script. Similar
+to <a class="reference internal" href="#document-guides/packages/pkg-type-script"><span class="doc std std-doc">script-based packages</span></a>, all package can opt for
+using a Python-based <code class="docutils literal notranslate"><span class="pre">&lt;package&gt;-patch.rt</span></code> script.</p>
+<p>For example, a <code class="docutils literal notranslate"><span class="pre">libfoo</span></code> package could have the following patch file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my-releng-tool-project/
+    ├── package/
+    │   └── libfoo/
+    │       ├── libfoo.rt
+    │       └── libfoo-patch.rt
+    ...
+</pre></div>
+</div>
+<p>When a patch script is defined, no patch files are automatically applied. It
+is assumed developers want to control any type of patching from a provided
+script.</p>
+<p>The patch script is typically invoked with a
+<a class="reference internal" href="#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a> working directory. In the event
+<a class="reference internal" href="#pkg-opt-patch-subdir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PATCH_SUBDIR</span></code></span></a> is configured, the working
+directory will be adjusted for the configured sub-directory.</p>
 </section>
 <span id="document-guides/intern-extern-pkgs"></span><section id="internal-external-packages">
 <h4>Internal/external packages<a class="headerlink" href="#internal-external-packages" title="Link to this heading">¶</a></h4>
@@ -10104,10 +10245,10 @@ considered external by default unless explicitly configured as internal
 through either a project configuration or a package option. Internal
 or external packages are treated the same except for the following:</p>
 <ul class="simple">
-<li><p>An internal package will not generate output warnings if the package is
+<li><p>An internal package will not generate warnings if the package is
 missing <a class="reference internal" href="#document-guides/packages/hash-file"><span class="doc std std-doc">hash information</span></a> or an
 <a class="reference internal" href="#document-guides/packages/ascii-armor"><span class="doc std std-doc">ASCII-armor</span></a>.</p></li>
-<li><p>An internal package will not generate output warnings if the package is
+<li><p>An internal package will not generate warnings if the package is
 missing <a class="reference internal" href="#document-guides/licenses"><span class="doc std std-doc">licenses</span></a>.</p></li>
 <li><p>When configured for <a class="reference internal" href="#document-guides/local-sources-mode"><span class="doc std std-doc">local-sources mode</span></a>, only internal
 packages which have local sources configured will have their fetch,
@@ -13417,6 +13558,15 @@ the following environment variables can be used instead:</p>
 </section>
 </div>
 </section>
+<section id="development">
+<h3>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>(note)</strong> Last version supporting the <code class="docutils literal notranslate"><span class="pre">.releng</span></code> extension</p></li>
+<li><p>Ensure an appropriate working directory is set when using a patch-script</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">releng_step</span></code> helper script function</p></li>
+<li><p>Support for <code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_NO_IMAGES</span></code></p></li>
+</ul>
+</section>
 <section id="v3-0-2026-04-12">
 <h3>3.0 (2026-04-12)<a class="headerlink" href="#v3-0-2026-04-12" title="Link to this heading">¶</a></h3>
 <ul class="simple">
@@ -14154,6 +14304,7 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="#env-releng-cache-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_CACHE_DIR</span></code></span></a>
 <a class="reference internal" href="#env-releng-dl-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_DL_DIR</span></code></span></a>
 <a class="reference internal" href="#env-releng-global-out-container-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_DIR</span></code></span></a>
+<a class="reference internal" href="#env-releng-global-out-container-no-images"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_NO_IMAGES</span></code></span></a>
 <a class="reference internal" href="#env-releng-ignore-running-as-root"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_RUNNING_AS_ROOT</span></code></span></a>
 <a class="reference internal" href="#env-releng-ignore-unknown-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_UNKNOWN_ARGS</span></code></span></a>
 <a class="reference internal" href="#env-releng-images-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_IMAGES_DIR</span></code></span></a>
@@ -14294,6 +14445,7 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="#releng_tool.releng_path" title="releng_tool.releng_path"><span class="xref myst py py-meth"><code class="docutils literal notranslate"><span class="pre">releng_path</span></code></span></a>(*pathsegments)
 <a class="reference internal" href="#releng_tool.releng_remove" title="releng_tool.releng_remove"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_remove</span></code></span></a>(path, quiet=False)
 <a class="reference internal" href="#releng_tool.releng_require_version" title="releng_tool.releng_require_version"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_require_version</span></code></span></a>(minver, maxver=None, quiet=False, critical=True)
+<a class="reference internal" href="#releng_tool.releng_step" title="releng_tool.releng_step"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_step</span></code></span></a>(key, force=False, dir_=None)
 <a class="reference internal" href="#releng_tool.releng_symlink" title="releng_tool.releng_symlink"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_symlink</span></code></span></a>(target, link_path, quiet=False, critical=True, lpd=False, relative=True)
 <a class="reference internal" href="#releng_tool.releng_tmpdir" title="releng_tool.releng_tmpdir"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_tmpdir</span></code></span></a>(dir_=None, *args, wd=False)
 <a class="reference internal" href="#releng_tool.releng_touch" title="releng_tool.releng_touch"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_touch</span></code></span></a>(file, *args)

@@ -445,12 +445,24 @@ type:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_INSTALL_TYPE</span> <span class="o">=</span> <span class="s1">&#39;target&#39;</span>
 </pre></div>
 </div>
+<p>For example, a package configured for <code class="docutils literal notranslate"><span class="pre">target</span></code> may install a library under:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">root</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;/</span><span class="n">output</span><span class="o">/</span><span class="n">target</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span>
+</pre></div>
+</div>
+<p>If configured for <code class="docutils literal notranslate"><span class="pre">staging_and_target</span></code>, the library would be installed into
+paths:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">root</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;/</span><span class="n">output</span><span class="o">/</span><span class="n">staging</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span>
+<span class="o">&lt;</span><span class="n">root</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;/</span><span class="n">output</span><span class="o">/</span><span class="n">target</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span>
+</pre></div>
+</div>
 <p>See also <a class="reference internal" href="../advanced-pkg-options/#pkg-opt-host-provides"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_HOST_PROVIDES</span></code></span></a>.</p>
 </section>
 <section id="libfoo-license">
 <span id="pkg-opt-license"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_LICENSE</span></code><a class="headerlink" href="#libfoo-license" title="Link to this heading">¶</a></h2>
 <p>A string or list of strings outlining the license information for a package.
-Outlining the license of a package is recommended.
+Outlining the license of a package is suggested for users who wish to build a
+software build of materials (SBOM) document or provide a helpful hint to other
+developers applicable licenses for a given package.
 It is recommended to use <a class="reference external" href="https://spdx.org/licenses/">SPDX registered licenses</a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_LICENSE</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;GPL-2.0-only&#39;</span><span class="p">,</span>

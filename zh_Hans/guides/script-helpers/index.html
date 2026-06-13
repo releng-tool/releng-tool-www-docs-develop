@@ -1403,6 +1403,102 @@ path could not be removed from the system</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_require_version">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_require_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_require_version" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.11.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 2.0: </span>Support maximum version.</p>
+</div>
+<p>Enables a caller to explicitly check for a required releng-tool version.
+Invoking this function with a dotted-separated <code class="docutils literal notranslate"><span class="pre">version</span></code> string, the
+string will be parsed and compared with the running releng-tool version.
+If the required version is met, this method will have no effect. In the
+event that the required version is not met, the exception <code class="docutils literal notranslate"><span class="pre">SystemExit</span></code>
+will be raised if the critical flag is set; otherwise this call will
+return <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>An example when using in the context of script helpers is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ensure we are using releng-tool v1</span>
+<span class="n">releng_require_version</span><span class="p">(</span><span class="s1">&#39;1.0.0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>minver</strong> -- dotted-separated minimum version string</p></li>
+<li><p><strong>**quiet</strong> (<em>optional</em>) -- whether or not to suppress output</p></li>
+<li><p><strong>**critical</strong> (<em>optional</em>) -- whether or not to stop execution on failure</p></li>
+<li><p><strong>**maxver</strong> (<em>optional</em>) -- dotted-separated maximum version string</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the version check is met; <code class="docutils literal notranslate"><span class="pre">False</span></code> if the version check
+has failed</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>SystemExit</strong> -- if the version check fails with <code class="docutils literal notranslate"><span class="pre">critical=True</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_step">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_step" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.1.</span></p>
+</div>
+<p>The following is a helper generator that aims to act like a context manager
+for invoking a step of commands once across re-invokes. This may
+be useful for scripts which contain a large number of actions. A step
+operation accepts a name value which would typically be unique for a
+given package. Consider the following example when used in the context
+of a build script helper:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">releng_step</span><span class="p">(</span><span class="s1">&#39;first-step&#39;</span><span class="p">):</span>
+    <span class="c1"># invoked only once on success</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">releng_step</span><span class="p">(</span><span class="s1">&#39;second-step&#39;</span><span class="p">):</span>
+    <span class="c1"># invoked only once on success</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">releng_step</span><span class="p">(</span><span class="s1">&#39;third-step&#39;</span><span class="p">):</span>
+    <span class="c1"># invoked only once on success</span>
+</pre></div>
+</div>
+<p>When invoked for the first time, calls inside the for-loop scope will
+be executed as normal. Once done, the step will persist a file flag in
+the active context's package output directory (or the path defined by
+<code class="docutils literal notranslate"><span class="pre">dir_</span></code>). In the event that the build script is re-invoked (e.g. continuing
+from a stopped/canceled state), if the step was previously completed, the
+scope will be stepped over.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">force</span></code> argument can be set depending on the stage, if desired. For
+example, when running in a build script, utilizing <code class="docutils literal notranslate"><span class="pre">RELENG_REBUILD</span></code> may
+be ideal:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">releng_step</span><span class="p">(</span><span class="s1">&#39;subbuild&#39;</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="n">RELENG_REBUILD</span><span class="p">):</span>
+    <span class="c1"># invoked only once on success</span>
+</pre></div>
+</div>
+<p>Likewise with <code class="docutils literal notranslate"><span class="pre">RELENG_RECONFIGURE</span></code> in configuration scripts:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">releng_step</span><span class="p">(</span><span class="s1">&#39;cfg-stage-1&#39;</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="n">RELENG_RECONFIGURE</span><span class="p">):</span>
+    <span class="c1"># invoked only once on success</span>
+</pre></div>
+</div>
+<p>If a directory cannot be detected for use of the file flag, a
+<code class="docutils literal notranslate"><span class="pre">FailedToPrepareStepError</span></code> exception will be thrown.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> -- name for the file flag</p></li>
+<li><p><strong>force</strong> (<em>optional</em>) -- force run the step</p></li>
+<li><p><strong>dir</strong> (<em>optional</em>) -- the directory to store the file flag</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>FailedToPrepareStepError</strong> -- the step context could not be prepared</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="releng_tool.releng_symlink">
 <span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_symlink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quiet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lpd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#releng_tool.releng_symlink" title="Link to this definition">¶</a></dt>
 <dd><div class="admonition note">
@@ -1470,46 +1566,6 @@ symbolic link could not be created</p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>SystemExit</strong> -- if the symbolic link operation fails with <code class="docutils literal notranslate"><span class="pre">critical=True</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="releng_tool.releng_require_version">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_require_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_require_version" title="Link to this definition">¶</a></dt>
-<dd><div class="versionadded">
-<p><span class="versionmodified added">Added in version 0.11.</span></p>
-</div>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 2.0: </span>Support maximum version.</p>
-</div>
-<p>Enables a caller to explicitly check for a required releng-tool version.
-Invoking this function with a dotted-separated <code class="docutils literal notranslate"><span class="pre">version</span></code> string, the
-string will be parsed and compared with the running releng-tool version.
-If the required version is met, this method will have no effect. In the
-event that the required version is not met, the exception <code class="docutils literal notranslate"><span class="pre">SystemExit</span></code>
-will be raised if the critical flag is set; otherwise this call will
-return <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
-<p>An example when using in the context of script helpers is as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ensure we are using releng-tool v1</span>
-<span class="n">releng_require_version</span><span class="p">(</span><span class="s1">&#39;1.0.0&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>minver</strong> -- dotted-separated minimum version string</p></li>
-<li><p><strong>**quiet</strong> (<em>optional</em>) -- whether or not to suppress output</p></li>
-<li><p><strong>**critical</strong> (<em>optional</em>) -- whether or not to stop execution on failure</p></li>
-<li><p><strong>**maxver</strong> (<em>optional</em>) -- dotted-separated maximum version string</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the version check is met; <code class="docutils literal notranslate"><span class="pre">False</span></code> if the version check
-has failed</p>
-</dd>
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>SystemExit</strong> -- if the version check fails with <code class="docutils literal notranslate"><span class="pre">critical=True</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1838,8 +1894,9 @@ example, import a specific function:</p>
 <li><a class="reference internal" href="#releng_tool.releng_path"><code class="docutils literal notranslate"><span class="pre">releng_path()</span></code></a></li>
 <li><a class="reference internal" href="#releng_tool.releng_register_path"><code class="docutils literal notranslate"><span class="pre">releng_register_path()</span></code></a></li>
 <li><a class="reference internal" href="#releng_tool.releng_remove"><code class="docutils literal notranslate"><span class="pre">releng_remove()</span></code></a></li>
-<li><a class="reference internal" href="#releng_tool.releng_symlink"><code class="docutils literal notranslate"><span class="pre">releng_symlink()</span></code></a></li>
 <li><a class="reference internal" href="#releng_tool.releng_require_version"><code class="docutils literal notranslate"><span class="pre">releng_require_version()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_step"><code class="docutils literal notranslate"><span class="pre">releng_step()</span></code></a></li>
+<li><a class="reference internal" href="#releng_tool.releng_symlink"><code class="docutils literal notranslate"><span class="pre">releng_symlink()</span></code></a></li>
 <li><a class="reference internal" href="#releng_tool.releng_tmpdir"><code class="docutils literal notranslate"><span class="pre">releng_tmpdir()</span></code></a></li>
 <li><a class="reference internal" href="#releng_tool.releng_touch"><code class="docutils literal notranslate"><span class="pre">releng_touch()</span></code></a></li>
 <li><a class="reference internal" href="#releng_tool.releng_wd"><code class="docutils literal notranslate"><span class="pre">releng_wd()</span></code></a></li>
