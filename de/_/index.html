@@ -4569,6 +4569,9 @@ following outline a series of supported site definitions:</p>
 <div class="versionremoved">
 <p><span class="versionmodified removed">Removed in version 2.10: </span>Support for Bazaar sites has been removed.</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Geändert in Version 3.1: </span>Support added for Lore.</p>
+</div>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="docutils align-default">
 <thead>
@@ -4592,19 +4595,22 @@ following outline a series of supported site definitions:</p>
 <tr class="row-even"><td class="text-right"><p><a class="reference internal" href="#site-mercurial"><span class="std std-ref">Mercurial</span></a></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">hg+</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-right"><p><a class="reference internal" href="#site-perforce"><span class="std std-ref">Perforce</span></a></p></td>
+<tr class="row-odd"><td class="text-right"><p><a class="reference internal" href="#site-lore"><span class="std std-ref">Lore</span></a></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">lore+</span></code> or <code class="docutils literal notranslate"><span class="pre">lore://</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><a class="reference internal" href="#site-perforce"><span class="std std-ref">Perforce</span></a></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">perforce+</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-right"><p><a class="reference internal" href="#site-rsync"><span class="std std-ref">rsync</span></a></p></td>
+<tr class="row-odd"><td class="text-right"><p><a class="reference internal" href="#site-rsync"><span class="std std-ref">rsync</span></a></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">rsync+</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-right"><p><a class="reference internal" href="#site-scp"><span class="std std-ref">SCP</span></a></p></td>
+<tr class="row-even"><td class="text-right"><p><a class="reference internal" href="#site-scp"><span class="std std-ref">SCP</span></a></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">scp+</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-right"><p><a class="reference internal" href="#site-svn"><span class="std std-ref">SVN</span></a></p></td>
+<tr class="row-odd"><td class="text-right"><p><a class="reference internal" href="#site-svn"><span class="std std-ref">SVN</span></a></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">svn+</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-right"><p><a class="reference internal" href="#site-url"><span class="std std-ref">URL</span></a></p></td>
+<tr class="row-even"><td class="text-right"><p><a class="reference internal" href="#site-url"><span class="std std-ref">URL</span></a></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">(wildcard)</span></code></p></td>
 </tr>
 </tbody>
@@ -5335,6 +5341,9 @@ set the VCS type.</p>
 <div class="versionremoved">
 <p><span class="versionmodified removed">Removed in version 2.10: </span>Support for Bazaar sites has been removed.</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Geändert in Version 3.1: </span>Support added for <code class="docutils literal notranslate"><span class="pre">lore</span></code>.</p>
+</div>
 <p>Explicitly sets the version control system type to use when acquiring
 sources. releng-tool attempts to automatically determine the VCS type of
 a package based off a <a class="reference internal" href="#pkg-opt-site"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_SITE</span></code></span></a> value. In some
@@ -5343,18 +5352,19 @@ A developer can instead explicitly set the VCS type to be used no matter
 what the site value is configured as.</p>
 <p>Supported types are as follows:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">brz</span></code> (Breezy)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cvs</span></code> (CVS)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">file</span></code> (File URI)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">git</span></code> (Git)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">hg</span></code>  (Mercurial)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">local</span></code> (no VCS; local interim-development package)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">brz</span></code> (<a class="reference internal" href="#site-file"><span class="std std-ref">Breezy</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cvs</span></code> (<a class="reference internal" href="#site-file"><span class="std std-ref">CVS</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file</span></code> (<a class="reference internal" href="#site-file"><span class="std std-ref">File</span></a> URI)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span></code> (<a class="reference internal" href="#site-git"><span class="std std-ref">Git</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hg</span></code>  (<a class="reference internal" href="#site-mercurial"><span class="std std-ref">Mercurial</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">local</span></code> (no VCS; <a class="reference internal" href="#site-local"><span class="std std-ref">local</span></a> interim-development package)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lore</span></code> (<a class="reference internal" href="#site-lore"><span class="std std-ref">Lore</span></a>)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">none</span></code> (no VCS; virtual package)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">perforce</span></code> (Perforce)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rsync</span></code> (rsync)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scp</span></code> (SCP)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">svn</span></code> (SVN)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">url</span></code> (URL)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">perforce</span></code> (<a class="reference internal" href="#site-perforce"><span class="std std-ref">Perforce</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rsync</span></code> (<a class="reference internal" href="#site-rsync"><span class="std std-ref">rsync</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scp</span></code> (<a class="reference internal" href="#site-scp"><span class="std std-ref">SCP</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">svn</span></code> (<a class="reference internal" href="#site-svn"><span class="std std-ref">SVN</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">url</span></code> (<a class="reference internal" href="#site-url"><span class="std std-ref">URL</span></a>)</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_VCS_TYPE</span> <span class="o">=</span> <span class="s1">&#39;git&#39;</span>
 </pre></div>
@@ -5669,6 +5679,39 @@ to a <code class="docutils literal notranslate"><span class="pre">local</span></
 development/testing/training purposes. See
 <a class="reference internal" href="#pkg-opt-vcs-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VCS_TYPE</span></code></span></a> for more information.</p>
 </section>
+<section id="lore-site">
+<span id="site-lore"></span><h5>Lore site<a class="headerlink" href="#lore-site" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.1.</span></p>
+</div>
+<p>To define a Lore-based location, the site value must be prefixed with
+a <code class="docutils literal notranslate"><span class="pre">lore+</span></code> or <code class="docutils literal notranslate"><span class="pre">lore://</span></code> value. A site can be defined as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;lore://lore.example.org:30000&#39;</span>
+<span class="c1"># (or)</span>
+<span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;lore+urc://sources.example.org&#39;</span>
+</pre></div>
+</div>
+<p>The site value (less prefix, if used) is used as the URL in a Lore clone
+<a class="footnote-reference brackets" href="#loreclone" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> request. Content from a Lore repository will be fetched and
+archived into a file during fetch stage. Once a cached archive is made, the
+fetch stage will be skipped unless the archive is manually removed.</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--1">Branch Clone</label><div class="tab-content docutils">
+<p>The following shows an example of cloning a v1.x LTS branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;lts-1.x&#39;</span>
+<span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;lore://lore.example.org&#39;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--2">Revision Hash Clone</label><div class="tab-content docutils">
+<p>The following shows an example of cloning with a revision hash:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;a89c9b0632406842567001d0b77d8cfdef3c3fc810457498bcb500b7e3172197&#39;</span>
+<span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;lore+lores://sources.example.org&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="mercurial-site">
 <span id="site-mercurial"></span><h5>Mercurial site<a class="headerlink" href="#mercurial-site" title="Link to this heading">¶</a></h5>
 <p>To define a <a class="reference external" href="https://www.mercurial-scm.org/">Mercurial</a>-based location, the site value must be
@@ -5677,13 +5720,13 @@ prefixed with a <code class="docutils literal notranslate"><span class="pre">hg+
 </pre></div>
 </div>
 <p>The value after the prefix is used as the <code class="docutils literal notranslate"><span class="pre">SOURCE</span></code> in an <code class="docutils literal notranslate"><span class="pre">hg</span> <span class="pre">clone</span></code> call
-<a class="footnote-reference brackets" href="#hgclone" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>. Mercurial sources will be cached inside the <code class="docutils literal notranslate"><span class="pre">cache</span></code> directory on
+<a class="footnote-reference brackets" href="#hgclone" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>. Mercurial sources will be cached inside the <code class="docutils literal notranslate"><span class="pre">cache</span></code> directory on
 first-run. Future runs to fetch a project’s source will use the cached Mercurial
 repository. If a desired revision exists, content will be acquired from the
 cache location. If a desired revision does not exist, the origin remote will be
 pulled for the new revision (if it exists).</p>
 <div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--1">Tagged Clone</label><div class="tab-content docutils">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--1">Tagged Clone</label><div class="tab-content docutils">
 <p>The following shows an example of cloning a v1.2.3 tag:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;v$</span><span class="si">{LIBFOO_VERSION}</span><span class="s1">&#39;</span>
 <span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;hg+https://hg.example.org/repo/hello&#39;</span>
@@ -5691,7 +5734,7 @@ pulled for the new revision (if it exists).</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--2">Branch Clone</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--2">Branch Clone</label><div class="tab-content docutils">
 <p>The following shows an example of cloning a v1.x LTS branch:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;lts-1.x&#39;</span>
 <span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;hg+https://hg.example.org/repo/hello&#39;</span>
@@ -5713,15 +5756,15 @@ an <code class="docutils literal notranslate"><span class="pre">perforce+</span>
 </pre></div>
 </div>
 <p>The value after the prefix is a space-separated pair, where the first part
-represents the Perforce service (<code class="docutils literal notranslate"><span class="pre">P4PORT</span></code> <a class="footnote-reference brackets" href="#p4port" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>) to use and the second
+represents the Perforce service (<code class="docutils literal notranslate"><span class="pre">P4PORT</span></code> <a class="footnote-reference brackets" href="#p4port" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a>) to use and the second
 part specifies the Perforce depot path. Perforce data is fetched using
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">p4</span> <span class="pre">&lt;option&gt;</span></code> <a class="footnote-reference brackets" href="#git-p4" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a> command. This requires a host to have both
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">p4</span> <span class="pre">&lt;option&gt;</span></code> <a class="footnote-reference brackets" href="#git-p4" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a> command. This requires a host to have both
 <a class="reference external" href="https://git-scm.com/">Git</a> and Perforce’s <a class="reference external" href="https://www.perforce.com/manuals/p4guide/Content/P4Guide/chapter.install.html">Helix Command-Line Client (P4)</a>
 installed. Content from a Perforce depot will be fetched and archived into
 a file during fetch stage. Once a cached archive is made, the fetch stage
-ill be skipped unless the archive is manually removed.</p>
+will be skipped unless the archive is manually removed.</p>
 <div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--1">Revision Clone</label><div class="tab-content docutils">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--1">Revision Clone</label><div class="tab-content docutils">
 <p>The following shows an example of cloning the 27574 revision:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;perforce+srcs.example.com:1666 //base/libfoo/main&#39;</span>
 <span class="n">LIBFOO_VERSION</span> <span class="o">=</span> <span class="s1">&#39;27574&#39;</span>
@@ -5740,7 +5783,7 @@ ill be skipped unless the archive is manually removed.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;rsync+&lt;source&gt;&#39;</span>
 </pre></div>
 </div>
-<p>The value of <code class="docutils literal notranslate"><span class="pre">&lt;source&gt;</span></code> will be provided to a <code class="docutils literal notranslate"><span class="pre">rsync</span></code> call’s <a class="footnote-reference brackets" href="#rsynccommand" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a>
+<p>The value of <code class="docutils literal notranslate"><span class="pre">&lt;source&gt;</span></code> will be provided to a <code class="docutils literal notranslate"><span class="pre">rsync</span></code> call’s <a class="footnote-reference brackets" href="#rsynccommand" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a>
 <code class="docutils literal notranslate"><span class="pre">SRC</span></code> value. Fetched content will be stored in an archive inside the <code class="docutils literal notranslate"><span class="pre">dl</span></code>
 directory. Once fetched, the fetch stage will be skipped unless the archive
 is manually removed. By default, the <code class="docutils literal notranslate"><span class="pre">--recursive</span></code> argument is applied.
@@ -5755,7 +5798,7 @@ value. A site can be defined as follows:</p>
 </pre></div>
 </div>
 <p>The value after the prefix is a path which will be provided to a <code class="docutils literal notranslate"><span class="pre">scp</span></code> call’s
-<a class="footnote-reference brackets" href="#scpcommand" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a> source host value. The SCP site only supports copying a file from
+<a class="footnote-reference brackets" href="#scpcommand" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a> source host value. The SCP site only supports copying a file from
 a remote host. The fetched file will be stored inside the <code class="docutils literal notranslate"><span class="pre">dl</span></code> directory. Once
 fetched, the fetch stage will be skipped unless the file is manually removed.</p>
 </section>
@@ -5767,11 +5810,11 @@ prefixed with a <code class="docutils literal notranslate"><span class="pre">svn
 </pre></div>
 </div>
 <p>The value after the prefix is a path which will be provided to a
-<code class="docutils literal notranslate"><span class="pre">svn</span> <span class="pre">checkout</span></code> call <a class="footnote-reference brackets" href="#svncheckout" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a>. Content from a Subversion repository will
+<code class="docutils literal notranslate"><span class="pre">svn</span> <span class="pre">checkout</span></code> call <a class="footnote-reference brackets" href="#svncheckout" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a>. Content from a Subversion repository will
 be fetched and archived into a file during fetch stage. Once a cached archive
 is made, the fetch stage will be skipped unless the archive is manually removed.</p>
 <div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--1">Explicit Tagged Clone</label><div class="tab-content docutils">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--1">Explicit Tagged Clone</label><div class="tab-content docutils">
 <p>The following shows an example of cloning a v1.2.3 tag with a fixed SVN
 revision value:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="mi">46801</span>
@@ -5781,7 +5824,7 @@ revision value:</p>
 </div>
 <p>This ensures a fixed/repeatable clone experience.</p>
 </div>
-<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--2">Flexible Tagged Clone</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--2">Flexible Tagged Clone</label><div class="tab-content docutils">
 <p>The following shows an example of cloning a v1.2.3 tag with a flexible
 revision value:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;HEAD&#39;</span>
@@ -5792,7 +5835,7 @@ revision value:</p>
 <p>Provides a simple definition to clone a tag without needing to determine an
 explicit SVN revision. This approach supports moved tags.</p>
 </div>
-<input class="tab-input" id="tab-set--7-input--3" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--3">Branch Clone</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--8-input--3" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--3">Branch Clone</label><div class="tab-content docutils">
 <p>The following shows an example of cloning a v1.x LTS branch:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;HEAD&#39;</span>
 <span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;svn+https://svn.example.com/repos/libfoo/c/branches/1.x-lts&#39;</span>
@@ -5811,7 +5854,7 @@ considered a URL site. A URL site can be defined as follows:</p>
 </pre></div>
 </div>
 <p>The site value provided will be directly used in a URL request. URL values
-supported are defined by the Python’s <code class="docutils literal notranslate"><span class="pre">urlopen</span></code> implementation <a class="footnote-reference brackets" href="#urlopen" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a>,
+supported are defined by the Python’s <code class="docutils literal notranslate"><span class="pre">urlopen</span></code> implementation <a class="footnote-reference brackets" href="#urlopen" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a>,
 which includes (but not limited to) <code class="docutils literal notranslate"><span class="pre">http(s)://</span></code>, <code class="docutils literal notranslate"><span class="pre">ftp://</span></code> and more.</p>
 <p>See also <a class="reference internal" href="#conf-urlopen-context"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">urlopen_context</span></code></span></a>.</p>
 </section>
@@ -5834,32 +5877,36 @@ which includes (but not limited to) <code class="docutils literal notranslate"><
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://git-scm.com/docs/git-remote">https://git-scm.com/docs/git-remote</a></p>
 </aside>
-<aside class="footnote brackets" id="hgclone" role="doc-footnote">
+<aside class="footnote brackets" id="loreclone" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://epicgames.github.io/lore/reference/lore-cli-commands/?h=clone#lore-repository-clone">https://epicgames.github.io/lore/reference/lore-cli-commands/?h=clone#lore-repository-clone</a></p>
+</aside>
+<aside class="footnote brackets" id="hgclone" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://www.mercurial-scm.org/help/commands/clone">https://www.mercurial-scm.org/help/commands/clone</a></p>
 </aside>
 <aside class="footnote brackets" id="p4port" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://www.perforce.com/manuals/cmdref/Content/CmdRef/P4PORT.html">https://www.perforce.com/manuals/cmdref/Content/CmdRef/P4PORT.html</a></p>
 </aside>
 <aside class="footnote brackets" id="git-p4" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">8</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://git-scm.com/docs/git-p4">https://git-scm.com/docs/git-p4</a></p>
 </aside>
 <aside class="footnote brackets" id="rsynccommand" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">8</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">9</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://linux.die.net/man/1/rsync">https://linux.die.net/man/1/rsync</a></p>
 </aside>
 <aside class="footnote brackets" id="scpcommand" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">9</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">10</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://linux.die.net/man/1/scp">https://linux.die.net/man/1/scp</a></p>
 </aside>
 <aside class="footnote brackets" id="svncheckout" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">10</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">11</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="http://svnbook.red-bean.com/en/1.7/svn.ref.svn.c.checkout.html">http://svnbook.red-bean.com/en/1.7/svn.ref.svn.c.checkout.html</a></p>
 </aside>
 <aside class="footnote brackets" id="urlopen" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">11</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">12</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://docs.python.org/library/urllib.request.html#urllib.request.urlopen">https://docs.python.org/library/urllib.request.html#urllib.request.urlopen</a></p>
 </aside>
 </aside>
@@ -6032,7 +6079,7 @@ See also the <a class="reference internal" href="#document-examples/examples-aut
 All stages are invoked with a <a class="reference internal" href="#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a>
 working directory.</p>
 <div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--1">Configuration</label><div class="tab-content docutils">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio" /><label class="tab-label" for="tab-set--9-input--1">Configuration</label><div class="tab-content docutils">
 <p>The configuration stage will invoke <code class="docutils literal notranslate"><span class="pre">./configure</span></code> with the arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./configure --exec-prefix &lt;PREFIX&gt; --prefix &lt;PREFIX&gt;
 </pre></div>
@@ -6044,7 +6091,7 @@ working directory.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--2">Build</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio" /><label class="tab-label" for="tab-set--9-input--2">Build</label><div class="tab-content docutils">
 <p>The build stage invokes <code class="docutils literal notranslate"><span class="pre">make</span></code> with the arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make --jobs &lt;NJOBS&gt;
 </pre></div>
@@ -6054,7 +6101,7 @@ working directory.</p>
 <a class="reference internal" href="#pkg-opt-max-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAX_JOBS</span></code></span></a>. Although, if the configuration results
 in a single job, the argument will not be used.</p>
 </div>
-<input class="tab-input" id="tab-set--8-input--3" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--3">Install</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--9-input--3" name="tab-set--9" type="radio" /><label class="tab-label" for="tab-set--9-input--3">Install</label><div class="tab-content docutils">
 <p>The install stage invokes <code class="docutils literal notranslate"><span class="pre">make</span></code> with an <code class="docutils literal notranslate"><span class="pre">install</span></code> target:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make install
 </pre></div>
@@ -6310,10 +6357,10 @@ are invoked with:</p>
 (see also <a class="reference internal" href="#env-cache-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">CACHE_DIR</span></code></span></a>).</p></li>
 </ul>
 <div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio" /><label class="tab-label" for="tab-set--9-input--1">Configuration</label><div class="tab-content docutils">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--1">Configuration</label><div class="tab-content docutils">
 <p>Cargo package do not have a configuration stage.</p>
 </div>
-<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio" /><label class="tab-label" for="tab-set--9-input--2">Build</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--2">Build</label><div class="tab-content docutils">
 <p>The build stage invokes <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">build</span></code> with the arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cargo build \
     --locked \
@@ -6340,7 +6387,7 @@ the <code class="docutils literal notranslate"><span class="pre">--release</span
 <a class="reference internal" href="#arg-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--jobs</span></code> argument</span></a>, <a class="reference internal" href="#pkg-opt-fixed-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_FIXED_JOBS</span></code></span></a> or
 <a class="reference internal" href="#pkg-opt-max-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAX_JOBS</span></code></span></a>.</p>
 </div>
-<input class="tab-input" id="tab-set--9-input--3" name="tab-set--9" type="radio" /><label class="tab-label" for="tab-set--9-input--3">Install</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--10-input--3" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--3">Install</label><div class="tab-content docutils">
 <p>The install stage invokes <code class="docutils literal notranslate"><span class="pre">cargo</span> <span class="pre">install</span></code> with the arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cargo install \
     --force \
@@ -6566,7 +6613,7 @@ configuration options that are available for an CMake package to set.
 See also the <a class="reference internal" href="#document-examples/examples-cmake"><span class="doc std std-doc">CMake package examples</span></a>. All stages
 are invoked with a <a class="reference internal" href="#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a> working directory.</p>
 <div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--1">Configuration</label><div class="tab-content docutils">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--1">Configuration</label><div class="tab-content docutils">
 <p>The configuration stage invokes <code class="docutils literal notranslate"><span class="pre">cmake</span></code> with the arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cmake -C &lt;RELENG-TOOL-CONFIG-CACHE&gt; &lt;PROJECT_DIR&gt;
 </pre></div>
@@ -6602,7 +6649,7 @@ variables using the
 <a class="reference internal" href="#quirk-releng-cmake-disable-direct-includes"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_direct_includes</span></code></span></a>
 quirk.</p>
 </div>
-<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--2">Build</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--2">Build</label><div class="tab-content docutils">
 <p>The build stage invokes <code class="docutils literal notranslate"><span class="pre">cmake</span></code> with the arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cmake --build &lt;BUILD_OUTPUT_DIR&gt; --config &lt;BUILD_TYPE&gt;
 </pre></div>
@@ -6621,7 +6668,7 @@ the <a class="reference internal" href="#arg-jobs"><span class="std std-ref"><co
 <a class="reference internal" href="#pkg-opt-max-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAX_JOBS</span></code></span></a>. Although, if the configuration results
 in a single job, the environment variable will not be set.</p>
 </div>
-<input class="tab-input" id="tab-set--10-input--3" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--3">Install</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--11-input--3" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--3">Install</label><div class="tab-content docutils">
 <p>The install stage invokes <code class="docutils literal notranslate"><span class="pre">cmake</span></code> with the arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cmake \
     --build &lt;BUILD_OUTPUT_DIR&gt; \
@@ -6880,7 +6927,7 @@ configuration options that are available for a Make package to set.
 See also the <a class="reference internal" href="#document-examples/examples-make"><span class="doc std std-doc">Make package examples</span></a>. All stages
 are invoked with a <a class="reference internal" href="#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a> working directory.</p>
 <div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--1">Configuration</label><div class="tab-content docutils">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio" /><label class="tab-label" for="tab-set--12-input--1">Configuration</label><div class="tab-content docutils">
 <p>Default configurations for make packages will not run a configuration stage.
 However, if a user wants to run a specific target during this stage, a
 target can be added into the configuration options. For example, if the
@@ -6898,7 +6945,7 @@ during the configuration stage, the following can be used:</p>
 <p>Alternatively, if no configuration options are specified, a
 <code class="docutils literal notranslate"><span class="pre">&lt;package&gt;-configure</span></code> <a class="reference internal" href="#document-guides/packages/pkg-type-script"><span class="doc std std-doc">script</span></a> can be invoked if available.</p>
 </div>
-<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--2">Build</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio" /><label class="tab-label" for="tab-set--12-input--2">Build</label><div class="tab-content docutils">
 <p>The build stage invokes <code class="docutils literal notranslate"><span class="pre">make</span></code> with the arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make --jobs &lt;NJOBS&gt;
 </pre></div>
@@ -6918,7 +6965,7 @@ the following can be used:</p>
 <a class="reference internal" href="#pkg-opt-max-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAX_JOBS</span></code></span></a>. Although, if the configuration results
 in a single job, the argument will not be used.</p>
 </div>
-<input class="tab-input" id="tab-set--11-input--3" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--3">Install</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--12-input--3" name="tab-set--12" type="radio" /><label class="tab-label" for="tab-set--12-input--3">Install</label><div class="tab-content docutils">
 <p>The install stage invokes <code class="docutils literal notranslate"><span class="pre">make</span></code> with an <code class="docutils literal notranslate"><span class="pre">install</span></code> target:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make install
 </pre></div>
@@ -7173,7 +7220,7 @@ configuration options that are available for a Meson package to set.
 See also the <a class="reference internal" href="#document-examples/examples-meson"><span class="doc std std-doc">Meson package examples</span></a>. All stages
 are invoked with a <a class="reference internal" href="#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a> working directory.</p>
 <div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio" /><label class="tab-label" for="tab-set--12-input--1">Configuration</label><div class="tab-content docutils">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--1">Configuration</label><div class="tab-content docutils">
 <p>The configuration stage invokes <code class="docutils literal notranslate"><span class="pre">meson</span></code> with the arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>meson setup \
     --buildtype debugoptimized \
@@ -7201,7 +7248,7 @@ pkg-config paths are defined to <code class="docutils literal notranslate"><span
 <a class="reference internal" href="#action-pkg-reconfigure"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reconfigure</span></code></span></a>), the <code class="docutils literal notranslate"><span class="pre">--reconfigure</span></code> argument
 will also be included.</p>
 </div>
-<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio" /><label class="tab-label" for="tab-set--12-input--2">Build</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--2">Build</label><div class="tab-content docutils">
 <p>The build stage invokes <code class="docutils literal notranslate"><span class="pre">meson</span></code> with the arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>meson compile -C &lt;BUILD_OUTPUT_DIR&gt; --jobs &lt;NJOBS&gt;
 </pre></div>
@@ -7213,7 +7260,7 @@ will also be included.</p>
 <a class="reference internal" href="#pkg-opt-max-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAX_JOBS</span></code></span></a>. Although, if the configuration results
 in a single job, the argument will not be used.</p>
 </div>
-<input class="tab-input" id="tab-set--12-input--3" name="tab-set--12" type="radio" /><label class="tab-label" for="tab-set--12-input--3">Install</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--13-input--3" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--3">Install</label><div class="tab-content docutils">
 <p>The install stage invokes <code class="docutils literal notranslate"><span class="pre">meson</span></code> with the arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>meson install -C &lt;BUILD_OUTPUT_DIR&gt; --destdir &lt;TARGET_DIR&gt; --no-rebuild
 </pre></div>
@@ -7487,37 +7534,37 @@ on the configured setup type and outlines options that are available for a
 Python package to set. See also the
 <a class="reference internal" href="#document-examples/examples-python"><span class="doc std std-doc">Python package examples</span></a></p>
 <div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--1">Flit</label><div class="tab-content docutils">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--1">Flit</label><div class="tab-content docutils">
 <p>The build stage invokes Python with the <code class="docutils literal notranslate"><span class="pre">flit_core.wheel</span></code> module and arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m flit_core.wheel
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--2">Hatch</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--2">Hatch</label><div class="tab-content docutils">
 <p>The build stage invokes Python with the <code class="docutils literal notranslate"><span class="pre">hatch</span></code> module and arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m hatch --no-interactive build --target wheel
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--13-input--3" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--3">PDM</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--14-input--3" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--3">PDM</label><div class="tab-content docutils">
 <p>The build stage invokes Python with the <code class="docutils literal notranslate"><span class="pre">pdm</span></code> module and arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pdm --ignore-python build --no-isolation --no-sdist
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--13-input--4" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--4">PEP 517 build</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--14-input--4" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--4">PEP 517 build</label><div class="tab-content docutils">
 <p>The build stage invokes Python with the <code class="docutils literal notranslate"><span class="pre">build</span></code> module and arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m build --no-isolation --wheel
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--13-input--5" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--5">Poetry</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--14-input--5" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--5">Poetry</label><div class="tab-content docutils">
 <p>The build stage invokes Python with the <code class="docutils literal notranslate"><span class="pre">poetry</span></code> module and arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m poetry build --no-interaction
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--13-input--6" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--6">Setuptools</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--14-input--6" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--6">Setuptools</label><div class="tab-content docutils">
 <p>The build stage invokes Python with the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file and arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python setup.py --no-user-cfg bdist_wheel
 </pre></div>
@@ -7528,7 +7575,7 @@ imported and <code class="docutils literal notranslate"><span class="pre">setup(
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--13-input--7" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--7">distutils</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--14-input--7" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--7">distutils</label><div class="tab-content docutils">
 <p>The build stage invokes Python with the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file and arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python setup.py --no-user-cfg bdist_wheel
 </pre></div>
@@ -7853,7 +7900,7 @@ configuration options that are available for a SCons package to set.
 See also the <a class="reference internal" href="#document-examples/examples-scons"><span class="doc std std-doc">SCons package examples</span></a>. All stages
 are invoked with a <a class="reference internal" href="#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a> working directory.</p>
 <div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--1">Configuration</label><div class="tab-content docutils">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio" /><label class="tab-label" for="tab-set--15-input--1">Configuration</label><div class="tab-content docutils">
 <p>Default configurations for SCons packages will not run a configuration stage.
 However, if a user wants to run a specific target during this stage, a
 target can be added into the configuration options. For example, if the
@@ -7871,7 +7918,7 @@ configuration stage, the following can be used:</p>
 <p>Alternatively, if no configuration options are specified, a
 <code class="docutils literal notranslate"><span class="pre">&lt;package&gt;-configure</span></code> <a class="reference internal" href="#document-guides/packages/pkg-type-script"><span class="doc std std-doc">script</span></a> can be invoked if available.</p>
 </div>
-<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--2">Build</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--15-input--2" name="tab-set--15" type="radio" /><label class="tab-label" for="tab-set--15-input--2">Build</label><div class="tab-content docutils">
 <p>The build stage invokes <code class="docutils literal notranslate"><span class="pre">scons</span></code> with the arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>scons -Q --jobs=&lt;NJOBS&gt;
 </pre></div>
@@ -7891,7 +7938,7 @@ the following can be used:</p>
 <a class="reference internal" href="#pkg-opt-max-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAX_JOBS</span></code></span></a>. Although, if the configuration results
 in a single job, the argument will not be used.</p>
 </div>
-<input class="tab-input" id="tab-set--14-input--3" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--3">Install</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--15-input--3" name="tab-set--15" type="radio" /><label class="tab-label" for="tab-set--15-input--3">Install</label><div class="tab-content docutils">
 <p>The install stage invokes <code class="docutils literal notranslate"><span class="pre">scons</span></code> with an <code class="docutils literal notranslate"><span class="pre">install</span></code> target:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>scons -Q install
 </pre></div>
@@ -8142,7 +8189,7 @@ configuration options that are available for a Waf package to set.
 See also the <a class="reference internal" href="#document-examples/examples-waf"><span class="doc std std-doc">Waf package examples</span></a>. All stages
 are invoked with a <a class="reference internal" href="#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a> working directory.</p>
 <div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio" /><label class="tab-label" for="tab-set--15-input--1">Configuration</label><div class="tab-content docutils">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio" /><label class="tab-label" for="tab-set--16-input--1">Configuration</label><div class="tab-content docutils">
 <p>The configuration stage invokes <code class="docutils literal notranslate"><span class="pre">waf</span></code> with the arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>waf configure \
     --bindir=bin \
@@ -8155,7 +8202,7 @@ are invoked with a <a class="reference internal" href="#env-pkg-build-dir"><span
 <p>The build output directory is configured to
 <a class="reference internal" href="#env-pkg-build-output-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_OUTPUT_DIR</span></code></span></a>.</p>
 </div>
-<input class="tab-input" id="tab-set--15-input--2" name="tab-set--15" type="radio" /><label class="tab-label" for="tab-set--15-input--2">Build</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio" /><label class="tab-label" for="tab-set--16-input--2">Build</label><div class="tab-content docutils">
 <p>The build stage invokes <code class="docutils literal notranslate"><span class="pre">waf</span></code> with the arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>waf build --jobs &lt;NJOBS&gt;
 </pre></div>
@@ -8165,7 +8212,7 @@ are invoked with a <a class="reference internal" href="#env-pkg-build-dir"><span
 <a class="reference internal" href="#pkg-opt-max-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAX_JOBS</span></code></span></a>. Although, if the configuration results
 in a single job, the argument will not be used.</p>
 </div>
-<input class="tab-input" id="tab-set--15-input--3" name="tab-set--15" type="radio" /><label class="tab-label" for="tab-set--15-input--3">Install</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--16-input--3" name="tab-set--16" type="radio" /><label class="tab-label" for="tab-set--16-input--3">Install</label><div class="tab-content docutils">
 <p>The install stage invokes <code class="docutils literal notranslate"><span class="pre">waf</span></code> with an <code class="docutils literal notranslate"><span class="pre">install</span></code> target:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>waf install --destdir &lt;TARGET_DIR&gt;
 </pre></div>
@@ -9917,6 +9964,17 @@ the following can be added into a project’s <code class="docutils literal notr
 </pre></div>
 </div>
 </section>
+</section>
+<section id="imported-python-modules-functions-etc">
+<h4>Imported Python modules/functions/etc.<a class="headerlink" href="#imported-python-modules-functions-etc" title="Link to this heading">¶</a></h4>
+<p>Select Python modules and callables are automatically imported into package
+definitions and script for convenience:</p>
+<ul class="simple">
+<li><p>The <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path"><code class="docutils literal notranslate"><span class="pre">Path</span></code> class</a> from
+<a class="reference external" href="https://docs.python.org/3/library/pathlib.html"><code class="docutils literal notranslate"><span class="pre">pathlib</span></code> module</a></p></li>
+<li><p>The <a class="reference external" href="https://docs.python.org/3/library/os.html"><code class="docutils literal notranslate"><span class="pre">os</span></code> module</a></p></li>
+<li><p>The <a class="reference external" href="https://docs.python.org/3/library/sys.html"><code class="docutils literal notranslate"><span class="pre">sys</span></code> module</a></p></li>
+</ul>
 </section>
 <section id="importing-helpers">
 <h4>Importing helpers<a class="headerlink" href="#importing-helpers" title="Link to this heading">¶</a></h4>
@@ -13592,10 +13650,12 @@ the following environment variables can be used instead:</p>
 <li><p>Directory now optional for <code class="docutils literal notranslate"><span class="pre">releng_ls</span></code> which can use working directory</p></li>
 <li><p>Ensure an appropriate working directory is set when using a patch-script</p></li>
 <li><p>Fix <code class="docutils literal notranslate"><span class="pre">releng_execute_rv</span></code> not expanding by default</p></li>
+<li><p>Include pathlib’s <code class="docutils literal notranslate"><span class="pre">Path</span></code>, <code class="docutils literal notranslate"><span class="pre">os</span></code> and <code class="docutils literal notranslate"><span class="pre">sys</span></code> into script contexts</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">releng_step</span></code> helper script function</p></li>
 <li><p>Introduce support for Lore sites</p></li>
 <li><p>Support <code class="docutils literal notranslate"><span class="pre">newline</span></code> option in <code class="docutils literal notranslate"><span class="pre">releng_execute_rv</span></code></p></li>
 <li><p>Support for <code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_NO_IMAGES</span></code></p></li>
+<li><p>Support network isolation for packages non-fetch stages</p></li>
 </ul>
 </section>
 <section id="v3-0-2026-04-12">
@@ -14436,9 +14496,9 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="#pkg-opt-site"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_SITE</span></code></span></a> = '&lt;site&gt;'
 <a class="reference internal" href="#pkg-opt-strip-count"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_STRIP_COUNT</span></code></span></a> = int # &gt;= 0
 <a class="reference internal" href="#pkg-opt-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_TYPE</span></code></span></a> = '&lt;type&gt;'
-  └── autotools, cargo, cmake, make, meson, python, scons, script, waf, ext-&lt;extension&gt;
+  └── <a class="reference internal" href="#document-guides/packages/pkg-type-autotools"><span class="doc std std-doc">autotools</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-cargo"><span class="doc std std-doc">cargo</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-cmake"><span class="doc std std-doc">cmake</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-make"><span class="doc std std-doc">make</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-meson"><span class="doc std std-doc">meson</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-python"><span class="doc std std-doc">python</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-scons"><span class="doc std std-doc">scons</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-script"><span class="doc std std-doc">script</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-waf"><span class="doc std std-doc">waf</span></a>, ext-&lt;extension&gt;
 <a class="reference internal" href="#pkg-opt-vcs-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VCS_TYPE</span></code></span></a> = '&lt;vcs-type&gt;'
-  └── brz, cvs, file, git, hg, local, none, perforce, rsync, scp, svn, url
+  └── <a class="reference internal" href="#site-file"><span class="std std-ref">brz</span></a>, <a class="reference internal" href="#site-file"><span class="std std-ref">cvs</span></a>, <a class="reference internal" href="#site-file"><span class="std std-ref">file</span></a>, <a class="reference internal" href="#site-git"><span class="std std-ref">git</span></a>, <a class="reference internal" href="#site-mercurial"><span class="std std-ref">hg</span></a>, <a class="reference internal" href="#site-local"><span class="std std-ref">local</span></a>, <a class="reference internal" href="#site-lore"><span class="std std-ref">lore</span></a>, none, <a class="reference internal" href="#site-perforce"><span class="std std-ref">perforce</span></a>, <a class="reference internal" href="#site-rsync"><span class="std std-ref">rsync</span></a>, <a class="reference internal" href="#site-scp"><span class="std std-ref">scp</span></a>, <a class="reference internal" href="#site-svn"><span class="std std-ref">svn</span></a>, <a class="reference internal" href="#site-url"><span class="std std-ref">url</span></a>
 <a class="reference internal" href="#pkg-opt-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VERSION</span></code></span></a> = '&lt;version&gt;'
 <a class="reference internal" href="#pkg-opt-vsdevcmd"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VSDEVCMD</span></code></span></a> = bool or str
 <a class="reference internal" href="#pkg-opt-vsdevcmd-products"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VSDEVCMD_PRODUCTS</span></code></span></a> = str
