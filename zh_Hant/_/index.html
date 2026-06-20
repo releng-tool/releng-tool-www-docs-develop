@@ -2689,14 +2689,6 @@ process. This option can be used multiple times to apply multiple quirks.</p>
 configured to the working directory.</p>
 <p>See also <a class="reference internal" href="#env-root-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">ROOT_DIR</span></code></span></a>.</p>
 </section>
-<section id="success-exit-code-code-var">
-<span id="arg-success-exit-code"></span><h5><code class="docutils literal notranslate"><span class="pre">--success-exit-code</span> <span class="pre">&lt;code&gt;</span></code><a class="headerlink" href="#success-exit-code-code-var" title="Link to this heading">¶</a></h5>
-<div class="versionadded">
-<p><span class="versionmodified added">Added in version 2.8.</span></p>
-</div>
-<p>Allows overriding the exit code reported on a successful run. By default, a
-successful run will have an exit code of <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
-</section>
 <section id="sbom-format-fmt-var">
 <span id="arg-sbom-format"></span><h5><code class="docutils literal notranslate"><span class="pre">--sbom-format</span> <span class="pre">&lt;fmt&gt;</span></code><a class="headerlink" href="#sbom-format-fmt-var" title="Link to this heading">¶</a></h5>
 <div class="versionadded">
@@ -2747,6 +2739,14 @@ Multiple formats can be provided (comma-separated).</p>
 </div>
 <p>See also <a class="reference internal" href="#action-sbom"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">sbom</span></code></span></a> (action) and <a class="reference internal" href="#conf-sbom-format"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">sbom_format</span></code></span></a>
 (configuration).</p>
+</section>
+<section id="success-exit-code-code-var">
+<span id="arg-success-exit-code"></span><h5><code class="docutils literal notranslate"><span class="pre">--success-exit-code</span> <span class="pre">&lt;code&gt;</span></code><a class="headerlink" href="#success-exit-code-code-var" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.8.</span></p>
+</div>
+<p>Allows overriding the exit code reported on a successful run. By default, a
+successful run will have an exit code of <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 </section>
 <section id="verbose-v">
 <span id="arg-verbose"></span><h5><code class="docutils literal notranslate"><span class="pre">--verbose</span></code>, <code class="docutils literal notranslate"><span class="pre">-V</span></code><a class="headerlink" href="#verbose-v" title="Link to this heading">¶</a></h5>
@@ -6208,6 +6208,7 @@ value. This field is optional.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>See also <a class="reference internal" href="#conf-environment"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">environment</span></code></span></a>.</p>
 </section>
 <section id="libfoo-install-defs">
 <span id="pkg-opt-autotools-install-defs"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code><a class="headerlink" href="#libfoo-install-defs" title="Link to this heading">¶</a></h5>
@@ -6462,6 +6463,7 @@ value. This field is optional.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>See also <a class="reference internal" href="#conf-environment"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">environment</span></code></span></a>.</p>
 </section>
 <section id="libfoo-install-defs">
 <span id="pkg-opt-cargo-install-defs"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code><a class="headerlink" href="#libfoo-install-defs" title="Link to this heading">¶</a></h5>
@@ -6803,6 +6805,7 @@ value. This field is optional.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>See also <a class="reference internal" href="#conf-environment"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">environment</span></code></span></a>.</p>
 </section>
 <section id="libfoo-install-defs">
 <span id="pkg-opt-cmake-install-defs"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code><a class="headerlink" href="#libfoo-install-defs" title="Link to this heading">¶</a></h5>
@@ -7066,6 +7069,7 @@ value. This field is optional.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>See also <a class="reference internal" href="#conf-environment"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">environment</span></code></span></a>.</p>
 </section>
 <section id="libfoo-install-defs">
 <span id="pkg-opt-make-install-defs"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code><a class="headerlink" href="#libfoo-install-defs" title="Link to this heading">¶</a></h5>
@@ -7354,6 +7358,7 @@ value. This field is optional.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>See also <a class="reference internal" href="#conf-environment"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">environment</span></code></span></a>.</p>
 </section>
 <section id="libfoo-install-defs">
 <span id="pkg-opt-meson-install-defs"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code><a class="headerlink" href="#libfoo-install-defs" title="Link to this heading">¶</a></h5>
@@ -7601,27 +7606,7 @@ value. This field is optional.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<section id="libfoo-install-defs">
-<h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code><a class="headerlink" href="#libfoo-install-defs" title="Link to this heading">¶</a></h5>
-<div class="versionremoved">
-<p><span class="versionmodified removed">Removed in version 2.0: </span>No longer applicable as all Python packages are installed using the
-<a class="reference external" href="https://installer.pypa.io/"><code class="docutils literal notranslate"><span class="pre">installer</span></code></a> module.</p>
-</div>
-</section>
-<section id="libfoo-install-env">
-<h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_ENV</span></code><a class="headerlink" href="#libfoo-install-env" title="Link to this heading">¶</a></h5>
-<div class="versionremoved">
-<p><span class="versionmodified removed">Removed in version 2.0: </span>No longer applicable as all Python packages are installed using the
-<a class="reference external" href="https://installer.pypa.io/"><code class="docutils literal notranslate"><span class="pre">installer</span></code></a> module.</p>
-</div>
-</section>
-<section id="libfoo-install-opts">
-<h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_OPTS</span></code><a class="headerlink" href="#libfoo-install-opts" title="Link to this heading">¶</a></h5>
-<div class="versionremoved">
-<p><span class="versionmodified removed">Removed in version 2.0: </span>No longer applicable as all Python packages are installed using the
-<a class="reference external" href="https://installer.pypa.io/"><code class="docutils literal notranslate"><span class="pre">installer</span></code></a> module.</p>
-</div>
+<p>See also <a class="reference internal" href="#conf-environment"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">environment</span></code></span></a>.</p>
 </section>
 <section id="libfoo-python-dist-path">
 <span id="pkg-opt-python-dist-path"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_PYTHON_DIST_PATH</span></code><a class="headerlink" href="#libfoo-python-dist-path" title="Link to this heading">¶</a></h5>
@@ -8059,6 +8044,7 @@ value. This field is optional.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>See also <a class="reference internal" href="#conf-environment"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">environment</span></code></span></a>.</p>
 </section>
 <section id="libfoo-install-defs">
 <span id="pkg-opt-scons-install-defs"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code><a class="headerlink" href="#libfoo-install-defs" title="Link to this heading">¶</a></h5>
@@ -8322,6 +8308,7 @@ value. This field is optional.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>See also <a class="reference internal" href="#conf-environment"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">environment</span></code></span></a>.</p>
 </section>
 <section id="libfoo-install-defs">
 <span id="pkg-opt-waf-install-defs"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code><a class="headerlink" href="#libfoo-install-defs" title="Link to this heading">¶</a></h5>
@@ -8425,8 +8412,8 @@ hint to remove such an option by configuring
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">DESTDIR</span><span class="o">=&lt;</span><span class="n">output</span><span class="o">&gt;/</span><span class="n">target</span> <span class="n">install</span>
 </pre></div>
 </div>
-<p>Overrides are typically supported on each configure, build and
-install-related configurations. Not all defines/options can be overridden.
+<p>Overrides are typically supported for each configure, build and
+install-related option. Not all defines/options can be overridden.
 Since overrides are advanced, developers are recommended to refer to the
 implementation for specifics. Developers can also use the
 <a class="reference internal" href="#arg-debug"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--debug</span></code></span></a> argument to see explicit commands invoked:</p>
@@ -8955,10 +8942,22 @@ execution has failed</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 2.0: </span>Add support for <code class="docutils literal notranslate"><span class="pre">ignore_stderr</span></code>.</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.1: </span>Correct support for expansion by default.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.1: </span>Add support for <code class="docutils literal notranslate"><span class="pre">newline</span></code>.</p>
+</div>
 <p>Runs the command <code class="docutils literal notranslate"><span class="pre">command</span></code> with provided <code class="docutils literal notranslate"><span class="pre">args</span></code> until completion. A
 caller can adjust the working directory of the executed command by
 explicitly setting the directory in <code class="docutils literal notranslate"><span class="pre">cwd</span></code>. The execution request will
 return the command's return code as well as any captured output.</p>
+<p>An example when using in the context of script helpers is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rv</span><span class="p">,</span> <span class="n">out</span> <span class="o">=</span> <span class="n">releng_execute_rv</span><span class="p">(</span><span class="s1">&#39;echo&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">)</span>
+<span class="c1"># rv: 1</span>
+<span class="c1"># out: 1 2 3</span>
+</pre></div>
+</div>
 <p>The environment variables used on execution can be manipulated in two ways.
 First, the environment can be explicitly controlled by applying a new
 environment content using the <code class="docutils literal notranslate"><span class="pre">env</span></code> dictionary. Key of the dictionary will
@@ -8972,8 +8971,8 @@ the original environment values and update select values which match in the
 updated environment request. When <code class="docutils literal notranslate"><span class="pre">env</span></code> and <code class="docutils literal notranslate"><span class="pre">env_update</span></code> are both
 provided, <code class="docutils literal notranslate"><span class="pre">env_update</span></code> will be updated the options based off of <code class="docutils literal notranslate"><span class="pre">env</span></code>
 instead of the original environment of the caller.</p>
-<p>An example when using in the context of script helpers is as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rv</span><span class="p">,</span> <span class="n">out</span> <span class="o">=</span> <span class="n">releng_execute_rv</span><span class="p">(</span><span class="s1">&#39;echo&#39;</span><span class="p">,</span> <span class="s1">&#39;$TEST&#39;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;TEST&#39;</span><span class="p">:</span> <span class="s1">&#39;env-test&#39;</span><span class="p">})</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">out</span> <span class="o">=</span> <span class="n">releng_execute_rv</span><span class="p">(</span><span class="s1">&#39;echo&#39;</span><span class="p">,</span> <span class="s1">&#39;env-$TEST&#39;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;TEST&#39;</span><span class="p">:</span> <span class="s1">&#39;test&#39;</span><span class="p">})</span>
+<span class="c1"># out: env-test</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
@@ -8987,6 +8986,7 @@ instead of the original environment of the caller.</p>
 <li><p><strong>**expand</strong> -- perform variable expansion on arguments</p></li>
 <li><p><strong>**args_str</strong> -- invoke arguments as a single string</p></li>
 <li><p><strong>**ignore_stderr</strong> -- ignore any stderr output</p></li>
+<li><p><strong>**newline</strong> -- newline value to use or defaults to <code class="docutils literal notranslate"><span class="pre">\n</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -9211,7 +9211,7 @@ if the message to be built may include a performance cost.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="releng_tool.releng_ls">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_ls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#releng_tool.releng_ls" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_ls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#releng_tool.releng_ls" title="Link to this definition">¶</a></dt>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.11.</span></p>
 </div>
@@ -9224,16 +9224,34 @@ if the message to be built may include a performance cost.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 2.7: </span>Provided directory will now expand variables.</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.1: </span>Directories always output POSIX path separators.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 3.1: </span>Directory is optional (using working directory).</p>
+</div>
 <p>Attempts to read a directory for its contents and prints this information
-to the configured standard output stream.</p>
+to the configured standard output stream. If no directory is provided,
+the working directory will be used.</p>
 <p>An example when using in the context of script helpers is as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_ls</span><span class="p">(</span><span class="s1">&#39;my-dir/&#39;</span><span class="p">)</span>
+<span class="c1"># another-dir/</span>
+<span class="c1"># file-a.txt</span>
+<span class="c1"># second-file.tgz</span>
+</pre></div>
+</div>
+<p>Or when using the <code class="docutils literal notranslate"><span class="pre">recursive</span></code> argument.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_ls</span><span class="p">(</span><span class="s1">&#39;test-dir/&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># another-dir/</span>
+<span class="c1"># another-dir/sub-dir/</span>
+<span class="c1"># another-dir/sub-dir/file-b.txt</span>
+<span class="c1"># file-c.txt</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dir</strong> -- the directory</p></li>
+<li><p><strong>dir</strong> (<em>optional</em>) -- the directory or the working directory</p></li>
 <li><p><strong>recursive</strong> (<em>optional</em>) -- recursive search of entries</p></li>
 </ul>
 </dd>
@@ -9646,7 +9664,7 @@ reason, this call will issue a system exit (<code class="docutils literal notran
 <span class="n">releng_symlink</span><span class="p">(</span><span class="s1">&#39;my-file&#39;</span><span class="p">,</span> <span class="s1">&#39;some/folder/my-link&#39;</span><span class="p">)</span>
 
 <span class="c1"># my-file -&gt; container/my-file</span>
-<span class="n">releng_symlink</span><span class="p">(</span><span class="s1">&#39;my-file&#39;</span><span class="p">,</span> <span class="s1">&#39;container&#39;</span><span class="p">,</span> <span class="n">ldp</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">releng_symlink</span><span class="p">(</span><span class="s1">&#39;my-file&#39;</span><span class="p">,</span> <span class="s1">&#39;container&#39;</span><span class="p">,</span> <span class="n">lpd</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># some-path/my-link -&gt; &lt;workdir&gt;/folder/my-file</span>
 <span class="n">releng_symlink</span><span class="p">(</span><span class="s1">&#39;folder/my-file&#39;</span><span class="p">,</span> <span class="s1">&#39;some-path/my-link&#39;</span><span class="p">,</span> <span class="n">relative</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -9693,6 +9711,14 @@ created, an <code class="docutils literal notranslate"><span class="pre">FailedT
 <p>An example when using in the context of script helpers is as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">releng_tmpdir</span><span class="p">()</span> <span class="k">as</span> <span class="n">dir_</span><span class="p">:</span>
     <span class="n">log</span><span class="p">(</span><span class="n">dir_</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>An example of a temporary directory being configured as the working
+directory:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">releng_tmpdir</span><span class="p">(</span><span class="n">wd</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">dir_</span><span class="p">:</span>
+    <span class="c1"># invoked in temporary folder</span>
+
+<span class="c1"># invoked in original working directory</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
@@ -13562,8 +13588,13 @@ the following environment variables can be used instead:</p>
 <h3>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>(note)</strong> Last version supporting the <code class="docutils literal notranslate"><span class="pre">.releng</span></code> extension</p></li>
+<li><p>Consistent path formats for <code class="docutils literal notranslate"><span class="pre">releng_ls</span></code> output</p></li>
+<li><p>Directory now optional for <code class="docutils literal notranslate"><span class="pre">releng_ls</span></code> which can use working directory</p></li>
 <li><p>Ensure an appropriate working directory is set when using a patch-script</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">releng_execute_rv</span></code> not expanding by default</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">releng_step</span></code> helper script function</p></li>
+<li><p>Introduce support for Lore sites</p></li>
+<li><p>Support <code class="docutils literal notranslate"><span class="pre">newline</span></code> option in <code class="docutils literal notranslate"><span class="pre">releng_execute_rv</span></code></p></li>
 <li><p>Support for <code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_NO_IMAGES</span></code></p></li>
 </ul>
 </section>
@@ -14445,6 +14476,7 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="#releng_tool.releng_path" title="releng_tool.releng_path"><span class="xref myst py py-meth"><code class="docutils literal notranslate"><span class="pre">releng_path</span></code></span></a>(*pathsegments)
 <a class="reference internal" href="#releng_tool.releng_remove" title="releng_tool.releng_remove"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_remove</span></code></span></a>(path, quiet=False)
 <a class="reference internal" href="#releng_tool.releng_require_version" title="releng_tool.releng_require_version"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_require_version</span></code></span></a>(minver, maxver=None, quiet=False, critical=True)
+<a class="reference internal" href="#document-guides/extensions/extensions"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">releng_setup</span></code></span></a>(app)
 <a class="reference internal" href="#releng_tool.releng_step" title="releng_tool.releng_step"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_step</span></code></span></a>(key, force=False, dir_=None)
 <a class="reference internal" href="#releng_tool.releng_symlink" title="releng_tool.releng_symlink"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_symlink</span></code></span></a>(target, link_path, quiet=False, critical=True, lpd=False, relative=True)
 <a class="reference internal" href="#releng_tool.releng_tmpdir" title="releng_tool.releng_tmpdir"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_tmpdir</span></code></span></a>(dir_=None, *args, wd=False)

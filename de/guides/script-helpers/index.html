@@ -852,10 +852,22 @@ execution has failed</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Geändert in Version 2.0: </span>Add support for <code class="docutils literal notranslate"><span class="pre">ignore_stderr</span></code>.</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Geändert in Version 3.1: </span>Correct support for expansion by default.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Geändert in Version 3.1: </span>Add support for <code class="docutils literal notranslate"><span class="pre">newline</span></code>.</p>
+</div>
 <p>Runs the command <code class="docutils literal notranslate"><span class="pre">command</span></code> with provided <code class="docutils literal notranslate"><span class="pre">args</span></code> until completion. A
 caller can adjust the working directory of the executed command by
 explicitly setting the directory in <code class="docutils literal notranslate"><span class="pre">cwd</span></code>. The execution request will
 return the command’s return code as well as any captured output.</p>
+<p>An example when using in the context of script helpers is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rv</span><span class="p">,</span> <span class="n">out</span> <span class="o">=</span> <span class="n">releng_execute_rv</span><span class="p">(</span><span class="s1">&#39;echo&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">)</span>
+<span class="c1"># rv: 1</span>
+<span class="c1"># out: 1 2 3</span>
+</pre></div>
+</div>
 <p>The environment variables used on execution can be manipulated in two ways.
 First, the environment can be explicitly controlled by applying a new
 environment content using the <code class="docutils literal notranslate"><span class="pre">env</span></code> dictionary. Key of the dictionary will
@@ -869,8 +881,8 @@ the original environment values and update select values which match in the
 updated environment request. When <code class="docutils literal notranslate"><span class="pre">env</span></code> and <code class="docutils literal notranslate"><span class="pre">env_update</span></code> are both
 provided, <code class="docutils literal notranslate"><span class="pre">env_update</span></code> will be updated the options based off of <code class="docutils literal notranslate"><span class="pre">env</span></code>
 instead of the original environment of the caller.</p>
-<p>An example when using in the context of script helpers is as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rv</span><span class="p">,</span> <span class="n">out</span> <span class="o">=</span> <span class="n">releng_execute_rv</span><span class="p">(</span><span class="s1">&#39;echo&#39;</span><span class="p">,</span> <span class="s1">&#39;$TEST&#39;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;TEST&#39;</span><span class="p">:</span> <span class="s1">&#39;env-test&#39;</span><span class="p">})</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">out</span> <span class="o">=</span> <span class="n">releng_execute_rv</span><span class="p">(</span><span class="s1">&#39;echo&#39;</span><span class="p">,</span> <span class="s1">&#39;env-$TEST&#39;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;TEST&#39;</span><span class="p">:</span> <span class="s1">&#39;test&#39;</span><span class="p">})</span>
+<span class="c1"># out: env-test</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
@@ -884,6 +896,7 @@ instead of the original environment of the caller.</p>
 <li><p><strong>**expand</strong> – perform variable expansion on arguments</p></li>
 <li><p><strong>**args_str</strong> – invoke arguments as a single string</p></li>
 <li><p><strong>**ignore_stderr</strong> – ignore any stderr output</p></li>
+<li><p><strong>**newline</strong> – newline value to use or defaults to <code class="docutils literal notranslate"><span class="pre">\n</span></code></p></li>
 </ul>
 </dd>
 <dt class="field-even">Rückgabe<span class="colon">:</span></dt>
@@ -1108,7 +1121,7 @@ if the message to be built may include a performance cost.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="releng_tool.releng_ls">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_ls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#releng_tool.releng_ls" title="Link to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_ls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recursive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#releng_tool.releng_ls" title="Link to this definition">¶</a></dt>
 <dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.11.</span></p>
 </div>
@@ -1121,16 +1134,34 @@ if the message to be built may include a performance cost.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Geändert in Version 2.7: </span>Provided directory will now expand variables.</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Geändert in Version 3.1: </span>Directories always output POSIX path separators.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Geändert in Version 3.1: </span>Directory is optional (using working directory).</p>
+</div>
 <p>Attempts to read a directory for its contents and prints this information
-to the configured standard output stream.</p>
+to the configured standard output stream. If no directory is provided,
+the working directory will be used.</p>
 <p>An example when using in the context of script helpers is as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_ls</span><span class="p">(</span><span class="s1">&#39;my-dir/&#39;</span><span class="p">)</span>
+<span class="c1"># another-dir/</span>
+<span class="c1"># file-a.txt</span>
+<span class="c1"># second-file.tgz</span>
+</pre></div>
+</div>
+<p>Or when using the <code class="docutils literal notranslate"><span class="pre">recursive</span></code> argument.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_ls</span><span class="p">(</span><span class="s1">&#39;test-dir/&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># another-dir/</span>
+<span class="c1"># another-dir/sub-dir/</span>
+<span class="c1"># another-dir/sub-dir/file-b.txt</span>
+<span class="c1"># file-c.txt</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameter<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dir</strong> – the directory</p></li>
+<li><p><strong>dir</strong> (<em>optional</em>) – the directory or the working directory</p></li>
 <li><p><strong>recursive</strong> (<em>optional</em>) – recursive search of entries</p></li>
 </ul>
 </dd>
@@ -1543,7 +1574,7 @@ reason, this call will issue a system exit (<code class="docutils literal notran
 <span class="n">releng_symlink</span><span class="p">(</span><span class="s1">&#39;my-file&#39;</span><span class="p">,</span> <span class="s1">&#39;some/folder/my-link&#39;</span><span class="p">)</span>
 
 <span class="c1"># my-file -&gt; container/my-file</span>
-<span class="n">releng_symlink</span><span class="p">(</span><span class="s1">&#39;my-file&#39;</span><span class="p">,</span> <span class="s1">&#39;container&#39;</span><span class="p">,</span> <span class="n">ldp</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">releng_symlink</span><span class="p">(</span><span class="s1">&#39;my-file&#39;</span><span class="p">,</span> <span class="s1">&#39;container&#39;</span><span class="p">,</span> <span class="n">lpd</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># some-path/my-link -&gt; &lt;workdir&gt;/folder/my-file</span>
 <span class="n">releng_symlink</span><span class="p">(</span><span class="s1">&#39;folder/my-file&#39;</span><span class="p">,</span> <span class="s1">&#39;some-path/my-link&#39;</span><span class="p">,</span> <span class="n">relative</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -1590,6 +1621,14 @@ created, an <code class="docutils literal notranslate"><span class="pre">FailedT
 <p>An example when using in the context of script helpers is as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">releng_tmpdir</span><span class="p">()</span> <span class="k">as</span> <span class="n">dir_</span><span class="p">:</span>
     <span class="n">log</span><span class="p">(</span><span class="n">dir_</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>An example of a temporary directory being configured as the working
+directory:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">releng_tmpdir</span><span class="p">(</span><span class="n">wd</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">dir_</span><span class="p">:</span>
+    <span class="c1"># invoked in temporary folder</span>
+
+<span class="c1"># invoked in original working directory</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
