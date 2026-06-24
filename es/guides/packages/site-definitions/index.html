@@ -234,6 +234,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../pkg-type-python/">Python package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pkg-type-scons/">SCons package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pkg-type-waf/">Waf package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pkg-type-xmake/">Xmake package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../hacking/">Package hacking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../deprecated-pkg-options/">Deprecated options</a></li>
 </ul>
@@ -272,6 +273,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-log-execute_args/">releng.log.execute_args</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-log-execute_env/">releng.log.execute_env</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-stats-no_pdf/">releng.stats.no_pdf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-xmake-disable-arch-detection/">releng.xmake.disable_arch_detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-xmake-disable-deps-init/">releng.xmake.disable_deps_init</a></li>
 </ul>
 </li>
 </ul>
@@ -292,6 +295,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../examples/examples-python/">Python package examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../examples/examples-scons/">SCons package examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../examples/examples-waf/">Waf package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/examples-xmake/">Xmake package examples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../help/">Solicitar asistencia</a></li>
@@ -556,7 +560,7 @@ development/testing/training purposes. See
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.1.</span></p>
 </div>
-<p>To define a Lore-based location, the site value must be prefixed with
+<p>To define a <a class="reference external" href="https://lore.org/">Lore</a>-based location, the site value must be prefixed with
 a <code class="docutils literal notranslate"><span class="pre">lore+</span></code> or <code class="docutils literal notranslate"><span class="pre">lore://</span></code> value. A site can be defined as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;lore://lore.example.org:30000&#39;</span>
 <span class="c1"># (or)</span>

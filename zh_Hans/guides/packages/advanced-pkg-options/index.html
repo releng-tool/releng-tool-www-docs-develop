@@ -234,6 +234,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../pkg-type-python/">Python package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pkg-type-scons/">SCons package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pkg-type-waf/">Waf package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pkg-type-xmake/">Xmake package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../hacking/">Package hacking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../deprecated-pkg-options/">Deprecated options</a></li>
 </ul>
@@ -272,6 +273,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-log-execute_args/">releng.log.execute_args</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-log-execute_env/">releng.log.execute_env</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-stats-no_pdf/">releng.stats.no_pdf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-xmake-disable-arch-detection/">releng.xmake.disable_arch_detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../quirks/quirk-xmake-disable-deps-init/">releng.xmake.disable_deps_init</a></li>
 </ul>
 </li>
 </ul>
@@ -292,6 +295,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../examples/examples-python/">Python package examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../examples/examples-scons/">SCons package examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../examples/examples-waf/">Waf package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/examples-xmake/">Xmake package examples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../help/">请求协助</a></li>
@@ -798,6 +802,18 @@ the total number of cores, the following can be used:</p>
 <p>See also the <a class="reference internal" href="../../arguments/#arg-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--jobs</span></code> argument</span></a> and
 <a class="reference internal" href="#pkg-opt-fixed-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_FIXED_JOBS</span></code></span></a>.</p>
 </section>
+<section id="libfoo-network-isolation">
+<span id="pkg-opt-network-isolation"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_NETWORK_ISOLATION</span></code><a class="headerlink" href="#libfoo-network-isolation" title="Link to this heading">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.1.</span></p>
+</div>
+<p>A flag to indicate that non-fetch stages will attempt to perform network
+isolation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_NETWORK_ISOLATION</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="../../configuration/#conf-network-isolation"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">network_isolation</span></code></span></a>.</p>
+</section>
 <section id="libfoo-no-extraction">
 <span id="pkg-opt-no-extraction"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_NO_EXTRACTION</span></code><a class="headerlink" href="#libfoo-no-extraction" title="Link to this heading">¶</a></h2>
 <div class="admonition warning">
@@ -1168,6 +1184,7 @@ warning message.</p>
 <li><a class="reference internal" href="#libfoo-ignore-patches"><code class="docutils literal notranslate"><span class="pre">LIBFOO_IGNORE_PATCHES</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-internal"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INTERNAL</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-max-jobs"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAX_JOBS</span></code></a></li>
+<li><a class="reference internal" href="#libfoo-network-isolation"><code class="docutils literal notranslate"><span class="pre">LIBFOO_NETWORK_ISOLATION</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-no-extraction"><code class="docutils literal notranslate"><span class="pre">LIBFOO_NO_EXTRACTION</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-only-devmode"><code class="docutils literal notranslate"><span class="pre">LIBFOO_ONLY_DEVMODE</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-patch-subdir"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PATCH_SUBDIR</span></code></a></li>

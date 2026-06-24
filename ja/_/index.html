@@ -235,6 +235,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/packages/pkg-type-python">Python package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/packages/pkg-type-scons">SCons package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/packages/pkg-type-waf">Waf package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#document-guides/packages/pkg-type-xmake">Xmake package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/packages/hacking">Package hacking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/packages/deprecated-pkg-options">Deprecated options</a></li>
 </ul>
@@ -273,6 +274,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-log-execute_args">releng.log.execute_args</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-log-execute_env">releng.log.execute_env</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-stats-no_pdf">releng.stats.no_pdf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-xmake-disable-arch-detection">releng.xmake.disable_arch_detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-xmake-disable-deps-init">releng.xmake.disable_deps_init</a></li>
 </ul>
 </li>
 </ul>
@@ -293,6 +296,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#document-examples/examples-python">Python package examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-examples/examples-scons">SCons package examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-examples/examples-waf">Waf package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#document-examples/examples-xmake">Xmake package examples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#document-help">支援要請</a></li>
@@ -440,7 +444,8 @@ sysroot.</p>
 type is a script-based package, where users can define custom scripts for
 various stages. A package does not need to handle every stage. Helper
 package types are available (e.g. Autotools, Cargo, CMake, Make, Meson,
-various Python types, SCons and Waf) for projects using common build systems.</p>
+various Python types, SCons, Waf and Xmake) for projects using common build
+systems.</p>
 <p>While releng-tool assists in configuring and building projects, it does not
 aim to provide a perfect sandbox for the process. Users are responsible
 for defining the compilers/toolchains used and managing the interaction
@@ -2886,6 +2891,21 @@ defined by project's configuration. For example:</p>
 </div>
 <p>See also <a class="reference internal" href="#document-guides/licenses"><span class="doc std std-doc">licenses</span></a>.</p>
 </section>
+<section id="network-isolation">
+<span id="conf-network-isolation"></span><h5><code class="docutils literal notranslate"><span class="pre">network_isolation</span></code><a class="headerlink" href="#network-isolation" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.1.</span></p>
+</div>
+<p>A flag to indicate that non-fetch package stages will attempt to perform
+network isolation. This is to help promote/enforce network-related interaction
+in expected stages which can be helpful for use cases such as
+<a class="reference internal" href="#document-guides/tips/offline-builds"><span class="doc std std-doc">offline builds</span></a>.</p>
+<p>By default, network isolation is not enforced.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">network_isolation</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#pkg-opt-network-isolation"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_NETWORK_ISOLATION</span></code></span></a>.</p>
+</section>
 <section id="packages">
 <span id="conf-packages"></span><h5><code class="docutils literal notranslate"><span class="pre">packages</span></code><a class="headerlink" href="#packages" title="Link to this heading">¶</a></h5>
 <p>A list of packages to process. Packages listed will be processed by
@@ -3140,6 +3160,22 @@ the following may be used:</p>
 </pre></div>
 </div>
 <p>See also <a class="reference internal" href="#pkg-opt-meson-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MESON_BUILD_TYPE</span></code></span></a>.</p>
+</section>
+<section id="default-xmake-build-type">
+<span id="conf-default-xmake-build-type"></span><h5><code class="docutils literal notranslate"><span class="pre">default_xmake_build_type</span></code><a class="headerlink" href="#default-xmake-build-type" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.1.</span></p>
+</div>
+<p><a class="reference internal" href="#document-guides/packages/pkg-type-xmake"><span class="doc std std-doc">Xmake</span></a> packages can configure a mode on
+individual packages using
+<a class="reference internal" href="#pkg-opt-xmake-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_XMAKE_BUILD_TYPE</span></code></span></a>. However, if a developer
+wishes to configure the default mode across all Xmake packages, this
+option may be used. For example, to default to using the <code class="docutils literal notranslate"><span class="pre">debug</span></code> mode,
+the following may be used:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">default_xmake_build_type</span> <span class="o">=</span> <span class="s1">&#39;debug&#39;</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#pkg-opt-xmake-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_XMAKE_BUILD_TYPE</span></code></span></a>.</p>
 </section>
 <section id="extra-license-exceptions">
 <span id="conf-extra-license-exceptions"></span><h5><code class="docutils literal notranslate"><span class="pre">extra_license_exceptions</span></code><a class="headerlink" href="#extra-license-exceptions" title="Link to this heading">¶</a></h5>
@@ -4657,6 +4693,9 @@ configure a VCS-type of <code class="docutils literal notranslate"><span class="
 <div class="versionchanged">
 <p><span class="versionmodified changed">バージョン 2.8 で変更: </span>Support added for <code class="docutils literal notranslate"><span class="pre">waf</span></code>.</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">バージョン 3.1 で変更: </span>Support added for <code class="docutils literal notranslate"><span class="pre">xmake</span></code>.</p>
+</div>
 <p>The package type. The default package type is a (Python) script-based package.
 releng-tool also provides a series of helper package types for common
 frameworks. The following outline a series of supported type definitions:</p>
@@ -4694,6 +4733,9 @@ frameworks. The following outline a series of supported type definitions:</p>
 </tr>
 <tr class="row-even"><td class="text-right"><p><a class="reference internal" href="#document-guides/packages/pkg-type-waf"><span class="doc std std-doc">Waf</span></a></p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">waf</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><a class="reference internal" href="#document-guides/packages/pkg-type-xmake"><span class="doc std std-doc">Xmake</span></a></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">xmake</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -5120,6 +5162,18 @@ the total number of cores, the following can be used:</p>
 </div>
 <p>See also the <a class="reference internal" href="#arg-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--jobs</span></code> argument</span></a> and
 <a class="reference internal" href="#pkg-opt-fixed-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_FIXED_JOBS</span></code></span></a>.</p>
+</section>
+<section id="libfoo-network-isolation">
+<span id="pkg-opt-network-isolation"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_NETWORK_ISOLATION</span></code><a class="headerlink" href="#libfoo-network-isolation" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.1.</span></p>
+</div>
+<p>A flag to indicate that non-fetch stages will attempt to perform network
+isolation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_NETWORK_ISOLATION</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#conf-network-isolation"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">network_isolation</span></code></span></a>.</p>
 </section>
 <section id="libfoo-no-extraction">
 <span id="pkg-opt-no-extraction"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_NO_EXTRACTION</span></code><a class="headerlink" href="#libfoo-no-extraction" title="Link to this heading">¶</a></h5>
@@ -5684,7 +5738,7 @@ development/testing/training purposes. See
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.1.</span></p>
 </div>
-<p>To define a Lore-based location, the site value must be prefixed with
+<p>To define a <a class="reference external" href="https://lore.org/">Lore</a>-based location, the site value must be prefixed with
 a <code class="docutils literal notranslate"><span class="pre">lore+</span></code> or <code class="docutils literal notranslate"><span class="pre">lore://</span></code> value. A site can be defined as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;lore://lore.example.org:30000&#39;</span>
 <span class="c1"># (or)</span>
@@ -6635,10 +6689,10 @@ CMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON
 <p>The build type is configured by
 <a class="reference internal" href="#pkg-opt-cmake-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CMAKE_BUILD_TYPE</span></code></span></a>.</p>
 <p>Paths may vary based on how the package's
-<a class="reference internal" href="#pkg-opt-install-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_TYPE</span></code></span></a> is configured. Root paths
-provided will only include the staging directory if <code class="docutils literal notranslate"><span class="pre">staging</span></code> is configured.
-Both the staging and target directories are provided is the <code class="docutils literal notranslate"><span class="pre">target</span></code> is
-configured. Likewise with the host directory if <code class="docutils literal notranslate"><span class="pre">host</span></code> is configured.</p>
+<a class="reference internal" href="#pkg-opt-install-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_TYPE</span></code></span></a> is configured. For example,
+root paths provided will only include the staging directory
+if <code class="docutils literal notranslate"><span class="pre">staging</span></code> is configured. Likewise, both the staging and target directories
+are provided when using <code class="docutils literal notranslate"><span class="pre">staging_and_target</span></code>.</p>
 <p>The same concepts apply for defined include (<code class="docutils literal notranslate"><span class="pre">&lt;sysroot&gt;[/&lt;prefix&gt;]/include</span></code>),
 library (<code class="docutils literal notranslate"><span class="pre">&lt;sysroot&gt;[/&lt;prefix&gt;]/lib</span></code>) and module paths
 (<code class="docutils literal notranslate"><span class="pre">&lt;sysroot&gt;[/&lt;prefix&gt;]/share/cmake/Modules</span></code>).</p>
@@ -7237,10 +7291,10 @@ are invoked with a <a class="reference internal" href="#env-pkg-build-dir"><span
 <p>The build output directory is configured to
 <a class="reference internal" href="#env-pkg-build-output-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_OUTPUT_DIR</span></code></span></a>.</p>
 <p>Paths may vary based on how the package's
-<a class="reference internal" href="#pkg-opt-install-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_TYPE</span></code></span></a> is configured. System root paths
-provided will only include the staging directory if <code class="docutils literal notranslate"><span class="pre">staging</span></code> is configured.
-Both the staging and target directories are provided is the <code class="docutils literal notranslate"><span class="pre">target</span></code> is
-configured. Likewise with the host directory if <code class="docutils literal notranslate"><span class="pre">host</span></code> is configured.
+<a class="reference internal" href="#pkg-opt-install-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_TYPE</span></code></span></a> is configured. For example,
+root paths provided will only include the staging directory
+if <code class="docutils literal notranslate"><span class="pre">staging</span></code> is configured. Likewise, both the staging and target directories
+are provided when using <code class="docutils literal notranslate"><span class="pre">staging_and_target</span></code>.
 pkg-config paths are defined to <code class="docutils literal notranslate"><span class="pre">&lt;sysroot&gt;/lib/pkgconfig</span></code>.</p>
 <p>If <a class="reference internal" href="#pkg-opt-prefix"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_PREFIX</span></code></span></a> resolves to an empty prefix, the
 <code class="docutils literal notranslate"><span class="pre">-Dprefix</span></code> define is not provided.</p>
@@ -8429,6 +8483,299 @@ can specify this no-install flag to skip a Waf-driven install request and
 manage installation actions through other means (such as post-processing).
 By default, the installation stage is invoked with a value of <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_WAF_NOINSTALL</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+</section>
+<span id="document-guides/packages/pkg-type-xmake"></span><section id="xmake-package">
+<h4>Xmake package<a class="headerlink" href="#xmake-package" title="Link to this heading">¶</a></h4>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.1.</span></p>
+</div>
+<p>An Xmake package provides support for processing an <a class="reference external" href="https://xmake.io/">Xmake</a> supported
+module.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_TYPE</span> <span class="o">=</span> <span class="s1">&#39;xmake&#39;</span>
+</pre></div>
+</div>
+<p>During the configuration stage of an Xmake package, <code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">config</span></code> will be
+invoked to generate build files for the module. For the build stage,
+<code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">build</span></code> will invoke the generated build files. For the installation
+stage (if enabled), <code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">install</span></code> will be used. Each stage can be
+configured to manipulate environment variables and options used by Xmake.</p>
+<p>The default configuration applies no explicit mode. A developer can set this
+option to a supported mode of the project by explicitly adjusting the
+configuration option <code class="docutils literal notranslate"><span class="pre">LIBFOO_XMAKE_BUILD_TYPE</span></code> to, for example, <code class="docutils literal notranslate"><span class="pre">debug</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_XMAKE_BUILD_TYPE</span> <span class="o">=</span> <span class="s1">&#39;debug&#39;</span>
+</pre></div>
+</div>
+<p>The following shows the default arguments used in stages and outlines
+configuration options that are available for an Xmake package to set.
+See also the <a class="reference internal" href="#document-examples/examples-xmake"><span class="doc std std-doc">Xmake package examples</span></a>. All stages
+are invoked with a <a class="reference internal" href="#env-pkg-build-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_DIR</span></code></span></a> working directory.</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio" /><label class="tab-label" for="tab-set--17-input--1">Configuration</label><div class="tab-content docutils">
+<p>The configuration stage invokes <code class="docutils literal notranslate"><span class="pre">xmake</span></code> with the arguments:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>xmake config \
+    --builddir=&lt;BUILD_OUTPUT_DIR&gt; \
+    --includedirs=&lt;SYSROOT_INCLUDE_PATHS&gt; \
+    --linkdirs=&lt;SYSROOT_LIBRARY_PATHS&gt; \
+    --mode=&lt;MODE&gt;
+</pre></div>
+</div>
+<p>With the following environment variables set:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>XMAKE_CONFIGDIR=&lt;BUILD_OUTPUT_DIR&gt;
+</pre></div>
+</div>
+<p>The mode/build type can configured by
+<a class="reference internal" href="#pkg-opt-xmake-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_XMAKE_BUILD_TYPE</span></code></span></a>. If no mode is
+configured, the <code class="docutils literal notranslate"><span class="pre">--mode</span></code> argument will not be used.</p>
+<p>The build output directory is configured to
+<a class="reference internal" href="#env-pkg-build-output-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PKG_BUILD_OUTPUT_DIR</span></code></span></a>.</p>
+<p>Paths may vary based on how the package's
+<a class="reference internal" href="#pkg-opt-install-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_TYPE</span></code></span></a> is configured. For example,
+system include/library paths provided will only include the staging directory
+if <code class="docutils literal notranslate"><span class="pre">staging</span></code> is configured. Likewise, both the staging and target directories
+are provided when using <code class="docutils literal notranslate"><span class="pre">staging_and_target</span></code>.</p>
+</div>
+<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio" /><label class="tab-label" for="tab-set--17-input--2">Build</label><div class="tab-content docutils">
+<p>The build stage invokes <code class="docutils literal notranslate"><span class="pre">xmake</span></code> with the arguments:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>xmake build --jobs &lt;NJOBS&gt;
+</pre></div>
+</div>
+<p>With the following environment variables set:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>XMAKE_CONFIGDIR=&lt;BUILD_OUTPUT_DIR&gt;
+</pre></div>
+</div>
+<p>The number of jobs is populated by either the <a class="reference internal" href="#arg-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--jobs</span></code> argument</span></a>,
+<a class="reference internal" href="#pkg-opt-fixed-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_FIXED_JOBS</span></code></span></a> or
+<a class="reference internal" href="#pkg-opt-max-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAX_JOBS</span></code></span></a>. Although, if the configuration results
+in a single job, the argument will not be used.</p>
+</div>
+<input class="tab-input" id="tab-set--17-input--3" name="tab-set--17" type="radio" /><label class="tab-label" for="tab-set--17-input--3">Install</label><div class="tab-content docutils">
+<p>The install stage invokes <code class="docutils literal notranslate"><span class="pre">xmake</span></code> with the arguments:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>xmake install --installdir &lt;TARGET_DIR&gt;
+</pre></div>
+</div>
+<p>With the following environment variables set:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>XMAKE_CONFIGDIR=&lt;BUILD_OUTPUT_DIR&gt;
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">--installdir</span></code> argument will be set to the target sysroot the package
+should install into (see also <a class="reference internal" href="#pkg-opt-install-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_TYPE</span></code></span></a>).
+<code class="docutils literal notranslate"><span class="pre">xmake</span> <span class="pre">install</span></code> may be invoked multiple times for each target it needs to
+install into.</p>
+<p>The installation stage can be skipped by configuring
+<a class="reference internal" href="#pkg-opt-xmake-noinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_XMAKE_NOINSTALL</span></code></span></a>.</p>
+</div>
+</div>
+<section id="libfoo-build-defs">
+<span id="pkg-opt-xmake-build-defs"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_DEFS</span></code><a class="headerlink" href="#libfoo-build-defs" title="Link to this heading">¶</a></h5>
+<div class="versionchanged">
+<p><span class="versionmodified changed">バージョン 2.2 で変更: </span>Support added for path-like values.</p>
+</div>
+<p>Provides a means to pass definitions into the build process. This option
+can is defined as a dictionary of string pairs. This field is optional.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_BUILD_DEFS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># adds &quot;--option=value&quot; to the command</span>
+    <span class="s1">&#39;--option&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="libfoo-build-env">
+<span id="pkg-opt-xmake-build-env"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_ENV</span></code><a class="headerlink" href="#libfoo-build-env" title="Link to this heading">¶</a></h5>
+<div class="versionchanged">
+<p><span class="versionmodified changed">バージョン 2.2 で変更: </span>Support added for path-like values.</p>
+</div>
+<p>Provides a means to pass environment variables into the build process. This
+option is defined as a dictionary with key-value pairs where the key is the
+environment name and the value is the environment variable's value. This
+field is optional.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_BUILD_ENV</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;OPTION&#39;</span><span class="p">:</span> <span class="s1">&#39;VALUE&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="libfoo-build-opts">
+<span id="pkg-opt-xmake-build-opts"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_OPTS</span></code><a class="headerlink" href="#libfoo-build-opts" title="Link to this heading">¶</a></h5>
+<div class="versionchanged">
+<p><span class="versionmodified changed">バージョン 2.2 で変更: </span>Support added for path-like values.</p>
+</div>
+<p>Provides a means to pass command line options into the build process. This
+option can be defined as a dictionary of string pairs or a list with
+strings -- either way defined will generate argument values to include in
+the build event. This field is optional.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_BUILD_OPTS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># adds &quot;--option value&quot; to the command</span>
+    <span class="s1">&#39;--option&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
+    <span class="c1"># adds &quot;--flag&quot; to the command</span>
+    <span class="s1">&#39;--flag&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># (or)</span>
+
+<span class="n">LIBFOO_BUILD_OPTS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># adds &quot;--some-option&quot; to the command</span>
+    <span class="s1">&#39;--some-option&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="libfoo-conf-defs">
+<span id="pkg-opt-xmake-conf-defs"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_DEFS</span></code><a class="headerlink" href="#libfoo-conf-defs" title="Link to this heading">¶</a></h5>
+<div class="versionchanged">
+<p><span class="versionmodified changed">バージョン 2.2 で変更: </span>Support added for path-like values.</p>
+</div>
+<p>Provides a means to pass definitions into the configuration process. This
+option can is defined as a dictionary of string pairs. This field is
+optional.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_CONF_DEFS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># adds &quot;--option=value&quot; to the command</span>
+    <span class="s1">&#39;--option&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="libfoo-conf-env">
+<span id="pkg-opt-xmake-conf-env"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_ENV</span></code><a class="headerlink" href="#libfoo-conf-env" title="Link to this heading">¶</a></h5>
+<div class="versionchanged">
+<p><span class="versionmodified changed">バージョン 2.2 で変更: </span>Support added for path-like values.</p>
+</div>
+<p>Provides a means to pass environment variables into the configuration process.
+This option is defined as a dictionary with key-value pairs where the key is
+the environment name and the value is the environment variable's value. This
+field is optional.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_CONF_ENV</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;OPTION&#39;</span><span class="p">:</span> <span class="s1">&#39;VALUE&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="libfoo-conf-opts">
+<span id="pkg-opt-xmake-conf-opts"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_OPTS</span></code><a class="headerlink" href="#libfoo-conf-opts" title="Link to this heading">¶</a></h5>
+<div class="versionchanged">
+<p><span class="versionmodified changed">バージョン 2.2 で変更: </span>Support added for path-like values.</p>
+</div>
+<p>Provides a means to pass command line options into the configuration process.
+This option can be defined as a dictionary of string pairs or a list with
+strings -- either way defined will generate argument values to include in the
+configuration event. This field is optional.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_CONF_OPTS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># adds &quot;--option value&quot; to the command</span>
+    <span class="s1">&#39;--option&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
+    <span class="c1"># adds &quot;--flag&quot; to the command</span>
+    <span class="s1">&#39;--flag&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># (or)</span>
+
+<span class="n">LIBFOO_CONF_OPTS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># adds &quot;--some-option&quot; to the command</span>
+    <span class="s1">&#39;--some-option&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="libfoo-env">
+<span id="pkg-opt-xmake-env"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_ENV</span></code><a class="headerlink" href="#libfoo-env" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.17.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">バージョン 2.2 で変更: </span>Support added for path-like values.</p>
+</div>
+<p>Provides a means to pass environment variables into all stages for a
+package. This option is defined as a dictionary with key-value pairs where
+the key is the environment name and the value is the environment variable's
+value. This field is optional.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_ENV</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;OPTION&#39;</span><span class="p">:</span> <span class="s1">&#39;VALUE&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#conf-environment"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">environment</span></code></span></a>.</p>
+</section>
+<section id="libfoo-install-defs">
+<span id="pkg-opt-xmake-install-defs"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code><a class="headerlink" href="#libfoo-install-defs" title="Link to this heading">¶</a></h5>
+<div class="versionchanged">
+<p><span class="versionmodified changed">バージョン 2.2 で変更: </span>Support added for path-like values.</p>
+</div>
+<p>Provides a means to pass definitions into the installation process. This
+option can is defined as a dictionary of string pairs. This field is
+optional.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_INSTALL_DEFS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># adds &quot;--option=value&quot; to the command</span>
+    <span class="s1">&#39;--option&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="libfoo-install-env">
+<span id="pkg-opt-xmake-install-env"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_ENV</span></code><a class="headerlink" href="#libfoo-install-env" title="Link to this heading">¶</a></h5>
+<div class="versionchanged">
+<p><span class="versionmodified changed">バージョン 2.2 で変更: </span>Support added for path-like values.</p>
+</div>
+<p>Provides a means to pass environment variables into the installation process.
+This option is defined as a dictionary with key-value pairs where the key is
+the environment name and the value is the environment variable's value. This
+field is optional.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_INSTALL_ENV</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;OPTION&#39;</span><span class="p">:</span> <span class="s1">&#39;VALUE&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="libfoo-install-opts">
+<span id="pkg-opt-xmake-install-opts"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_OPTS</span></code><a class="headerlink" href="#libfoo-install-opts" title="Link to this heading">¶</a></h5>
+<div class="versionchanged">
+<p><span class="versionmodified changed">バージョン 2.2 で変更: </span>Support added for path-like values.</p>
+</div>
+<p>Provides a means to pass command line options into the installation process.
+This option can be defined as a dictionary of string pairs or a list with
+strings -- either way defined will generate argument values to include in
+the installation event. This field is optional.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_INSTALL_OPTS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># adds &quot;--option value&quot; to the command</span>
+    <span class="s1">&#39;--option&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
+    <span class="c1"># adds &quot;--flag&quot; to the command</span>
+    <span class="s1">&#39;--flag&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># (or)</span>
+
+<span class="n">LIBFOO_INSTALL_OPTS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># adds &quot;--some-option&quot; to the command</span>
+    <span class="s1">&#39;--some-option&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="libfoo-xmake-build-type">
+<span id="pkg-opt-xmake-build-type"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_XMAKE_BUILD_TYPE</span></code><a class="headerlink" href="#libfoo-xmake-build-type" title="Link to this heading">¶</a></h5>
+<p>Specifies the <a class="reference external" href="https://xmake.io/posts/quickstart-8-switch-build-mode.html">mode</a> to use for the Xmake package. Modes
+for an individual package may vary as a project file (<code class="docutils literal notranslate"><span class="pre">xmake.lua</span></code>) defines
+modes it supports (although commonly named modes include <code class="docutils literal notranslate"><span class="pre">debug</span></code>, <code class="docutils literal notranslate"><span class="pre">release</span></code>,
+<code class="docutils literal notranslate"><span class="pre">releasedbg</span></code> and <code class="docutils literal notranslate"><span class="pre">minsizerel</span></code>). A developer needing to use a specific mode
+can configure this option with the name of the mode. By default, no explicit
+mode is used for all Xmake packages.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_XMAKE_BUILD_TYPE</span> <span class="o">=</span> <span class="s1">&#39;releasedbg&#39;</span>
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#conf-default-xmake-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">default_xmake_build_type</span></code></span></a>.</p>
+</section>
+<section id="libfoo-xmake-noinstall">
+<span id="pkg-opt-xmake-noinstall"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_XMAKE_NOINSTALL</span></code><a class="headerlink" href="#libfoo-xmake-noinstall" title="Link to this heading">¶</a></h5>
+<p>Specifies whether the Xmake package should skip an attempt to invoke the
+install command. Ideally, projects will have an <a class="reference external" href="https://xmake.io/guide/basic-commands/install-and-uninstall.html">install</a>
+options configured to define how a project will install files into a target
+(or staging) environment. Not all Xmake projects have installation options
+configured, or there can be cases where installation stage for a package to
+fail due to issues with some host environments. A developer can specify this
+no-install flag to skip an Xmake-driven install request and manage installation
+actions through other means (such as post-processing). By default, the
+installation stage is invoked with a value of <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_XMAKE_NOINSTALL</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
 </section>
@@ -10110,7 +10457,7 @@ build, the <code class="docutils literal notranslate"><span class="pre">licenses
 <h4>Alternative extensions<a class="headerlink" href="#alternative-extensions" title="Link to this heading">¶</a></h4>
 <div class="deprecated">
 <p><span class="versionmodified deprecated">バージョン 2.0 で非推奨: </span>The <code class="docutils literal notranslate"><span class="pre">.releng</span></code> extension is no longer recommended and will be removed in
-a future release.</p>
+v3.2 release.</p>
 </div>
 <div class="deprecated">
 <p><span class="versionmodified deprecated">バージョン 2.2 で非推奨: </span>Extensionless configurations/scripts are no longer recommended and will
@@ -10778,8 +11125,15 @@ in host, staging or target areas.</p>
 <p>However, if this causes issues for a build environment (such as when building
 a CMake project with a toolchain file which has issues with standard include
 overrides), the option can be disabled using the
-<code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_direct_includes</span></code> quirk:</p>
+<code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_direct_includes</span></code> quirk using the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">cmake</span><span class="o">.</span><span class="n">disable_direct_includes</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.cmake.disable_direct_includes&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <section id="see-also">
@@ -10802,8 +11156,15 @@ a new fetch of sources for a development-configured revision. However, if a
 remote is not available during a rebuild event, the process will fail since
 the package cannot be re-fetched from the configured site. To help a builder
 hint that using the cache is fine for an invoke, this quirk can be provided to
-avoid any re-fetch attempt.</p>
+avoid any re-fetch attempt. For example, using the command line::</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">disable_devmode_ignore_cache</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.disable_devmode_ignore_cache&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <section id="see-also">
@@ -10825,8 +11186,15 @@ found, the build process stops immediately.</p>
 example, if the running environment is not expected to perform a specific
 action in a project that requires an application. To avoid triggering a
 run error at start, users may set the <code class="docutils literal notranslate"><span class="pre">releng.disable_prerequisites_check</span></code>
-quirk to skip any prerequisite check:</p>
+quirk to skip any prerequisite check using the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">disable_prerequisites_check</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.disable_prerequisites_check&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <section id="see-also">
@@ -10842,8 +11210,15 @@ quirk to skip any prerequisite check:</p>
 configuration options from a remote source. If a user is having issues
 with a project's remote options for a package, the
 <code class="docutils literal notranslate"><span class="pre">releng.disable_remote_configs</span></code> quirk can be used to skip any application
-of late-stage configuration options:</p>
+of late-stage configuration options using the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">disable_remote_configs</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.disable_remote_configs&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <section id="see-also">
@@ -10859,8 +11234,15 @@ of late-stage configuration options:</p>
 build and installation stage scripts from a remote source. If a user is
 having issues with a project's remote scripts for a package, the
 <code class="docutils literal notranslate"><span class="pre">releng.disable_remote_scripts</span></code> quirk can be used to skip any invoke of
-these scripts:</p>
+these scripts using the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">disable_remote_scripts</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.disable_remote_scripts&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <section id="see-also">
@@ -10877,8 +11259,16 @@ these scripts:</p>
 </div>
 <p>When utilizing <a class="reference internal" href="#document-guides/patching"><span class="doc std std-doc">patching</span></a> capabilities in releng-tool,
 all patches are by default applied with a <code class="docutils literal notranslate"><span class="pre">--verbose</span></code> argument. If this
-is not preferred by a project, this quirk can be set to omit the argument.</p>
+is not preferred by a project, this quirk can be set to omit the argument.
+For example, using the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">disable_verbose_patch</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.disable_verbose_patch&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <section id="see-also">
@@ -10894,8 +11284,15 @@ is not preferred by a project, this quirk can be set to omit the argument.</p>
 <p>releng-tool may use the <a class="reference external" href="https://git-scm.com/docs/git-clone#Documentation/git-clone.txt-code--depthltdepthgtcode"><code class="docutils literal notranslate"><span class="pre">--depth</span></code></a> option for Git-based packages
 to to perform shallow checkouts to improve fetch performance. If a user does
 not want to perform shallow checkouts, the <code class="docutils literal notranslate"><span class="pre">releng.git.no_depth</span></code> quirk may be
-used.</p>
+used. For example, using the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">no_depth</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.git.no_depth&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <section id="see-also">
@@ -10914,8 +11311,16 @@ references needed for a build (i.e. &quot;quick fetching&quot;, in the context o
 releng-tool). For example, if a project defines a Git tag to fetch, only
 the <code class="docutils literal notranslate"><span class="pre">refs/tags/&lt;tag&gt;</span></code> reference will be fetched.</p>
 <p>If a user does not want to utilizing quick-fetching for Git packages, this
-can be disabled by using the <code class="docutils literal notranslate"><span class="pre">releng.git.no_quick_fetch</span></code> quirk.</p>
+can be disabled by using the <code class="docutils literal notranslate"><span class="pre">releng.git.no_quick_fetch</span></code> quirk. For example,
+using the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">no_quick_fetch</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.git.no_quick_fetch&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <section id="see-also">
@@ -10939,8 +11344,16 @@ the cache directory, if users want to perform Git-related commands
 <p>In the case where developers want a complete copy of the Git repository in
 the build folder instead of a pointer to the cache, the
 <code class="docutils literal notranslate"><span class="pre">releng.git.replicate_cache</span></code> quirk can be enabled to force releng-tool to
-copy over the Git repository when a package is extracted.</p>
+copy over the Git repository when a package is extracted. For example,
+using the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">replicate_cache</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.git.replicate_cache&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <section id="see-also">
@@ -10959,8 +11372,16 @@ copy over the Git repository when a package is extracted.</p>
 missing or a bad extension definition), the releng-tool process will stop with
 an error.</p>
 <p>If a user wants to ignore the failed loading of extension for a given run,
-they may do so by configuring the <code class="docutils literal notranslate"><span class="pre">releng.ignore_failed_extensions</span></code> quirk.</p>
+they may do so by configuring the <code class="docutils literal notranslate"><span class="pre">releng.ignore_failed_extensions</span></code> quirk.
+For example, using the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">ignore_failed_extensions</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.ignore_failed_extensions&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <section id="see-also">
@@ -10981,8 +11402,15 @@ information such as working directory of an execution, as well as arguments
 used for a call. For some commands, the command line and arguments can be
 long and may be difficult to quickly scan for issues. To help improve the
 user experience, the <code class="docutils literal notranslate"><span class="pre">releng.log.execute_args</span></code> quick can be used to print
-each argument on their own line.</p>
+each argument on their own line. For example, using the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">debug</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">execute_args</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.log.execute_args&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <section id="see-also">
@@ -11002,8 +11430,16 @@ will log (among other things) process executions. Debugging can print
 information such as working directory of an execution, as well as arguments
 used for a call. The environment for an execution is not logged by default.
 For users wishing to include this information as well before an invoked
-process, the <code class="docutils literal notranslate"><span class="pre">releng.log.execute_env</span></code> quick can be used.</p>
+process, the <code class="docutils literal notranslate"><span class="pre">releng.log.execute_env</span></code> quick can be used. For example, using
+the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">debug</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">execute_env</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.log.execute_env&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <section id="see-also">
@@ -11021,14 +11457,82 @@ output directory. If an environment has <a class="reference external" href="http
 PDF-format statistics may be generated for a more visual inspection of this
 information.</p>
 <p>If a user does not want PDF statistics to be created, the quirk
-<code class="docutils literal notranslate"><span class="pre">releng.stats.no_pdf</span></code> can be used:</p>
+<code class="docutils literal notranslate"><span class="pre">releng.stats.no_pdf</span></code> can be used with the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">no_pdf</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.stats.no_pdf&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <section id="see-also">
 <h6 aria-level="7">See also<a class="headerlink" href="#see-also" title="Link to this heading">¶</a></h6>
 <ul class="simple">
 <li><p><a class="reference external" href="https://matplotlib.org/">Matplotlib</a></p></li>
+<li><p><a class="reference internal" href="#document-guides/quirks/quirks"><span class="doc std std-doc">Quirks</span></a></p></li>
+</ul>
+</section>
+</section>
+<span id="document-guides/quirks/quirk-xmake-disable-arch-detection"></span><section id="quirk-releng-xmake-disable-arch-detection">
+<span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.xmake.disable_arch_detection</span></code><a class="headerlink" href="#quirk-releng-xmake-disable-arch-detection" title="Link to this heading">¶</a></h6>
+<p>In select environments, a generated Xmake project may fail to link due
+to automatic architecture detection not working as expected. This can be
+observed in Windows-based builds when using clang, where packages may build
+64-bit applications but attempt to link against 32-bit MSVC. When Xmake
+builds are explicitly pass in an architecture value, this issue is no longer
+observed. To help handle this scenario, releng-tool will detect an applicable
+architecture value of the native system that is compatible for Xmake and pass
+this value during Xmake configuration stage.</p>
+<p>Note, packages building for other hosts and using toolchains can still override
+an architecture value using available package options.</p>
+<p>If a developer experiences issues with the automatic detection and explicit
+architecture configuration, this feature can be disabled using the quirk
+<code class="docutils literal notranslate"><span class="pre">releng.xmake.disable_arch_detection</span></code> using the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">xmake</span><span class="o">.</span><span class="n">disable_arch_detection</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.xmake.disable_arch_detection&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<section id="see-also">
+<h6 aria-level="7">See also<a class="headerlink" href="#see-also" title="Link to this heading">¶</a></h6>
+<ul class="simple">
+<li><p><a class="reference internal" href="#document-guides/quirks/quirks"><span class="doc std std-doc">Quirks</span></a></p></li>
+</ul>
+</section>
+</section>
+<span id="document-guides/quirks/quirk-xmake-disable-deps-init"></span><section id="quirk-releng-xmake-disable-deps-init">
+<span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.xmake.disable_deps_init</span></code><a class="headerlink" href="#quirk-releng-xmake-disable-deps-init" title="Link to this heading">¶</a></h6>
+<p>releng-tool will default generate Xmake dependency folders for configured
+modes. This involves detecting available targets of a package, along with
+knowing the mode, to generate these folders. This is performed since in
+some environment (e.g. OS X), it has been observed that dependencies may
+fail to install when Xmake believes the parent folder of a dependency exists
+but does not.</p>
+<p>Not all environments require pre-building these folders. If a developer
+experiences issues when pre-building dependency folders, this feature can be
+disabled using the quirk <code class="docutils literal notranslate"><span class="pre">releng.xmake.disable_deps_init</span></code> using the
+command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">xmake</span><span class="o">.</span><span class="n">disable_deps_init</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.xmake.disable_deps_init&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<section id="see-also">
+<h6 aria-level="7">See also<a class="headerlink" href="#see-also" title="Link to this heading">¶</a></h6>
+<ul class="simple">
 <li><p><a class="reference internal" href="#document-guides/quirks/quirks"><span class="doc std std-doc">Quirks</span></a></p></li>
 </ul>
 </section>
@@ -11608,6 +12112,23 @@ their working directory can use the <code class="docutils literal notranslate"><
 <span class="n">MYAPP_REVISION</span> <span class="o">=</span> <span class="s1">&#39;myapp-8.3&#39;</span>
 <span class="n">MYAPP_SITE</span> <span class="o">=</span> <span class="s1">&#39;https://git.example.org/mygroup/myapp.git&#39;</span>
 <span class="n">MYAPP_TYPE</span> <span class="o">=</span> <span class="s1">&#39;waf&#39;</span>
+</pre></div>
+</div>
+</section>
+<span id="document-examples/examples-xmake"></span><section id="xmake-package-examples">
+<h3>Xmake package examples<a class="headerlink" href="#xmake-package-examples" title="Link to this heading">¶</a></h3>
+<p>An example <a class="reference internal" href="#document-guides/packages/pkg-type-xmake"><span class="doc std std-doc">Xmake package</span></a> definition:</p>
+<p><strong>package/libfoo/libfoo.rt</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_NEEDS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;libbar&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">LIBFOO_LICENSE</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Apache-2.0&#39;</span><span class="p">]</span>
+<span class="n">LIBFOO_LICENSE_FILES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;LICENSE.txt&#39;</span><span class="p">]</span>
+<span class="n">LIBFOO_REVISION</span> <span class="o">=</span> <span class="s1">&#39;v4.5&#39;</span>
+<span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;https://git.example.org/example/example.git&#39;</span>
+<span class="n">LIBFOO_TYPE</span> <span class="o">=</span> <span class="s1">&#39;xmake&#39;</span>
+<span class="n">LIBFOO_XMAKE_BUILD_TYPE</span> <span class="o">=</span> <span class="s1">&#39;releasedbg&#39;</span>
 </pre></div>
 </div>
 </section>
@@ -13649,13 +14170,15 @@ the following environment variables can be used instead:</p>
 <li><p>Consistent path formats for <code class="docutils literal notranslate"><span class="pre">releng_ls</span></code> output</p></li>
 <li><p>Directory now optional for <code class="docutils literal notranslate"><span class="pre">releng_ls</span></code> which can use working directory</p></li>
 <li><p>Ensure an appropriate working directory is set when using a patch-script</p></li>
+<li><p>Fix Meson/Waf installs when using <code class="docutils literal notranslate"><span class="pre">staging_and_target</span></code></p></li>
 <li><p>Fix <code class="docutils literal notranslate"><span class="pre">releng_execute_rv</span></code> not expanding by default</p></li>
 <li><p>Include pathlib's <code class="docutils literal notranslate"><span class="pre">Path</span></code>, <code class="docutils literal notranslate"><span class="pre">os</span></code> and <code class="docutils literal notranslate"><span class="pre">sys</span></code> into script contexts</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">releng_step</span></code> helper script function</p></li>
 <li><p>Introduce support for Lore sites</p></li>
+<li><p>Introduce support for Xmake-based packages</p></li>
 <li><p>Support <code class="docutils literal notranslate"><span class="pre">newline</span></code> option in <code class="docutils literal notranslate"><span class="pre">releng_execute_rv</span></code></p></li>
 <li><p>Support for <code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_NO_IMAGES</span></code></p></li>
-<li><p>Support network isolation for packages non-fetch stages</p></li>
+<li><p>Support network isolation for package's non-fetch stages</p></li>
 </ul>
 </section>
 <section id="v3-0-2026-04-12">
@@ -14297,6 +14820,7 @@ releng-tool project.</p>
 <a class="reference internal" href="#conf-default-cmake-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">default_cmake_build_type</span></code></span></a> = str
 <a class="reference internal" href="#conf-default-meson-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">default_meson_build_type</span></code></span></a> = str
 <a class="reference internal" href="#conf-default-internal"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">default_internal</span></code></span></a> = bool
+<a class="reference internal" href="#conf-default-xmake-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">default_xmake_build_type</span></code></span></a> = str
 <a class="reference internal" href="#conf-environment"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">environment</span></code></span></a> = {'&lt;key&gt;': '&lt;val&gt;'}
 <a class="reference internal" href="#conf-extensions"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">extensions</span></code></span></a> = ['&lt;extension&gt;', '&lt;extension&gt;']
 <a class="reference internal" href="#conf-external-packages"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">external_packages</span></code></span></a> = ['&lt;path&gt;', '&lt;path&gt;']
@@ -14304,6 +14828,7 @@ releng-tool project.</p>
 <a class="reference internal" href="#conf-extra-licenses"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">extra_licenses</span></code></span></a> = {'&lt;short-license-id&gt;': '&lt;license-name&gt;'}
 <a class="reference internal" href="#conf-license-header"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">license_header</span></code></span></a> = '&lt;data&gt;'
 <a class="reference internal" href="#conf-lint-max-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">lint_max_version</span></code></span></a> = '&lt;max-version&gt;'
+<a class="reference internal" href="#conf-network-isolation"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">network_isolation</span></code></span></a> = bool
 <a class="reference internal" href="#conf-override-extract-tools"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">override_extract_tools</span></code></span></a> = {'&lt;tool&gt;': '&lt;tool-path&gt;'}
 <a class="reference internal" href="#conf-packages"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">packages</span></code></span></a> = ['&lt;pkg&gt;', '&lt;pkg&gt;', '&lt;pkg&gt;']
 <a class="reference internal" href="#conf-prerequisites"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">prerequisites</span></code></span></a> = ['&lt;tool&gt;', '&lt;tool&gt;', '&lt;tool&gt;']
@@ -14414,18 +14939,19 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="#document-guides/packages/pkg-type-python"><span class="doc std std-doc">Python</span></a>
 <a class="reference internal" href="#document-guides/packages/pkg-type-scons"><span class="doc std std-doc">SCons</span></a>
 <a class="reference internal" href="#document-guides/packages/pkg-type-script"><span class="doc std std-doc">Script</span></a> <em>(default)</em>
-<a class="reference internal" href="#document-guides/packages/pkg-type-waf"><span class="doc std std-doc">Waf</span></a></pre>
+<a class="reference internal" href="#document-guides/packages/pkg-type-waf"><span class="doc std std-doc">Waf</span></a>
+<a class="reference internal" href="#document-guides/packages/pkg-type-xmake"><span class="doc std std-doc">Xmake</span></a></pre>
 </section>
 <section id="package-options">
 <h3>Package options<a class="headerlink" href="#package-options" title="Link to this heading">¶</a></h3>
 <p>Configuration options parsed by releng-tool for a package definition:</p>
 <pre class="literal-block"><a class="reference internal" href="#pkg-opt-autotools-autoreconf"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_AUTOTOOLS_AUTORECONF</span></code></span></a> = bool
 <code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_DEFS</span></code> = {'FOO': 'BAR'}
-  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-build-defs"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cargo-build-defs"><span class="std std-ref">Cargo</span></a>, <a class="reference internal" href="#pkg-opt-cmake-build-defs"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-build-defs"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-build-defs"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-python-build-defs"><span class="std std-ref">Python</span></a>, <a class="reference internal" href="#pkg-opt-scons-build-defs"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-build-defs"><span class="std std-ref">Waf</span></a>)</em>
+  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-build-defs"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cargo-build-defs"><span class="std std-ref">Cargo</span></a>, <a class="reference internal" href="#pkg-opt-cmake-build-defs"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-build-defs"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-build-defs"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-python-build-defs"><span class="std std-ref">Python</span></a>, <a class="reference internal" href="#pkg-opt-scons-build-defs"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-build-defs"><span class="std std-ref">Waf</span></a>, <a class="reference internal" href="#pkg-opt-xmake-build-defs"><span class="std std-ref">Xmake</span></a>)</em>
 <code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_ENV</span></code> = {'FOO': 'BAR'}
-  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-build-env"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cargo-build-env"><span class="std std-ref">Cargo</span></a>, <a class="reference internal" href="#pkg-opt-cmake-build-env"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-build-env"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-build-env"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-python-build-env"><span class="std std-ref">Python</span></a>, <a class="reference internal" href="#pkg-opt-scons-build-env"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-build-env"><span class="std std-ref">Waf</span></a>)</em>
+  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-build-env"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cargo-build-env"><span class="std std-ref">Cargo</span></a>, <a class="reference internal" href="#pkg-opt-cmake-build-env"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-build-env"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-build-env"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-python-build-env"><span class="std std-ref">Python</span></a>, <a class="reference internal" href="#pkg-opt-scons-build-env"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-build-env"><span class="std std-ref">Waf</span></a>, <a class="reference internal" href="#pkg-opt-xmake-build-env"><span class="std std-ref">Xmake</span></a>)</em>
 <code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_OPTS</span></code> = {'--option': 'value'} or ['--option', 'value']
-  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-build-opts"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cargo-build-opts"><span class="std std-ref">Cargo</span></a>, <a class="reference internal" href="#pkg-opt-cmake-build-opts"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-build-opts"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-build-opts"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-python-build-opts"><span class="std std-ref">Python</span></a>, <a class="reference internal" href="#pkg-opt-scons-build-opts"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-build-opts"><span class="std std-ref">Waf</span></a>)</em>
+  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-build-opts"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cargo-build-opts"><span class="std std-ref">Cargo</span></a>, <a class="reference internal" href="#pkg-opt-cmake-build-opts"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-build-opts"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-build-opts"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-python-build-opts"><span class="std std-ref">Python</span></a>, <a class="reference internal" href="#pkg-opt-scons-build-opts"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-build-opts"><span class="std std-ref">Waf</span></a>, <a class="reference internal" href="#pkg-opt-xmake-build-opts"><span class="std std-ref">Xmake</span></a>)</em>
 <a class="reference internal" href="#pkg-opt-build-subdir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_BUILD_SUBDIR</span></code></span></a> = '&lt;subdir&gt;'
 <a class="reference internal" href="#pkg-opt-cargo-name"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CARGO_NAME</span></code></span></a> = '&lt;name&gt;'
 <a class="reference internal" href="#pkg-opt-cargo-noinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CARGO_NOINSTALL</span></code></span></a> = bool
@@ -14433,17 +14959,17 @@ releng-tool (may vary per context):</p>
   └── Debug, Release, RelWithDebInfo (default), MinSizeRel
 <a class="reference internal" href="#pkg-opt-cmake-noinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_CMAKE_NOINSTALL</span></code></span></a> = bool
 <code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_DEFS</span></code> = {'FOO': 'BAR'}
-  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-conf-defs"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cmake-conf-defs"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-conf-defs"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-conf-defs"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-scons-conf-defs"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-conf-defs"><span class="std std-ref">Waf</span></a>)</em>
+  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-conf-defs"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cmake-conf-defs"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-conf-defs"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-conf-defs"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-scons-conf-defs"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-conf-defs"><span class="std std-ref">Waf</span></a>, <a class="reference internal" href="#pkg-opt-xmake-conf-defs"><span class="std std-ref">Xmake</span></a>)</em>
 <code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_ENV</span></code> = {'FOO': 'BAR'}
-  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-conf-env"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cmake-conf-env"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-conf-env"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-conf-env"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-scons-conf-env"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-conf-env"><span class="std std-ref">Waf</span></a>)</em>
+  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-conf-env"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cmake-conf-env"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-conf-env"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-conf-env"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-scons-conf-env"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-conf-env"><span class="std std-ref">Waf</span></a>, <a class="reference internal" href="#pkg-opt-xmake-conf-env"><span class="std std-ref">Xmake</span></a>)</em>
 <code class="docutils literal notranslate"><span class="pre">LIBFOO_CONF_OPTS</span></code> = {'--option': 'value'} or ['--option', 'value']
-  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-conf-opts"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cmake-conf-opts"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-conf-opts"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-conf-opts"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-scons-conf-opts"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-conf-opts"><span class="std std-ref">Waf</span></a>)</em>
+  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-conf-opts"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cmake-conf-opts"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-conf-opts"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-conf-opts"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-scons-conf-opts"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-conf-opts"><span class="std std-ref">Waf</span></a>, <a class="reference internal" href="#pkg-opt-xmake-conf-opts"><span class="std std-ref">Xmake</span></a>)</em>
 <a class="reference internal" href="#pkg-opt-dependencies"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEPENDENCIES</span></code></span></a> = ['&lt;pkg&gt;', '&lt;pkg&gt;']   <em>(deprecated)</em>
 <a class="reference internal" href="#pkg-opt-devmode-ignore-cache"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEVMODE_IGNORE_CACHE</span></code></span></a> = bool
 <a class="reference internal" href="#pkg-opt-devmode-patches"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEVMODE_PATCHES</span></code></span></a> = bool, '&lt;pattern&gt;', ['&lt;pattern&gt;'] or {'&lt;mode&gt;': bool or str}
 <a class="reference internal" href="#pkg-opt-devmode-revision"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEVMODE_REVISION</span></code></span></a> = '&lt;revision&gt;'
 <code class="docutils literal notranslate"><span class="pre">LIBFOO_ENV</span></code> = {'FOO': 'BAR'}
-  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-env"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cargo-env"><span class="std std-ref">Cargo</span></a>, <a class="reference internal" href="#pkg-opt-cmake-env"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-env"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-env"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-python-env"><span class="std std-ref">Python</span></a>, <a class="reference internal" href="#pkg-opt-scons-env"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-env"><span class="std std-ref">Waf</span></a>)</em>
+  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-env"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cargo-env"><span class="std std-ref">Cargo</span></a>, <a class="reference internal" href="#pkg-opt-cmake-env"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-env"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-env"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-python-env"><span class="std std-ref">Python</span></a>, <a class="reference internal" href="#pkg-opt-scons-env"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-env"><span class="std std-ref">Waf</span></a>, <a class="reference internal" href="#pkg-opt-xmake-env"><span class="std std-ref">Xmake</span></a>)</em>
 <a class="reference internal" href="#pkg-opt-devmode-skip-integrity-check"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEVMODE_SKIP_INTEGRITY_CHECK</span></code></span></a> = bool
 <a class="reference internal" href="#pkg-opt-extension"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXTENSION</span></code></span></a> = '&lt;extension&gt;'
 <a class="reference internal" href="#pkg-opt-external"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXTERNAL</span></code></span></a> = bool
@@ -14460,11 +14986,11 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="#pkg-opt-host-provides"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_HOST_PROVIDES</span></code></span></a> = '&lt;tool&gt;' or ['&lt;tool-a&gt;', '&lt;tool-b&gt;']
 <a class="reference internal" href="#pkg-opt-ignore-patches"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_IGNORE_PATCHES</span></code></span></a> = bool, '&lt;pattern&gt;' or ['&lt;pattern&gt;']
 <code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code> = {'FOO': 'BAR'}
-  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-install-defs"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cargo-install-defs"><span class="std std-ref">Cargo</span></a>, <a class="reference internal" href="#pkg-opt-cmake-install-defs"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-install-defs"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-install-defs"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-scons-install-defs"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-install-defs"><span class="std std-ref">Waf</span></a>)</em>
+  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-install-defs"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cargo-install-defs"><span class="std std-ref">Cargo</span></a>, <a class="reference internal" href="#pkg-opt-cmake-install-defs"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-install-defs"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-install-defs"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-scons-install-defs"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-install-defs"><span class="std std-ref">Waf</span></a>, <a class="reference internal" href="#pkg-opt-xmake-install-defs"><span class="std std-ref">Xmake</span></a>)</em>
 <code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_ENV</span></code> = {'FOO': 'BAR'}
-  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-install-env"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cargo-install-env"><span class="std std-ref">Cargo</span></a>, <a class="reference internal" href="#pkg-opt-cmake-install-env"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-install-env"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-install-env"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-scons-install-env"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-install-env"><span class="std std-ref">Waf</span></a>)</em>
+  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-install-env"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cargo-install-env"><span class="std std-ref">Cargo</span></a>, <a class="reference internal" href="#pkg-opt-cmake-install-env"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-install-env"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-install-env"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-scons-install-env"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-install-env"><span class="std std-ref">Waf</span></a>, <a class="reference internal" href="#pkg-opt-xmake-install-env"><span class="std std-ref">Xmake</span></a>)</em>
 <code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_OPTS</span></code> = {'--option': 'value'} or ['--option', 'value']
-  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-install-opts"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cargo-install-opts"><span class="std std-ref">Cargo</span></a>, <a class="reference internal" href="#pkg-opt-cmake-install-opts"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-install-opts"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-install-opts"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-scons-install-opts"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-install-opts"><span class="std std-ref">Waf</span></a>)</em>
+  └── <em>(<a class="reference internal" href="#pkg-opt-autotools-install-opts"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cargo-install-opts"><span class="std std-ref">Cargo</span></a>, <a class="reference internal" href="#pkg-opt-cmake-install-opts"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-install-opts"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-install-opts"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-scons-install-opts"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-install-opts"><span class="std std-ref">Waf</span></a>, <a class="reference internal" href="#pkg-opt-xmake-install-opts"><span class="std std-ref">Xmake</span></a>)</em>
 <a class="reference internal" href="#pkg-opt-install-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_TYPE</span></code></span></a> = '&lt;install-type&gt;'
   └── host, images, staging, staging_and_target, target
 <a class="reference internal" href="#pkg-opt-internal"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INTERNAL</span></code></span></a> = bool
@@ -14474,6 +15000,7 @@ releng-tool (may vary per context):</p>
   └── plain, debug, debugoptimized (default), release, minsize
 <a class="reference internal" href="#pkg-opt-meson-noinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MESON_NOINSTALL</span></code></span></a> = bool
 <a class="reference internal" href="#pkg-opt-needs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_NEEDS</span></code></span></a> = ['&lt;pkg&gt;', '&lt;pkg&gt;']
+<a class="reference internal" href="#pkg-opt-network-isolation"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_NETWORK_ISOLATION</span></code></span></a> = bool
 <a class="reference internal" href="#pkg-opt-no-extraction"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_NO_EXTRACTION</span></code></span></a> = bool
 <a class="reference internal" href="#pkg-opt-license"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_LICENSE</span></code></span></a> = '&lt;license&gt;' or ['&lt;license&gt;', '&lt;license&gt;']
 <a class="reference internal" href="#pkg-opt-license-files"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_LICENSE_FILES</span></code></span></a> = '&lt;file&gt;' or ['&lt;file&gt;', '&lt;file&gt;']
@@ -14496,13 +15023,15 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="#pkg-opt-site"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_SITE</span></code></span></a> = '&lt;site&gt;'
 <a class="reference internal" href="#pkg-opt-strip-count"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_STRIP_COUNT</span></code></span></a> = int # &gt;= 0
 <a class="reference internal" href="#pkg-opt-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_TYPE</span></code></span></a> = '&lt;type&gt;'
-  └── <a class="reference internal" href="#document-guides/packages/pkg-type-autotools"><span class="doc std std-doc">autotools</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-cargo"><span class="doc std std-doc">cargo</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-cmake"><span class="doc std std-doc">cmake</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-make"><span class="doc std std-doc">make</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-meson"><span class="doc std std-doc">meson</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-python"><span class="doc std std-doc">python</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-scons"><span class="doc std std-doc">scons</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-script"><span class="doc std std-doc">script</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-waf"><span class="doc std std-doc">waf</span></a>, ext-&lt;extension&gt;
+  └── <a class="reference internal" href="#document-guides/packages/pkg-type-autotools"><span class="doc std std-doc">autotools</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-cargo"><span class="doc std std-doc">cargo</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-cmake"><span class="doc std std-doc">cmake</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-make"><span class="doc std std-doc">make</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-meson"><span class="doc std std-doc">meson</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-python"><span class="doc std std-doc">python</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-scons"><span class="doc std std-doc">scons</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-script"><span class="doc std std-doc">script</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-waf"><span class="doc std std-doc">waf</span></a>, <a class="reference internal" href="#document-guides/packages/pkg-type-xmake"><span class="doc std std-doc">xmake</span></a>, ext-&lt;extension&gt;
 <a class="reference internal" href="#pkg-opt-vcs-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VCS_TYPE</span></code></span></a> = '&lt;vcs-type&gt;'
   └── <a class="reference internal" href="#site-file"><span class="std std-ref">brz</span></a>, <a class="reference internal" href="#site-file"><span class="std std-ref">cvs</span></a>, <a class="reference internal" href="#site-file"><span class="std std-ref">file</span></a>, <a class="reference internal" href="#site-git"><span class="std std-ref">git</span></a>, <a class="reference internal" href="#site-mercurial"><span class="std std-ref">hg</span></a>, <a class="reference internal" href="#site-local"><span class="std std-ref">local</span></a>, <a class="reference internal" href="#site-lore"><span class="std std-ref">lore</span></a>, none, <a class="reference internal" href="#site-perforce"><span class="std std-ref">perforce</span></a>, <a class="reference internal" href="#site-rsync"><span class="std std-ref">rsync</span></a>, <a class="reference internal" href="#site-scp"><span class="std std-ref">scp</span></a>, <a class="reference internal" href="#site-svn"><span class="std std-ref">svn</span></a>, <a class="reference internal" href="#site-url"><span class="std std-ref">url</span></a>
 <a class="reference internal" href="#pkg-opt-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VERSION</span></code></span></a> = '&lt;version&gt;'
 <a class="reference internal" href="#pkg-opt-vsdevcmd"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VSDEVCMD</span></code></span></a> = bool or str
 <a class="reference internal" href="#pkg-opt-vsdevcmd-products"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_VSDEVCMD_PRODUCTS</span></code></span></a> = str
-<a class="reference internal" href="#pkg-opt-waf-noinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_WAF_NOINSTALL</span></code></span></a> = bool</pre>
+<a class="reference internal" href="#pkg-opt-waf-noinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_WAF_NOINSTALL</span></code></span></a> = bool
+<a class="reference internal" href="#pkg-opt-xmake-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_XMAKE_BUILD_TYPE</span></code></span></a> = '&lt;mode&gt;'
+<a class="reference internal" href="#pkg-opt-xmake-noinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_XMAKE_NOINSTALL</span></code></span></a> = bool</pre>
 </section>
 <section id="script-helpers">
 <h3>Script helpers<a class="headerlink" href="#script-helpers" title="Link to this heading">¶</a></h3>
@@ -14564,7 +15093,9 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="#quirk-releng-ignore-failed-extensions"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.ignore_failed_extensions</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-log-execute-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.log.execute_args</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-log-execute-env"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.log.execute_env</span></code></span></a>
-<a class="reference internal" href="#quirk-releng-stats-no-pdf"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.stats.no_pdf</span></code></span></a></pre>
+<a class="reference internal" href="#quirk-releng-stats-no-pdf"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.stats.no_pdf</span></code></span></a>
+<a class="reference internal" href="#quirk-releng-xmake-disable-arch-detection"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.xmake.disable_arch_detection</span></code></span></a>
+<a class="reference internal" href="#quirk-releng-xmake-disable-deps-init"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.xmake.disable_deps_init</span></code></span></a></pre>
 </section>
 </section>
 </div>

@@ -1265,6 +1265,76 @@
         <changefreq>monthly</changefreq>
     </url>
     <url>
+        <loc>https://docs-develop.releng.io/en/guides/packages/pkg-type-xmake/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/packages/pkg-type-xmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/guides/packages/pkg-type-xmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/packages/pkg-type-xmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/guides/packages/pkg-type-xmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/packages/pkg-type-xmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/guides/packages/pkg-type-xmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/packages/pkg-type-xmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/guides/packages/pkg-type-xmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/packages/pkg-type-xmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/guides/packages/pkg-type-xmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/packages/pkg-type-xmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/guides/packages/pkg-type-xmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/packages/pkg-type-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/packages/pkg-type-xmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
         <loc>https://docs-develop.releng.io/en/guides/packages/ascii-armor/</loc>
         <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/packages/ascii-armor/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/packages/ascii-armor/"/>
@@ -3435,6 +3505,76 @@
         <changefreq>monthly</changefreq>
     </url>
     <url>
+        <loc>https://docs-develop.releng.io/en/guides/quirks/quirk-xmake-disable-arch-detection/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/guides/quirks/quirk-xmake-disable-arch-detection/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/guides/quirks/quirk-xmake-disable-arch-detection/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/guides/quirks/quirk-xmake-disable-arch-detection/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/guides/quirks/quirk-xmake-disable-arch-detection/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-xmake-disable-arch-detection/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-xmake-disable-arch-detection/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-xmake-disable-arch-detection/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
         <loc>https://docs-develop.releng.io/en/guides/quirks/quirk-disable_verbose_patch/</loc>
         <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-disable_verbose_patch/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-disable_verbose_patch/"/>
@@ -3572,6 +3712,76 @@
         <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-stats-no_pdf/"/>
         <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-stats-no_pdf/"/>
         <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-stats-no_pdf/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/en/guides/quirks/quirk-xmake-disable-deps-init/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/guides/quirks/quirk-xmake-disable-deps-init/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/guides/quirks/quirk-xmake-disable-deps-init/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/guides/quirks/quirk-xmake-disable-deps-init/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/guides/quirks/quirk-xmake-disable-deps-init/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-xmake-disable-deps-init/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-xmake-disable-deps-init/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-xmake-disable-deps-init/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-xmake-disable-deps-init/"/>
         <changefreq>monthly</changefreq>
     </url>
     <url>
@@ -6722,6 +6932,76 @@
         <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-cargo/"/>
         <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-cargo/"/>
         <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-cargo/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/en/examples/examples-xmake/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-xmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/examples/examples-xmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-xmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/examples/examples-xmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-xmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/examples/examples-xmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-xmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/examples/examples-xmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-xmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/examples/examples-xmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/examples/examples-xmake/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/examples/examples-xmake/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/examples/examples-xmake/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/examples/examples-xmake/"/>
         <changefreq>monthly</changefreq>
     </url>
     <url>

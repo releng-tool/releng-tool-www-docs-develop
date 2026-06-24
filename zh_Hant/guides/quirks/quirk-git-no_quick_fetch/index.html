@@ -234,6 +234,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../packages/pkg-type-python/">Python package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../packages/pkg-type-scons/">SCons package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../packages/pkg-type-waf/">Waf package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../packages/pkg-type-xmake/">Xmake package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../packages/hacking/">Package hacking</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../packages/deprecated-pkg-options/">Deprecated options</a></li>
 </ul>
@@ -272,6 +273,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../quirk-log-execute_args/">releng.log.execute_args</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirk-log-execute_env/">releng.log.execute_env</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirk-stats-no_pdf/">releng.stats.no_pdf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quirk-xmake-disable-arch-detection/">releng.xmake.disable_arch_detection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quirk-xmake-disable-deps-init/">releng.xmake.disable_deps_init</a></li>
 </ul>
 </li>
 </ul>
@@ -292,6 +295,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../examples/examples-python/">Python package examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../examples/examples-scons/">SCons package examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../examples/examples-waf/">Waf package examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../examples/examples-xmake/">Xmake package examples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../help/">Requesting help</a></li>
@@ -414,8 +418,16 @@ references needed for a build (i.e. &quot;quick fetching&quot;, in the context o
 releng-tool). For example, if a project defines a Git tag to fetch, only
 the <code class="docutils literal notranslate"><span class="pre">refs/tags/&lt;tag&gt;</span></code> reference will be fetched.</p>
 <p>If a user does not want to utilizing quick-fetching for Git packages, this
-can be disabled by using the <code class="docutils literal notranslate"><span class="pre">releng.git.no_quick_fetch</span></code> quirk.</p>
+can be disabled by using the <code class="docutils literal notranslate"><span class="pre">releng.git.no_quick_fetch</span></code> quirk. For example,
+using the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">git</span><span class="o">.</span><span class="n">no_quick_fetch</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.git.no_quick_fetch&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <section id="see-also">
