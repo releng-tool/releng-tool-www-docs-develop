@@ -8517,14 +8517,15 @@ are invoked with a <a class="reference internal" href="#env-pkg-build-dir"><span
 <input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio" /><label class="tab-label" for="tab-set--17-input--1">Configuration</label><div class="tab-content docutils">
 <p>The configuration stage invokes <code class="docutils literal notranslate"><span class="pre">xmake</span></code> with the arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>xmake config \
-    --builddir=&lt;BUILD_OUTPUT_DIR&gt; \
     --includedirs=&lt;SYSROOT_INCLUDE_PATHS&gt; \
     --linkdirs=&lt;SYSROOT_LIBRARY_PATHS&gt; \
-    --mode=&lt;MODE&gt;
+    --mode=&lt;MODE&gt; \
+    -o &lt;BUILD_OUTPUT_DIR&gt;
 </pre></div>
 </div>
 <p>With the following environment variables set:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>XMAKE_CONFIGDIR=&lt;BUILD_OUTPUT_DIR&gt;
+XMAKE_GLOBALDIR=&lt;BUILD_BASE_DIR&gt;/.releng-tool-xmake-global
 </pre></div>
 </div>
 <p>The mode/build type can configured by
@@ -8545,6 +8546,7 @@ are provided when using <code class="docutils literal notranslate"><span class="
 </div>
 <p>With the following environment variables set:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>XMAKE_CONFIGDIR=&lt;BUILD_OUTPUT_DIR&gt;
+XMAKE_GLOBALDIR=&lt;BUILD_BASE_DIR&gt;/.releng-tool-xmake-global
 </pre></div>
 </div>
 <p>The number of jobs is populated by either the <a class="reference internal" href="#arg-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--jobs</span></code> argument</span></a>,
@@ -8559,6 +8561,7 @@ in a single job, the argument will not be used.</p>
 </div>
 <p>With the following environment variables set:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>XMAKE_CONFIGDIR=&lt;BUILD_OUTPUT_DIR&gt;
+XMAKE_GLOBALDIR=&lt;BUILD_BASE_DIR&gt;/.releng-tool-xmake-global
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">--installdir</span></code> argument will be set to the target sysroot the package
@@ -10315,6 +10318,9 @@ the following can be added into a project's <code class="docutils literal notran
 </section>
 <section id="imported-python-modules-functions-etc">
 <h4>Imported Python modules/functions/etc.<a class="headerlink" href="#imported-python-modules-functions-etc" title="Link to this heading">¶</a></h4>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.1.</span></p>
+</div>
 <p>Select Python modules and callables are automatically imported into package
 definitions and script for convenience:</p>
 <ul class="simple">
@@ -10426,10 +10432,10 @@ users could locally tweak a revision for testing or utilize
 great when trying to utilize when performing continuous integration (CI).</p>
 <p>The recommended approach for overriding revisions for packages in a CI context
 is to utilize package-specific force revision options. An invoke of releng-tool
-accepts a, for example, <a class="reference internal" href="#pkg-opt-force-revision"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_FORCE_REVISION</span></code></span></a>
-option which can override the revision used for a <code class="docutils literal notranslate"><span class="pre">libfoo</span></code> package. Forced
-revisions take priority over any other revision/version configuration, even
-when operating in a development mode.</p>
+accepts the <a class="reference internal" href="#pkg-opt-force-revision"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;_FORCE_REVISION</span></code></span></a> option which can
+override the revision used for a specific package. Forced revisions take
+priority over any other revision/version configuration, even when operating
+in a development mode.</p>
 <p>Consider the following example of a project with three packages:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my-releng-tool-project/
     ├── package/
@@ -10445,8 +10451,8 @@ when operating in a development mode.</p>
 <p>A developer may be in a scenario where they want to quickly test a build
 with changes to the library <code class="docutils literal notranslate"><span class="pre">liba</span></code> and an application <code class="docutils literal notranslate"><span class="pre">my-app</span></code>. To do so,
 the following environment variables can be set:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBA_FORCE_REVISION</span><span class="o">=</span><span class="n">v2</span><span class="mf">.3.4</span>
-<span class="n">MY_APP_FORCE_REVISION</span><span class="o">=</span><span class="n">feature</span><span class="o">/</span><span class="n">new</span><span class="o">-</span><span class="n">stuff</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>LIBA_FORCE_REVISION=v2.3.4
+MY_APP_FORCE_REVISION=feature/new-stuff
 </pre></div>
 </div>
 <p>The above shows a developer wanting to use a v2.3.4 tag for the library and a
@@ -10472,7 +10478,10 @@ will use its existing revision in the package definition.</p>
 </div>
 </div>
 </div>
-<p>Consider the following CI definition examples:</p>
+<p>The approach to providing revision overrides in a CI configuration would
+commonly use inputs to accept revision values and using these inputs to
+ensure environment variables are configured. Consider the following CI
+definition examples:</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio" /><label class="tab-label" for="tab-set--19-input--1">GitHub</label><div class="tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">on</span><span class="p">:</span>
@@ -10497,7 +10506,31 @@ will use its existing revision in the package definition.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio" /><label class="tab-label" for="tab-set--19-input--2">GitLab</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio" /><label class="tab-label" for="tab-set--19-input--2">GitLab (Inputs)</label><div class="tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">inputs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">LIBA_FORCE_REVISION</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Force</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">revision</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">liba</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">provided</span><span class="nv"> </span><span class="s">value.&quot;</span>
+<span class="w">    </span><span class="nt">LIBB_FORCE_REVISION</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Force</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">revision</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">libb</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">provided</span><span class="nv"> </span><span class="s">value.&quot;</span>
+<span class="w">    </span><span class="nt">MY_APP_FORCE_REVISION</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span>
+<span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Force</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">revision</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">my-application</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">provided</span><span class="nv"> </span><span class="s">value.&quot;</span>
+<span class="nn">---</span>
+
+<span class="nt">variables</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">LIBA_FORCE_REVISION</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$[[ inputs.LIBA_FORCE_REVISION ]]</span>
+<span class="w">  </span><span class="nt">LIBB_FORCE_REVISION</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$[[ inputs.LIBB_FORCE_REVISION ]]</span>
+<span class="w">  </span><span class="nt">MY_APP_FORCE_REVISION</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$[[ inputs.MY_APP_FORCE_REVISION ]]</span>
+
+<span class="nt">test</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">releng-tool</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--19-input--3" name="tab-set--19" type="radio" /><label class="tab-label" for="tab-set--19-input--3">GitLab (Variables)</label><div class="tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">variables</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">LIBA_FORCE_REVISION</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Force</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">revision</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">liba</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">provided</span><span class="nv"> </span><span class="s">value.&quot;</span>
@@ -10511,7 +10544,7 @@ will use its existing revision in the package definition.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--19-input--3" name="tab-set--19" type="radio" /><label class="tab-label" for="tab-set--19-input--3">Jenkins</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--19-input--4" name="tab-set--19" type="radio" /><label class="tab-label" for="tab-set--19-input--4">Jenkins</label><div class="tab-content docutils">
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span>
 

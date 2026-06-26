@@ -440,14 +440,15 @@ are invoked with a <a class="reference internal" href="../../environment/#env-pk
 <input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--1">Configuration</label><div class="tab-content docutils">
 <p>The configuration stage invokes <code class="docutils literal notranslate"><span class="pre">xmake</span></code> with the arguments:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>xmake config \
-    --builddir=&lt;BUILD_OUTPUT_DIR&gt; \
     --includedirs=&lt;SYSROOT_INCLUDE_PATHS&gt; \
     --linkdirs=&lt;SYSROOT_LIBRARY_PATHS&gt; \
-    --mode=&lt;MODE&gt;
+    --mode=&lt;MODE&gt; \
+    -o &lt;BUILD_OUTPUT_DIR&gt;
 </pre></div>
 </div>
 <p>With the following environment variables set:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>XMAKE_CONFIGDIR=&lt;BUILD_OUTPUT_DIR&gt;
+XMAKE_GLOBALDIR=&lt;BUILD_BASE_DIR&gt;/.releng-tool-xmake-global
 </pre></div>
 </div>
 <p>The mode/build type can configured by
@@ -468,6 +469,7 @@ are provided when using <code class="docutils literal notranslate"><span class="
 </div>
 <p>With the following environment variables set:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>XMAKE_CONFIGDIR=&lt;BUILD_OUTPUT_DIR&gt;
+XMAKE_GLOBALDIR=&lt;BUILD_BASE_DIR&gt;/.releng-tool-xmake-global
 </pre></div>
 </div>
 <p>The number of jobs is populated by either the <a class="reference internal" href="../../arguments/#arg-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--jobs</span></code> argument</span></a>,
@@ -482,6 +484,7 @@ in a single job, the argument will not be used.</p>
 </div>
 <p>With the following environment variables set:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>XMAKE_CONFIGDIR=&lt;BUILD_OUTPUT_DIR&gt;
+XMAKE_GLOBALDIR=&lt;BUILD_BASE_DIR&gt;/.releng-tool-xmake-global
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">--installdir</span></code> argument will be set to the target sysroot the package
