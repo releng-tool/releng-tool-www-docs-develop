@@ -260,7 +260,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/intern-extern-pkgs">Internal/external packages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/development-mode">Development mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/local-sources-mode">Local-sources mode</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#document-guides/release-checks">Release Checks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#document-guides/release-mode">Release Mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/profiles">Profiles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/network-isolation">Network isolation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/api-mode">API Mode</a></li>
@@ -2689,7 +2689,7 @@ process. This option can be used multiple times to apply multiple quirks.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.1.</span></p>
 </div>
-<p>Invoke releng-tool in a <a class="reference internal" href="#document-guides/release-checks"><span class="doc std std-doc">release mode</span></a>. Helps
+<p>Invoke releng-tool in a <a class="reference internal" href="#document-guides/release-mode"><span class="doc std std-doc">release mode</span></a>. Helps
 sanity check certain configurations are not used for a run that is expected
 to produce a release.</p>
 <p>See also <a class="reference internal" href="#env-releng-release"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_RELEASE</span></code></span></a>.</p>
@@ -3835,7 +3835,7 @@ for a run.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.1.</span></p>
 </div>
-<p>Flag set if running in a <a class="reference internal" href="#document-guides/release-checks"><span class="doc std std-doc">release mode</span></a>.</p>
+<p>Flag set if running in a <a class="reference internal" href="#document-guides/release-mode"><span class="doc std std-doc">release mode</span></a>.</p>
 <p>See also <a class="reference internal" href="#arg-release"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--release</span></code></span></a>.</p>
 </section>
 <section id="releng-script">
@@ -4988,12 +4988,12 @@ be used to exceed the jobs count (although not recommended in most scenarios).</
 </section>
 <section id="libfoo-force-revision">
 <span id="pkg-opt-force-revision"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_FORCE_REVISION</span></code><a class="headerlink" href="#libfoo-force-revision" title="Link to this heading">¶</a></h5>
-<div class="versionadded">
-<p><span class="versionmodified added">Added in version 3.0.</span></p>
-</div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>This option is not recommended for use inside a package definition.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.0.</span></p>
 </div>
 <p>Specifies a forced revision to use for a package. This option is not
 recommended for use inside a package definition. It is designed for users
@@ -11206,8 +11206,8 @@ the respective folder:</p>
 </pre></div>
 </div>
 </section>
-<span id="document-guides/release-checks"></span><section id="release-checks">
-<h4>Release Checks<a class="headerlink" href="#release-checks" title="Link to this heading">¶</a></h4>
+<span id="document-guides/release-mode"></span><section id="release-mode">
+<h4>Release Mode<a class="headerlink" href="#release-mode" title="Link to this heading">¶</a></h4>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.1.</span></p>
 </div>
@@ -11739,7 +11739,7 @@ for developers.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.1.</span></p>
 </div>
-<p>Users may invoke releng-tool in a <a class="reference internal" href="#document-guides/release-checks"><span class="doc std std-doc">release mode</span></a>. If
+<p>Users may invoke releng-tool in a <a class="reference internal" href="#document-guides/release-mode"><span class="doc std std-doc">release mode</span></a>. If
 a user is experiencing an odd corner case or a development scenario where they
 wish to permit a build to continue even if a release check has been triggered,
 they may do so by configuring the <code class="docutils literal notranslate"><span class="pre">releng.ignore_release_check</span></code> quirk.
