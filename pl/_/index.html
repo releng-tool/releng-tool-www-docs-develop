@@ -309,6 +309,7 @@
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="#document-release-notes">Informacje o wydaniu</a><input aria-label="Toggle navigation of Informacje o wydaniu" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="#document-news/2026-06-28_03.01.00">3.1 (2026-06-28)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-news/2026-04-12_03.00.00">3.0 (2026-04-12)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-news/2026-03-10_02.11.00">2.11 (2026-03-10)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-news/2026-03-08_02.10.00">2.10 (2026-03-08)</a></li>
@@ -12609,6 +12610,98 @@ releng-tool, please see the project’s <a class="reference external" href="http
 <section id="news">
 <h3>News<a class="headerlink" href="#news" title="Link to this heading">¶</a></h3>
 <div class="toctree-wrapper compound">
+<span id="document-news/2026-06-28_03.01.00"></span><section id="v3-1-2026-06-28">
+<h4>3.1 (2026-06-28)<a class="headerlink" href="#v3-1-2026-06-28" title="Link to this heading">¶</a></h4>
+<section id="support-for-xmake-package-types">
+<h5>Support for Xmake package types<a class="headerlink" href="#support-for-xmake-package-types" title="Link to this heading">¶</a></h5>
+<p>Introduction of the <a class="reference internal" href="#document-guides/packages/pkg-type-xmake"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">xmake</span></code> package type</span></a>
+for <a class="reference external" href="https://xmake.io/">Xmake</a>-based packages. This new package type allow a developer
+to easily invoke Xmake calls at various stages without needing invoke these
+tools inside a scripts package.</p>
+</section>
+<section id="support-for-lore-sites">
+<h5>Support for Lore sites<a class="headerlink" href="#support-for-lore-sites" title="Link to this heading">¶</a></h5>
+<p>With this release, releng-tool now supports cloning from <a class="reference external" href="https://lore.org/">Lore</a>
+instances. In a host environment with Lore client installed, releng-tool
+runs can clone from this version control system when a
+<a class="reference internal" href="#site-lore"><span class="std std-ref">Lore-compatible site</span></a> is provided:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_SITE</span> <span class="o">=</span> <span class="s1">&#39;lore://lore.example.org/my-project&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="support-release-mode-invoked-runs">
+<h5>Support release mode invoked runs<a class="headerlink" href="#support-release-mode-invoked-runs" title="Link to this heading">¶</a></h5>
+<p>Users can now invoke releng-tool in a <a class="reference internal" href="#document-guides/release-mode"><span class="doc std std-doc">„release mode”</span></a>.
+It can be used to sanity check a run is using a runtime configuration
+appropriate for a release. This mode can be enabled using the
+<a class="reference internal" href="#arg-release"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--release</span></code> argument</span></a>. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">release</span>
+</pre></div>
+</div>
+<p>What a release means for developers may vary, but there are some options
+releng-tool can determine that should not be applied for a typical release.
+A series of checks are performed. In the event that a check detects a runtime
+configuration state that should not be used for a release, releng-tool will
+stop.</p>
+<p>Checks performed include:</p>
+<ul class="simple">
+<li><p>Verify no actions are being used (e.g. running only <code class="docutils literal notranslate"><span class="pre">libfoo-build</span></code>).</p></li>
+<li><p>Verify not running in a <a class="reference internal" href="#document-guides/development-mode"><span class="doc std std-doc">development mode</span></a>.</p></li>
+<li><p>Verify not running in a <a class="reference internal" href="#document-guides/local-sources-mode"><span class="doc std std-doc">local-sources mode</span></a>.</p></li>
+<li><p>Verify <a class="reference internal" href="#pkg-opt-force-revision"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_FORCE_REVISION</span></code></span></a> is not used.</p></li>
+</ul>
+</section>
+<section id="support-network-isolation-for-package-s-non-fetch-stages">
+<h5>Support network isolation for package’s non-fetch stages<a class="headerlink" href="#support-network-isolation-for-package-s-non-fetch-stages" title="Link to this heading">¶</a></h5>
+<p>Developers can now configure projects to run in a
+<a class="reference internal" href="#document-guides/network-isolation"><span class="doc std std-doc">network isolation</span></a> mode for non-fetch stages.
+This helps promote the use of using only fetch-related stages to acquire
+remote sources, and help support capabilities such as
+<a class="reference internal" href="#document-guides/tips/offline-builds"><span class="doc std std-doc">offline builds</span></a>.</p>
+<p>Network isolation mode can be configured at the project-level using
+the <a class="reference internal" href="#conf-network-isolation"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">network_isolation</span></code></span></a> project configuration:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">network_isolation</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Developers may also tailor individual packages for network isolation mode
+using the <a class="reference internal" href="#pkg-opt-network-isolation"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_NETWORK_ISOLATION</span></code></span></a> option.</p>
+</section>
+<section id="introducing-releng-step-helper-script-generator">
+<h5>Introducing <code class="docutils literal notranslate"><span class="pre">releng_step</span></code> helper script generator<a class="headerlink" href="#introducing-releng-step-helper-script-generator" title="Link to this heading">¶</a></h5>
+<p>To help the user experience for developers wishing to easily perform
+sub-stage actions for large packages, a new script helper <code class="docutils literal notranslate"><span class="pre">releng_step</span></code>
+has been introduced.</p>
+<p>Packages will process various stages for configuration, build and so on.
+Once a stage is complete, re-runs will step over already completed stages.
+This works at a package-level, but developers processing monolithic packages
+may attempt to internally mange their own stages for large sections of work.
+This may include checking and setting custom file flags.</p>
+<p>Developers can now use a provided <a class="reference internal" href="#releng_tool.releng_step" title="releng_tool.releng_step"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_step</span></code></span></a>
+generator to help limit actions in a stage to only occur once. Consider the
+following example added into a project’s build stage script:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">releng_step</span><span class="p">(</span><span class="s1">&#39;part-one&#39;</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="n">RELENG_REBUILD</span><span class="p">):</span>
+    <span class="c1"># invoked only once on success</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">releng_step</span><span class="p">(</span><span class="s1">&#39;part-two&#39;</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="n">RELENG_REBUILD</span><span class="p">):</span>
+    <span class="c1"># invoked only once on success</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">releng_step</span><span class="p">(</span><span class="s1">&#39;part-three&#39;</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="n">RELENG_REBUILD</span><span class="p">):</span>
+    <span class="c1"># invoked only once on success</span>
+</pre></div>
+</div>
+<p>This package performs three sub-stages for its build. In the event that
+„part-two” fails to build; a developer may then investigate, correct and
+re-start the build process. Since „part-one” has already been performed,
+its context will be skipped, avoiding any unnecessary extra build actions.</p>
+</section>
+<section id="planned-removals-next-release">
+<h5>Planned Removals Next Release<a class="headerlink" href="#planned-removals-next-release" title="Link to this heading">¶</a></h5>
+<p>The following features are planned to be removed next release:</p>
+<ul class="simple">
+<li><p>Support for the <code class="docutils literal notranslate"><span class="pre">.releng</span></code> extension</p></li>
+</ul>
+</section>
+</section>
 <span id="document-news/2026-04-12_03.00.00"></span><section id="v3-0-2026-04-12">
 <h4>3.0 (2026-04-12)<a class="headerlink" href="#v3-0-2026-04-12" title="Link to this heading">¶</a></h4>
 <section id="python-installer-support-and-dependency-changes">
@@ -14534,8 +14627,8 @@ the following environment variables can be used instead:</p>
 </section>
 </div>
 </section>
-<section id="development">
-<h3>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h3>
+<section id="v3-1-2026-06-28">
+<h3>3.1 (2026-06-28)<a class="headerlink" href="#v3-1-2026-06-28" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>(note)</strong> Last version supporting the <code class="docutils literal notranslate"><span class="pre">.releng</span></code> extension</p></li>
 <li><p>Consistent path formats for <code class="docutils literal notranslate"><span class="pre">releng_ls</span></code> output</p></li>
