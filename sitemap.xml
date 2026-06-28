@@ -355,6 +355,76 @@
         <changefreq>monthly</changefreq>
     </url>
     <url>
+        <loc>https://docs-develop.releng.io/en/guides/cleaning/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/cleaning/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/guides/cleaning/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/cleaning/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/guides/cleaning/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/cleaning/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/guides/cleaning/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/cleaning/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/guides/cleaning/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/cleaning/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/guides/cleaning/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/cleaning/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/guides/cleaning/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/cleaning/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/cleaning/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
         <loc>https://docs-develop.releng.io/en/guides/local-sources-mode/</loc>
         <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/local-sources-mode/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/local-sources-mode/"/>
@@ -3365,6 +3435,76 @@
         <changefreq>monthly</changefreq>
     </url>
     <url>
+        <loc>https://docs-develop.releng.io/en/guides/release-checks/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/release-checks/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/guides/release-checks/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/release-checks/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/guides/release-checks/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/release-checks/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/guides/release-checks/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/release-checks/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/guides/release-checks/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/release-checks/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/guides/release-checks/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/release-checks/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/guides/release-checks/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/release-checks/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/release-checks/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
         <loc>https://docs-develop.releng.io/en/guides/quirks/quirk-log-execute_env/</loc>
         <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-log-execute_env/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-log-execute_env/"/>
@@ -3992,6 +4132,76 @@
         <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-git-replicate_cache/"/>
         <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-git-replicate_cache/"/>
         <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-git-replicate_cache/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/en/guides/quirks/quirk-ignore_release_check/</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-ignore_release_check/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/de/guides/quirks/quirk-ignore_release_check/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-ignore_release_check/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/es/guides/quirks/quirk-ignore_release_check/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-ignore_release_check/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/ja/guides/quirks/quirk-ignore_release_check/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-ignore_release_check/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/pl/guides/quirks/quirk-ignore_release_check/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-ignore_release_check/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-ignore_release_check/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hant" href="https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-ignore_release_check/"/>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://docs-develop.releng.io/zh_Hant/guides/quirks/quirk-ignore_release_check/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://docs-develop.releng.io/en/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://docs-develop.releng.io/de/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://docs-develop.releng.io/es/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://docs-develop.releng.io/ja/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="pl" href="https://docs-develop.releng.io/pl/guides/quirks/quirk-ignore_release_check/"/>
+        <xhtml:link rel="alternate" hreflang="zh_Hans" href="https://docs-develop.releng.io/zh_Hans/guides/quirks/quirk-ignore_release_check/"/>
         <changefreq>monthly</changefreq>
     </url>
     <url>

@@ -254,11 +254,13 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="#document-guides/advanced-guides">Advanced</a><input aria-label="Toggle navigation of Advanced" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="#document-guides/cleaning">Cleaning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/linting">Linting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/patching">Patching</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/intern-extern-pkgs">Internal/external packages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/development-mode">Development mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/local-sources-mode">Local-sources mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#document-guides/release-checks">Release Checks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/profiles">Profiles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/api-mode">API Mode</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="#document-guides/quirks/quirks">Quirks</a><input aria-label="Toggle navigation of Quirks" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
@@ -272,6 +274,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-git-no_quick_fetch">releng.git.no_quick_fetch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-git-replicate_cache">releng.git.replicate_cache</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-ignore_failed_extensions">releng.ignore_failed_extensions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-ignore_release_check">releng.ignore_release_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-log-execute_args">releng.log.execute_args</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-log-execute_env">releng.log.execute_env</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-stats-no_pdf">releng.stats.no_pdf</a></li>
@@ -755,7 +758,7 @@ Python-compatible scripts, which releng-tool accepts for processing
 configuration files and invoking other tools on a host system. While
 releng-tool supports running on various host systems (e.g. Linux, OS X,
 Windows, etc.), this guide will primarily show examples following a
-Unix-styled file system.</p>
+POSIX-styled file system.</p>
 <section id="running-releng-tool">
 <h3>Running releng-tool<a class="headerlink" href="#running-releng-tool" title="Link to this heading">¶</a></h3>
 <p>Depending on the host and how releng-tool has been <a class="reference internal" href="#document-install"><span class="doc std std-doc">installed</span></a>,
@@ -775,17 +778,12 @@ python -m releng-tool --version
 <p>A project will typically be defined by a <code class="docutils literal notranslate"><span class="pre">releng-tool.rt</span></code> configuration
 file along with one or more packages found inside a <code class="docutils literal notranslate"><span class="pre">package/</span></code> folder.
 This location can be referred to as the „root directory“.</p>
-<div class="admonition note">
-<p class="admonition-title">Bemerkung</p>
-<p>releng-tool supports using a <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension. For more information, please
-see <a class="reference internal" href="#document-guides/tips/alternative-extensions"><span class="doc std std-doc">alternative extensions</span></a>.</p>
-</div>
-<p>When invoking <code class="docutils literal notranslate"><span class="pre">releng-tool</span></code>, the tool will look in the current working
+<p>When invoking <code class="docutils literal notranslate"><span class="pre">releng-tool</span></code>, the tool will look in the working
 directory for project information to process. For example, if a folder
 <code class="docutils literal notranslate"><span class="pre">my-project</span></code> had a skeleton such as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>└── my-project/
     ├── package/
-    │   └── package-a/
+    │   └── my-app/
     │       └── ...
     └── releng-tool.rt
 </pre></div>
@@ -793,19 +791,19 @@ directory for project information to process. For example, if a folder
 <p>The following output may be observed when running releng-tool:</p>
 <div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>my-project
 <span class="gp">$ </span>releng-tool
-<span class="go">extracting package-a...</span>
-<span class="go">patching package-a...</span>
-<span class="go">configuring package-a...</span>
-<span class="go">building package-a...</span>
-<span class="go">installing package-a...</span>
+<span class="go">extracting my-app...</span>
+<span class="go">patching my-app...</span>
+<span class="go">configuring my-app...</span>
+<span class="go">building my-app...</span>
+<span class="go">installing my-app...</span>
 <span class="go">generating license information...</span>
 <span class="gp gp-VirtualEnv">(success)</span> <span class="go">completed (0:01:30)</span>
 </pre></div>
 </div>
 <p>On a successful execution, it is most likely that the releng-tool process
 will have an asset (or multiple) generated into a <code class="docutils literal notranslate"><span class="pre">images/</span></code> location. It is
-up to the developer of a releng-tool project to decide where generated
-files will be stored.</p>
+up to the developer of a releng-tool project to decide how content is packaged
+and where generated files will be stored.</p>
 <p>If a user wishes to pass the directory of a project location via command line,
 the argument <code class="docutils literal notranslate"><span class="pre">--root-dir</span></code> can be used:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>--root-dir<span class="w"> </span>my-project/
@@ -2028,18 +2026,13 @@ steps are to be performed.</p>
 <p>The following outlines available global actions:</p>
 <section id="clean">
 <span id="action-clean"></span><h5><code class="docutils literal notranslate"><span class="pre">clean</span></code><a class="headerlink" href="#clean" title="Link to this heading">¶</a></h5>
-<p>Clean (removes) a series of folders holding content such as extracted
-archives, built libraries and more.</p>
+<p>Removes content such as extracted archives, built libraries and more.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>releng-tool<span class="w"> </span>clean
 </pre></div>
 </div>
-<p>Images and downloaded assets/cache are not removed (see
-<a class="reference internal" href="#action-mrproper"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></span></a> for a more through all cleaning operation).
-This clean operation will remove files based off the configured output
-directory. If an output directory is provided (i.e. <code class="docutils literal notranslate"><span class="pre">--out-dir</span> <span class="pre">&lt;dir&gt;</span></code>)
-during a clean event, select folders inside this directory will be removed
-instead of the output directory (if any) found in the root directory.</p>
-<p>See also the <a class="reference internal" href="#action-distclean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">distclean</span></code></span></a>, <a class="reference internal" href="#action-mrproper"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></span></a> and
+<p>Built images and downloaded assets/cache are not removed.</p>
+<p>See specifics under <a class="reference internal" href="#document-guides/cleaning"><span class="doc std std-doc">Cleaning</span></a>. Also see the
+<a class="reference internal" href="#action-distclean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">distclean</span></code></span></a>, <a class="reference internal" href="#action-mrproper"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></span></a> and
 <a class="reference internal" href="#action-pkg-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-clean</span></code></span></a> actions.</p>
 </section>
 <section id="distclean">
@@ -2053,10 +2046,10 @@ instead of the output directory (if any) found in the root directory.</p>
 </div>
 <p>This request removes the <code class="docutils literal notranslate"><span class="pre">cache/</span></code>, <code class="docutils literal notranslate"><span class="pre">dl/</span></code> and <code class="docutils literal notranslate"><span class="pre">output/</span></code> directories found
 in the root directory or overridden by respective arguments, as well as
-any mode file flags which may be set. See also the <a class="reference internal" href="#action-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">clean</span></code></span></a>
-or <a class="reference internal" href="#action-mrproper"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></span></a> actions.</p>
-<p>See also the <a class="reference internal" href="#action-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">clean</span></code></span></a>, <a class="reference internal" href="#action-mrproper"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></span></a> and
-<a class="reference internal" href="#action-pkg-distclean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-distclean</span></code></span></a> actions.</p>
+any mode file flags which may be set.</p>
+<p>See specifics under <a class="reference internal" href="#document-guides/cleaning"><span class="doc std std-doc">Cleaning</span></a>. Also see the
+<a class="reference internal" href="#action-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">clean</span></code></span></a>, <a class="reference internal" href="#action-mrproper"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></span></a> and
+<a class="reference internal" href="#action-pkg-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-clean</span></code></span></a> actions.</p>
 </section>
 <section id="extract">
 <span id="action-extract"></span><h5><code class="docutils literal notranslate"><span class="pre">extract</span></code><a class="headerlink" href="#extract" title="Link to this heading">¶</a></h5>
@@ -2148,8 +2141,9 @@ with a <code class="docutils literal notranslate"><span class="pre">noqa</span><
 <p>This request removes the <code class="docutils literal notranslate"><span class="pre">output/</span></code> directory found in the root directory or
 overridden by the <code class="docutils literal notranslate"><span class="pre">--out-dir</span></code> argument, as well as any mode file flags
 which may be set. The <code class="docutils literal notranslate"><span class="pre">cache/</span></code> and <code class="docutils literal notranslate"><span class="pre">dl/</span></code> directories will remain untouched.</p>
-<p>See also the <a class="reference internal" href="#action-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">clean</span></code></span></a> and <a class="reference internal" href="#action-distclean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">distclean</span></code></span></a>
-actions.</p>
+<p>See specifics under <a class="reference internal" href="#document-guides/cleaning"><span class="doc std std-doc">Cleaning</span></a>. Also see the
+<a class="reference internal" href="#action-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">clean</span></code></span></a>, <a class="reference internal" href="#action-distclean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">distclean</span></code></span></a> and
+<a class="reference internal" href="#action-pkg-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-clean</span></code></span></a> actions.</p>
 </section>
 <section id="patch">
 <span id="action-patch"></span><h5><code class="docutils literal notranslate"><span class="pre">patch</span></code><a class="headerlink" href="#patch" title="Link to this heading">¶</a></h5>
@@ -2688,6 +2682,16 @@ process. This option can be used multiple times to apply multiple quirks.</p>
 </div>
 <p>Do not throw an error when releng-tool is provided unknown arguments.</p>
 <p>See also <a class="reference internal" href="#env-releng-ignore-unknown-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_IGNORE_UNKNOWN_ARGS</span></code></span></a>.</p>
+</section>
+<section id="release">
+<span id="arg-release"></span><h5><code class="docutils literal notranslate"><span class="pre">--release</span></code><a class="headerlink" href="#release" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.1.</span></p>
+</div>
+<p>Invoke releng-tool in a <a class="reference internal" href="#document-guides/release-checks"><span class="doc std std-doc">release mode</span></a>. Helps
+sanity check certain configurations are not used for a run that is expected
+to produce a release.</p>
+<p>See also <a class="reference internal" href="#env-releng-release"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_RELEASE</span></code></span></a>.</p>
 </section>
 <section id="root-dir-dir-var-r-dir-var">
 <span id="arg-root-dir"></span><h5><code class="docutils literal notranslate"><span class="pre">--root-dir</span> <span class="pre">&lt;dir&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">-R</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#root-dir-dir-var-r-dir-var" title="Link to this heading">¶</a></h5>
@@ -3824,6 +3828,14 @@ for a run.</p>
 <span id="env-releng-reinstall"></span><h5><code class="docutils literal notranslate"><span class="pre">RELENG_REINSTALL</span></code><a class="headerlink" href="#releng-reinstall" title="Link to this heading">¶</a></h5>
 <p>Flag set if performing a re-install request.</p>
 <p>See also <a class="reference internal" href="#action-pkg-reinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reinstall</span></code></span></a>.</p>
+</section>
+<section id="releng-release">
+<span id="env-releng-release"></span><h5><code class="docutils literal notranslate"><span class="pre">RELENG_RELEASE</span></code><a class="headerlink" href="#releng-release" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.1.</span></p>
+</div>
+<p>Flag set if running in a <a class="reference internal" href="#document-guides/release-checks"><span class="doc std std-doc">release mode</span></a>.</p>
+<p>See also <a class="reference internal" href="#arg-release"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--release</span></code></span></a>.</p>
 </section>
 <section id="releng-script">
 <span id="env-releng-script"></span><h5><code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT</span></code><a class="headerlink" href="#releng-script" title="Link to this heading">¶</a></h5>
@@ -5555,6 +5567,12 @@ variables available for use. Developers may also be interested in using a
 </section>
 <span id="document-guides/packages/post-processing"></span><section id="package-post-processing">
 <h4>Package post-processing<a class="headerlink" href="#package-post-processing" title="Link to this heading">¶</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>This page is about package-specific post-processing. If looking for
+post-processing support for an entire project, see
+<a class="reference internal" href="#document-guides/post-processing"><span class="doc std std-doc">project post-processing</span></a>.</p>
+</div>
 <p>Every package, no matter which package <a class="reference internal" href="#pkg-opt-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_TYPE</span></code></span></a> is
 defined, can create a post-processing script to invoke after a package
 has completed an installation stage. The existence of a <code class="docutils literal notranslate"><span class="pre">&lt;package&gt;-post.rt</span></code>
@@ -8850,6 +8868,12 @@ processed first:</p>
 <p>A post-processing script (if used) will be invoked each time <code class="docutils literal notranslate"><span class="pre">releng-tool</span></code>
 reaches the final stage of a build.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>This page is about project post-processing. If looking for post-processing
+support for a specific package, see
+<a class="reference internal" href="#document-guides/packages/post-processing"><span class="doc std std-doc">package post-processing</span></a>.</p>
+</div>
 <div class="admonition-prospect admonition">
 <p class="admonition-title">Prospect</p>
 <p>At this time, releng-tool supports only post-build scripts. It is planned to
@@ -10701,6 +10725,79 @@ configuration which can be applied for Git-based repositories (via
 <p>The following contains a series of advanced guides which a developer may
 want to use for more involved use cases.</p>
 <div class="toctree-wrapper compound">
+<span id="document-guides/cleaning"></span><section id="cleaning">
+<h4>Cleaning<a class="headerlink" href="#cleaning" title="Link to this heading">¶</a></h4>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p>If using package-specific cleaning actions, users are recommended to see
+<a class="reference internal" href="#document-getting-started/rebuilds"><span class="doc std std-doc">Understanding rebuilds</span></a>.</p>
+</div>
+<p>A user can invoke various cleaning actions to help start fresh. There are
+multiple cleaning approaches that can be performed to help start from a
+pristine state or avoid unnecessary fetches/rebuilds.</p>
+<p>The following cleaning-related actions are supported:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#action-pkg-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-clean</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#action-pkg-distclean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-distclean</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#action-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">clean</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#action-mrproper"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">mrproper</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#action-distclean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">distclean</span></code></span></a></p></li>
+</ul>
+<p>The list is order of how much cleaning is performed.</p>
+<p>Cleaning operations will remove files based off the configured root and output
+directory. If an output directory is provided (i.e. <code class="docutils literal notranslate"><span class="pre">--out-dir</span> <span class="pre">&lt;dir&gt;</span></code>)
+during a clean event, select folders inside this directory will be removed
+instead of the output directory (if any) found in the root directory.</p>
+<p>Consider the following output content and which paths are applicable for
+a given cleaning mode:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>                                    [clean]  [mrproper]  [distclean]
+(example file tree)
+└── my-releng-tool-project/            ☐         ☐           ☐
+    ├── cache/                         ☐         ☐           ☒
+    │   ├── .cargo/                    ☐         ☐           ☒
+    │   │   └── ...                    ☐         ☐           ☒
+    │   ├── .cargo-vendor/             ☐         ☐           ☒
+    │   │   └── ...                    ☐         ☐           ☒
+    │   ├── libfoo/                    ☐         ☐           ☒
+    │   │   ├── index                  ☐         ☐           ☒
+    │   │   └── ...                    ☐         ☐           ☒
+    │   ├── .dvcsdb                    ☐         ☐           ☒
+    │   └── ...                        ☐         ☐           ☒
+    ├── dl/                            ☐         ☐           ☒
+    │   ├── libbar/                    ☐         ☐           ☒
+    │   │   └── libbar-1.2.3.tgz       ☐         ☐           ☒
+    │   └── ...                        ☐         ☐           ☒
+    ├── output/                        ☐         ☒           ☒
+    │   ├── build/                     ☒         ☒           ☒
+    │   │   ├── libfoo                 ☒         ☒           ☒
+    │   │   │   └── ...                ☒         ☒           ☒
+    │   │   ├── libbar                 ☒         ☒           ☒
+    │   │   │   └── ...                ☒         ☒           ☒
+    │   │   └── ...                    ☒         ☒           ☒
+    │   ├── host/                      ☒         ☒           ☒
+    │   │   └── ...                    ☒         ☒           ☒
+    │   ├── images/                    ☐         ☒           ☒
+    │   │   └── ...                    ☐         ☒           ☒
+    │   ├── licenses/                  ☒         ☒           ☒
+    │   │   └── ...                    ☒         ☒           ☒
+    │   ├── misc/                      ☐         ☒           ☒
+    │   │   └── ...                    ☐         ☒           ☒
+    │   ├── staging/                   ☒         ☒           ☒
+    │   │   └── ...                    ☒         ☒           ☒
+    │   ├── symbols/                   ☒         ☒           ☒
+    │   │   └── ...                    ☒         ☒           ☒
+    │   ├── target/                    ☒         ☒           ☒
+    │   │   └── ...                    ☒         ☒           ☒
+    │   ├── sbom.txt                   ☐         ☒           ☒
+    │   └── ...                        ☐         ☒           ☒
+    ├── package/                       ☐         ☐           ☐
+    │   └── ...                        ☐         ☐           ☐
+    ├── .releng-flag-devmode           ☐         ☒           ☒
+    ├── releng-tool.rt                 ☐         ☐           ☐
+    ...                                ☐         ☐           ☐
+</pre></div>
+</div>
+</section>
 <span id="document-guides/linting"></span><section id="linting">
 <h4>Linting<a class="headerlink" href="#linting" title="Link to this heading">¶</a></h4>
 <div class="versionadded">
@@ -11105,6 +11202,38 @@ the respective folder:</p>
 </ul>
 <p>For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">local</span><span class="o">-</span><span class="n">sources</span> <span class="n">unset</span>
+</pre></div>
+</div>
+</section>
+<span id="document-guides/release-checks"></span><section id="release-checks">
+<h4>Release Checks<a class="headerlink" href="#release-checks" title="Link to this heading">¶</a></h4>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.1.</span></p>
+</div>
+<p>Users can invoke releng-tool in a „release mode“. It can be used to sanity
+check a run is using a runtime configuration appropriate for a release. This
+mode can be enabled using the <a class="reference internal" href="#arg-release"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--release</span></code> argument</span></a>. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">release</span>
+</pre></div>
+</div>
+<p>What a release means for developers may vary, but there are some options
+releng-tool can determine that should not be applied for a typical release.
+A series of checks are performed. In the event that a check detects a runtime
+configuration state that should not be used for a release, releng-tool will
+stop.</p>
+<p>Checks performed include:</p>
+<ul class="simple">
+<li><p>Verify no actions are being used (e.g. running only <code class="docutils literal notranslate"><span class="pre">libfoo-build</span></code>).</p></li>
+<li><p>Verify not running in a <a class="reference internal" href="#document-guides/development-mode"><span class="doc std std-doc">development mode</span></a>.</p></li>
+<li><p>Verify not running in a <a class="reference internal" href="#document-guides/local-sources-mode"><span class="doc std std-doc">local-sources mode</span></a>.</p></li>
+<li><p>Verify <a class="reference internal" href="#pkg-opt-force-revision"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_FORCE_REVISION</span></code></span></a> is not used.</p></li>
+</ul>
+<p>When running in a release mode, releng-tool will also set the
+<a class="reference internal" href="#env-releng-release"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_RELEASE</span></code></span></a> variable. Developers can utilize this
+in their own projects for additional checks. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">RELENG_RELEASE</span><span class="p">:</span>
+    <span class="k">if</span> <span class="o">&lt;</span><span class="n">some</span><span class="o">-</span><span class="n">condition</span><span class="o">&gt;</span><span class="p">:</span>
+        <span class="n">releng_exit</span><span class="p">(</span><span class="s1">&#39;failed a release pre-check&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -11560,6 +11689,39 @@ For example, using the command line:</p>
 </ul>
 </section>
 </section>
+<span id="document-guides/quirks/quirk-ignore_release_check"></span><section id="quirk-releng-ignore-release-check">
+<span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.ignore_release_check</span></code><a class="headerlink" href="#quirk-releng-ignore-release-check" title="Link to this heading">¶</a></h6>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Using this option is never recommended since it overrides the purpose of
+release checks. The quick is solely available to help special corner cases
+for developers.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.1.</span></p>
+</div>
+<p>Users may invoke releng-tool in a <a class="reference internal" href="#document-guides/release-checks"><span class="doc std std-doc">release mode</span></a>. If
+a user is experiencing an odd corner case or a development scenario where they
+wish to permit a build to continue even if a release check has been triggered,
+they may do so by configuring the <code class="docutils literal notranslate"><span class="pre">releng.ignore_release_check</span></code> quirk.
+For example, using the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">ignore_release_check</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;releng.ignore_release_check&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<section id="see-also">
+<h6 aria-level="7">See also<a class="headerlink" href="#see-also" title="Link to this heading">¶</a></h6>
+<ul class="simple">
+<li><p><a class="reference internal" href="#document-guides/quirks/quirks"><span class="doc std std-doc">Quirks</span></a></p></li>
+</ul>
+</section>
+</section>
 <span id="document-guides/quirks/quirk-log-execute_args"></span><section id="quirk-releng-log-execute-args">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.log.execute_args</span></code><a class="headerlink" href="#quirk-releng-log-execute-args" title="Link to this heading">¶</a></h6>
 <div class="versionadded">
@@ -11766,6 +11928,11 @@ extensions for releng-tool:</p>
 <div class="toctree-wrapper compound">
 <span id="document-guides/extensions/making-a-custom-post-build-action"></span><section id="making-a-custom-post-build-action-extension">
 <h5>Making a custom post-build action extension<a class="headerlink" href="#making-a-custom-post-build-action-extension" title="Link to this heading">¶</a></h5>
+<div class="admonition note">
+<p class="admonition-title">Bemerkung</p>
+<p>This page relates to extension development. If looking for existing project
+post-processing support, see <a class="reference internal" href="#document-guides/post-processing"><span class="doc std std-doc">post-processing</span></a>.</p>
+</div>
 <p>This is an extension example for the following use case:</p>
 <blockquote>
 <div><p>After performing a build for any of my releng-tool projects, I want to
@@ -14341,6 +14508,7 @@ the following environment variables can be used instead:</p>
 <li><p>Ensure an appropriate working directory is set when using a patch-script</p></li>
 <li><p>Fix Meson/Waf installs when using <code class="docutils literal notranslate"><span class="pre">staging_and_target</span></code></p></li>
 <li><p>Fix <code class="docutils literal notranslate"><span class="pre">releng_execute_rv</span></code> not expanding by default</p></li>
+<li><p>Include detected revisions <code class="docutils literal notranslate"><span class="pre">printpkgs</span></code> action output</p></li>
 <li><p>Include pathlib’s <code class="docutils literal notranslate"><span class="pre">Path</span></code>, <code class="docutils literal notranslate"><span class="pre">os</span></code> and <code class="docutils literal notranslate"><span class="pre">sys</span></code> into script contexts</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">releng_step</span></code> helper script function</p></li>
 <li><p>Introduce support for Lore sites</p></li>
@@ -14348,6 +14516,7 @@ the following environment variables can be used instead:</p>
 <li><p>Support <code class="docutils literal notranslate"><span class="pre">newline</span></code> option in <code class="docutils literal notranslate"><span class="pre">releng_execute_rv</span></code></p></li>
 <li><p>Support for <code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_NO_IMAGES</span></code></p></li>
 <li><p>Support network isolation for package’s non-fetch stages</p></li>
+<li><p>Support release mode invoked runs</p></li>
 </ul>
 </section>
 <section id="v3-0-2026-04-12">
@@ -14973,6 +15142,7 @@ releng-tool project.</p>
 <a class="reference internal" href="#arg-quiet"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--quiet</span></code></span></a>
 <a class="reference internal" href="#arg-quirk"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--quirk</span> <span class="pre">&lt;quirk-id&gt;</span></code></span></a>
 <a class="reference internal" href="#arg-relaxed-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--relaxed-args</span></code></span></a>
+<a class="reference internal" href="#arg-release"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--release</span></code></span></a>
 <a class="reference internal" href="#arg-root-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--root-dir</span> <span class="pre">&lt;dir&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">-R</span> <span class="pre">&lt;dir&gt;</span></code></span></a>
 <a class="reference internal" href="#arg-sbom-format"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--sbom-format</span> <span class="pre">&lt;fmt&gt;</span></code></span></a>
 <a class="reference internal" href="#arg-success-exit-code"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--success-exit-code</span> <span class="pre">&lt;code&gt;</span></code></span></a>
@@ -15059,6 +15229,7 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="#env-releng-rebuild"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_REBUILD</span></code></span></a>
 <a class="reference internal" href="#env-releng-reconfigure"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_RECONFIGURE</span></code></span></a>
 <a class="reference internal" href="#env-releng-reinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_REINSTALL</span></code></span></a>
+<a class="reference internal" href="#env-releng-release"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_RELEASE</span></code></span></a>
 <a class="reference internal" href="#env-releng-script"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT</span></code></span></a>
 <a class="reference internal" href="#env-releng-script-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_SCRIPT_DIR</span></code></span></a>
 <a class="reference internal" href="#env-releng-target-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_TARGET_PKG</span></code></span></a>
@@ -15260,6 +15431,7 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="#quirk-releng-git-no-quick-fetch"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.git.no_quick_fetch</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-git-replicate-cache"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.git.replicate_cache</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-ignore-failed-extensions"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.ignore_failed_extensions</span></code></span></a>
+<a class="reference internal" href="#quirk-releng-ignore-release-check"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.ignore_release_check</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-log-execute-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.log.execute_args</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-log-execute-env"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.log.execute_env</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-stats-no-pdf"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.stats.no_pdf</span></code></span></a>
