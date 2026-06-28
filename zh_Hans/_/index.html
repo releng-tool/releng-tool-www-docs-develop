@@ -262,6 +262,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/local-sources-mode">Local-sources mode</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/release-checks">Release Checks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/profiles">Profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#document-guides/network-isolation">Network isolation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#document-guides/api-mode">API Mode</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="#document-guides/quirks/quirks">Quirks</a><input aria-label="Toggle navigation of Quirks" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-cmake-disable_direct_includes">releng.cmake.disable_direct_includes</a></li>
@@ -2899,9 +2900,9 @@ defined by project's configuration. For example:</p>
 <p><span class="versionmodified added">Added in version 3.1.</span></p>
 </div>
 <p>A flag to indicate that non-fetch package stages will attempt to perform
-network isolation. This is to help promote/enforce network-related interaction
-in expected stages which can be helpful for use cases such as
-<a class="reference internal" href="#document-guides/tips/offline-builds"><span class="doc std std-doc">offline builds</span></a>.</p>
+<a class="reference internal" href="#document-guides/network-isolation"><span class="doc std std-doc">network isolation</span></a>. This is to help promote/enforce
+network-related interaction in expected stages which can be helpful for use
+cases such as <a class="reference internal" href="#document-guides/tips/offline-builds"><span class="doc std std-doc">offline builds</span></a>.</p>
 <p>By default, network isolation is not enforced.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">network_isolation</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
@@ -5178,8 +5179,8 @@ the total number of cores, the following can be used:</p>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.1.</span></p>
 </div>
-<p>A flag to indicate that non-fetch stages will attempt to perform network
-isolation.</p>
+<p>A flag to indicate that non-fetch stages will attempt to perform
+<a class="reference internal" href="#document-guides/network-isolation"><span class="doc std std-doc">network isolation</span></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_NETWORK_ISOLATION</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
@@ -11285,6 +11286,44 @@ that are all equivalent:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">Red_Backed_Shrike</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Red</span> <span class="pre">Backed</span> <span class="pre">Shrike</span></code></p></li>
 </ul>
+</section>
+<span id="document-guides/network-isolation"></span><section id="network-isolation">
+<h4>Network isolation<a class="headerlink" href="#network-isolation" title="Link to this heading">¶</a></h4>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.1.</span></p>
+</div>
+<p>Developers can configure projects to run in a network isolation mode for
+non-fetch stages. This helps promote the use of using only fetch-related
+stages to acquire remote sources, and help support capabilities such as
+<a class="reference internal" href="#document-guides/tips/offline-builds"><span class="doc std std-doc">offline builds</span></a>.</p>
+<p>When this feature is enabled, proxy-related environment variables are
+configured in non-fetch stages to help restrict/limit network interaction.
+This can cause remote-related requests to almost immediately timeout, causing
+an execution failure. If a build stage attempts to use utilities that perform
+a network request, the build stage would fail.</p>
+<p>Network isolation mode can be configured at the project-level using
+the <a class="reference internal" href="#conf-network-isolation"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">network_isolation</span></code></span></a> project configuration:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">network_isolation</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Developers may also tailor individual packages for network isolation mode
+using the <a class="reference internal" href="#pkg-opt-network-isolation"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_NETWORK_ISOLATION</span></code></span></a> option.
+For example, to enable it for the <code class="docutils literal notranslate"><span class="pre">myapp</span></code> package (if not configured at a
+project level):</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">MYAPP_NETWORK_ISOLATION</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Developers can also opt-out of network-isolation if the project is configured
+to isolate but a specific package still relies on networking outside of the
+fetch stage:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">MYAPP_NETWORK_ISOLATION</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<p>Restricting networking is not intended to be a perfect isolation
+capability, only a helper to support promoted practice. The
+implementation will configure common proxy values to a local socket to
+drop connections. Tools which do not utilize proxy options will not be
+restricted.</p>
 </section>
 <span id="document-guides/api-mode"></span><section id="api-mode">
 <h4>API Mode<a class="headerlink" href="#api-mode" title="Link to this heading">¶</a></h4>
