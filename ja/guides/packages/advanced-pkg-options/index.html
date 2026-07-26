@@ -626,6 +626,10 @@ be used to exceed the jobs count (although not recommended in most scenarios).</
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.0.</span></p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">バージョン 4.0 で変更: </span>Forced revisions can now be automatically pulled from the environment without
+<a class="reference internal" href="../../arguments/#arg-variable-injection"><span class="std std-ref">variable injection</span></a>.</p>
+</div>
 <p>Specifies a forced revision to use for a package. This option is not
 recommended for use inside a package definition. It is designed for users
 trying to override a used revision from the command line. The primary use
@@ -636,6 +640,8 @@ matter what mode is configured.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="n">LIBFOO_FORCE_REVISION</span><span class="o">=</span><span class="s2">&quot;1.2.3&quot;</span>
 </pre></div>
 </div>
+<p>Forced revisions can also be pulled from the environment when not running in
+a <a class="reference internal" href="../../release-mode/"><span class="doc std std-doc">release mode</span></a>.</p>
 <p>See also <a class="reference internal" href="#pkg-opt-devmode-revision"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEVMODE_REVISION</span></code></span></a>,
 <a class="reference internal" href="#pkg-opt-revision"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_REVISION</span></code></span></a> and <a class="reference internal" href="../../configuration/#conf-revisions"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">revisions</span></code></span></a>.</p>
 </section>
