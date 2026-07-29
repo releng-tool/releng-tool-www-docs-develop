@@ -5046,6 +5046,15 @@ instead configure this option if not needing an integrity check.</p>
 </pre></div>
 </div>
 </section>
+<section id="libfoo-exclude-sbom">
+<span id="pkg-opt-exclude-sbom"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXCLUDE_SBOM</span></code><a class="headerlink" href="#libfoo-exclude-sbom" title="Link to this heading">¶</a></h5>
+<p>Flag value to indicate that a package should be excluded from any generated
+software build of materials (SBOM).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_EXCLUDE_SBOM</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>See also the <a class="reference internal" href="#action-sbom"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">sbom</span></code></span></a> action.</p>
+</section>
 <section id="libfoo-extension">
 <span id="pkg-opt-extension"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXTENSION</span></code><a class="headerlink" href="#libfoo-extension" title="Link to this heading">¶</a></h5>
 <div class="versionchanged">
@@ -5604,6 +5613,11 @@ sites, users can provide an explicit VCS type based off a configured mode:</p>
 respective host tool is installed on the host system. For example, if a
 Git VCS-type is set, the host system will need to have <code class="docutils literal notranslate"><span class="pre">git</span></code> installed on
 the system.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The use of the <code class="docutils literal notranslate"><span class="pre">local</span></code> type is not recommended except for an interim
+development scenarios.</p>
+</div>
 <p>The use of the <code class="docutils literal notranslate"><span class="pre">local</span></code> type is designed to be a special/development-helper
 type only. When set, this option allows placing the sources of a package
 directly inside a <code class="docutils literal notranslate"><span class="pre">local</span></code> folder inside the definition folder. For example,
@@ -5620,13 +5634,27 @@ follows:</p>
     ...
 </pre></div>
 </div>
+<p>Alternatively, when using the <code class="docutils literal notranslate"><span class="pre">local</span></code> type, if a <code class="docutils literal notranslate"><span class="pre">local</span></code> folder does not exist
+for a package, a package's sources may be found in a sibling folder alongside
+the root directory. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>├── libfoo/                           &lt;----
+│   ├── src/
+│   │   └── ...
+│   └── Makefile
+└── my-releng-tool-project/
+    ├── package/
+    │   └── libfoo/
+    │       └── libfoo.rt
+    ...
+</pre></div>
+</div>
 <p>This approach is similar to using
 <a class="reference internal" href="#document-guides/local-sources-mode"><span class="doc std std-doc">local-sources mode</span></a>, where it avoids the
 need to have the module content located in a site to be fetched --
 specifically, for initial development/testing/training scenarios.
 It is never recommended to store the package's &quot;main content&quot; inside a
-releng-tool project, thus using the <code class="docutils literal notranslate"><span class="pre">local</span></code> type will always generate a
-warning message.</p>
+releng-tool project or permanently use package sources with a relative path
+outside the releng-tool project.</p>
 </section>
 </section>
 <span id="document-guides/packages/system-pkg-options"></span><section id="system-specific-package-options">
@@ -14850,6 +14878,16 @@ the following environment variables can be used instead:</p>
 </section>
 </div>
 </section>
+<section id="development">
+<h3>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Allow local package types to use sibling root path as a fallback</p></li>
+<li><p>Always check for cache existence if a package fetch-state is stale</p></li>
+<li><p>Fixed clearing of stale fetch-state after invoking package-specific distclean</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">LIBFOO_EXCLUDE_SBOM</span></code> to support package-specific SBOM exclusion</p></li>
+<li><p>Process license files as binary to avoid encoding issues</p></li>
+</ul>
+</section>
 <section id="v4-0-2026-07-26">
 <h3>4.0 (2026-07-26)<a class="headerlink" href="#v4-0-2026-07-26" title="Link to this heading">¶</a></h3>
 <ul class="simple">
@@ -15675,6 +15713,7 @@ releng-tool (may vary per context):</p>
 <code class="docutils literal notranslate"><span class="pre">LIBFOO_ENV</span></code> = {'FOO': 'BAR'}
   └── <em>(<a class="reference internal" href="#pkg-opt-autotools-env"><span class="std std-ref">Autotools</span></a>, <a class="reference internal" href="#pkg-opt-cargo-env"><span class="std std-ref">Cargo</span></a>, <a class="reference internal" href="#pkg-opt-cmake-env"><span class="std std-ref">CMake</span></a>, <a class="reference internal" href="#pkg-opt-make-env"><span class="std std-ref">Make</span></a>, <a class="reference internal" href="#pkg-opt-meson-env"><span class="std std-ref">Meson</span></a>, <a class="reference internal" href="#pkg-opt-python-env"><span class="std std-ref">Python</span></a>, <a class="reference internal" href="#pkg-opt-scons-env"><span class="std std-ref">SCons</span></a>, <a class="reference internal" href="#pkg-opt-waf-env"><span class="std std-ref">Waf</span></a>, <a class="reference internal" href="#pkg-opt-xmake-env"><span class="std std-ref">Xmake</span></a>)</em>
 <a class="reference internal" href="#pkg-opt-devmode-skip-integrity-check"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_DEVMODE_SKIP_INTEGRITY_CHECK</span></code></span></a> = bool
+<a class="reference internal" href="#pkg-opt-exclude-sbom"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXCLUDE_SBOM</span></code></span></a> = bool
 <a class="reference internal" href="#pkg-opt-extension"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXTENSION</span></code></span></a> = '&lt;extension&gt;'
 <a class="reference internal" href="#pkg-opt-external"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXTERNAL</span></code></span></a> = bool
 <a class="reference internal" href="#pkg-opt-extopt"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXTOPT</span></code></span></a> = {'FOO': 'BAR'}
