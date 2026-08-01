@@ -264,6 +264,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../guides/network-isolation/">Network isolation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../guides/api-mode/">API Mode</a></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../guides/quirks/quirks/">Quirks</a><input aria-label="Toggle navigation of Quirks" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-cmake-disable_default_prefix/">releng.cmake.disable_default_prefix</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-cmake-disable_direct_includes/">releng.cmake.disable_direct_includes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_devmode_ignore_cache/">releng.disable_devmode_ignore_cache</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_prerequisites_check/">releng.disable_prerequisites_check</a></li>
@@ -463,8 +464,11 @@ releng-tool, please see the project's <a class="reference external" href="https:
 <li><p>Allow local package types to use sibling root path as a fallback</p></li>
 <li><p>Always check for cache existence if a package fetch-state is stale</p></li>
 <li><p>Fixed clearing of stale fetch-state after invoking package-specific distclean</p></li>
+<li><p>Generate a <code class="docutils literal notranslate"><span class="pre">skeleton-target.txt</span></code> of the target file structure post-run</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">LIBFOO_EXCLUDE_SBOM</span></code> to support package-specific SBOM exclusion</p></li>
 <li><p>Process license files as binary to avoid encoding issues</p></li>
+<li><p>Re-introducing configuring <code class="docutils literal notranslate"><span class="pre">CMAKE_PREFIX_PATH</span></code> to support &quot;Config&quot; finds</p></li>
+<li><p>Support for <code class="docutils literal notranslate"><span class="pre">RELENG_QUIRKS</span></code> to pass in quirks via an environment variable</p></li>
 </ul>
 </section>
 <section id="v4-0-2026-07-26">
