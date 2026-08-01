@@ -451,7 +451,10 @@ a build environment wants to perform CI without utilizing new lint checks,
 they can do so by configuring a maximum version for lint checks to use. This
 can be configured in the <a class="reference internal" href="../configuration/#conf-lint-max-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">lint_max_version</span></code></span></a> project
 configuration:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lint_max_version</span> <span class="o">=</span> <span class="s1">&#39;2.8&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_config</span><span class="p">(</span>
+    <span class="o">...</span>
+    <span class="n">lint_max_version</span><span class="o">=</span><span class="s1">&#39;2.8&#39;</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <p>Or configured with a <a class="reference internal" href="../environment/#env-releng-lint-max-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_LINT_MAX_VERSION</span></code></span></a>

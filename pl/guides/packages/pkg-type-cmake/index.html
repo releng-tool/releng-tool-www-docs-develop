@@ -456,13 +456,13 @@ required staging/target paths through the
 <a class="reference external" href="https://cmake.org/cmake/help/latest/variable/CMAKE_FIND_ROOT_PATH.html"><code class="docutils literal notranslate"><span class="pre">CMAKE_FIND_ROOT_PATH</span></code></a> configuration. Ensure the
 toolchain configuration accepts <code class="docutils literal notranslate"><span class="pre">CMAKE_FIND_ROOT_PATH</span></code> hints. For example,
 using either:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">APPEND</span> <span class="n">CMAKE_FIND_ROOT_PATH</span> <span class="s2">&quot;INTERNAL_SDK_PATH&quot;</span><span class="p">)</span>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="s">APPEND</span><span class="w"> </span><span class="s">CMAKE_FIND_ROOT_PATH</span><span class="w"> </span><span class="s2">&quot;INTERNAL_SDK_PATH&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Or:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">NOT</span> <span class="n">DEFINED</span> <span class="n">CMAKE_FIND_ROOT_PATH</span><span class="p">)</span>
-    <span class="nb">set</span><span class="p">(</span><span class="n">CMAKE_FIND_ROOT_PATH</span> <span class="s2">&quot;INTERNAL_SDK_PATH&quot;</span><span class="p">)</span>
-<span class="n">endif</span><span class="p">()</span>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">if</span><span class="p">(</span><span class="s">NOT</span><span class="w"> </span><span class="s">DEFINED</span><span class="w"> </span><span class="s">CMAKE_FIND_ROOT_PATH</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_FIND_ROOT_PATH</span><span class="w"> </span><span class="s2">&quot;INTERNAL_SDK_PATH&quot;</span><span class="p">)</span>
+<span class="nb">endif</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>The following shows the default arguments used in stages and outlines

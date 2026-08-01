@@ -443,11 +443,14 @@ releng-tool.</p>
 <p>Quirks can also be enabled through the <a class="reference internal" href="../../configuration/#conf-quirks"><span class="std std-ref">project configuration</span></a>.
 For example, the following can be used to enable one or more quirks for a
 releng-tool run:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;releng.quirk1&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;releng.quirk2&#39;</span><span class="p">,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_config</span><span class="p">(</span>
     <span class="o">...</span>
-<span class="p">]</span>
+    <span class="n">quirks</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">&#39;releng.quirk1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;releng.quirk2&#39;</span><span class="p">,</span>
+        <span class="o">...</span>
+    <span class="p">],</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </section>

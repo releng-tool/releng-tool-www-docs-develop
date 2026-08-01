@@ -431,9 +431,12 @@ configurations to perform similar actions as extensions can.</p>
 in the <code class="docutils literal notranslate"><span class="pre">extensions</span></code> configuration option inside the project configuration
 (<code class="docutils literal notranslate"><span class="pre">releng</span></code>). For example, to load an extension <code class="docutils literal notranslate"><span class="pre">my_awesome_extension</span></code> into
 releng-tool, the following can be defined:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
-   <span class="s1">&#39;my_awesome_extension&#39;</span><span class="p">,</span>
-<span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_config</span><span class="p">(</span>
+    <span class="o">...</span>
+    <span class="n">extensions</span><span class="o">=</span><span class="p">[</span>
+       <span class="s1">&#39;my_awesome_extension&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <p>During the initial stages of a releng-tool process, the process will

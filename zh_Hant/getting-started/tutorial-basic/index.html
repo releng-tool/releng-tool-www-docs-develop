@@ -458,9 +458,11 @@ releng-tool will process the <code class="docutils literal notranslate"><span cl
 <p>With this minimal set of packages, the project's releng-tool configuration
 can now be created. At the root of the project, create a <code class="docutils literal notranslate"><span class="pre">releng-tool.rt</span></code>
 configuration file with the following contents:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">packages</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;program-b&#39;</span><span class="p">,</span>
-<span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_config</span><span class="p">(</span>
+    <span class="n">packages</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;program-b&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">packages</span></code> key indicates a list of required packages to be processed.

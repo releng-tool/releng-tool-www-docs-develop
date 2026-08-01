@@ -758,11 +758,12 @@ placed alongside the executable we plan to build.</p></li>
 <p>Lastly, we need to create our releng-tool configuration file for the project.
 In the root folder, create a <code class="docutils literal notranslate"><span class="pre">releng-tool.rt</span></code> file with the following
 contents:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">packages</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;sample&#39;</span><span class="p">,</span>
-<span class="p">]</span>
-
-<span class="n">vsdevcmd</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_config</span><span class="p">(</span>
+    <span class="n">packages</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;sample&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">vsdevcmd</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">

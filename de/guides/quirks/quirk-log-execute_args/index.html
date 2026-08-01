@@ -434,10 +434,13 @@ each argument on their own line. For example, using the command line:</p>
 </pre></div>
 </div>
 <p>Or adding in the project configuration:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_config</span><span class="p">(</span>
     <span class="o">...</span>
-    <span class="s1">&#39;releng.log.execute_args&#39;</span><span class="p">,</span>
-<span class="p">]</span>
+    <span class="n">quirks</span><span class="o">=</span><span class="p">[</span>
+        <span class="o">...</span>
+        <span class="s1">&#39;releng.log.execute_args&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <section id="see-also">

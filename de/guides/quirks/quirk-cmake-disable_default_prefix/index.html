@@ -433,7 +433,7 @@ operations are performed for executables, the CMake project may find staging
 executables that cannot run on the host system.</p>
 <p>One workaround for a package is to override/unset the <code class="docutils literal notranslate"><span class="pre">CMAKE_PREFIX_PATH</span></code>
 option to use a default/unset value:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_CONF_DEFS</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_CONF_DEFS</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;CMAKE_PREFIX_PATH&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
@@ -445,10 +445,13 @@ the <code class="docutils literal notranslate"><span class="pre">releng.cmake.di
 </pre></div>
 </div>
 <p>Or adding in the project configuration:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">quirks</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_config</span><span class="p">(</span>
     <span class="o">...</span>
-    <span class="s1">&#39;releng.cmake.disable_default_prefix&#39;</span><span class="p">,</span>
-<span class="p">]</span>
+    <span class="n">quirks</span><span class="o">=</span><span class="p">[</span>
+        <span class="o">...</span>
+        <span class="s1">&#39;releng.cmake.disable_default_prefix&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <p>Note, once disabled, individual packages may need to explicitly configure

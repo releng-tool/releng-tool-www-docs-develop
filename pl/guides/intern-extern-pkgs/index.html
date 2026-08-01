@@ -436,13 +436,16 @@ extract and patch stages skipped.</p></li>
 </ul>
 <p>An individual package can be configured as internal using
 <a class="reference internal" href="../packages/advanced-pkg-options/#pkg-opt-internal"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INTERNAL</span></code></span></a>. For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_INTERNAL</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_INTERNAL</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
 <p>Developers may want to instead use the project configuration
 <a class="reference internal" href="../configuration/#conf-default-internal"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">default_internal</span></code></span></a> to configure all packages as
 internal by default:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default_internal</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_config</span><span class="p">(</span>
+    <span class="o">...</span>
+    <span class="n">default_internal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <p>See also <a class="reference internal" href="../packages/advanced-pkg-options/#pkg-opt-external"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_EXTERNAL</span></code></span></a>.</p>
