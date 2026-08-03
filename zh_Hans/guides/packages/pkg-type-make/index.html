@@ -451,6 +451,13 @@ during the configuration stage, the following can be used:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make prework
 </pre></div>
 </div>
+<p>For packages which want to invoke a configuration stage with a command other
+than <code class="docutils literal notranslate"><span class="pre">make</span></code>, the <a class="reference internal" href="#pkg-opt-make-configure"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAKE_CONFIGURE</span></code></span></a> option can
+be set with the command to invoke. For example, to use a <code class="docutils literal notranslate"><span class="pre">configure</span></code> script
+in the package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_MAKE_CONFIGURE</span> <span class="o">=</span> <span class="s1">&#39;./configure&#39;</span>
+</pre></div>
+</div>
 <p>Alternatively, if no configuration options are specified, a
 <code class="docutils literal notranslate"><span class="pre">&lt;package&gt;-configure</span></code> <a class="reference internal" href="../pkg-type-script/"><span class="doc std std-doc">script</span></a> can be invoked if available.</p>
 </div>
@@ -688,6 +695,19 @@ being added. Users looking to utilize the <code class="docutils literal notransl
 stage with custom arguments should explicitly include the <code class="docutils literal notranslate"><span class="pre">install</span></code> target in
 their options.</p>
 </section>
+<section id="libfoo-make-configure">
+<span id="pkg-opt-make-configure"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAKE_CONFIGURE</span></code><a class="headerlink" href="#libfoo-make-configure" title="Link to this heading">¶</a></h2>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>The command to invoke during the configuration stage.</p>
+<p>By default, make packages do not invoke a configuration stage. However, if
+configuration options are defined, the default configuration executable
+invoked will be <code class="docutils literal notranslate"><span class="pre">make</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_MAKE_CONFIGURE</span> <span class="o">=</span> <span class="s1">&#39;./configure&#39;</span>
+</pre></div>
+</div>
+</section>
 <section id="libfoo-make-noinstall">
 <span id="pkg-opt-make-noinstall"></span><h2><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAKE_NOINSTALL</span></code><a class="headerlink" href="#libfoo-make-noinstall" title="Link to this heading">¶</a></h2>
 <p>Specifies whether a make package should skip an attempt to invoke the
@@ -774,6 +794,7 @@ By default, the installation stage is invoked with a value of <code class="docut
 <li><a class="reference internal" href="#libfoo-install-defs"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_DEFS</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-install-env"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_ENV</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-install-opts"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_OPTS</span></code></a></li>
+<li><a class="reference internal" href="#libfoo-make-configure"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAKE_CONFIGURE</span></code></a></li>
 <li><a class="reference internal" href="#libfoo-make-noinstall"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAKE_NOINSTALL</span></code></a></li>
 </ul>
 </li>

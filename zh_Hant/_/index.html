@@ -3947,6 +3947,27 @@ action request.</p>
 <p>Flag set if performing a forced request from the command line.</p>
 <p>See also <a class="reference internal" href="#arg-force"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--force</span></code></span></a>.</p>
 </section>
+<section id="releng-host-os-linux">
+<span id="env-releng-host-os-linux"></span><h5><code class="docutils literal notranslate"><span class="pre">RELENG_HOST_OS_LINUX</span></code><a class="headerlink" href="#releng-host-os-linux" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>Flag set if the host is running on a Linux-based platform.</p>
+</section>
+<section id="releng-host-os-macos">
+<span id="env-releng-host-os-macos"></span><h5><code class="docutils literal notranslate"><span class="pre">RELENG_HOST_OS_MACOS</span></code><a class="headerlink" href="#releng-host-os-macos" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>Flag set if the host is running on a macOS-based platform.</p>
+</section>
+<section id="releng-host-os-windows">
+<span id="env-releng-host-os-windows"></span><h5><code class="docutils literal notranslate"><span class="pre">RELENG_HOST_OS_WINDOWS</span></code><a class="headerlink" href="#releng-host-os-windows" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>Flag set if the host is running on a Windows-based platform.</p>
+</section>
 <section id="releng-localsrcs">
 <span id="env-releng-localsrcs"></span><h5><code class="docutils literal notranslate"><span class="pre">RELENG_LOCALSRCS</span></code><a class="headerlink" href="#releng-localsrcs" title="Link to this heading">¶</a></h5>
 <div class="versionadded">
@@ -7233,6 +7254,13 @@ during the configuration stage, the following can be used:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make prework
 </pre></div>
 </div>
+<p>For packages which want to invoke a configuration stage with a command other
+than <code class="docutils literal notranslate"><span class="pre">make</span></code>, the <a class="reference internal" href="#pkg-opt-make-configure"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAKE_CONFIGURE</span></code></span></a> option can
+be set with the command to invoke. For example, to use a <code class="docutils literal notranslate"><span class="pre">configure</span></code> script
+in the package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_MAKE_CONFIGURE</span> <span class="o">=</span> <span class="s1">&#39;./configure&#39;</span>
+</pre></div>
+</div>
 <p>Alternatively, if no configuration options are specified, a
 <code class="docutils literal notranslate"><span class="pre">&lt;package&gt;-configure</span></code> <a class="reference internal" href="#document-guides/packages/pkg-type-script"><span class="doc std std-doc">script</span></a> can be invoked if available.</p>
 </div>
@@ -7469,6 +7497,19 @@ the installation event. This field is optional.</p>
 being added. Users looking to utilize the <code class="docutils literal notranslate"><span class="pre">install</span></code> target for the install
 stage with custom arguments should explicitly include the <code class="docutils literal notranslate"><span class="pre">install</span></code> target in
 their options.</p>
+</section>
+<section id="libfoo-make-configure">
+<span id="pkg-opt-make-configure"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAKE_CONFIGURE</span></code><a class="headerlink" href="#libfoo-make-configure" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>The command to invoke during the configuration stage.</p>
+<p>By default, make packages do not invoke a configuration stage. However, if
+configuration options are defined, the default configuration executable
+invoked will be <code class="docutils literal notranslate"><span class="pre">make</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_MAKE_CONFIGURE</span> <span class="o">=</span> <span class="s1">&#39;./configure&#39;</span>
+</pre></div>
+</div>
 </section>
 <section id="libfoo-make-noinstall">
 <span id="pkg-opt-make-noinstall"></span><h5><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAKE_NOINSTALL</span></code><a class="headerlink" href="#libfoo-make-noinstall" title="Link to this heading">¶</a></h5>
@@ -10098,17 +10139,16 @@ has failed</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="releng_tool.releng_register_path">
-<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_register_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_register_path" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="releng_tool.releng_register_env_path">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_register_env_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_register_env_path" title="Link to this definition">¶</a></dt>
 <dd><div class="versionadded">
-<p><span class="versionmodified added">Added in version 2.7.</span></p>
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
 </div>
-<p>This call will register a provided path into the Python module search path
-(<code class="docutils literal notranslate"><span class="pre">sys.path</span></code>). This can be useful for situations when trying to load a
-local/relative folder containing extensions or other enhancements a
-developer wants to use/import. If <code class="docutils literal notranslate"><span class="pre">critical</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> and the
-specified directory could not be registered for any reason, this call will
-issue a system exit (<code class="docutils literal notranslate"><span class="pre">SystemExit</span></code>).</p>
+<p>This call will register a provided path into the environment path
+(<code class="docutils literal notranslate"><span class="pre">PATH</span></code>). This can be useful for registering custom paths for host
+tooling already setup in user's build environments. If <code class="docutils literal notranslate"><span class="pre">critical</span></code> is set
+to <code class="docutils literal notranslate"><span class="pre">True</span></code> and the specified directory could not be registered for any
+reason, this call will issue a system exit (<code class="docutils literal notranslate"><span class="pre">SystemExit</span></code>).</p>
 <p>If the provided path is already registered, the call is ignored and will
 return as if a registration was made (<code class="docutils literal notranslate"><span class="pre">True</span></code>).</p>
 <p>An example when using in the context of script helpers is as follows:</p>
@@ -10120,6 +10160,49 @@ return as if a registration was made (<code class="docutils literal notranslate"
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dir</strong> -- the directory to register</p></li>
 <li><p><strong>critical</strong> (<em>optional</em>) -- whether or not to stop execution on failure</p></li>
+<li><p><strong>prepend</strong> (<em>optional</em>) -- whether this path should be prepended</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the path has been registered; <code class="docutils literal notranslate"><span class="pre">False</span></code> if the registration
+has failed</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>SystemExit</strong> -- if the registration fails with <code class="docutils literal notranslate"><span class="pre">critical=True</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="releng_tool.releng_register_python_path">
+<span class="sig-prename descclassname"><span class="pre">releng_tool.</span></span><span class="sig-name descname"><span class="pre">releng_register_python_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">PathLike</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prepend</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#releng_tool.releng_register_python_path" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 2.7.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 4.2: </span>This call was originally named <code class="docutils literal notranslate"><span class="pre">releng_register_path</span></code>.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 4.2: </span>Added the <code class="docutils literal notranslate"><span class="pre">prepend</span></code> argument.</p>
+</div>
+<p>This call will register a provided path into the Python module search path
+(<code class="docutils literal notranslate"><span class="pre">sys.path</span></code>). This can be useful for situations when trying to load a
+local/relative folder containing extensions or other enhancements a
+developer wants to use/import. If <code class="docutils literal notranslate"><span class="pre">critical</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> and the
+specified directory could not be registered for any reason, this call will
+issue a system exit (<code class="docutils literal notranslate"><span class="pre">SystemExit</span></code>).</p>
+<p>If the provided path is already registered, the call is ignored and will
+return as if a registration was made (<code class="docutils literal notranslate"><span class="pre">True</span></code>).</p>
+<p>An example when using in the context of script helpers is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_register_python_path</span><span class="p">(</span><span class="n">ROOT_DIR</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s1">&#39;my-other-folder&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dir</strong> -- the directory to register</p></li>
+<li><p><strong>critical</strong> (<em>optional</em>) -- whether or not to stop execution on failure</p></li>
+<li><p><strong>prepend</strong> (<em>optional</em>) -- whether this path should be prepended</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -15127,6 +15210,16 @@ the following environment variables can be used instead:</p>
 <section id="development">
 <h3>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h3>
 <ul class="simple">
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">LIBFOO_MAKE_CONFIGURE</span></code> for custom make configuration calls</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">RELENG_HOST_OS_*</span></code> environment/script variables</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">releng_register_python_path</span></code> helper script function</p></li>
+<li><p>Renamed <code class="docutils literal notranslate"><span class="pre">releng_register_path</span></code> to <code class="docutils literal notranslate"><span class="pre">releng_register_python_path</span></code></p></li>
+<li><p>Renamed call <code class="docutils literal notranslate"><span class="pre">releng_register_python_path</span></code> now supports <code class="docutils literal notranslate"><span class="pre">prepend</span></code></p></li>
+</ul>
+</section>
+<section id="v4-1-2026-08-01">
+<h3>4.1 (2026-08-01)<a class="headerlink" href="#v4-1-2026-08-01" title="Link to this heading">¶</a></h3>
+<ul class="simple">
 <li><p>Allow local package types to use sibling root path as a fallback</p></li>
 <li><p>Always check for cache existence if a package fetch-state is stale</p></li>
 <li><p>Fixed clearing of stale fetch-state after invoking package-specific distclean</p></li>
@@ -15874,6 +15967,9 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="#env-releng-force"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_FORCE</span></code></span></a>
 <a class="reference internal" href="#env-releng-generated-licenses"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_GENERATED_LICENSES</span></code></span></a>
 <a class="reference internal" href="#env-releng-generated-sboms"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_GENERATED_SBOMS</span></code></span></a>
+<a class="reference internal" href="#env-releng-host-os-linux"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_HOST_OS_LINUX</span></code></span></a>
+<a class="reference internal" href="#env-releng-host-os-macos"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_HOST_OS_MACOS</span></code></span></a>
+<a class="reference internal" href="#env-releng-host-os-windows"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_HOST_OS_WINDOWS</span></code></span></a>
 <a class="reference internal" href="#env-releng-localsrcs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_LOCALSRCS</span></code></span></a>
 <a class="reference internal" href="#env-releng-mrproper"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_MRPROPER</span></code></span></a>
 <a class="reference internal" href="#env-releng-profiles"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_PROFILES</span></code></span></a>
@@ -15987,6 +16083,7 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="#pkg-opt-install-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INSTALL_TYPE</span></code></span></a> = '&lt;install-type&gt;'
   └── host, images, staging, staging_and_target, target
 <a class="reference internal" href="#pkg-opt-internal"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_INTERNAL</span></code></span></a> = bool
+<a class="reference internal" href="#pkg-opt-make-configure"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAKE_CONFIGURE</span></code></span></a> = '&lt;command&gt;'
 <a class="reference internal" href="#pkg-opt-make-noinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAKE_NOINSTALL</span></code></span></a> = bool
 <a class="reference internal" href="#pkg-opt-max-jobs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MAX_JOBS</span></code></span></a> = int
 <a class="reference internal" href="#pkg-opt-meson-build-type"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">LIBFOO_MESON_BUILD_TYPE</span></code></span></a> = '&lt;build-type&gt;'
@@ -16056,6 +16153,8 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="#releng_tool.releng_move" title="releng_tool.releng_move"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_move</span></code></span></a>(src, dst, quiet=False, critical=True, dst_dir=None, nested=False)
 <a class="reference internal" href="#releng_tool.releng_move_into" title="releng_tool.releng_move_into"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_move_into</span></code></span></a>(src, dst, quiet=False, critical=True, nested=False)
 <a class="reference internal" href="#releng_tool.releng_path" title="releng_tool.releng_path"><span class="xref myst py py-meth"><code class="docutils literal notranslate"><span class="pre">releng_path</span></code></span></a>(*pathsegments)
+<a class="reference internal" href="#releng_tool.releng_register_env_path" title="releng_tool.releng_register_env_path"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_register_env_path</span></code></span></a>(path, critical=True)
+<a class="reference internal" href="#releng_tool.releng_register_python_path" title="releng_tool.releng_register_python_path"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_register_python_path</span></code></span></a>(path, critical=True)
 <a class="reference internal" href="#releng_tool.releng_remove" title="releng_tool.releng_remove"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_remove</span></code></span></a>(path, quiet=False)
 <a class="reference internal" href="#releng_tool.releng_require_version" title="releng_tool.releng_require_version"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_require_version</span></code></span></a>(minver, maxver=None, quiet=False, critical=True)
 <a class="reference internal" href="#document-guides/extensions/extensions"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">releng_setup</span></code></span></a>(app)

@@ -463,6 +463,16 @@ releng-tool, please see the project's <a class="reference external" href="https:
 <section id="development">
 <h2>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h2>
 <ul class="simple">
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">LIBFOO_MAKE_CONFIGURE</span></code> for custom make configuration calls</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">RELENG_HOST_OS_*</span></code> environment/script variables</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">releng_register_python_path</span></code> helper script function</p></li>
+<li><p>Renamed <code class="docutils literal notranslate"><span class="pre">releng_register_path</span></code> to <code class="docutils literal notranslate"><span class="pre">releng_register_python_path</span></code></p></li>
+<li><p>Renamed call <code class="docutils literal notranslate"><span class="pre">releng_register_python_path</span></code> now supports <code class="docutils literal notranslate"><span class="pre">prepend</span></code></p></li>
+</ul>
+</section>
+<section id="v4-1-2026-08-01">
+<h2>4.1 (2026-08-01)<a class="headerlink" href="#v4-1-2026-08-01" title="Link to this heading">¶</a></h2>
+<ul class="simple">
 <li><p>Allow local package types to use sibling root path as a fallback</p></li>
 <li><p>Always check for cache existence if a package fetch-state is stale</p></li>
 <li><p>Fixed clearing of stale fetch-state after invoking package-specific distclean</p></li>
@@ -1129,6 +1139,7 @@ execution</p></li>
 <li><a class="reference internal" href="#">バージョンノート</a><ul>
 <li><a class="reference internal" href="#news">News</a></li>
 <li><a class="reference internal" href="#development">Development</a></li>
+<li><a class="reference internal" href="#v4-1-2026-08-01">4.1 (2026-08-01)</a></li>
 <li><a class="reference internal" href="#v4-0-2026-07-26">4.0 (2026-07-26)</a></li>
 <li><a class="reference internal" href="#v3-1-2026-06-28">3.1 (2026-06-28)</a></li>
 <li><a class="reference internal" href="#v3-0-2026-04-12">3.0 (2026-04-12)</a></li>
