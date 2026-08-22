@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=88acf7b1" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css?v=26d2822e" />
     <link rel="stylesheet" type="text/css" href="_static/theme_overrides_singlebuilder.css?v=69bb1ead" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     
@@ -267,6 +267,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="#document-guides/quirks/quirks">Quirks</a><input aria-label="Toggle navigation of Quirks" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-cmake-disable_default_prefix">releng.cmake.disable_default_prefix</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-cmake-disable_direct_includes">releng.cmake.disable_direct_includes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-cmake-disable_export_compile_commands">releng.cmake.disable_export_compile_commands</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-disable_devmode_ignore_cache">releng.disable_devmode_ignore_cache</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-disable_prerequisites_check">releng.disable_prerequisites_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-disable_remote_configs">releng.disable_remote_configs</a></li>
@@ -2533,6 +2534,18 @@ or <code class="docutils literal notranslate"><span class="pre">--dl-dir</span><
 </div>
 <p>See also <a class="reference internal" href="#env-releng-assets-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_ASSETS_DIR</span></code></span></a>.</p>
 </section>
+<section id="build-id-id-var">
+<span id="arg-build-id"></span><h5><code class="docutils literal notranslate"><span class="pre">--build-id</span> <span class="pre">&lt;id&gt;</span></code><a class="headerlink" href="#build-id-id-var" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>Allows providing a build/job identifier which projects may utilize for identify
+a given releng-tool run.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>releng-tool --build-id=123
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#env-releng-build-id"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_BUILD_ID</span></code></span></a>.</p>
+</section>
 <section id="cache-dir-dir-var">
 <span id="arg-cache-dir"></span><h5><code class="docutils literal notranslate"><span class="pre">--cache-dir</span> <span class="pre">&lt;dir&gt;</span></code><a class="headerlink" href="#cache-dir-dir-var" title="Link to this heading">¶</a></h5>
 <p>Directory for distributed version control cache information (defaults to
@@ -3896,6 +3909,14 @@ directory may be as follows:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;root-dir&gt;/output/target/usr
 </pre></div>
 </div>
+</section>
+<section id="releng-build-id">
+<span id="env-releng-build-id"></span><h5><code class="docutils literal notranslate"><span class="pre">RELENG_BUILD_ID</span></code><a class="headerlink" href="#releng-build-id" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>The build identifier provided from the command line.</p>
+<p>This is set when the <a class="reference internal" href="#arg-build-id"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--build-id</span></code> argument</span></a> is configured.</p>
 </section>
 <section id="releng-clean">
 <span id="env-releng-clean"></span><h5><code class="docutils literal notranslate"><span class="pre">RELENG_CLEAN</span></code><a class="headerlink" href="#releng-clean" title="Link to this heading">¶</a></h5>
@@ -6881,6 +6902,9 @@ the installation event. This field is optional.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Distinto en la versión 4.1: </span>releng-tool now populates <code class="docutils literal notranslate"><span class="pre">CMAKE_PREFIX_PATH</span></code>.</p>
 </div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Distinto en la versión 4.2: </span>releng-tool default enables <code class="docutils literal notranslate"><span class="pre">CMAKE_EXPORT_COMPILE_COMMANDS</span></code>.</p>
+</div>
 <p>A CMake package provides support for processing a <a class="reference external" href="https://cmake.org/">CMake</a> supported
 module.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_TYPE</span> <span class="o">=</span> <span class="s1">&#39;cmake&#39;</span>
@@ -6929,6 +6953,7 @@ are invoked with a <a class="reference internal" href="#env-pkg-build-dir"><span
 <p>With the configuration cache that populates the options:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CMAKE_&lt;LANG&gt;_STANDARD_INCLUDE_DIRECTORIES=&lt;INCLUDE_PATHS&gt;
 CMAKE_BUILD_TYPE=&lt;BUILD_TYPE&gt;
+CMAKE_EXPORT_COMPILE_COMMANDS=ON
 CMAKE_FIND_ROOT_PATH=&lt;SYSROOT_PATHS&gt;
 CMAKE_FIND_ROOT_PATH_MODE_PROGRAM=NEVER
 CMAKE_INCLUDE_PATH=&lt;INCLUDE_PATHS&gt;
@@ -6959,6 +6984,9 @@ library (<code class="docutils literal notranslate"><span class="pre">&lt;sysroo
 quirk. Packages may opt-out of configuring
 <code class="docutils literal notranslate"><span class="pre">CMAKE_&lt;LANG&gt;_STANDARD_INCLUDE_DIRECTORIES</span></code> variables using the
 <a class="reference internal" href="#quirk-releng-cmake-disable-direct-includes"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_direct_includes</span></code></span></a>
+quirk. Packages may opt-out of configuring the <code class="docutils literal notranslate"><span class="pre">CMAKE_EXPORT_COMPILE_COMMANDS</span></code>
+variable using the
+<a class="reference internal" href="#quirk-releng-cmake-disable-export-compile-commands"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_export_compile_commands</span></code></span></a>
 quirk.</p>
 </div>
 <input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--2">Build</label><div class="tab-content docutils">
@@ -11764,7 +11792,7 @@ releng-tool run:</p>
 <h5>Available quirks<a class="headerlink" href="#available-quirks" title="Link to this heading">¶</a></h5>
 <p>The following is a list of all available quirks supported by releng-tool:</p>
 <div class="toctree-wrapper compound">
-<span id="document-guides/quirks/quirk-cmake-disable_default_prefix"></span><section id="quirk-releng-cmake-disable-default-prefix">
+<span id="document-guides/quirks/quirk-cmake-disable_default_prefix"></span><section class="quirk-header" id="quirk-releng-cmake-disable-default-prefix">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_default_prefix</span></code><a class="headerlink" href="#quirk-releng-cmake-disable-default-prefix" title="Link to this heading">¶</a></h6>
 <p>For CMake-based projects, releng-tool will populate
 <a class="reference external" href="https://cmake.org/cmake/help/latest/variable/CMAKE_PREFIX_PATH.html"><code class="docutils literal notranslate"><span class="pre">CMAKE_PREFIX_PATH</span></code></a> to paths applicable for a package.
@@ -11811,7 +11839,7 @@ resolutions.</p>
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-cmake-disable_direct_includes"></span><section id="quirk-releng-cmake-disable-direct-includes">
+<span id="document-guides/quirks/quirk-cmake-disable_direct_includes"></span><section class="quirk-header" id="quirk-releng-cmake-disable-direct-includes">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_direct_includes</span></code><a class="headerlink" href="#quirk-releng-cmake-disable-direct-includes" title="Link to this heading">¶</a></h6>
 <p>For CMake-based projects, releng-tool will populate a series of include
 directories (internally or from a project’s configuration definition) to
@@ -11850,7 +11878,44 @@ overrides), the option can be disabled using the
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-disable_devmode_ignore_cache"></span><section id="quirk-releng-disable-devmode-ignore-cache">
+<span id="document-guides/quirks/quirk-cmake-disable_export_compile_commands"></span><section class="quirk-header" id="quirk-releng-cmake-disable-export-compile-commands">
+<span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_export_compile_commands</span></code><a class="headerlink" href="#quirk-releng-cmake-disable-export-compile-commands" title="Link to this heading">¶</a></h6>
+<p>For CMake-based projects, releng-tool will populate
+<a class="reference external" href="https://cmake.org/cmake/help/latest/variable/CMAKE_EXPORT_COMPILE_COMMANDS.html"><code class="docutils literal notranslate"><span class="pre">CMAKE_EXPORT_COMPILE_COMMANDS</span></code></a> to an enabled state. This is
+to help developers by default have a compilation database available for
+inspection and use by supplementary tooling.</p>
+<p>If enabling this feature causes issues for a package, it can be disabled by
+configuring the <code class="docutils literal notranslate"><span class="pre">CMAKE_EXPORT_COMPILE_COMMANDS</span></code> option to use an unset value:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LIBFOO_CONF_DEFS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;CMAKE_EXPORT_COMPILE_COMMANDS&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>However, if multiple packages have issues, developers may utilizes this quirk
+to disable this feature. The feature can be disabled using the
+<code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_export_compile_commands</span></code> quirk using the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">cmake</span><span class="o">.</span><span class="n">disable_export_compile_commands</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_config</span><span class="p">(</span>
+    <span class="o">...</span>
+    <span class="n">quirks</span><span class="o">=</span><span class="p">[</span>
+        <span class="o">...</span>
+        <span class="s1">&#39;releng.cmake.disable_export_compile_commands&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<section id="see-also">
+<h6 aria-level="7">See also<a class="headerlink" href="#see-also" title="Link to this heading">¶</a></h6>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cmake.org/cmake/help/latest/variable/CMAKE_EXPORT_COMPILE_COMMANDS.html"><code class="docutils literal notranslate"><span class="pre">CMAKE_EXPORT_COMPILE_COMMANDS</span></code></a></p></li>
+<li><p><a class="reference internal" href="#document-guides/quirks/quirks"><span class="doc std std-doc">Quirks</span></a></p></li>
+</ul>
+</section>
+</section>
+<span id="document-guides/quirks/quirk-disable_devmode_ignore_cache"></span><section class="quirk-header" id="quirk-releng-disable-devmode-ignore-cache">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.disable_devmode_ignore_cache</span></code><a class="headerlink" href="#quirk-releng-disable-devmode-ignore-cache" title="Link to this heading">¶</a></h6>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 2.4.</span></p>
@@ -11882,7 +11947,7 @@ avoid any re-fetch attempt. For example, using the command line::</p>
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-disable_prerequisites_check"></span><section id="quirk-releng-disable-prerequisites-check">
+<span id="document-guides/quirks/quirk-disable_prerequisites_check"></span><section class="quirk-header" id="quirk-releng-disable-prerequisites-check">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.disable_prerequisites_check</span></code><a class="headerlink" href="#quirk-releng-disable-prerequisites-check" title="Link to this heading">¶</a></h6>
 <p>A releng-tool project may require various dependencies. For example, if
 a package define a Git-based site for sources, the <code class="docutils literal notranslate"><span class="pre">git</span></code> client will be
@@ -11915,7 +11980,7 @@ quirk to skip any prerequisite check using the command line:</p>
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-disable_remote_configs"></span><section id="quirk-releng-disable-remote-configs">
+<span id="document-guides/quirks/quirk-disable_remote_configs"></span><section class="quirk-header" id="quirk-releng-disable-remote-configs">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.disable_remote_configs</span></code><a class="headerlink" href="#quirk-releng-disable-remote-configs" title="Link to this heading">¶</a></h6>
 <p>releng-tool package sources have the ability to inject late-stage
 configuration options from a remote source. If a user is having issues
@@ -11942,7 +12007,7 @@ of late-stage configuration options using the command line:</p>
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-disable_remote_scripts"></span><section id="quirk-releng-disable-remote-scripts">
+<span id="document-guides/quirks/quirk-disable_remote_scripts"></span><section class="quirk-header" id="quirk-releng-disable-remote-scripts">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.disable_remote_scripts</span></code><a class="headerlink" href="#quirk-releng-disable-remote-scripts" title="Link to this heading">¶</a></h6>
 <p>releng-tool package sources have the ability to define configuration,
 build and installation stage scripts from a remote source. If a user is
@@ -11969,7 +12034,7 @@ these scripts using the command line:</p>
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-disable_verbose_patch"></span><section id="quirk-releng-disable-verbose-patch">
+<span id="document-guides/quirks/quirk-disable_verbose_patch"></span><section class="quirk-header" id="quirk-releng-disable-verbose-patch">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.disable_verbose_patch</span></code><a class="headerlink" href="#quirk-releng-disable-verbose-patch" title="Link to this heading">¶</a></h6>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 2.2.</span></p>
@@ -11999,7 +12064,7 @@ For example, using the command line:</p>
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-git-no_depth"></span><section id="quirk-releng-git-no-depth">
+<span id="document-guides/quirks/quirk-git-no_depth"></span><section class="quirk-header" id="quirk-releng-git-no-depth">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.git.no_depth</span></code><a class="headerlink" href="#quirk-releng-git-no-depth" title="Link to this heading">¶</a></h6>
 <p>releng-tool may use the <a class="reference external" href="https://git-scm.com/docs/git-clone#Documentation/git-clone.txt-code--depthltdepthgtcode"><code class="docutils literal notranslate"><span class="pre">--depth</span></code></a> option for Git-based packages
 to to perform shallow checkouts to improve fetch performance. If a user does
@@ -12026,7 +12091,7 @@ used. For example, using the command line:</p>
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-git-no_quick_fetch"></span><section id="quirk-releng-git-no-quick-fetch">
+<span id="document-guides/quirks/quirk-git-no_quick_fetch"></span><section class="quirk-header" id="quirk-releng-git-no-quick-fetch">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.git.no_quick_fetch</span></code><a class="headerlink" href="#quirk-releng-git-no-quick-fetch" title="Link to this heading">¶</a></h6>
 <p>When fetching sources for a Git-site-defined package, releng-tool will
 attempt to acquire these sources by only pulling applicable revision
@@ -12056,7 +12121,7 @@ using the command line:</p>
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-git-replicate_cache"></span><section id="quirk-releng-git-replicate-cache">
+<span id="document-guides/quirks/quirk-git-replicate_cache"></span><section class="quirk-header" id="quirk-releng-git-replicate-cache">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.git.replicate_cache</span></code><a class="headerlink" href="#quirk-releng-git-replicate-cache" title="Link to this heading">¶</a></h6>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 0.17.</span></p>
@@ -12092,7 +12157,7 @@ using the command line:</p>
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-ignore_failed_extensions"></span><section id="quirk-releng-ignore-failed-extensions">
+<span id="document-guides/quirks/quirk-ignore_failed_extensions"></span><section class="quirk-header" id="quirk-releng-ignore-failed-extensions">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.ignore_failed_extensions</span></code><a class="headerlink" href="#quirk-releng-ignore-failed-extensions" title="Link to this heading">¶</a></h6>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 2.7.</span></p>
@@ -12123,7 +12188,7 @@ For example, using the command line:</p>
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-ignore_release_check"></span><section id="quirk-releng-ignore-release-check">
+<span id="document-guides/quirks/quirk-ignore_release_check"></span><section class="quirk-header" id="quirk-releng-ignore-release-check">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.ignore_release_check</span></code><a class="headerlink" href="#quirk-releng-ignore-release-check" title="Link to this heading">¶</a></h6>
 <div class="admonition warning">
 <p class="admonition-title">Advertencia</p>
@@ -12159,7 +12224,7 @@ For example, using the command line:</p>
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-log-execute_args"></span><section id="quirk-releng-log-execute-args">
+<span id="document-guides/quirks/quirk-log-execute_args"></span><section class="quirk-header" id="quirk-releng-log-execute-args">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.log.execute_args</span></code><a class="headerlink" href="#quirk-releng-log-execute-args" title="Link to this heading">¶</a></h6>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 1.4.</span></p>
@@ -12191,7 +12256,7 @@ each argument on their own line. For example, using the command line:</p>
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-log-execute_env"></span><section id="quirk-releng-log-execute-env">
+<span id="document-guides/quirks/quirk-log-execute_env"></span><section class="quirk-header" id="quirk-releng-log-execute-env">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.log.execute_env</span></code><a class="headerlink" href="#quirk-releng-log-execute-env" title="Link to this heading">¶</a></h6>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 1.3.</span></p>
@@ -12223,7 +12288,7 @@ the command line:</p>
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-stats-no_pdf"></span><section id="quirk-releng-stats-no-pdf">
+<span id="document-guides/quirks/quirk-stats-no_pdf"></span><section class="quirk-header" id="quirk-releng-stats-no-pdf">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.stats.no_pdf</span></code><a class="headerlink" href="#quirk-releng-stats-no-pdf" title="Link to this heading">¶</a></h6>
 <p>releng-tool will generate statistics for a build (such as the duration it
 takes to build a specific package) and place this information in the
@@ -12253,7 +12318,7 @@ information.</p>
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-xmake-disable-arch-detection"></span><section id="quirk-releng-xmake-disable-arch-detection">
+<span id="document-guides/quirks/quirk-xmake-disable-arch-detection"></span><section class="quirk-header" id="quirk-releng-xmake-disable-arch-detection">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.xmake.disable_arch_detection</span></code><a class="headerlink" href="#quirk-releng-xmake-disable-arch-detection" title="Link to this heading">¶</a></h6>
 <p>In select environments, a generated Xmake project may fail to link due
 to automatic architecture detection not working as expected. This can be
@@ -12288,7 +12353,7 @@ architecture configuration, this feature can be disabled using the quirk
 </ul>
 </section>
 </section>
-<span id="document-guides/quirks/quirk-xmake-disable-deps-init"></span><section id="quirk-releng-xmake-disable-deps-init">
+<span id="document-guides/quirks/quirk-xmake-disable-deps-init"></span><section class="quirk-header" id="quirk-releng-xmake-disable-deps-init">
 <span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.xmake.disable_deps_init</span></code><a class="headerlink" href="#quirk-releng-xmake-disable-deps-init" title="Link to this heading">¶</a></h6>
 <p>releng-tool will default generate Xmake dependency folders for configured
 modes. This involves detecting available targets of a package, along with
@@ -15210,9 +15275,11 @@ the following environment variables can be used instead:</p>
 <section id="development">
 <h3>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h3>
 <ul class="simple">
+<li><p>Default enable <code class="docutils literal notranslate"><span class="pre">CMAKE_EXPORT_COMPILE_COMMANDS</span></code> for CMake projects</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">LIBFOO_MAKE_CONFIGURE</span></code> for custom make configuration calls</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">RELENG_HOST_OS_*</span></code> environment/script variables</p></li>
-<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">releng_register_python_path</span></code> helper script function</p></li>
+<li><p>Introduce <code class="docutils literal notranslate"><span class="pre">releng_register_env_path</span></code> helper script function</p></li>
+<li><p>Introduce the <code class="docutils literal notranslate"><span class="pre">--build-id</span></code> argument which projects may use for tracking a run</p></li>
 <li><p>Renamed <code class="docutils literal notranslate"><span class="pre">releng_register_path</span></code> to <code class="docutils literal notranslate"><span class="pre">releng_register_python_path</span></code></p></li>
 <li><p>Renamed call <code class="docutils literal notranslate"><span class="pre">releng_register_python_path</span></code> now supports <code class="docutils literal notranslate"><span class="pre">prepend</span></code></p></li>
 </ul>
@@ -15865,6 +15932,7 @@ releng-tool project.</p>
 <a class="reference internal" href="#action-pkg-reconfigure-only"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reconfigure-only</span></code></span></a>
 <a class="reference internal" href="#action-pkg-reinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reinstall</span></code></span></a>
 <a class="reference internal" href="#arg-assets-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--assets-dir</span> <span class="pre">&lt;dir&gt;</span></code></span></a>
+<a class="reference internal" href="#arg-build-id"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--build-id</span> <span class="pre">&lt;id&gt;</span></code></span></a>
 <a class="reference internal" href="#arg-cache-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--cache-dir</span> <span class="pre">&lt;dir&gt;</span></code></span></a>
 <a class="reference internal" href="#arg-config"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--config</span> <span class="pre">&lt;file&gt;</span></code></span></a>
 <a class="reference internal" href="#arg-debug"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--debug</span></code></span></a>
@@ -15959,6 +16027,7 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="#env-prefixed-host-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PREFIXED_HOST_DIR</span></code></span></a>
 <a class="reference internal" href="#env-prefixed-staging-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PREFIXED_STAGING_DIR</span></code></span></a>
 <a class="reference internal" href="#env-prefixed-target-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PREFIXED_TARGET_DIR</span></code></span></a>
+<a class="reference internal" href="#env-releng-build-id"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_BUILD_ID</span></code></span></a>
 <a class="reference internal" href="#env-releng-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_CLEAN</span></code></span></a>
 <a class="reference internal" href="#env-releng-debug"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_DEBUG</span></code></span></a>
 <a class="reference internal" href="#env-releng-devmode"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_DEVMODE</span></code></span></a>
@@ -16175,6 +16244,7 @@ releng-tool (may vary per context):</p>
 <p>Quirk options used by releng-tool:</p>
 <pre class="literal-block"><a class="reference internal" href="#quirk-releng-cmake-disable-default-prefix"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_default_prefix</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-cmake-disable-direct-includes"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_direct_includes</span></code></span></a>
+<a class="reference internal" href="#quirk-releng-cmake-disable-export-compile-commands"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_export_compile_commands</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-disable-devmode-ignore-cache"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_devmode_ignore_cache</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-disable-prerequisites-check"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_prerequisites_check</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-disable-remote-configs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_remote_configs</span></code></span></a>

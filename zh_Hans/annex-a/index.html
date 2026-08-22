@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=88acf7b1" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme_overrides.css?v=26d2822e" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
     
     
@@ -266,6 +266,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../guides/quirks/quirks/">Quirks</a><input aria-label="Toggle navigation of Quirks" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-cmake-disable_default_prefix/">releng.cmake.disable_default_prefix</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-cmake-disable_direct_includes/">releng.cmake.disable_direct_includes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-cmake-disable_export_compile_commands/">releng.cmake.disable_export_compile_commands</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_devmode_ignore_cache/">releng.disable_devmode_ignore_cache</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_prerequisites_check/">releng.disable_prerequisites_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../guides/quirks/quirk-disable_remote_configs/">releng.disable_remote_configs</a></li>
@@ -461,6 +462,7 @@ releng-tool project.</p>
 <a class="reference internal" href="../guides/arguments/#action-pkg-reconfigure-only"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reconfigure-only</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#action-pkg-reinstall"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">&lt;pkg&gt;-reinstall</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#arg-assets-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--assets-dir</span> <span class="pre">&lt;dir&gt;</span></code></span></a>
+<a class="reference internal" href="../guides/arguments/#arg-build-id"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--build-id</span> <span class="pre">&lt;id&gt;</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#arg-cache-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--cache-dir</span> <span class="pre">&lt;dir&gt;</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#arg-config"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--config</span> <span class="pre">&lt;file&gt;</span></code></span></a>
 <a class="reference internal" href="../guides/arguments/#arg-debug"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--debug</span></code></span></a>
@@ -555,6 +557,7 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="../guides/environment/#env-prefixed-host-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PREFIXED_HOST_DIR</span></code></span></a>
 <a class="reference internal" href="../guides/environment/#env-prefixed-staging-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PREFIXED_STAGING_DIR</span></code></span></a>
 <a class="reference internal" href="../guides/environment/#env-prefixed-target-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">PREFIXED_TARGET_DIR</span></code></span></a>
+<a class="reference internal" href="../guides/environment/#env-releng-build-id"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_BUILD_ID</span></code></span></a>
 <a class="reference internal" href="../guides/environment/#env-releng-clean"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_CLEAN</span></code></span></a>
 <a class="reference internal" href="../guides/environment/#env-releng-debug"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_DEBUG</span></code></span></a>
 <a class="reference internal" href="../guides/environment/#env-releng-devmode"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_DEVMODE</span></code></span></a>
@@ -771,6 +774,7 @@ releng-tool (may vary per context):</p>
 <p>Quirk options used by releng-tool:</p>
 <pre class="literal-block"><a class="reference internal" href="../guides/quirks/quirk-cmake-disable_default_prefix/#quirk-releng-cmake-disable-default-prefix"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_default_prefix</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-cmake-disable_direct_includes/#quirk-releng-cmake-disable-direct-includes"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_direct_includes</span></code></span></a>
+<a class="reference internal" href="../guides/quirks/quirk-cmake-disable_export_compile_commands/#quirk-releng-cmake-disable-export-compile-commands"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.cmake.disable_export_compile_commands</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-disable_devmode_ignore_cache/#quirk-releng-disable-devmode-ignore-cache"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_devmode_ignore_cache</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-disable_prerequisites_check/#quirk-releng-disable-prerequisites-check"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_prerequisites_check</span></code></span></a>
 <a class="reference internal" href="../guides/quirks/quirk-disable_remote_configs/#quirk-releng-disable-remote-configs"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.disable_remote_configs</span></code></span></a>

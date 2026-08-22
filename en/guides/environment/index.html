@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=88acf7b1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/theme_overrides.css?v=26d2822e" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
     
     
@@ -266,6 +266,7 @@
 <li class="toctree-l3 has-children"><a class="reference internal" href="../quirks/quirks/">Quirks</a><input aria-label="Toggle navigation of Quirks" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-cmake-disable_default_prefix/">releng.cmake.disable_default_prefix</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-cmake-disable_direct_includes/">releng.cmake.disable_direct_includes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-cmake-disable_export_compile_commands/">releng.cmake.disable_export_compile_commands</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-disable_devmode_ignore_cache/">releng.disable_devmode_ignore_cache</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-disable_prerequisites_check/">releng.disable_prerequisites_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-disable_remote_configs/">releng.disable_remote_configs</a></li>
@@ -821,6 +822,14 @@ directory may be as follows:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;root-dir&gt;/output/target/usr
 </pre></div>
 </div>
+</section>
+<section id="releng-build-id">
+<span id="env-releng-build-id"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_BUILD_ID</span></code><a class="headerlink" href="#releng-build-id" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>The build identifier provided from the command line.</p>
+<p>This is set when the <a class="reference internal" href="../arguments/#arg-build-id"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--build-id</span></code> argument</span></a> is configured.</p>
 </section>
 <section id="releng-clean">
 <span id="env-releng-clean"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_CLEAN</span></code><a class="headerlink" href="#releng-clean" title="Link to this heading">¶</a></h3>
@@ -1630,6 +1639,7 @@ Consider the following example:</p>
 <li><a class="reference internal" href="#prefixed-host-dir"><code class="docutils literal notranslate"><span class="pre">PREFIXED_HOST_DIR</span></code></a></li>
 <li><a class="reference internal" href="#prefixed-staging-dir"><code class="docutils literal notranslate"><span class="pre">PREFIXED_STAGING_DIR</span></code></a></li>
 <li><a class="reference internal" href="#prefixed-target-dir"><code class="docutils literal notranslate"><span class="pre">PREFIXED_TARGET_DIR</span></code></a></li>
+<li><a class="reference internal" href="#releng-build-id"><code class="docutils literal notranslate"><span class="pre">RELENG_BUILD_ID</span></code></a></li>
 <li><a class="reference internal" href="#releng-clean"><code class="docutils literal notranslate"><span class="pre">RELENG_CLEAN</span></code></a></li>
 <li><a class="reference internal" href="#releng-debug"><code class="docutils literal notranslate"><span class="pre">RELENG_DEBUG</span></code></a></li>
 <li><a class="reference internal" href="#releng-devmode"><code class="docutils literal notranslate"><span class="pre">RELENG_DEVMODE</span></code></a></li>
