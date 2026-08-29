@@ -312,6 +312,7 @@
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="#document-release-notes">バージョンノート</a><input aria-label="Toggle navigation of バージョンノート" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="#document-news/2026-08-29_04.02.00">4.2 (2026-08-29)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-news/2026-08-01_04.01.00">4.1 (2026-08-01)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-news/2026-07-26_04.00.00">4.0 (2026-07-26)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-news/2026-06-28_03.01.00">3.1 (2026-06-28)</a></li>
@@ -13140,6 +13141,44 @@ releng-tool, please see the project's <a class="reference external" href="https:
 <section id="news">
 <h3>News<a class="headerlink" href="#news" title="Link to this heading">¶</a></h3>
 <div class="toctree-wrapper compound">
+<span id="document-news/2026-08-29_04.02.00"></span><section id="v4-2-2026-08-29">
+<h4>4.2 (2026-08-29)<a class="headerlink" href="#v4-2-2026-08-29" title="Link to this heading">¶</a></h4>
+<section id="changes-to-path-registration-helpers">
+<h5>Changes to path registration helpers<a class="headerlink" href="#changes-to-path-registration-helpers" title="Link to this heading">¶</a></h5>
+<p>This release now provides helpers for both environment and Python path
+registration. Originally, releng-tool provided a <code class="docutils literal notranslate"><span class="pre">releng_register_path</span></code> helper
+to register paths into the Python system paths. This helper has now been renamed
+to <a class="reference internal" href="#releng_tool.releng_register_python_path" title="releng_tool.releng_register_python_path"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_register_python_path</span></code></span></a> to
+be more explicit on where the path is being registered on.</p>
+<p>For registering paths in the environment (i.e. <code class="docutils literal notranslate"><span class="pre">PATH</span></code>), the helper
+<a class="reference internal" href="#releng_tool.releng_register_env_path" title="releng_tool.releng_register_env_path"><span class="xref myst py py-func"><code class="docutils literal notranslate"><span class="pre">releng_register_env_path</span></code></span></a> has been
+added.</p>
+<p>Both helpers support appending to respective path configurations. Both options
+also support a <code class="docutils literal notranslate"><span class="pre">prepend</span></code> argument if a path priority is required.</p>
+</section>
+<section id="build-identifier-argument">
+<h5>Build identifier argument<a class="headerlink" href="#build-identifier-argument" title="Link to this heading">¶</a></h5>
+<p>releng-tool's command line now accepts a <a class="reference internal" href="#arg-build-id"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--build-id</span></code></span></a> argument.
+This is a helper for projects who which to easily pass in an identifier for a
+run (e.g. a CI pipeline/job identifier) which can be used to tailor either
+specific packages or used in a post-build stage. Setting this argument will
+populate an environment/script variable <a class="reference internal" href="#env-releng-build-id"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_BUILD_ID</span></code></span></a>
+which can be used at any stage of a run.</p>
+</section>
+<section id="platform-type-variables">
+<h5>Platform type variables<a class="headerlink" href="#platform-type-variables" title="Link to this heading">¶</a></h5>
+<p>New environment/script variables have been added to help identify a platform
+type. Supported variables include:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#env-releng-host-os-linux"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_HOST_OS_LINUX</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#env-releng-host-os-macos"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_HOST_OS_MACOS</span></code></span></a></p></li>
+<li><p><a class="reference internal" href="#env-releng-host-os-windows"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_HOST_OS_WINDOWS</span></code></span></a></p></li>
+</ul>
+<p>This is aimed to be a simple/quick alternative for project's supporting multiple
+platform types if not looking to rely on Python's <code class="docutils literal notranslate"><span class="pre">platform</span></code>, <code class="docutils literal notranslate"><span class="pre">sys</span></code> or other
+modules.</p>
+</section>
+</section>
 <span id="document-news/2026-08-01_04.01.00"></span><section id="v4-1-2026-08-01">
 <h4>4.1 (2026-08-01)<a class="headerlink" href="#v4-1-2026-08-01" title="Link to this heading">¶</a></h4>
 <section id="target-skeleton-report">
@@ -15318,8 +15357,8 @@ the following environment variables can be used instead:</p>
 </section>
 </div>
 </section>
-<section id="development">
-<h3>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h3>
+<section id="v4-2-2026-08-29">
+<h3>4.2 (2026-08-29)<a class="headerlink" href="#v4-2-2026-08-29" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Check for <code class="docutils literal notranslate"><span class="pre">p4</span></code> availability when using Perforce packages</p></li>
 <li><p>Default enable <code class="docutils literal notranslate"><span class="pre">CMAKE_EXPORT_COMPILE_COMMANDS</span></code> for CMake projects</p></li>
