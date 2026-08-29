@@ -280,6 +280,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-ignore_release_check">releng.ignore_release_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-log-execute_args">releng.log.execute_args</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-log-execute_env">releng.log.execute_env</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-log-skip_package_versions_banner">releng.log.skip_package_versions_banner</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-stats-no_pdf">releng.stats.no_pdf</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-xmake-disable-arch-detection">releng.xmake.disable_arch_detection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#document-guides/quirks/quirk-xmake-disable-deps-init">releng.xmake.disable_deps_init</a></li>
@@ -4445,6 +4446,21 @@ configured to <code class="docutils literal notranslate"><span class="pre">&lt;r
 using the <a class="reference internal" href="#arg-cache-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--cache-dir</span></code> argument</span></a>, the <code class="docutils literal notranslate"><span class="pre">RELENG_CACHE_DIR</span></code>
 option can be used to override this location.</p>
 <p>See also <a class="reference internal" href="#env-cache-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">CACHE_DIR</span></code></span></a>.</p>
+</section>
+<section id="releng-delayed-start">
+<span id="env-releng-delayed-start"></span><h5><code class="docutils literal notranslate"><span class="pre">RELENG_DELAYED_START=1</span></code><a class="headerlink" href="#releng-delayed-start" title="Link to this heading">¶</a></h5>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>Hint to delay execution at the start of a run. releng-tool will print package
+versions at the start of an execution. Users who wish to delay the execution
+for a moment after printing this information can set this variable.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">RELENG_DELAYED_START</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>This is to help users perform active inspections of used revisions, allowing
+easy active log reading before packages may trigger extensive log messages.
+Execution is delayed ten (10) seconds.</p>
 </section>
 <section id="releng-dl-dir">
 <span id="env-releng-dl-dir"></span><h5><code class="docutils literal notranslate"><span class="pre">RELENG_DL_DIR=&lt;dir&gt;</span></code><a class="headerlink" href="#releng-dl-dir" title="Link to this heading">¶</a></h5>
@@ -12190,7 +12206,7 @@ For example, using the command line:</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Using this option is never recommended since it overrides the purpose of
-release checks. The quick is solely available to help special corner cases
+release checks. The quirk is solely available to help special corner cases
 for developers.</p>
 </div>
 <div class="versionadded">
@@ -12231,7 +12247,7 @@ will log (among other things) process executions. Debugging can print
 information such as working directory of an execution, as well as arguments
 used for a call. For some commands, the command line and arguments can be
 long and may be difficult to quickly scan for issues. To help improve the
-user experience, the <code class="docutils literal notranslate"><span class="pre">releng.log.execute_args</span></code> quick can be used to print
+user experience, the <code class="docutils literal notranslate"><span class="pre">releng.log.execute_args</span></code> quirk can be used to print
 each argument on their own line. For example, using the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">debug</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">execute_args</span>
 </pre></div>
@@ -12263,7 +12279,7 @@ will log (among other things) process executions. Debugging can print
 information such as working directory of an execution, as well as arguments
 used for a call. The environment for an execution is not logged by default.
 For users wishing to include this information as well before an invoked
-process, the <code class="docutils literal notranslate"><span class="pre">releng.log.execute_env</span></code> quick can be used. For example, using
+process, the <code class="docutils literal notranslate"><span class="pre">releng.log.execute_env</span></code> quirk can be used. For example, using
 the command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">debug</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">execute_env</span>
 </pre></div>
@@ -12274,6 +12290,36 @@ the command line:</p>
     <span class="n">quirks</span><span class="o">=</span><span class="p">[</span>
         <span class="o">...</span>
         <span class="s1">&#39;releng.log.execute_env&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<section id="see-also">
+<h6 aria-level="7">See also<a class="headerlink" href="#see-also" title="Link to this heading">¶</a></h6>
+<ul class="simple">
+<li><p><a class="reference internal" href="#document-guides/quirks/quirks"><span class="doc std std-doc">Quirks</span></a></p></li>
+</ul>
+</section>
+</section>
+<span id="document-guides/quirks/quirk-log-skip_package_versions_banner"></span><section class="quirk-header" id="quirk-releng-log-skip-package-versions-banner">
+<span id="id1"></span><h6>Quirk <code class="docutils literal notranslate"><span class="pre">releng.log.skip_package_versions_banner</span></code><a class="headerlink" href="#quirk-releng-log-skip-package-versions-banner" title="Link to this heading">¶</a></h6>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>At the start of a releng-tool run, configured package versions will be
+printed to the output stream. This is to help users actively inspect configured
+revisions at the start of a possible long run. For users not wanting to display
+this information in their logs, the <code class="docutils literal notranslate"><span class="pre">releng.log.skip_package_versions_banner</span></code>
+quirk can be used. For example, using the command line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">releng</span><span class="o">-</span><span class="n">tool</span> <span class="o">--</span><span class="n">quirk</span> <span class="n">releng</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">skip_package_versions_banner</span>
+</pre></div>
+</div>
+<p>Or adding in the project configuration:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_config</span><span class="p">(</span>
+    <span class="o">...</span>
+    <span class="n">quirks</span><span class="o">=</span><span class="p">[</span>
+        <span class="o">...</span>
+        <span class="s1">&#39;releng.log.skip_package_versions_banner&#39;</span><span class="p">,</span>
     <span class="p">],</span>
 <span class="p">)</span>
 </pre></div>
@@ -15271,11 +15317,14 @@ the following environment variables can be used instead:</p>
 <section id="development">
 <h3>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h3>
 <ul class="simple">
+<li><p>Check for <code class="docutils literal notranslate"><span class="pre">p4</span></code> availability when using Perforce packages</p></li>
 <li><p>Default enable <code class="docutils literal notranslate"><span class="pre">CMAKE_EXPORT_COMPILE_COMMANDS</span></code> for CMake projects</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">LIBFOO_MAKE_CONFIGURE</span></code> for custom make configuration calls</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">RELENG_HOST_OS_*</span></code> environment/script variables</p></li>
 <li><p>Introduce <code class="docutils literal notranslate"><span class="pre">releng_register_env_path</span></code> helper script function</p></li>
 <li><p>Introduce the <code class="docutils literal notranslate"><span class="pre">--build-id</span></code> argument which projects may use for tracking a run</p></li>
+<li><p>Packages are now sorted when using <code class="docutils literal notranslate"><span class="pre">printpkgs</span></code> and <code class="docutils literal notranslate"><span class="pre">printvars</span></code></p></li>
+<li><p>Print package revisions at the start of a run</p></li>
 <li><p>Renamed <code class="docutils literal notranslate"><span class="pre">releng_register_path</span></code> to <code class="docutils literal notranslate"><span class="pre">releng_register_python_path</span></code></p></li>
 <li><p>Renamed call <code class="docutils literal notranslate"><span class="pre">releng_register_python_path</span></code> now supports <code class="docutils literal notranslate"><span class="pre">prepend</span></code></p></li>
 </ul>
@@ -16070,6 +16119,7 @@ releng-tool (may vary per context):</p>
 <code class="docutils literal notranslate"><span class="pre">NO_COLOR</span></code>
 <a class="reference internal" href="#env-releng-assets-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_ASSETS_DIR</span></code></span></a>
 <a class="reference internal" href="#env-releng-cache-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_CACHE_DIR</span></code></span></a>
+<a class="reference internal" href="#env-releng-delayed-start"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_DELAYED_START</span></code></span></a>
 <a class="reference internal" href="#env-releng-dl-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_DL_DIR</span></code></span></a>
 <a class="reference internal" href="#env-releng-global-out-container-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_DIR</span></code></span></a>
 <a class="reference internal" href="#env-releng-global-out-container-no-images"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_NO_IMAGES</span></code></span></a>
@@ -16253,6 +16303,7 @@ releng-tool (may vary per context):</p>
 <a class="reference internal" href="#quirk-releng-ignore-release-check"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.ignore_release_check</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-log-execute-args"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.log.execute_args</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-log-execute-env"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.log.execute_env</span></code></span></a>
+<a class="reference internal" href="#quirk-releng-log-skip-package-versions-banner"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.log.skip_package_versions_banner</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-stats-no-pdf"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.stats.no_pdf</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-xmake-disable-arch-detection"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.xmake.disable_arch_detection</span></code></span></a>
 <a class="reference internal" href="#quirk-releng-xmake-disable-deps-init"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">releng.xmake.disable_deps_init</span></code></span></a></pre>

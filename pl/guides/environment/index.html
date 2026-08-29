@@ -279,6 +279,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-ignore_release_check/">releng.ignore_release_check</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-log-execute_args/">releng.log.execute_args</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-log-execute_env/">releng.log.execute_env</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-log-skip_package_versions_banner/">releng.log.skip_package_versions_banner</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-stats-no_pdf/">releng.stats.no_pdf</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-xmake-disable-arch-detection/">releng.xmake.disable_arch_detection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../quirks/quirk-xmake-disable-deps-init/">releng.xmake.disable_deps_init</a></li>
@@ -1362,6 +1363,21 @@ using the <a class="reference internal" href="../arguments/#arg-cache-dir"><span
 option can be used to override this location.</p>
 <p>See also <a class="reference internal" href="#env-cache-dir"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">CACHE_DIR</span></code></span></a>.</p>
 </section>
+<section id="releng-delayed-start">
+<span id="env-releng-delayed-start"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_DELAYED_START=1</span></code><a class="headerlink" href="#releng-delayed-start" title="Link to this heading">¶</a></h3>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>Hint to delay execution at the start of a run. releng-tool will print package
+versions at the start of an execution. Users who wish to delay the execution
+for a moment after printing this information can set this variable.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">RELENG_DELAYED_START</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>This is to help users perform active inspections of used revisions, allowing
+easy active log reading before packages may trigger extensive log messages.
+Execution is delayed ten (10) seconds.</p>
+</section>
 <section id="releng-dl-dir">
 <span id="env-releng-dl-dir"></span><h3><code class="docutils literal notranslate"><span class="pre">RELENG_DL_DIR=&lt;dir&gt;</span></code><a class="headerlink" href="#releng-dl-dir" title="Link to this heading">¶</a></h3>
 <div class="versionadded">
@@ -1692,6 +1708,7 @@ Consider the following example:</p>
 <li><a class="reference internal" href="#other-variables">Other variables</a><ul>
 <li><a class="reference internal" href="#releng-assets-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_ASSETS_DIR=&lt;dir&gt;</span></code></a></li>
 <li><a class="reference internal" href="#releng-cache-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_CACHE_DIR=&lt;dir&gt;</span></code></a></li>
+<li><a class="reference internal" href="#releng-delayed-start"><code class="docutils literal notranslate"><span class="pre">RELENG_DELAYED_START=1</span></code></a></li>
 <li><a class="reference internal" href="#releng-dl-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_DL_DIR=&lt;dir&gt;</span></code></a></li>
 <li><a class="reference internal" href="#releng-global-output-container-dir"><code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_DIR=&lt;dir&gt;</span></code></a></li>
 <li><a class="reference internal" href="#releng-global-output-container-no-images"><code class="docutils literal notranslate"><span class="pre">RELENG_GLOBAL_OUTPUT_CONTAINER_NO_IMAGES=1</span></code></a></li>
