@@ -3400,6 +3400,7 @@ action.</p>
 <span class="p">)</span>
 </pre></div>
 </div>
+<p>The version provided maps to the version of a target releng-tool release.</p>
 <p>See also <a class="reference internal" href="#document-guides/linting"><span class="doc std std-doc">Linting</span></a> and
 <a class="reference internal" href="#env-releng-lint-max-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_LINT_MAX_VERSION</span></code></span></a>.</p>
 </section>
@@ -4633,6 +4634,7 @@ action.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">RELENG_LINT_MAX_VERSION</span><span class="o">=</span><span class="mf">3.0</span>
 </pre></div>
 </div>
+<p>The version provided maps to the version of a target releng-tool release.</p>
 <p>See also <a class="reference internal" href="#document-guides/linting"><span class="doc std std-doc">Linting</span></a> and <a class="reference internal" href="#conf-lint-max-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">lint_max_version</span></code></span></a>.</p>
 </section>
 <section id="releng-images-dir">
@@ -11353,11 +11355,15 @@ flagged. For example:</p>
 </div>
 <p>As releng-tool adds lint checks over time, new lint checks are mapped to the
 release version of releng-tool that introduces the check. For example, if
-releng-tool v3 adds two new checks, both checks will be mapped to v3.0. If
+releng-tool v3.0 adds two new checks, both checks will be mapped to v3.0. If
 a build environment wants to perform CI without utilizing new lint checks,
-they can do so by configuring a maximum version for lint checks to use. This
-can be configured in the <a class="reference internal" href="#conf-lint-max-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">lint_max_version</span></code></span></a> project
-configuration:</p>
+they can do so by configuring a maximum version for lint checks to use. For
+example, consider the scenario where a developer wishes to:</p>
+<blockquote>
+<div><p>Only use linting checks that are available in releng-tool v2.8 release.</p>
+</div></blockquote>
+<p>This can be configured in the <a class="reference internal" href="#conf-lint-max-version"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">lint_max_version</span></code></span></a>
+project configuration:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">releng_config</span><span class="p">(</span>
     <span class="o">...</span>
     <span class="n">lint_max_version</span><span class="o">=</span><span class="s1">&#39;2.8&#39;</span><span class="p">,</span>
