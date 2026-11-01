@@ -313,6 +313,7 @@
 </ul>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="#document-release-notes">Release notes</a><input aria-label="Toggle navigation of Release notes" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="#document-news/2026-11-01_04.03.00">4.3 (2026-11-01)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-news/2026-08-29_04.02.00">4.2 (2026-08-29)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-news/2026-08-01_04.01.00">4.1 (2026-08-01)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#document-news/2026-07-26_04.00.00">4.0 (2026-07-26)</a></li>
@@ -10938,7 +10939,7 @@ a build identifier.</p>
 <p><span class="versionmodified added">Added in version 4.3.</span></p>
 </div>
 <p>A build variant (string) can be provided into a releng-tool run. This is
-typically used to help identify special variable builds such as enabling a
+typically used to help identify special variant builds such as enabling a
 custom feature or enabling certain debugging capabilities in a build.</p>
 <p>A build variant can be provided for a run using either the
 <a class="reference internal" href="#arg-build-variant"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--build-variant</span> <span class="pre">&lt;variant&gt;</span></code></span></a> argument or pre-set using the
@@ -13341,6 +13342,61 @@ releng-tool, please see the project's <a class="reference external" href="https:
 <section id="news">
 <h3>News<a class="headerlink" href="#news" title="Link to this heading">¶</a></h3>
 <div class="toctree-wrapper compound">
+<span id="document-news/2026-11-01_04.03.00"></span><section id="v4-3-2026-11-01">
+<h4>4.3 (2026-11-01)<a class="headerlink" href="#v4-3-2026-11-01" title="Link to this heading">¶</a></h4>
+<section id="improved-support-for-passthrough-options">
+<h5>Improved support for passthrough options<a class="headerlink" href="#improved-support-for-passthrough-options" title="Link to this heading">¶</a></h5>
+<p>The previous release of releng-tool added support from the command line to
+accept a build identifier value. This was done through the
+<a class="reference internal" href="#arg-build-id"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--build-id</span></code></span></a> argument which in turn populated an
+environment/script variable <a class="reference internal" href="#env-releng-build-id"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_BUILD_ID</span></code></span></a>. This
+release now extends this capability with two changes. First, the
+<a class="reference internal" href="#env-releng-build-id-set"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_BUILD_ID</span></code></span></a> environment variable can be set
+before running releng-tool to make it easier for builders who opt for use of
+environment variables over populating a command line argument.</p>
+<p>While a build identifier can be explicitly provided from either a command line
+argument or environment variable, releng-tool now also supports implicitly
+populating a build identifier through various common vendor tools. The
+following vendor tools are checked based on their pipeline/job documentation
+for an identifier value:</p>
+<ul class="simple">
+<li><p>AWS CodeBuild</p></li>
+<li><p>Azure Pipelines</p></li>
+<li><p>Bitbucket Pipelines</p></li>
+<li><p>CircleCI</p></li>
+<li><p>Forgejo</p></li>
+<li><p>GitHub</p></li>
+<li><p>GitLab</p></li>
+<li><p>Jenkins</p></li>
+<li><p>Travis CI</p></li>
+<li><p>Woodpecker</p></li>
+</ul>
+<p>Developers can opt-out of an implicit build identifier by setting the
+<a class="reference internal" href="#env-releng-build-id-no-implicit"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_BUILD_ID_NO_IMPLICIT</span></code></span></a> environment
+variable.</p>
+<p>Additionally, this release includes a new <a class="reference internal" href="#arg-build-variant"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">--build-variant</span></code></span></a>
+argument and <a class="reference internal" href="#env-releng-build-variant"><span class="std std-ref"><code class="docutils literal notranslate"><span class="pre">RELENG_BUILD_VARIANT</span></code></span></a> variable. The
+goal is to help identify special builds such as a debug-enabled variant build.
+For example, a provided string can be passed to a post-build phase which can be
+used when building the name of a package.</p>
+<p>For more information, see
+<a class="reference internal" href="#document-guides/tips/passthrough-options"><span class="doc std std-doc">passthrough options</span></a>.</p>
+</section>
+<section id="spdx-license-database-updated">
+<h5>SPDX license database updated<a class="headerlink" href="#spdx-license-database-updated" title="Link to this heading">¶</a></h5>
+<p>The internally managed copy of the <a class="reference external" href="https://spdx.org/licenses/">SPDX license identifiers</a> has
+been updated to the most recent version (v3.29).</p>
+</section>
+<section id="planned-removals-next-release">
+<h5>Planned Removals Next Release<a class="headerlink" href="#planned-removals-next-release" title="Link to this heading">¶</a></h5>
+<p>The following features are planned to be removed next release:</p>
+<ul class="simple">
+<li><p>Support for Python 3.10 (EOL) will be dropped.</p></li>
+<li><p>Support for the <code class="docutils literal notranslate"><span class="pre">LIBFOO_REMOTE_CONFIG</span></code> option</p></li>
+<li><p>Support for the <code class="docutils literal notranslate"><span class="pre">LIBFOO_REMOTE_SCRIPTS</span></code> option</p></li>
+</ul>
+</section>
+</section>
 <span id="document-news/2026-08-29_04.02.00"></span><section id="v4-2-2026-08-29">
 <h4>4.2 (2026-08-29)<a class="headerlink" href="#v4-2-2026-08-29" title="Link to this heading">¶</a></h4>
 <section id="changes-to-path-registration-helpers">
@@ -15557,8 +15613,8 @@ the following environment variables can be used instead:</p>
 </section>
 </div>
 </section>
-<section id="development">
-<h3>Development<a class="headerlink" href="#development" title="Link to this heading">¶</a></h3>
+<section id="v4-3-2026-11-01">
+<h3>4.3 (2026-11-01)<a class="headerlink" href="#v4-3-2026-11-01" title="Link to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><strong>(note)</strong> Last version supporting Python 3.10 (EOL)</p></li>
 <li><p><strong>(note)</strong> Last version supporting <code class="docutils literal notranslate"><span class="pre">LIBFOO_REMOTE_CONFIG</span></code></p></li>
